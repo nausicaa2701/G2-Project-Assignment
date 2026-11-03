@@ -4,6 +4,10 @@ matplotlib
 seaborn
 scipy
 scikit-learn
+xgboost
+lightgbm
+plotly
+streamlit
 jupyter
 nbconvert
 kaggle
