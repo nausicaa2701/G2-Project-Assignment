@@ -1,0 +1,953 @@
+CountryCode,ShortName,Region,Income,actual,lp_std,expected,gap,score,rank,n,theme,target,unit
+ABW,Aruba,Latin America & Caribbean,High income,1.669,0.03453599287884935,1.757939980085809,-0.08893998008580906,49.47916666666667,98,192,Demography,fertility,births per woman
+ADO,Andorra,Europe & Central Asia,High income,1.22,0.05901726051195349,1.3872689606341841,-0.16726896063418417,53.125,91,192,Demography,fertility,births per woman
+AFG,Afghanistan,South Asia,Low income,5.05,0.11559076346541163,4.300351580948714,0.7496484190512858,19.270833333333336,156,192,Demography,fertility,births per woman
+AGO,Angola,Sub-Saharan Africa,Upper middle income,6.165,0.03600882303665424,3.2001737318786843,2.9648262681213158,1.0416666666666665,191,192,Demography,fertility,births per woman
+ALB,Albania,Europe & Central Asia,Upper middle income,1.771,0.021748612638483062,2.8296945123096178,-1.0586945123096179,89.58333333333334,21,192,Demography,fertility,births per woman
+ARE,United Arab Emirates,Middle East & North Africa,High income,1.801,0.024763257037947323,1.5494368341818707,0.2515631658181292,35.9375,124,192,Demography,fertility,births per woman
+ARG,Argentina,Latin America & Caribbean,High income,2.335,0.020829409145392608,2.3795023460928255,-0.04450234609282555,47.39583333333333,102,192,Demography,fertility,births per woman
+ARM,Armenia,Europe & Central Asia,Lower middle income,1.553,0.012926588095067795,3.1656768012125465,-1.6126768012125465,96.875,7,192,Demography,fertility,births per woman
+ATG,Antigua and Barbuda,Latin America & Caribbean,High income,2.088,0.02142485719624581,2.08666499130554,0.0013350086944599049,46.35416666666667,104,192,Demography,fertility,births per woman
+AUS,Australia,East Asia & Pacific,High income,1.921,0.06805290453197764,1.3248424650288295,0.5961575349711705,26.041666666666668,143,192,Demography,fertility,births per woman
+AUT,Austria,Europe & Central Asia,High income,1.44,0.07524956173063102,1.2932382133233076,0.14676178667669237,39.58333333333333,117,192,Demography,fertility,births per woman
+AZE,Azerbaijan,Europe & Central Asia,Upper middle income,2.0,0.022244358036882426,2.951306551381441,-0.9513065513814412,85.41666666666666,29,192,Demography,fertility,births per woman
+BDI,Burundi,Sub-Saharan Africa,Low income,6.035,0.12292622976926694,4.880423806450499,1.1545761935495014,9.895833333333332,174,192,Demography,fertility,births per woman
+BEL,Belgium,Europe & Central Asia,High income,1.79,0.057070594008087575,1.3650674439408674,0.4249325560591326,32.8125,130,192,Demography,fertility,births per woman
+BEN,Benin,Sub-Saharan Africa,Low income,4.846,0.09176647721629988,3.9535983434327404,0.8924016565672597,16.666666666666664,161,192,Demography,fertility,births per woman
+BFA,Burkina Faso,Sub-Saharan Africa,Low income,5.607,0.04665991714099552,4.149960493547586,1.4570395064524142,6.770833333333333,180,192,Demography,fertility,births per woman
+BGD,Bangladesh,South Asia,Lower middle income,2.209,0.03503487123497255,3.964007586198181,-1.755007586198181,98.4375,4,192,Demography,fertility,births per woman
+BGR,Bulgaria,Europe & Central Asia,Upper middle income,1.5,0.032429133081749446,2.666198366778488,-1.166198366778488,92.1875,16,192,Demography,fertility,births per woman
+BHR,Bahrain,Middle East & North Africa,High income,2.075,0.049508561977330535,1.837460035199938,0.23753996480006223,36.45833333333333,123,192,Demography,fertility,births per woman
+BHS,The Bahamas,Latin America & Caribbean,High income,1.883,0.03609070690927415,1.714399892247981,0.16860010775201895,38.54166666666667,119,192,Demography,fertility,births per woman
+BIH,Bosnia and Herzegovina,Europe & Central Asia,Upper middle income,1.272,0.02722579373827402,2.927810265333839,-1.655810265333839,97.39583333333334,6,192,Demography,fertility,births per woman
+BLR,Belarus,Europe & Central Asia,Upper middle income,1.62,0.03615768487883531,2.6701177386410873,-1.0501177386410872,89.0625,22,192,Demography,fertility,births per woman
+BLZ,Belize,Latin America & Caribbean,Upper middle income,2.611,0.02226067522363518,2.8191083405793504,-0.20810834057935024,55.729166666666664,86,192,Demography,fertility,births per woman
+BMU,Bermuda,North America,High income,1.63,0.0873554626933655,0.9277580882843957,0.7022419117156042,20.3125,154,192,Demography,fertility,births per woman
+BOL,Bolivia,Latin America & Caribbean,Lower middle income,3.017,0.036154158955774805,3.5183527046972474,-0.5013527046972475,68.22916666666666,62,192,Demography,fertility,births per woman
+BRA,Brazil,Latin America & Caribbean,Upper middle income,1.801,0.019805952437617246,2.5483084361485266,-0.7473084361485267,79.16666666666666,41,192,Demography,fertility,births per woman
+BRB,Barbados,Latin America & Caribbean,High income,1.791,0.03347688384540571,1.9497496155964842,-0.15874961559648426,52.604166666666664,92,192,Demography,fertility,births per woman
+BRN,Brunei,East Asia & Pacific,High income,1.893,0.042404109738595916,1.6632656778253605,0.22973432217463952,37.5,121,192,Demography,fertility,births per woman
+BTN,Bhutan,South Asia,Lower middle income,2.082,0.027110929410867922,3.2578229316788154,-1.1758229316788156,92.70833333333334,15,192,Demography,fertility,births per woman
+BWA,Botswana,Sub-Saharan Africa,Upper middle income,2.864,0.013601212215079046,2.433085029728597,0.4309149702714028,32.29166666666667,131,192,Demography,fertility,births per woman
+CAF,Central African Republic,Sub-Saharan Africa,Low income,4.368,0.07851403339477571,4.711530855122042,-0.34353085512204196,64.0625,70,192,Demography,fertility,births per woman
+CAN,Canada,North America,High income,1.61,0.04751743535729367,1.3255039516128362,0.2844960483871639,35.41666666666667,125,192,Demography,fertility,births per woman
+CHE,Switzerland,Europe & Central Asia,High income,1.52,0.05229790995015339,1.0048530872883132,0.5151469127116868,27.083333333333332,141,192,Demography,fertility,births per woman
+CHI,Channel Islands,Europe & Central Asia,High income,1.459,0.025880871851763163,1.025803361015458,0.4331966389845421,31.770833333333332,132,192,Demography,fertility,births per woman
+CHL,Chile,Latin America & Caribbean,High income,1.774,0.029849815075219627,2.1991583818188336,-0.4251583818188336,65.625,67,192,Demography,fertility,births per woman
+CHN,China,East Asia & Pacific,Upper middle income,1.668,0.03410513928226778,2.8235697119691987,-1.1555697119691988,91.66666666666666,17,192,Demography,fertility,births per woman
+CIV,Côte d'Ivoire,Sub-Saharan Africa,Lower middle income,5.063,0.04216976345781391,3.683206387159287,1.3797936128407127,7.8125,178,192,Demography,fertility,births per woman
+CMR,Cameroon,Sub-Saharan Africa,Lower middle income,4.781,0.014699841421664962,3.72333114421657,1.0576688557834295,11.979166666666668,170,192,Demography,fertility,births per woman
+COG,Congo,Sub-Saharan Africa,Lower middle income,4.919,0.029260434506109975,3.2251895069972347,1.6938104930027649,4.166666666666666,185,192,Demography,fertility,births per woman
+COL,Colombia,Latin America & Caribbean,Upper middle income,1.922,0.02556584124711744,2.7035269130084036,-0.7815269130084037,80.20833333333334,39,192,Demography,fertility,births per woman
+COM,Comoros,Sub-Saharan Africa,Low income,4.56,0.05658332308847532,4.075830740410792,0.48416925958920753,28.645833333333332,138,192,Demography,fertility,births per woman
+CPV,Cabo Verde,Sub-Saharan Africa,Lower middle income,2.339,0.022086549396361232,3.064022254939606,-0.7250222549396059,78.125,43,192,Demography,fertility,births per woman
+CRI,Costa Rica,Latin America & Caribbean,Upper middle income,1.841,0.018029489917691315,2.5285601045362216,-0.6875601045362216,77.60416666666666,44,192,Demography,fertility,births per woman
+CUB,Cuba,Latin America & Caribbean,Upper middle income,1.622,0.020034049777032287,2.6262950739385684,-1.0042950739385683,88.02083333333334,24,192,Demography,fertility,births per woman
+CYP,Cyprus,Europe & Central Asia,High income,1.455,0.03357142991212635,1.7177179134408225,-0.2627179134408224,58.854166666666664,80,192,Demography,fertility,births per woman
+CZE,Czech Republic,Europe & Central Asia,High income,1.45,0.017558724960845068,1.9543878616230672,-0.5043878616230673,68.75,61,192,Demography,fertility,births per woman
+DEU,Germany,Europe & Central Asia,High income,1.38,0.04060323008688126,1.328656365181312,0.05134363481868798,44.79166666666667,107,192,Demography,fertility,births per woman
+DJI,Djibouti,Middle East & North Africa,Lower middle income,3.262,0.03765482269557404,3.56888237852717,-0.30688237852716993,61.979166666666664,74,192,Demography,fertility,births per woman
+DNK,Denmark,Europe & Central Asia,High income,1.73,0.05567613624628015,1.226350464760678,0.503649535239322,27.604166666666668,140,192,Demography,fertility,births per woman
+DOM,Dominican Republic,Latin America & Caribbean,Upper middle income,2.51,0.03095077284573313,2.6159492522291883,-0.1059492522291885,50.0,97,192,Demography,fertility,births per woman
+DZA,Algeria,Middle East & North Africa,Upper middle income,2.893,0.030096129676773237,2.9089530860825,-0.015953086082500345,46.875,103,192,Demography,fertility,births per woman
+ECU,Ecuador,Latin America & Caribbean,Upper middle income,2.571,0.02806741583348066,2.850491163224203,-0.27949116322420275,59.375,79,192,Demography,fertility,births per woman
+EGY,Egypt,Middle East & North Africa,Lower middle income,3.336,0.028098502899805984,3.468154068661049,-0.13215406866104917,50.520833333333336,96,192,Demography,fertility,births per woman
+ERI,Eritrea,Sub-Saharan Africa,Low income,4.363,0.12648673130026328,4.6080537632144445,-0.24505376321444405,57.8125,82,192,Demography,fertility,births per woman
+ESP,Spain,Europe & Central Asia,High income,1.32,0.05136536847281261,1.6015186860244484,-0.2815186860244483,59.895833333333336,78,192,Demography,fertility,births per woman
+EST,Estonia,Europe & Central Asia,High income,1.56,0.031571758923758506,2.0785533498840776,-0.5185533498840775,70.3125,58,192,Demography,fertility,births per woman
+ETH,Ethiopia,Sub-Saharan Africa,Low income,4.517,0.0589914253686223,4.4857168650733215,0.03128313492667889,45.83333333333333,105,192,Demography,fertility,births per woman
+FIN,Finland,Europe & Central Asia,High income,1.8,0.045382766845041896,1.3286283931870764,0.47137160681292367,30.208333333333332,135,192,Demography,fertility,births per woman
+FJI,Fiji,East Asia & Pacific,Upper middle income,2.589,0.024383397566733425,2.818102517481349,-0.22910251748134902,56.770833333333336,84,192,Demography,fertility,births per woman
+FRA,France,Europe & Central Asia,High income,2.01,0.06438458131287822,1.379217574812912,0.6307824251870877,24.479166666666664,146,192,Demography,fertility,births per woman
+FSM,Micronesia,East Asia & Pacific,Lower middle income,3.294,0.019155373743715468,3.1817575834205707,0.11224241657942935,42.1875,112,192,Demography,fertility,births per woman
+GAB,Gabon,Sub-Saharan Africa,Upper middle income,3.963,0.034201862292004614,2.3924226974254106,1.5705773025745895,5.208333333333334,183,192,Demography,fertility,births per woman
+GBR,United Kingdom,Europe & Central Asia,High income,1.92,0.05146598909243099,1.2675052611011814,0.6524947388988185,22.916666666666664,149,192,Demography,fertility,births per woman
+GEO,Georgia,Europe & Central Asia,Lower middle income,1.817,0.020133710933905695,3.20225125857579,-1.3852512585757901,95.83333333333334,9,192,Demography,fertility,births per woman
+GHA,Ghana,Sub-Saharan Africa,Lower middle income,4.209,0.04659726143056139,3.8993737656272756,0.3096262343727241,34.89583333333333,126,192,Demography,fertility,births per woman
+GIN,Guinea,Sub-Saharan Africa,Low income,5.094,0.12149819607511766,4.465224385349866,0.6287756146501344,25.0,145,192,Demography,fertility,births per woman
+GMB,The Gambia,Sub-Saharan Africa,Low income,5.751,0.09285763632822874,4.2036577505924395,1.5473422494075608,5.729166666666666,182,192,Demography,fertility,births per woman
+GNB,Guinea-Bissau,Sub-Saharan Africa,Low income,4.906,0.04199782603138073,4.257605239897048,0.6483947601029518,23.4375,148,192,Demography,fertility,births per woman
+GNQ,Equatorial Guinea,Sub-Saharan Africa,High income,4.924,0.025371485278981986,2.046451442765741,2.877548557234259,1.5625,190,192,Demography,fertility,births per woman
+GRC,Greece,Europe & Central Asia,High income,1.29,0.02413570008096155,1.81776664675118,-0.5277666467511799,70.83333333333334,57,192,Demography,fertility,births per woman
+GRD,Grenada,Latin America & Caribbean,Upper middle income,2.171,0.03320619585092101,2.4605885866698523,-0.28958858666985243,60.416666666666664,77,192,Demography,fertility,births per woman
+GRL,Greenland,Europe & Central Asia,High income,2.05,0.027340104570187516,1.452116301871773,0.5978836981282267,25.520833333333332,144,192,Demography,fertility,births per woman
+GTM,Guatemala,Latin America & Caribbean,Lower middle income,3.263,0.024630817174077748,3.1589677170033292,0.10403228299667067,43.22916666666667,110,192,Demography,fertility,births per woman
+GUY,Guyana,Latin America & Caribbean,Lower middle income,2.585,0.031066594203371215,3.423784887420504,-0.8387848874205042,81.77083333333334,36,192,Demography,fertility,births per woman
+HKG,"Hong Kong SAR, China",East Asia & Pacific,High income,1.124,0.04748792694622597,1.4289130297546175,-0.3049130297546174,61.458333333333336,75,192,Demography,fertility,births per woman
+HND,Honduras,Latin America & Caribbean,Lower middle income,2.442,0.025742589953549753,3.3958683787076174,-0.9538683787076172,85.9375,28,192,Demography,fertility,births per woman
+HRV,Croatia,Europe & Central Asia,High income,1.51,0.026163554424001575,2.1520514686209453,-0.6420514686209453,75.0,49,192,Demography,fertility,births per woman
+HTI,Haiti,Latin America & Caribbean,Low income,3.098,0.0631808496666749,4.186044993473871,-1.0880449934738712,90.10416666666666,20,192,Demography,fertility,births per woman
+HUN,Hungary,Europe & Central Asia,High income,1.34,0.023990831960634864,2.0823548409270605,-0.7423548409270604,78.64583333333334,42,192,Demography,fertility,births per woman
+IDN,Indonesia,East Asia & Pacific,Lower middle income,2.484,0.02906967869606171,3.3283389288335554,-0.8443389288335554,82.8125,34,192,Demography,fertility,births per woman
+IND,India,South Asia,Lower middle income,2.465,0.025508083979577843,3.6080702815466728,-1.143070281546673,90.625,19,192,Demography,fertility,births per woman
+IRL,Ireland,Europe & Central Asia,High income,2.01,0.05058790225131726,1.1072031334356187,0.9027968665643811,15.625,163,192,Demography,fertility,births per woman
+IRN,Iran,Middle East & North Africa,Upper middle income,1.726,0.02299766346709283,2.8745854486376423,-1.1485854486376423,91.14583333333334,18,192,Demography,fertility,births per woman
+IRQ,Iraq,Middle East & North Africa,Upper middle income,4.026,0.032241906890493915,3.134944880303334,0.8910551196966656,17.1875,160,192,Demography,fertility,births per woman
+ISL,Iceland,Europe & Central Asia,High income,2.04,0.04771477210998204,1.0082193781428488,1.0317806218571512,13.020833333333334,168,192,Demography,fertility,births per woman
+ISR,Israel,Middle East & North Africa,High income,3.03,0.051852347963243305,1.609350825593135,1.4206491744068648,7.291666666666667,179,192,Demography,fertility,births per woman
+ITA,Italy,Europe & Central Asia,High income,1.43,0.05964731051853148,1.518602981604185,-0.08860298160418512,48.95833333333333,99,192,Demography,fertility,births per woman
+JAM,Jamaica,Latin America & Caribbean,Upper middle income,2.26,0.038838947088058025,2.793177815053509,-0.5331778150535094,71.35416666666666,56,192,Demography,fertility,births per woman
+JOR,Jordan,Middle East & North Africa,Upper middle income,3.244,0.02236587413011458,3.03801586594427,0.20598413405573002,38.02083333333333,120,192,Demography,fertility,births per woman
+JPN,Japan,East Asia & Pacific,High income,1.43,0.03418135417235815,1.369484924435559,0.06051507556444102,44.27083333333333,108,192,Demography,fertility,births per woman
+KAZ,Kazakhstan,Europe & Central Asia,Upper middle income,2.64,0.031854433835711474,2.5950066892096695,0.04499331079033064,45.3125,106,192,Demography,fertility,births per woman
+KEN,Kenya,Sub-Saharan Africa,Lower middle income,4.406,0.053397092144664406,4.0255220094066555,0.3804779905933442,33.85416666666667,128,192,Demography,fertility,births per woman
+KGZ,Kyrgyz Republic,Europe & Central Asia,Lower middle income,3.2,0.061809790855954574,4.049091566183219,-0.849091566183219,83.33333333333334,33,192,Demography,fertility,births per woman
+KHM,Cambodia,East Asia & Pacific,Low income,2.683,0.031850156971936563,3.933822905572685,-1.2508229055726852,93.75,13,192,Demography,fertility,births per woman
+KIR,Kiribati,East Asia & Pacific,Lower middle income,3.765,0.04486042204727562,3.6466039085081916,0.11839609149180852,41.66666666666667,113,192,Demography,fertility,births per woman
+KOR,Korea,East Asia & Pacific,High income,1.187,0.042523973299589596,1.6074880278204895,-0.42048802782048944,65.10416666666666,68,192,Demography,fertility,births per woman
+KSV,Kosovo,Europe & Central Asia,Lower middle income,2.16,0.022675946802294865,3.0393646850275786,-0.8793646850275785,83.85416666666666,32,192,Demography,fertility,births per woman
+KWT,Kuwait,Middle East & North Africa,High income,2.6,0.05838502390269769,1.5708855758538924,1.0291144241461077,13.541666666666666,167,192,Demography,fertility,births per woman
+LAO,Lao PDR,East Asia & Pacific,Lower middle income,3.063,0.05769704760678822,3.880362905741088,-0.817362905741088,81.25,37,192,Demography,fertility,births per woman
+LBN,Lebanon,Middle East & North Africa,Upper middle income,1.495,0.02316688669087144,2.4448745801182534,-0.9498745801182533,84.89583333333334,30,192,Demography,fertility,births per woman
+LBR,Liberia,Sub-Saharan Africa,Low income,4.793,0.14082982149372472,4.691653398849203,0.10134660115079708,43.75,109,192,Demography,fertility,births per woman
+LBY,Libya,Middle East & North Africa,Upper middle income,2.507,0.031585845474109135,2.7072491063164312,-0.2002491063164311,55.208333333333336,87,192,Demography,fertility,births per woman
+LCA,St. Lucia,Latin America & Caribbean,Upper middle income,1.913,0.023724781991964778,2.5850498616412985,-0.6720498616412984,76.5625,46,192,Demography,fertility,births per woman
+LIE,Liechtenstein,Europe & Central Asia,High income,1.51,0.028626448425869203,0.6345840975804575,0.8754159024195425,17.708333333333336,159,192,Demography,fertility,births per woman
+LKA,Sri Lanka,South Asia,Lower middle income,2.339,0.027033744700789796,3.2454283218737787,-0.9064283218737788,84.375,31,192,Demography,fertility,births per woman
+LSO,Lesotho,Sub-Saharan Africa,Lower middle income,3.222,0.029652964988198995,3.716935795527739,-0.49493579552773914,67.70833333333334,63,192,Demography,fertility,births per woman
+LTU,Lithuania,Europe & Central Asia,High income,1.6,0.025555857537440888,2.146637079863565,-0.5466370798635647,72.39583333333334,54,192,Demography,fertility,births per woman
+LUX,Luxembourg,Europe & Central Asia,High income,1.57,0.06590380794280387,0.7958410983648235,0.7741589016351765,18.75,157,192,Demography,fertility,births per woman
+LVA,Latvia,Europe & Central Asia,High income,1.44,0.016568945850198434,2.233015966912586,-0.793015966912586,80.72916666666666,38,192,Demography,fertility,births per woman
+MAC,"Macao SAR, China",East Asia & Pacific,High income,1.204,0.019855050659593157,1.099710851001704,0.104289148998296,42.70833333333333,111,192,Demography,fertility,births per woman
+MAR,Morocco,Middle East & North Africa,Lower middle income,2.535,0.019640309793877403,3.1067707214718436,-0.5717707214718435,73.95833333333334,51,192,Demography,fertility,births per woman
+MDA,Moldova,Europe & Central Asia,Lower middle income,1.456,0.038639758793676406,3.624915911121768,-2.168915911121768,100.0,1,192,Demography,fertility,births per woman
+MDG,Madagascar,Sub-Saharan Africa,Low income,4.468,0.14063779335578533,4.543182551282877,-0.07518255128287699,48.4375,100,192,Demography,fertility,births per woman
+MDV,Maldives,South Asia,Upper middle income,2.152,0.02038364792536751,2.662051960501402,-0.5100519605014018,69.27083333333334,60,192,Demography,fertility,births per woman
+MEX,Mexico,Latin America & Caribbean,Upper middle income,2.272,0.03680147226899646,2.3279376158411305,-0.05593761584113066,47.91666666666667,101,192,Demography,fertility,births per woman
+MHL,Marshall Islands,East Asia & Pacific,Upper middle income,4.05,0.030894752299037563,3.0164855679184512,1.0335144320815486,12.5,169,192,Demography,fertility,births per woman
+MKD,Macedonia,Europe & Central Asia,Upper middle income,1.511,0.020051525753856075,2.8254480708511145,-1.3144480708511146,94.27083333333334,12,192,Demography,fertility,births per woman
+MLI,Mali,Sub-Saharan Africa,Low income,6.314,0.02996699106548914,4.203747157545235,2.1102528424547646,2.604166666666667,188,192,Demography,fertility,births per woman
+MLT,Malta,Middle East & North Africa,High income,1.43,0.030268408818772005,1.8931555054850269,-0.46315550548502693,67.1875,64,192,Demography,fertility,births per woman
+MNE,Montenegro,Europe & Central Asia,Upper middle income,1.666,0.01502444599705194,2.69925011382213,-1.0332501138221302,88.54166666666666,23,192,Demography,fertility,births per woman
+MNG,Mongolia,East Asia & Pacific,Upper middle income,2.657,0.039224245014975,3.311156557379004,-0.6541565573790038,75.52083333333334,48,192,Demography,fertility,births per woman
+MOZ,Mozambique,Sub-Saharan Africa,Low income,5.418,0.033574850696703365,4.1239714297626096,1.2940285702373906,8.854166666666668,176,192,Demography,fertility,births per woman
+MRT,Mauritania,Sub-Saharan Africa,Lower middle income,4.662,0.06669526383516436,3.7594074458108175,0.9025925541891824,16.145833333333336,162,192,Demography,fertility,births per woman
+MUS,Mauritius,Sub-Saharan Africa,Upper middle income,1.44,0.022486198747256905,2.4430980962580082,-1.0030980962580083,87.5,25,192,Demography,fertility,births per woman
+MWI,Malawi,Sub-Saharan Africa,Low income,5.22,0.03933165496403978,4.581743874668767,0.6382561253312327,23.958333333333336,147,192,Demography,fertility,births per woman
+MYS,Malaysia,East Asia & Pacific,Upper middle income,1.956,0.0038387055163262274,2.3890346590679745,-0.43303465906797456,66.66666666666666,65,192,Demography,fertility,births per woman
+NAM,Namibia,Sub-Saharan Africa,Upper middle income,3.56,0.025378425488612275,2.6978737841329474,0.8621262158670526,18.229166666666664,158,192,Demography,fertility,births per woman
+NER,Niger,Sub-Saharan Africa,Low income,7.623,0.08771189274428008,4.440065561682909,3.1829344383170914,0.5208333333333333,192,192,Demography,fertility,births per woman
+NGA,Nigeria,Sub-Saharan Africa,Lower middle income,5.707,0.07791940812775355,3.6315098077062906,2.0754901922937092,3.125,187,192,Demography,fertility,births per woman
+NIC,Nicaragua,Latin America & Caribbean,Lower middle income,2.3,0.03515485731517373,3.4837857883869354,-1.1837857883869356,93.22916666666666,14,192,Demography,fertility,births per woman
+NLD,Netherlands,Europe & Central Asia,High income,1.72,0.04442122686344158,1.2620999225053269,0.4579000774946731,30.729166666666668,134,192,Demography,fertility,births per woman
+NOR,Norway,Europe & Central Asia,High income,1.85,0.03683556111481103,0.9184438495682425,0.9315561504317575,14.583333333333334,165,192,Demography,fertility,births per woman
+NPL,Nepal,South Asia,Low income,2.292,0.06422975378802571,4.26931545410702,-1.9773154541070204,99.47916666666666,2,192,Demography,fertility,births per woman
+NZL,New Zealand,East Asia & Pacific,High income,1.95,0.027585539008364635,1.4722004951171281,0.4777995048828718,29.6875,136,192,Demography,fertility,births per woman
+OMN,Oman,Middle East & North Africa,High income,2.823,0.026699018461865485,2.1263056023811373,0.6966943976188626,20.833333333333336,153,192,Demography,fertility,births per woman
+PAK,Pakistan,South Asia,Lower middle income,3.682,0.029112072198809843,3.8722241900766123,-0.1902241900766124,54.166666666666664,89,192,Demography,fertility,births per woman
+PAN,Panama,Latin America & Caribbean,Upper middle income,2.465,0.033111739513281675,2.3271331700023836,0.13786682999761624,40.10416666666667,116,192,Demography,fertility,births per woman
+PER,Peru,Latin America & Caribbean,Upper middle income,2.48,0.030213304344638477,2.7999011430698575,-0.3199011430698575,63.541666666666664,71,192,Demography,fertility,births per woman
+PHL,Philippines,East Asia & Pacific,Lower middle income,3.011,0.034810413607744416,3.4008297150273323,-0.3898297150273322,64.58333333333334,69,192,Demography,fertility,births per woman
+PNG,Papua New Guinea,East Asia & Pacific,Lower middle income,3.812,0.027775339407758226,3.6461936890735958,0.16580631092640408,39.0625,118,192,Demography,fertility,births per woman
+POL,Poland,Europe & Central Asia,High income,1.3,0.02252365188046744,2.139117223629243,-0.8391172236292428,82.29166666666666,35,192,Demography,fertility,births per woman
+PRI,Puerto Rico,Latin America & Caribbean,High income,1.636,0.03888479855880606,1.790844707744282,-0.15484470774428205,52.083333333333336,93,192,Demography,fertility,births per woman
+PRT,Portugal,Europe & Central Asia,High income,1.28,0.023587275341662883,1.8198755879277229,-0.5398755879277228,71.875,55,192,Demography,fertility,births per woman
+PRY,Paraguay,Latin America & Caribbean,Upper middle income,2.581,0.018761992010217617,3.2631706696817644,-0.6821706696817644,77.08333333333334,45,192,Demography,fertility,births per woman
+QAT,Qatar,Middle East & North Africa,High income,2.043,0.021913231893518556,0.97809568166222,1.06490431833778,11.458333333333332,171,192,Demography,fertility,births per woman
+ROM,Romania,Europe & Central Asia,Upper middle income,1.53,0.029234057682301567,2.511114962960785,-0.9811149629607849,86.45833333333334,27,192,Demography,fertility,births per woman
+RUS,Russia,Europe & Central Asia,High income,1.7,0.03167577020824666,2.4778370772075196,-0.7778370772075196,79.6875,40,192,Demography,fertility,births per woman
+RWA,Rwanda,Sub-Saharan Africa,Low income,4.012,0.06475633096429631,4.240293642844349,-0.22829364284434916,56.25,85,192,Demography,fertility,births per woman
+SAU,Saudi Arabia,Middle East & North Africa,High income,2.818,0.033138241454045,1.8629655166868564,0.9550344833131437,14.0625,166,192,Demography,fertility,births per woman
+SDN,Sudan,Sub-Saharan Africa,Lower middle income,4.421,0.05010632458544723,3.740175339421653,0.6808246605783475,21.354166666666664,152,192,Demography,fertility,births per woman
+SEN,Senegal,Sub-Saharan Africa,Lower middle income,5.134,0.04591234075142993,3.8726448712027874,1.261355128797213,9.375,175,192,Demography,fertility,births per woman
+SGP,Singapore,East Asia & Pacific,High income,1.19,0.03349537848635125,1.3344096955781446,-0.14440969557814465,51.041666666666664,95,192,Demography,fertility,births per woman
+SLB,Solomon Islands,East Asia & Pacific,Lower middle income,4.031,0.06772418699265653,3.62373480090042,0.4072651990995797,33.33333333333333,129,192,Demography,fertility,births per woman
+SLE,Sierra Leone,Sub-Saharan Africa,Low income,4.746,0.04935623618255026,4.1662321286134,0.5797678713866006,26.5625,142,192,Demography,fertility,births per woman
+SLV,El Salvador,Latin America & Caribbean,Lower middle income,1.958,0.03568875840248851,2.957524380140195,-0.9995243801401952,86.97916666666666,26,192,Demography,fertility,births per woman
+SMR,San Marino,Europe & Central Asia,High income,1.26,0.055417725984305936,1.1349221129156608,0.1250778870843392,41.14583333333333,114,192,Demography,fertility,births per woman
+SRB,Serbia,Europe & Central Asia,Upper middle income,1.45,0.041271564054500436,2.765807520140423,-1.315807520140423,94.79166666666666,11,192,Demography,fertility,births per woman
+STP,São Tomé and Principe,Sub-Saharan Africa,Lower middle income,4.634,0.027347027197991345,3.7099603362383937,0.9240396637616066,15.104166666666666,164,192,Demography,fertility,births per woman
+SUR,Suriname,Latin America & Caribbean,Upper middle income,2.386,0.026814929496588744,2.69952400481123,-0.3135240048112298,62.5,73,192,Demography,fertility,births per woman
+SVK,Slovak Republic,Europe & Central Asia,High income,1.34,0.019182678456211355,1.9103247168936304,-0.5703247168936303,73.4375,52,192,Demography,fertility,births per woman
+SVN,Slovenia,Europe & Central Asia,High income,1.58,0.030126196258615814,1.8101776926606923,-0.2301776926606922,57.291666666666664,83,192,Demography,fertility,births per woman
+SWE,Sweden,Europe & Central Asia,High income,1.91,0.02541329490287696,1.2021781064979058,0.7078218935020941,19.791666666666664,155,192,Demography,fertility,births per woman
+SWZ,Swaziland,Sub-Saharan Africa,Lower middle income,3.334,0.024312975091566227,3.101345668869459,0.2326543311305409,36.97916666666667,122,192,Demography,fertility,births per woman
+SYC,Seychelles,Sub-Saharan Africa,High income,2.4,0.03998095601999976,1.9079637464844423,0.4920362535155576,28.125,139,192,Demography,fertility,births per woman
+SYR,Syrian Arab Republic,Middle East & North Africa,Lower middle income,2.964,0.04530561778523645,3.392235822587355,-0.42823582258735504,66.14583333333334,66,192,Demography,fertility,births per woman
+TCD,Chad,Sub-Saharan Africa,Low income,6.264,0.04901465072179172,3.8844035103710737,2.3795964896289266,2.083333333333333,189,192,Demography,fertility,births per woman
+TGO,Togo,Sub-Saharan Africa,Low income,4.655,0.08914622961361188,4.216267819882603,0.43873218011739734,31.25,133,192,Demography,fertility,births per woman
+THA,Thailand,East Asia & Pacific,Upper middle income,1.524,0.008910105537151936,2.860857807549453,-1.3368578075494528,95.3125,10,192,Demography,fertility,births per woman
+TJK,Tajikistan,Europe & Central Asia,Lower middle income,3.514,0.048874741415352876,4.184143103614123,-0.6701431036141234,76.04166666666666,47,192,Demography,fertility,births per woman
+TKM,Turkmenistan,Europe & Central Asia,Upper middle income,2.326,0.015149417618440316,2.8383974675045422,-0.5123974675045422,69.79166666666666,59,192,Demography,fertility,births per woman
+TMP,Timor-Leste,East Asia & Pacific,Lower middle income,5.2,0.06835602344229175,3.8409481572475586,1.3590518427524416,8.333333333333332,177,192,Demography,fertility,births per woman
+TON,Tonga,East Asia & Pacific,Upper middle income,3.768,0.026179585861305366,3.107416106023288,0.6605838939767117,21.875,151,192,Demography,fertility,births per woman
+TTO,Trinidad and Tobago,Latin America & Caribbean,High income,1.789,0.027068263933541448,1.9823781999596577,-0.19337819995965777,54.6875,88,192,Demography,fertility,births per woman
+TUN,Tunisia,Middle East & North Africa,Upper middle income,2.25,0.03950153474442361,2.8169071904561434,-0.5669071904561434,72.91666666666666,53,192,Demography,fertility,births per woman
+TUR,Turkey,Europe & Central Asia,Upper middle income,2.041,0.03295816697132095,2.295022218395463,-0.254022218395463,58.333333333333336,81,192,Demography,fertility,births per woman
+TZA,Tanzania,Sub-Saharan Africa,Low income,5.215,0.034499348494820184,4.088262886142641,1.1267371138573585,10.416666666666668,173,192,Demography,fertility,births per woman
+UGA,Uganda,Sub-Saharan Africa,Low income,5.869,0.06118883191207604,4.251233905294653,1.6177660947053472,4.6875,184,192,Demography,fertility,births per woman
+UKR,Ukraine,Europe & Central Asia,Lower middle income,1.506,0.03466302271154799,3.254141798307169,-1.748141798307169,97.91666666666666,5,192,Demography,fertility,births per woman
+URY,Uruguay,Latin America & Caribbean,High income,2.033,0.031036866073206746,2.3485326630979815,-0.31553266309798156,63.020833333333336,72,192,Demography,fertility,births per woman
+USA,United States,North America,High income,1.8695,0.05272335885025402,1.2110036761702978,0.6584963238297021,22.395833333333336,150,192,Demography,fertility,births per woman
+UZB,Uzbekistan,Europe & Central Asia,Lower middle income,2.2,0.026835504708989915,3.761063843842121,-1.561063843842121,96.35416666666666,8,192,Demography,fertility,births per woman
+VCT,St. Vincent and the Grenadines,Latin America & Caribbean,Upper middle income,1.997,0.02199083476519448,2.603860856707585,-0.6068608567075848,74.47916666666666,50,192,Demography,fertility,births per woman
+VEN,Venezuela,Latin America & Caribbean,High income,2.391,0.020647050807411884,2.5415193404578456,-0.15051934045784554,51.5625,94,192,Demography,fertility,births per woman
+VNM,Vietnam,East Asia & Pacific,Lower middle income,1.743,0.05992564173189959,3.623493390499101,-1.8804933904991008,98.95833333333334,3,192,Demography,fertility,births per woman
+VUT,Vanuatu,East Asia & Pacific,Lower middle income,3.383,0.018229968816596588,3.252751458444184,0.1302485415558161,40.625,115,192,Demography,fertility,births per woman
+WBG,West Bank and Gaza,Middle East & North Africa,Lower middle income,4.01,0.022952639571850675,3.5263264275787614,0.48367357242123843,29.166666666666668,137,192,Demography,fertility,births per woman
+WSM,Samoa,East Asia & Pacific,Lower middle income,4.147,0.033441083617744144,3.0727496553688907,1.0742503446311096,10.9375,172,192,Demography,fertility,births per woman
+YEM,Yemen,Middle East & North Africa,Lower middle income,4.284,0.023583404953942365,3.932505885855657,0.3514941141443426,34.375,127,192,Demography,fertility,births per woman
+ZAF,South Africa,Sub-Saharan Africa,Upper middle income,2.387,0.023793422329244487,2.558104962333343,-0.17110496233334294,53.645833333333336,90,192,Demography,fertility,births per woman
+ZAR,Dem. Rep. Congo,Sub-Saharan Africa,Low income,6.103,0.04964719778074001,4.559993470143452,1.543006529856548,6.25,181,192,Demography,fertility,births per woman
+ZMB,Zambia,Sub-Saharan Africa,Lower middle income,5.429,0.02997711275687863,3.697731735527813,1.7312682644721873,3.6458333333333335,186,192,Demography,fertility,births per woman
+ZWE,Zimbabwe,Sub-Saharan Africa,Low income,3.977,0.03048628612514424,4.267253153521096,-0.2902531535210957,60.9375,76,192,Demography,fertility,births per woman
+ABW,Aruba,Latin America & Caribbean,High income,111.174522399902,1.2160163774564532,105.1656525203502,6.008869879551796,59.66850828729282,74,181,Education,enrol_secondary,pp of enrolment
+AFG,Afghanistan,South Asia,Low income,54.3108406066895,0.6460992292288785,49.86941424304298,4.441426363646521,55.80110497237569,81,181,Education,enrol_secondary,pp of enrolment
+AGO,Angola,Sub-Saharan Africa,Upper middle income,31.5163898468018,0.8122287214557311,72.88998430686591,-41.37359446006411,1.6574585635359116,179,181,Education,enrol_secondary,pp of enrolment
+ALB,Albania,Europe & Central Asia,Upper middle income,82.39508056640629,0.7160254024853968,81.36949147930886,1.0255890870974298,48.06629834254144,95,181,Education,enrol_secondary,pp of enrolment
+ARG,Argentina,Latin America & Caribbean,High income,107.28875732421899,0.593581353845168,90.56284198502433,16.725915339194657,82.32044198895028,33,181,Education,enrol_secondary,pp of enrolment
+ARM,Armenia,Europe & Central Asia,Lower middle income,96.59027099609379,0.6836078910493151,74.74453621403222,21.84573478206157,90.60773480662984,18,181,Education,enrol_secondary,pp of enrolment
+ATG,Antigua and Barbuda,Latin America & Caribbean,High income,105.393508911133,0.6367689591207476,97.58914032999942,7.8043685811335735,65.19337016574586,64,181,Education,enrol_secondary,pp of enrolment
+AUS,Australia,East Asia & Pacific,High income,135.757797241211,1.1707072790273647,113.64735173155968,22.110445509651314,91.71270718232044,16,181,Education,enrol_secondary,pp of enrolment
+AUT,Austria,Europe & Central Asia,High income,98.9764175415039,1.0444530763237099,115.02834319378431,-16.051925652280403,19.88950276243094,146,181,Education,enrol_secondary,pp of enrolment
+AZE,Azerbaijan,Europe & Central Asia,Upper middle income,100.268608093262,0.49848341714043864,78.85179040595027,21.416817687311735,90.05524861878453,19,181,Education,enrol_secondary,pp of enrolment
+BDI,Burundi,Sub-Saharan Africa,Low income,33.1023101806641,1.1935428469732765,35.33569826548811,-2.233388084824014,45.30386740331492,100,181,Education,enrol_secondary,pp of enrolment
+BEL,Belgium,Europe & Central Asia,High income,165.581253051758,1.2762231362769278,113.62286919657795,51.95838385518006,100.0,1,181,Education,enrol_secondary,pp of enrolment
+BEN,Benin,Sub-Saharan Africa,Low income,54.16410827636721,1.1021262205529154,57.550588186063635,-3.386479909696426,43.0939226519337,104,181,Education,enrol_secondary,pp of enrolment
+BFA,Burkina Faso,Sub-Saharan Africa,Low income,28.3777809143066,1.0575063261238462,53.65972108364001,-25.281940169333406,5.524861878453039,172,181,Education,enrol_secondary,pp of enrolment
+BGD,Bangladesh,South Asia,Lower middle income,53.6488914489746,0.5591617249480569,58.54942496131084,-4.900533512336239,40.88397790055249,108,181,Education,enrol_secondary,pp of enrolment
+BGR,Bulgaria,Europe & Central Asia,Upper middle income,98.7242584228516,0.6233042274303512,84.72923473760034,13.995023685251269,78.45303867403315,40,181,Education,enrol_secondary,pp of enrolment
+BHR,Bahrain,Middle East & North Africa,High income,101.490303039551,0.5766657638430787,103.96929588822672,-2.4789928486757304,44.19889502762431,102,181,Education,enrol_secondary,pp of enrolment
+BHS,The Bahamas,Latin America & Caribbean,High income,92.8586883544922,0.5834747894426795,105.87398421315916,-13.01529585866696,24.861878453038674,137,181,Education,enrol_secondary,pp of enrolment
+BLR,Belarus,Europe & Central Asia,Upper middle income,105.120933532715,0.6657152567267347,85.6360296351338,19.484903897581205,86.74033149171271,25,181,Education,enrol_secondary,pp of enrolment
+BLZ,Belize,Latin America & Caribbean,Upper middle income,86.0465087890625,0.5903604350142516,81.78504844301187,4.261460346050626,53.591160220994475,85,181,Education,enrol_secondary,pp of enrolment
+BMU,Bermuda,North America,High income,74.2486190795898,0.8599257365845814,123.146501831669,-48.8978827520792,1.1049723756906076,180,181,Education,enrol_secondary,pp of enrolment
+BOL,Bolivia,Latin America & Caribbean,Lower middle income,80.0322494506835,0.7065654101095081,66.9815453125124,13.050704138171099,77.34806629834254,42,181,Education,enrol_secondary,pp of enrolment
+BRB,Barbados,Latin America & Caribbean,High income,104.66017913818399,1.0094153525135077,100.3227595136018,4.337419624582196,54.69613259668509,83,181,Education,enrol_secondary,pp of enrolment
+BRN,Brunei,East Asia & Pacific,High income,105.909812927246,0.3976175935577034,106.61986322534096,-0.7100502980949699,46.96132596685083,97,181,Education,enrol_secondary,pp of enrolment
+BTN,Bhutan,South Asia,Lower middle income,77.7004470825195,0.6127695750490839,72.9091151863225,4.791331896197008,56.9060773480663,79,181,Education,enrol_secondary,pp of enrolment
+BWA,Botswana,Sub-Saharan Africa,Upper middle income,81.70265197753909,0.562589898686872,90.2698645075497,-8.567212530010607,33.14917127071823,122,181,Education,enrol_secondary,pp of enrolment
+CAF,Central African Republic,Sub-Saharan Africa,Low income,17.791889190673803,0.4374860971351811,41.76289315709788,-23.971003966424075,8.83977900552486,166,181,Education,enrol_secondary,pp of enrolment
+CAN,Canada,North America,High income,111.20378112792999,1.2628479644703057,114.71610795070231,-3.512326822772323,42.5414364640884,105,181,Education,enrol_secondary,pp of enrolment
+CHE,Switzerland,Europe & Central Asia,High income,96.3063812255859,1.0386072405750792,121.35372059690948,-25.047339371323588,6.077348066298343,171,181,Education,enrol_secondary,pp of enrolment
+CHL,Chile,Latin America & Caribbean,High income,99.0289764404297,0.9278958096518929,94.70148493713775,4.327491503291952,54.14364640883977,84,181,Education,enrol_secondary,pp of enrolment
+CHN,China,East Asia & Pacific,Upper middle income,92.40911865234379,0.6718919757166348,81.54408247041661,10.86503618192718,72.37569060773481,51,181,Education,enrol_secondary,pp of enrolment
+CIV,Côte d'Ivoire,Sub-Saharan Africa,Lower middle income,39.0752296447754,0.6896371374620514,63.17122998428317,-24.096000339507775,7.734806629834254,168,181,Education,enrol_secondary,pp of enrolment
+CMR,Cameroon,Sub-Saharan Africa,Lower middle income,52.202419281005895,0.5564982651019709,62.215257809825744,-10.012838528819849,27.624309392265197,132,181,Education,enrol_secondary,pp of enrolment
+COG,Congo,Sub-Saharan Africa,Lower middle income,53.663169860839794,1.032485328291235,72.84986137747373,-19.186691516633935,16.574585635359114,152,181,Education,enrol_secondary,pp of enrolment
+COL,Colombia,Latin America & Caribbean,Upper middle income,92.956443786621,0.6716084107287247,84.16019235695582,8.796251429665176,66.85082872928176,61,181,Education,enrol_secondary,pp of enrolment
+COM,Comoros,Sub-Saharan Africa,Low income,63.873470306396506,1.0800663410094506,55.57399430984513,8.299475996551372,66.29834254143645,62,181,Education,enrol_secondary,pp of enrolment
+CPV,Cabo Verde,Sub-Saharan Africa,Lower middle income,95.6678619384766,0.7965371814792589,76.78731052080859,18.880551417668016,85.0828729281768,28,181,Education,enrol_secondary,pp of enrolment
+CRI,Costa Rica,Latin America & Caribbean,Upper middle income,108.91867828369101,0.9260417947807994,88.04495664411087,20.87372163958014,88.95027624309392,21,181,Education,enrol_secondary,pp of enrolment
+CUB,Cuba,Latin America & Caribbean,Upper middle income,92.0979995727539,0.7828592841468337,85.4341603245347,6.663839248219205,62.98342541436463,68,181,Education,enrol_secondary,pp of enrolment
+CYP,Cyprus,Europe & Central Asia,High income,95.2998504638672,1.181840308821682,105.99243253812168,-10.692582074254474,26.519337016574585,134,181,Education,enrol_secondary,pp of enrolment
+CZE,Czech Republic,Europe & Central Asia,High income,103.362548828125,0.5261524096700484,100.51395146564508,2.8485973624799215,51.93370165745856,88,181,Education,enrol_secondary,pp of enrolment
+DEU,Germany,Europe & Central Asia,High income,101.08529663085899,1.417569697172283,115.24519178085052,-14.159895149991527,22.65193370165746,141,181,Education,enrol_secondary,pp of enrolment
+DJI,Djibouti,Middle East & North Africa,Lower middle income,47.721229553222706,0.9579492817866685,65.82275117463765,-18.10152162141494,18.23204419889503,149,181,Education,enrol_secondary,pp of enrolment
+DMA,Dominica,Latin America & Caribbean,Upper middle income,96.7295989990234,0.8642089726280017,87.92269301692089,8.806905982102506,67.40331491712708,60,181,Education,enrol_secondary,pp of enrolment
+DNK,Denmark,Europe & Central Asia,High income,131.47248840332,1.867003731323944,116.46374185782463,15.00874654549537,79.55801104972376,38,181,Education,enrol_secondary,pp of enrolment
+DOM,Dominican Republic,Latin America & Caribbean,Upper middle income,75.9074401855469,0.9186796057416154,86.11875795762475,-10.211317772077848,27.071823204419886,133,181,Education,enrol_secondary,pp of enrolment
+DZA,Algeria,Middle East & North Africa,Upper middle income,97.60729217529301,0.8611307713010964,79.60564729089427,18.001644884398743,83.97790055248619,30,181,Education,enrol_secondary,pp of enrolment
+ECU,Ecuador,Latin America & Caribbean,Upper middle income,103.189666748047,1.0109965673462609,81.23222502830802,21.95744171973898,91.16022099447514,17,181,Education,enrol_secondary,pp of enrolment
+EGY,Egypt,Middle East & North Africa,Lower middle income,88.95004272460942,0.6620125605513096,68.30669556636367,20.643347158245746,88.39779005524862,22,181,Education,enrol_secondary,pp of enrolment
+ESP,Spain,Europe & Central Asia,High income,130.565368652344,1.1388725635576749,107.72306886890824,22.842299783435763,93.37016574585635,13,181,Education,enrol_secondary,pp of enrolment
+EST,Estonia,Europe & Central Asia,High income,104.725883483887,0.864251518720702,97.36457366288786,7.361309820999139,64.64088397790056,65,181,Education,enrol_secondary,pp of enrolment
+ETH,Ethiopia,Sub-Saharan Africa,Low income,29.025390625,0.6133546058124723,45.71426928067896,-16.688878655678963,18.784530386740332,148,181,Education,enrol_secondary,pp of enrolment
+FIN,Finland,Europe & Central Asia,High income,143.549163818359,1.3675621083189937,113.49779259118625,30.05137122717275,97.23756906077348,6,181,Education,enrol_secondary,pp of enrolment
+FJI,Fiji,East Asia & Pacific,Upper middle income,88.25067138671879,0.444859430926618,82.08545946043817,6.1652119262806195,61.32596685082873,71,181,Education,enrol_secondary,pp of enrolment
+FRA,France,Europe & Central Asia,High income,108.927406311035,1.3728338335703871,113.39815834007496,-4.470752029039957,41.43646408839779,107,181,Education,enrol_secondary,pp of enrolment
+FSM,Micronesia,East Asia & Pacific,Lower middle income,83.21533203125,0.5803116137716633,73.84754318191032,9.367788849339675,69.61325966850829,56,181,Education,enrol_secondary,pp of enrolment
+GBR,United Kingdom,Europe & Central Asia,High income,129.106292724609,0.9010991330964856,113.96612401125292,15.14016871335609,80.11049723756905,37,181,Education,enrol_secondary,pp of enrolment
+GEO,Georgia,Europe & Central Asia,Lower middle income,100.624526977539,0.5832607905055975,74.10139583474323,26.523131142795776,96.13259668508287,8,181,Education,enrol_secondary,pp of enrolment
+GHA,Ghana,Sub-Saharan Africa,Lower middle income,67.1334609985352,1.0600159351781435,58.21451915057685,8.91894184795835,68.50828729281768,58,181,Education,enrol_secondary,pp of enrolment
+GIN,Guinea,Sub-Saharan Africa,Low income,38.1347618103027,0.9230364880618067,45.39385859632971,-7.259096786027008,35.91160220994475,117,181,Education,enrol_secondary,pp of enrolment
+GMB,The Gambia,Sub-Saharan Africa,Low income,57.487941741943395,0.43568512965392286,50.958023993873994,6.529917748069401,61.87845303867403,70,181,Education,enrol_secondary,pp of enrolment
+GNB,Guinea-Bissau,Sub-Saharan Africa,Low income,34.457218170166,0.4197092205334173,50.093799969627376,-15.636581799461375,20.994475138121548,144,181,Education,enrol_secondary,pp of enrolment
+GNQ,Equatorial Guinea,Sub-Saharan Africa,High income,28.194259643554698,0.4578202535607721,98.60252037885228,-70.40826073529757,0.5524861878453038,181,181,Education,enrol_secondary,pp of enrolment
+GRC,Greece,Europe & Central Asia,High income,108.54606628417999,1.1501817301529962,103.39574439374738,5.150321890432608,58.5635359116022,76,181,Education,enrol_secondary,pp of enrolment
+GRD,Grenada,Latin America & Caribbean,Upper middle income,101.088821411133,0.545867301810807,89.202502943917,11.886318467216,74.58563535911603,47,181,Education,enrol_secondary,pp of enrolment
+GTM,Guatemala,Latin America & Caribbean,Lower middle income,65.0240631103516,0.733787571779317,74.430754832394,-9.406691722042396,29.2817679558011,129,181,Education,enrol_secondary,pp of enrolment
+GUY,Guyana,Latin America & Caribbean,Lower middle income,100.976463317871,0.8788311837502067,68.89190496924348,32.08455834862751,97.79005524861878,5,181,Education,enrol_secondary,pp of enrolment
+HKG,"Hong Kong SAR, China",East Asia & Pacific,High income,99.30343627929692,1.4274223765779037,112.50818743088294,-13.204751151586024,24.30939226519337,138,181,Education,enrol_secondary,pp of enrolment
+HND,Honduras,Latin America & Caribbean,Lower middle income,70.9721221923828,0.6237179440344839,69.55772097382663,1.414401218556165,50.27624309392266,91,181,Education,enrol_secondary,pp of enrolment
+HRV,Croatia,Europe & Central Asia,High income,98.42800903320308,0.925340354356529,95.66633528341823,2.7616737497848476,51.38121546961326,89,181,Education,enrol_secondary,pp of enrolment
+HUN,Hungary,Europe & Central Asia,High income,107.751762390137,0.6482943246032452,97.54248672818701,10.209275661949988,70.71823204419888,54,181,Education,enrol_secondary,pp of enrolment
+IDN,Indonesia,East Asia & Pacific,Lower middle income,83.05140686035159,0.42431056513895665,70.98874756244369,12.0626592979079,75.69060773480662,45,181,Education,enrol_secondary,pp of enrolment
+IND,India,South Asia,Lower middle income,71.4701614379883,0.6207406310605287,64.8716853575211,6.598476080467194,62.430939226519335,69,181,Education,enrol_secondary,pp of enrolment
+IRL,Ireland,Europe & Central Asia,High income,119.119331359863,0.4049436914517326,118.06400897292342,1.0553223869395794,48.61878453038674,94,181,Education,enrol_secondary,pp of enrolment
+IRN,Iran,Middle East & North Africa,Upper middle income,86.2766876220703,0.7677767483324485,80.2559143813586,6.020773240711705,60.773480662983424,72,181,Education,enrol_secondary,pp of enrolment
+IRQ,Iraq,Middle East & North Africa,Upper middle income,53.1315307617188,0.87329667861674,74.90705797801095,-21.775527216292154,12.154696132596685,160,181,Education,enrol_secondary,pp of enrolment
+ISL,Iceland,Europe & Central Asia,High income,111.990447998047,1.4495022009136875,119.60860866154549,-7.618160663498486,35.35911602209944,118,181,Education,enrol_secondary,pp of enrolment
+ISR,Israel,Middle East & North Africa,High income,102.176483154297,0.8844576147450158,108.3953787259355,-6.218895571638498,38.12154696132597,113,181,Education,enrol_secondary,pp of enrolment
+ITA,Italy,Europe & Central Asia,High income,99.18505859375,0.7627415603534496,109.94432000608454,-10.759261412334538,25.96685082872928,135,181,Education,enrol_secondary,pp of enrolment
+JAM,Jamaica,Latin America & Caribbean,Upper middle income,77.79786682128909,0.3665502781380551,82.8034028927514,-5.005536071462302,40.331491712707184,109,181,Education,enrol_secondary,pp of enrolment
+JOR,Jordan,Middle East & North Africa,Upper middle income,87.8294677734375,0.7364483553439937,77.18459723910736,10.644870534330138,71.27071823204419,53,181,Education,enrol_secondary,pp of enrolment
+JPN,Japan,East Asia & Pacific,High income,101.809410095215,0.4685520391237491,114.7354804455116,-12.926070350296598,25.41436464088398,136,181,Education,enrol_secondary,pp of enrolment
+KAZ,Kazakhstan,Europe & Central Asia,Upper middle income,100.54416656494101,0.6572883441949835,86.78510829835975,13.759058266581263,77.90055248618785,41,181,Education,enrol_secondary,pp of enrolment
+KEN,Kenya,Sub-Saharan Africa,Lower middle income,66.9884414672852,0.37500098327441267,56.2618748379716,10.726566629313602,71.8232044198895,52,181,Education,enrol_secondary,pp of enrolment
+KGZ,Kyrgyz Republic,Europe & Central Asia,Lower middle income,88.22936248779301,0.6912746342077895,55.878037204999615,32.3513252827934,98.34254143646409,4,181,Education,enrol_secondary,pp of enrolment
+KHM,Cambodia,East Asia & Pacific,Low income,45.006710052490206,0.8294075977612757,59.13888342627272,-14.132173373782514,23.204419889502763,140,181,Education,enrol_secondary,pp of enrolment
+KIR,Kiribati,East Asia & Pacific,Lower middle income,86.39517211914058,0.3292379901018035,63.86685841801218,22.528313701128404,92.26519337016575,15,181,Education,enrol_secondary,pp of enrolment
+KNA,St. Kitts and Nevis,Latin America & Caribbean,High income,101.20379638671899,1.0204883464499657,96.86261589273883,4.341180493980161,55.24861878453039,82,181,Education,enrol_secondary,pp of enrolment
+KOR,Korea,East Asia & Pacific,High income,99.0195465087891,1.5762311568458023,107.63215520834794,-8.612608699558834,32.59668508287293,123,181,Education,enrol_secondary,pp of enrolment
+KWT,Kuwait,Middle East & North Africa,High income,100.335220336914,1.3452004746326163,109.18855010691611,-8.853329770002105,32.04419889502763,124,181,Education,enrol_secondary,pp of enrolment
+LAO,Lao PDR,East Asia & Pacific,Lower middle income,50.4936103820801,0.665096974303962,60.073705912127494,-9.580095530047394,28.7292817679558,130,181,Education,enrol_secondary,pp of enrolment
+LBN,Lebanon,Middle East & North Africa,Upper middle income,75.0457763671875,0.21230948443654168,91.12039861815205,-16.074622250964552,19.337016574585636,147,181,Education,enrol_secondary,pp of enrolment
+LBR,Liberia,Sub-Saharan Africa,Low income,37.8739891052246,1.1875590008061672,40.89876620294068,-3.0247770977160755,43.646408839779006,103,181,Education,enrol_secondary,pp of enrolment
+LBY,Libya,Middle East & North Africa,Upper middle income,104.30108642578101,0.713667525370543,84.5138563556101,19.787230070170907,87.29281767955801,24,181,Education,enrol_secondary,pp of enrolment
+LCA,St. Lucia,Latin America & Caribbean,Upper middle income,88.3851089477539,0.8790376992977457,87.22571215016306,1.1593967975908441,49.171270718232044,93,181,Education,enrol_secondary,pp of enrolment
+LIE,Liechtenstein,Europe & Central Asia,High income,110.373863220215,1.412963651633904,129.70013811605182,-19.326274895836818,14.917127071823206,155,181,Education,enrol_secondary,pp of enrolment
+LKA,Sri Lanka,South Asia,Lower middle income,99.18179321289058,0.29916250877827827,72.7242228247741,26.45757038811648,95.58011049723757,9,181,Education,enrol_secondary,pp of enrolment
+LSO,Lesotho,Sub-Saharan Africa,Lower middle income,53.2936401367188,0.505254908445634,62.1503845600633,-8.856744423344502,31.491712707182316,125,181,Education,enrol_secondary,pp of enrolment
+LTU,Lithuania,Europe & Central Asia,High income,107.748863220215,0.8484560245888781,96.02045562635173,11.728407593863267,74.03314917127072,48,181,Education,enrol_secondary,pp of enrolment
+LUX,Luxembourg,Europe & Central Asia,High income,100.04749298095699,0.8983152821331902,126.20092771995992,-26.153434739002932,4.972375690607735,173,181,Education,enrol_secondary,pp of enrolment
+LVA,Latvia,Europe & Central Asia,High income,106.89852905273399,0.8469775198850803,94.80203752181255,12.09649153092144,76.24309392265194,44,181,Education,enrol_secondary,pp of enrolment
+MAC,"Macao SAR, China",East Asia & Pacific,High income,95.9738616943359,0.8164193206822175,118.64165077687873,-22.66778908254284,10.497237569060774,163,181,Education,enrol_secondary,pp of enrolment
+MAR,Morocco,Middle East & North Africa,Lower middle income,68.8769607543945,0.7780444366450876,75.27119641423921,-6.3942356598447105,37.569060773480665,114,181,Education,enrol_secondary,pp of enrolment
+MDA,Moldova,Europe & Central Asia,Lower middle income,88.33605194091801,0.46062336961976635,64.24227405105589,24.093777889862125,93.92265193370166,12,181,Education,enrol_secondary,pp of enrolment
+MDG,Madagascar,Sub-Saharan Africa,Low income,38.3909301757813,0.7233624327728367,44.088359465624464,-5.697429289843164,38.67403314917127,112,181,Education,enrol_secondary,pp of enrolment
+MEX,Mexico,Latin America & Caribbean,Upper middle income,87.6039276123047,0.9890089132704691,92.74332895897685,-5.139401346672145,39.226519337016576,111,181,Education,enrol_secondary,pp of enrolment
+MHL,Marshall Islands,East Asia & Pacific,Upper middle income,102.892562866211,0.5030132560109626,77.42627111333175,25.466291752879243,94.47513812154696,11,181,Education,enrol_secondary,pp of enrolment
+MKD,Macedonia,Europe & Central Asia,Upper middle income,82.830810546875,0.8250072493223743,81.8718382260158,0.9589723208592034,47.51381215469613,96,181,Education,enrol_secondary,pp of enrolment
+MLI,Mali,Sub-Saharan Africa,Low income,44.946300506591705,0.47279782131371656,51.39236572783078,-6.446065221239074,37.01657458563536,115,181,Education,enrol_secondary,pp of enrolment
+MLT,Malta,Middle East & North Africa,High income,86.28856658935551,1.262300670936449,102.06772773337747,-15.779161144021955,20.441988950276244,145,181,Education,enrol_secondary,pp of enrolment
+MNE,Montenegro,Europe & Central Asia,Upper middle income,90.9029312133789,0.5088211409939624,84.88697653137612,6.015954682002786,60.22099447513812,73,181,Education,enrol_secondary,pp of enrolment
+MNG,Mongolia,East Asia & Pacific,Upper middle income,91.5752182006835,0.43200307252197306,71.0587123414492,20.5165058592343,87.84530386740332,23,181,Education,enrol_secondary,pp of enrolment
+MOZ,Mozambique,Sub-Saharan Africa,Low income,26.0463008880615,0.9427171499038637,54.327605221932046,-28.281304333870548,3.867403314917127,175,181,Education,enrol_secondary,pp of enrolment
+MRT,Mauritania,Sub-Saharan Africa,Lower middle income,29.5032691955566,0.8655335406060244,60.863028148922524,-31.359758953365922,2.7624309392265194,177,181,Education,enrol_secondary,pp of enrolment
+MUS,Mauritius,Sub-Saharan Africa,Upper middle income,95.851463317871,0.7925115232700638,90.16392096378256,5.687542354088436,59.11602209944752,75,181,Education,enrol_secondary,pp of enrolment
+MWI,Malawi,Sub-Saharan Africa,Low income,36.599781036377,0.6038189346288345,43.45222613902352,-6.85244510264652,36.46408839779006,116,181,Education,enrol_secondary,pp of enrolment
+MYS,Malaysia,East Asia & Pacific,Upper middle income,70.79637145996091,1.1058033982876208,90.71203830770746,-19.91566684774655,14.3646408839779,156,181,Education,enrol_secondary,pp of enrolment
+NAM,Namibia,Sub-Saharan Africa,Upper middle income,64.84945678710939,0.6581711557039693,84.10633341385066,-19.256876626741274,15.469613259668508,154,181,Education,enrol_secondary,pp of enrolment
+NER,Niger,Sub-Saharan Africa,Low income,18.309759140014602,0.7974879373849177,45.505007894667806,-27.195248754653203,4.41988950276243,174,181,Education,enrol_secondary,pp of enrolment
+NGA,Nigeria,Sub-Saharan Africa,Lower middle income,43.829139709472706,0.6175503112630311,64.29732598611074,-20.46818627663803,13.812154696132598,157,181,Education,enrol_secondary,pp of enrolment
+NIC,Nicaragua,Latin America & Caribbean,Lower middle income,68.908561706543,0.7558964346177734,67.51137974285734,1.3971819636856537,49.72375690607735,92,181,Education,enrol_secondary,pp of enrolment
+NLD,Netherlands,Europe & Central Asia,High income,130.568756103516,1.182344107778161,116.11851185283142,14.450244250684577,79.00552486187846,39,181,Education,enrol_secondary,pp of enrolment
+NOR,Norway,Europe & Central Asia,High income,113.340522766113,1.8354365448076468,122.39394679074492,-9.053424024631923,30.939226519337016,126,181,Education,enrol_secondary,pp of enrolment
+NPL,Nepal,South Asia,Low income,66.9919281005859,1.0476093737765197,50.13085075460136,16.861077345984533,82.87292817679558,32,181,Education,enrol_secondary,pp of enrolment
+NZL,New Zealand,East Asia & Pacific,High income,118.562400817871,1.1426933925924923,110.32985539373695,8.232545424134045,65.74585635359117,63,181,Education,enrol_secondary,pp of enrolment
+OMN,Oman,Middle East & North Africa,High income,91.2346572875977,1.1137095227046319,96.34485808178263,-5.110200794184934,39.77900552486188,110,181,Education,enrol_secondary,pp of enrolment
+PAK,Pakistan,South Asia,Lower middle income,38.317409515380895,0.9072465798653911,59.81099431300887,-21.493584797627975,12.70718232044199,159,181,Education,enrol_secondary,pp of enrolment
+PAN,Panama,Latin America & Caribbean,Upper middle income,73.7437210083008,0.3770694075065917,92.93249547236474,-19.18877446406394,16.022099447513813,153,181,Education,enrol_secondary,pp of enrolment
+PER,Peru,Latin America & Caribbean,Upper middle income,93.9782028198242,0.25002653180789153,83.00039368963961,10.977809130184596,72.92817679558011,50,181,Education,enrol_secondary,pp of enrolment
+PHL,Philippines,East Asia & Pacific,Lower middle income,85.3685989379883,0.5511803134457023,69.57676560970039,15.791833328287908,81.21546961325967,35,181,Education,enrol_secondary,pp of enrolment
+PLW,Palau,East Asia & Pacific,Upper middle income,113.59773254394501,1.0102730893137597,94.22401510309571,19.373717440849305,85.6353591160221,27,181,Education,enrol_secondary,pp of enrolment
+PNG,Papua New Guinea,East Asia & Pacific,Lower middle income,40.1570587158203,0.45900945963827505,64.97280642085244,-24.815747705032138,6.629834254143646,170,181,Education,enrol_secondary,pp of enrolment
+POL,Poland,Europe & Central Asia,High income,108.77677917480499,0.5979753789062341,96.63263563979957,12.144143535005412,76.79558011049724,43,181,Education,enrol_secondary,pp of enrolment
+PRI,Puerto Rico,Latin America & Caribbean,High income,80.803352355957,0.5971680181377209,105.59406268837361,-24.79071033241661,7.18232044198895,169,181,Education,enrol_secondary,pp of enrolment
+PRT,Portugal,Europe & Central Asia,High income,122.86466217041,1.2267545542973712,103.4039015216111,19.460760648798896,86.1878453038674,26,181,Education,enrol_secondary,pp of enrolment
+PRY,Paraguay,Latin America & Caribbean,Upper middle income,75.3162078857422,0.6934274628261281,73.22081905435711,2.095388831385094,50.82872928176796,90,181,Education,enrol_secondary,pp of enrolment
+QAT,Qatar,Middle East & North Africa,High income,111.61669921875,1.5079707110520795,120.94918096700573,-9.33248174825573,29.83425414364641,128,181,Education,enrol_secondary,pp of enrolment
+ROM,Romania,Europe & Central Asia,Upper middle income,95.0112991333008,0.7984618981133967,88.13670506516071,6.874594068140084,63.53591160220995,67,181,Education,enrol_secondary,pp of enrolment
+RUS,Russia,Europe & Central Asia,High income,97.1820220947266,0.21389907894044194,90.24943111429171,6.932590980434895,64.08839779005525,66,181,Education,enrol_secondary,pp of enrolment
+RWA,Rwanda,Sub-Saharan Africa,Low income,32.5598983764648,0.63367187573295,51.104763614118056,-18.544865237653255,17.12707182320442,151,181,Education,enrol_secondary,pp of enrolment
+SAU,Saudi Arabia,Middle East & North Africa,High income,124.299423217773,0.4039674456712869,103.26917341317669,21.03024980459631,89.50276243093923,20,181,Education,enrol_secondary,pp of enrolment
+SDN,Sudan,Sub-Saharan Africa,Lower middle income,40.742500305175795,0.3449880909736396,61.85133122907249,-21.108830923896697,13.259668508287293,158,181,Education,enrol_secondary,pp of enrolment
+SEN,Senegal,Sub-Saharan Africa,Lower middle income,41.004451751709,0.6445699419819751,59.24125741917138,-18.236805667462384,17.67955801104972,150,181,Education,enrol_secondary,pp of enrolment
+SLB,Solomon Islands,East Asia & Pacific,Lower middle income,48.4396095275879,0.7590999539637636,63.73984118636655,-15.30023165877865,21.54696132596685,143,181,Education,enrol_secondary,pp of enrolment
+SLE,Sierra Leone,Sub-Saharan Africa,Low income,44.658561706543,0.4385681113295007,52.951409246668675,-8.292847540125678,34.25414364640884,120,181,Education,enrol_secondary,pp of enrolment
+SLV,El Salvador,Latin America & Caribbean,Lower middle income,70.19834136962889,0.3909885436988453,79.42867401983588,-9.23033265020699,30.386740331491712,127,181,Education,enrol_secondary,pp of enrolment
+SMR,San Marino,Europe & Central Asia,High income,94.6519927978516,0.689409983923807,118.63103411602769,-23.979041318176087,8.287292817679557,167,181,Education,enrol_secondary,pp of enrolment
+SRB,Serbia,Europe & Central Asia,Upper middle income,94.40921020507808,0.40202877920775737,83.41935452999647,10.989855675081614,73.48066298342542,49,181,Education,enrol_secondary,pp of enrolment
+STP,São Tomé and Principe,Sub-Saharan Africa,Lower middle income,80.3529586791992,0.8641917067836398,62.858405526729584,17.49455315246962,83.42541436464089,31,181,Education,enrol_secondary,pp of enrolment
+SUR,Suriname,Latin America & Caribbean,Upper middle income,76.009162902832,0.9403949315068217,84.36849182494976,-8.359328922117754,33.70165745856354,121,181,Education,enrol_secondary,pp of enrolment
+SVK,Slovak Republic,Europe & Central Asia,High income,92.4118804931641,0.6431106245450856,102.27352713946769,-9.861646646303583,28.176795580110497,131,181,Education,enrol_secondary,pp of enrolment
+SVN,Slovenia,Europe & Central Asia,High income,110.206352233887,0.5810825786554988,105.13355988060535,5.072792353281656,58.011049723756905,77,181,Education,enrol_secondary,pp of enrolment
+SWE,Sweden,Europe & Central Asia,High income,128.781234741211,1.1885572575774,116.82368700771524,11.957547733495758,75.13812154696133,46,181,Education,enrol_secondary,pp of enrolment
+SWZ,Swaziland,Sub-Saharan Africa,Lower middle income,60.6870994567871,0.5894400268944332,75.78110028655817,-15.094000829771069,22.099447513812155,142,181,Education,enrol_secondary,pp of enrolment
+SYC,Seychelles,Sub-Saharan Africa,High income,71.6730575561523,0.8057625271986653,101.38815086023126,-29.715093304078962,3.314917127071823,176,181,Education,enrol_secondary,pp of enrolment
+SYR,Syrian Arab Republic,Middle East & North Africa,Lower middle income,47.7270317077637,0.41988592083237725,70.0645993757577,-22.337567667993994,11.049723756906078,162,181,Education,enrol_secondary,pp of enrolment
+TCD,Chad,Sub-Saharan Africa,Low income,22.7940998077393,0.9734097598279379,59.21662340940145,-36.42252360166215,2.209944751381215,178,181,Education,enrol_secondary,pp of enrolment
+TGO,Togo,Sub-Saharan Africa,Low income,54.940521240234396,1.2232749313006208,51.02784278867474,3.912678451559657,53.03867403314917,86,181,Education,enrol_secondary,pp of enrolment
+THA,Thailand,East Asia & Pacific,Upper middle income,85.90744018554692,0.7025879659371167,81.11813726069282,4.789302924854098,56.353591160220994,80,181,Education,enrol_secondary,pp of enrolment
+TJK,Tajikistan,Europe & Central Asia,Lower middle income,87.0034408569335,1.449247538689163,53.01109457856677,33.992346278366725,98.89502762430939,3,181,Education,enrol_secondary,pp of enrolment
+TKM,Turkmenistan,Europe & Central Asia,Upper middle income,85.3651428222656,0.70980486027806,81.45669237822544,3.908450444040156,52.48618784530387,87,181,Education,enrol_secondary,pp of enrolment
+TMP,Timor-Leste,East Asia & Pacific,Lower middle income,56.6177101135254,0.8791863730298395,59.07759664348934,-2.4598865299639456,44.751381215469614,101,181,Education,enrol_secondary,pp of enrolment
+TON,Tonga,East Asia & Pacific,Upper middle income,102.077308654785,0.6056239243065509,75.15556668990637,26.921741964878635,96.68508287292818,7,181,Education,enrol_secondary,pp of enrolment
+TUN,Tunisia,Middle East & North Africa,Upper middle income,90.6009063720703,0.7203683268501896,81.70765408557938,8.89325228649092,67.95580110497238,59,181,Education,enrol_secondary,pp of enrolment
+TUR,Turkey,Europe & Central Asia,Upper middle income,102.18628692627001,0.9534735386672906,92.90907221502998,9.277214711240035,69.06077348066299,57,181,Education,enrol_secondary,pp of enrolment
+TUV,Tuvalu,East Asia & Pacific,Upper middle income,94.9725112915039,0.8634948519869606,76.30606179233861,18.666449499165296,84.5303867403315,29,181,Education,enrol_secondary,pp of enrolment
+TZA,Tanzania,Sub-Saharan Africa,Low income,32.967781066894496,1.455509478377026,55.01822656031011,-22.050445493415616,11.602209944751381,161,181,Education,enrol_secondary,pp of enrolment
+UGA,Uganda,Sub-Saharan Africa,Low income,26.866930007934602,0.6607646559350291,50.1305732466759,-23.2636432387413,9.392265193370166,165,181,Education,enrol_secondary,pp of enrolment
+UKR,Ukraine,Europe & Central Asia,Lower middle income,98.8634490966797,0.8092586930668589,72.42376230097568,26.43968679570402,95.02762430939227,10,181,Education,enrol_secondary,pp of enrolment
+URY,Uruguay,Latin America & Caribbean,High income,90.3358688354492,0.26296282089780454,92.31747817010444,-1.9816093346552321,45.85635359116022,99,181,Education,enrol_secondary,pp of enrolment
+USA,United States,North America,High income,93.9821319580078,1.3787250279463845,117.11853503016921,-23.136403072161414,9.94475138121547,164,181,Education,enrol_secondary,pp of enrolment
+UZB,Uzbekistan,Europe & Central Asia,Lower middle income,105.169761657715,0.649600564638055,61.17771597872769,43.99204567898731,99.4475138121547,2,181,Education,enrol_secondary,pp of enrolment
+VCT,St. Vincent and the Grenadines,Latin America & Caribbean,Upper middle income,102.900703430176,0.5928491297110308,86.59946245738999,16.301240972786005,81.76795580110497,34,181,Education,enrol_secondary,pp of enrolment
+VEN,Venezuela,Latin America & Caribbean,High income,92.95358276367192,0.9522268753458771,88.00532745393166,4.9482553097402615,57.4585635359116,78,181,Education,enrol_secondary,pp of enrolment
+VUT,Vanuatu,East Asia & Pacific,Lower middle income,59.5326995849609,0.8127840389011861,73.28519458631297,-13.752495001352067,23.756906077348066,139,181,Education,enrol_secondary,pp of enrolment
+WBG,West Bank and Gaza,Middle East & North Africa,Lower middle income,82.2902297973633,0.7709191210243537,66.6128232386494,15.677406558713898,80.66298342541437,36,181,Education,enrol_secondary,pp of enrolment
+WSM,Samoa,East Asia & Pacific,Lower middle income,85.71044921875,0.3426752836082754,75.75603730628197,9.954411912468032,70.1657458563536,55,181,Education,enrol_secondary,pp of enrolment
+YEM,Yemen,Middle East & North Africa,Lower middle income,49.1850395202637,0.15705104139203616,57.387064729626445,-8.202025209362745,34.806629834254146,119,181,Education,enrol_secondary,pp of enrolment
+ZAF,South Africa,Sub-Saharan Africa,Upper middle income,110.763572692871,0.5652646468998794,87.99739466552361,22.76617802734738,92.81767955801105,14,181,Education,enrol_secondary,pp of enrolment
+ZAR,Dem. Rep. Congo,Sub-Saharan Africa,Low income,43.3615112304688,0.5573929691732228,45.131255886314776,-1.769744655845976,46.408839779005525,98,181,Education,enrol_secondary,pp of enrolment
+ZWE,Zimbabwe,Sub-Saharan Africa,Low income,47.204139709472706,0.8097129286237311,51.34912684827816,-4.144987138805455,41.988950276243095,106,181,Education,enrol_secondary,pp of enrolment
+ABW,Aruba,Latin America & Caribbean,High income,23.922412101710897,0.039923448345277994,7.673114817725785,3.11769244563464,8.854166666666668,176,192,Environment,co2_pc,× CO₂ per head
+ADO,Andorra,Europe & Central Asia,High income,5.9686854699608896,0.02664059919688746,12.383944965758605,0.4819696378225357,83.85416666666666,32,192,Environment,co2_pc,× CO₂ per head
+AFG,Afghanistan,South Asia,Low income,0.42526210494041705,0.02651536777597203,0.27231141892298755,1.5616756235282425,27.083333333333332,141,192,Environment,co2_pc,× CO₂ per head
+AGO,Angola,Sub-Saharan Africa,Upper middle income,1.3540075295675502,0.019148667100336966,1.1149031693483618,1.2144619970530177,35.41666666666667,125,192,Environment,co2_pc,× CO₂ per head
+ALB,Albania,Europe & Central Asia,Upper middle income,1.6070377102568898,0.012775921520293125,1.9369824605138322,0.8296604347313417,57.8125,82,192,Environment,co2_pc,× CO₂ per head
+ARE,United Arab Emirates,Middle East & North Africa,High income,20.4338376195602,0.014213140691361988,9.860882042890166,2.0722119512922563,21.354166666666664,152,192,Environment,co2_pc,× CO₂ per head
+ARG,Argentina,Latin America & Caribbean,High income,4.56204851225823,0.0151042583442399,3.354813221835581,1.359851714713975,30.208333333333332,135,192,Environment,co2_pc,× CO₂ per head
+ARM,Armenia,Europe & Central Asia,Lower middle income,1.67165692267883,0.009713843084317945,1.227529232279797,1.3618062028341176,29.6875,136,192,Environment,co2_pc,× CO₂ per head
+ATG,Antigua and Barbuda,Latin America & Caribbean,High income,5.8238043379617,0.012641358777263518,4.874458342645559,1.1947592796127773,36.97916666666667,122,192,Environment,co2_pc,× CO₂ per head
+AUS,Australia,East Asia & Pacific,High income,16.519209916694802,0.022484594569260448,13.523056913845016,1.2215588547721263,34.89583333333333,126,192,Environment,co2_pc,× CO₂ per head
+AUT,Austria,Europe & Central Asia,High income,7.769983422793371,0.03396395696686261,14.853811678359952,0.5230969390916147,81.25,37,192,Environment,co2_pc,× CO₂ per head
+AZE,Azerbaijan,Europe & Central Asia,Upper middle income,3.6473791469432,0.009497917648589925,1.6225278947209065,2.2479608263194706,19.791666666666664,155,192,Environment,co2_pc,× CO₂ per head
+BDI,Burundi,Sub-Saharan Africa,Low income,0.021349926063448897,0.034083412534667665,0.1305880569641957,0.16349064807130537,98.4375,4,192,Environment,co2_pc,× CO₂ per head
+BEL,Belgium,Europe & Central Asia,High income,8.849398302495059,0.03870394852266647,13.352384131556605,0.6627579176351487,69.79166666666666,59,192,Environment,co2_pc,× CO₂ per head
+BEN,Benin,Sub-Saharan Africa,Low income,0.509962225664154,0.0231582135334155,0.4213118167064325,1.210415197111579,35.9375,124,192,Environment,co2_pc,× CO₂ per head
+BFA,Burkina Faso,Sub-Saharan Africa,Low income,0.119980559825133,0.03386656925908937,0.33444703571934786,0.3587430804015707,92.70833333333334,15,192,Environment,co2_pc,× CO₂ per head
+BGD,Bangladesh,South Asia,Lower middle income,0.372017165838757,0.010548745512917651,0.46046750770092926,0.8079118713418099,58.333333333333336,81,192,Environment,co2_pc,× CO₂ per head
+BGR,Bulgaria,Europe & Central Asia,Upper middle income,6.71438250987163,0.020007645765019125,2.36248323500302,2.8420868391318117,11.458333333333332,171,192,Environment,co2_pc,× CO₂ per head
+BHR,Bahrain,Middle East & North Africa,High income,17.947329814228606,0.019429386618318365,7.029222392985626,2.5532454104934885,15.104166666666666,164,192,Environment,co2_pc,× CO₂ per head
+BHS,The Bahamas,Latin America & Caribbean,High income,5.19984401885954,0.0201541350017568,8.05520409450016,0.6455260422774179,72.91666666666666,53,192,Environment,co2_pc,× CO₂ per head
+BIH,Bosnia and Herzegovina,Europe & Central Asia,Upper middle income,6.196652149747798,0.016232100494020366,1.6974969484672497,3.650464382479773,5.208333333333334,183,192,Environment,co2_pc,× CO₂ per head
+BLR,Belarus,Europe & Central Asia,Upper middle income,6.682510397973191,0.011243726344943573,2.289769559824631,2.918420488778352,10.9375,172,192,Environment,co2_pc,× CO₂ per head
+BLZ,Belize,Latin America & Caribbean,Upper middle income,1.6709043023393602,0.013696663650962152,1.9615289171790393,0.8518377107294247,56.770833333333336,84,192,Environment,co2_pc,× CO₂ per head
+BMU,Bermuda,North America,High income,6.07721021002416,0.03906060185800603,23.293419695036963,0.26089815448261583,95.83333333333334,9,192,Environment,co2_pc,× CO₂ per head
+BOL,Bolivia,Latin America & Caribbean,Lower middle income,1.59949903941542,0.011027759253115109,0.7899584887730762,2.0247887226323518,21.875,151,192,Environment,co2_pc,× CO₂ per head
+BRA,Brazil,Latin America & Caribbean,Upper middle income,2.19139356376845,0.009482854140071172,2.7151906114249114,0.8070864544638445,59.375,79,192,Environment,co2_pc,× CO₂ per head
+BRB,Barbados,Latin America & Caribbean,High income,5.5801776181210405,0.01297377320045127,6.026325756806925,0.9259668068587321,51.041666666666664,95,192,Environment,co2_pc,× CO₂ per head
+BRN,Brunei,East Asia & Pacific,High income,24.392013378629706,0.03207590972644336,8.594137778494254,2.83821530528259,11.979166666666668,170,192,Environment,co2_pc,× CO₂ per head
+BTN,Bhutan,South Asia,Lower middle income,0.766205619422981,0.008410958507525827,1.0886847727886024,0.7037901498892009,66.14583333333334,66,192,Environment,co2_pc,× CO₂ per head
+BWA,Botswana,Sub-Saharan Africa,Upper middle income,2.3233450064267402,0.00800455458978566,3.204456569101212,0.7250355735288975,65.625,67,192,Environment,co2_pc,× CO₂ per head
+CAF,Central African Republic,Sub-Saharan Africa,Low income,0.0631278135947735,0.03606291135022385,0.1704175764247555,0.3704301804963547,91.66666666666666,17,192,Environment,co2_pc,× CO₂ per head
+CAN,Canada,North America,High income,14.135813379114898,0.02458902844304657,13.537295715177976,1.0442124983105647,44.79166666666667,107,192,Environment,co2_pc,× CO₂ per head
+CHE,Switzerland,Europe & Central Asia,High income,4.625229923975009,0.032278479909202795,20.385773708534632,0.2268851793463511,97.39583333333334,6,192,Environment,co2_pc,× CO₂ per head
+CHL,Chile,Latin America & Caribbean,High income,4.61644538016156,0.010943065007205498,4.205471577359836,1.097723595378507,41.14583333333333,114,192,Environment,co2_pc,× CO₂ per head
+CHN,China,East Asia & Pacific,Upper middle income,6.710301990878859,0.013887499128534363,1.8911566631581906,3.5482528346820303,5.729166666666666,182,192,Environment,co2_pc,× CO₂ per head
+CIV,Côte d'Ivoire,Sub-Saharan Africa,Lower middle income,0.312877702632263,0.014398422614673997,0.6484168239404762,0.482525577807933,83.33333333333334,33,192,Environment,co2_pc,× CO₂ per head
+CMR,Cameroon,Sub-Saharan Africa,Lower middle income,0.26809179288950497,0.022092497383824,0.6110613701359409,0.43873137133486845,86.45833333333334,27,192,Environment,co2_pc,× CO₂ per head
+COG,Congo,Sub-Saharan Africa,Lower middle income,0.5380983785504739,0.007045176929839411,1.0881851523493038,0.4944915645915247,82.29166666666666,35,192,Environment,co2_pc,× CO₂ per head
+COL,Colombia,Latin America & Caribbean,Upper middle income,1.56062909881097,0.008811549589585754,2.2244203688906263,0.701589106374392,66.66666666666666,65,192,Environment,co2_pc,× CO₂ per head
+COM,Comoros,Sub-Saharan Africa,Low income,0.22023347281737304,0.029418909106799153,0.4021472422426465,0.5476438719042345,79.6875,40,192,Environment,co2_pc,× CO₂ per head
+CPV,Cabo Verde,Sub-Saharan Africa,Lower middle income,0.8590614327922951,0.01607837738020668,1.4359300433978963,0.5982613406148012,75.52083333333334,48,192,Environment,co2_pc,× CO₂ per head
+CRI,Costa Rica,Latin America & Caribbean,Upper middle income,1.7049744950915,0.014679524918803876,2.857114257785263,0.5967470465857875,76.04166666666666,47,192,Environment,co2_pc,× CO₂ per head
+CUB,Cuba,Latin America & Caribbean,Upper middle income,3.17231509144201,0.006914946801163009,2.4710248221155293,1.2838054328916382,32.29166666666667,131,192,Environment,co2_pc,× CO₂ per head
+CYP,Cyprus,Europe & Central Asia,High income,6.735375822554011,0.02987285427463958,8.593099168276252,0.7838121835506648,60.9375,76,192,Environment,co2_pc,× CO₂ per head
+CZE,Czech Republic,Europe & Central Asia,High income,10.431088134931802,0.00702732392030811,6.1131658726280715,1.7063316049769544,25.520833333333332,144,192,Environment,co2_pc,× CO₂ per head
+DEU,Germany,Europe & Central Asia,High income,8.91783284592949,0.015778426012222197,13.80963304953556,0.6457689942912286,72.39583333333334,54,192,Environment,co2_pc,× CO₂ per head
+DJI,Djibouti,Middle East & North Africa,Lower middle income,0.561940931477949,0.01796751554003796,0.7274863131748773,0.7724419295609022,61.979166666666664,74,192,Environment,co2_pc,× CO₂ per head
+DMA,Dominica,Latin America & Caribbean,Upper middle income,1.74614156466205,0.005979556759080399,2.8393280588058234,0.6149840837329835,75.0,49,192,Environment,co2_pc,× CO₂ per head
+DNK,Denmark,Europe & Central Asia,High income,7.248328717409991,0.03823528489539749,16.41917453937239,0.4414551230957956,85.9375,28,192,Environment,co2_pc,× CO₂ per head
+DOM,Dominican Republic,Latin America & Caribbean,Upper middle income,2.18290788799199,0.014822497480139986,2.4877239178505333,0.8774719221568954,54.166666666666664,89,192,Environment,co2_pc,× CO₂ per head
+DZA,Algeria,Middle East & North Africa,Upper middle income,3.3160378920662996,0.011605204990044452,1.7006589491912434,1.9498547275708968,22.916666666666664,149,192,Environment,co2_pc,× CO₂ per head
+ECU,Ecuador,Latin America & Caribbean,Upper middle income,2.35401738651458,0.014310489813204815,1.8953179870652566,1.2420171193328786,33.85416666666667,128,192,Environment,co2_pc,× CO₂ per head
+EGY,Egypt,Middle East & North Africa,Lower middle income,2.63511522475978,0.011113347561382303,0.8007979864174288,3.2906117016460428,7.291666666666667,179,192,Environment,co2_pc,× CO₂ per head
+ERI,Eritrea,Sub-Saharan Africa,Low income,0.108718364579018,0.030844794616053422,0.1843494463486206,0.5897406622714898,77.08333333333334,45,192,Environment,co2_pc,× CO₂ per head
+ESP,Spain,Europe & Central Asia,High income,5.7907642342503305,0.015365592792383115,9.242354539053679,0.6265464292439105,74.47916666666666,50,192,Environment,co2_pc,× CO₂ per head
+EST,Estonia,Europe & Central Asia,High income,14.049882518142104,0.020794034682733692,4.966153696175067,2.8291276061317485,12.5,169,192,Environment,co2_pc,× CO₂ per head
+ETH,Ethiopia,Sub-Saharan Africa,Low income,0.0839431166461619,0.019552886557130493,0.21168532043941382,0.3965467065543978,89.0625,22,192,Environment,co2_pc,× CO₂ per head
+FIN,Finland,Europe & Central Asia,High income,10.164046098637899,0.020306635321569934,13.324141575597094,0.7628293380830741,62.5,73,192,Environment,co2_pc,× CO₂ per head
+FJI,Fiji,East Asia & Pacific,Upper middle income,1.42481324805984,0.0053424056480943114,1.8976589135544568,0.75082684136901,63.020833333333336,72,192,Environment,co2_pc,× CO₂ per head
+FRA,France,Europe & Central Asia,High income,5.185043423927991,0.046820741635844154,12.519360620863589,0.41416199923876984,88.54166666666666,23,192,Environment,co2_pc,× CO₂ per head
+FRO,Faeroe Islands,Europe & Central Asia,High income,11.721211746267398,0.025515026768565898,12.981080837640317,0.9029457479596179,53.645833333333336,90,192,Environment,co2_pc,× CO₂ per head
+FSM,Micronesia,East Asia & Pacific,Lower middle income,1.24033592330589,0.016923608154999235,1.1917114188361033,1.0408022476760994,45.3125,106,192,Environment,co2_pc,× CO₂ per head
+GAB,Gabon,Sub-Saharan Africa,Upper middle income,1.41816574927503,0.021575312297265566,3.249497838972681,0.43642612475882697,86.97916666666666,26,192,Environment,co2_pc,× CO₂ per head
+GBR,United Kingdom,Europe & Central Asia,High income,7.085732086027781,0.01825505305844226,14.393388835132317,0.49229074314538535,82.8125,34,192,Environment,co2_pc,× CO₂ per head
+GEO,Georgia,Europe & Central Asia,Lower middle income,1.769150523604,0.009336586874578032,1.1978863214563007,1.476893501424408,28.125,139,192,Environment,co2_pc,× CO₂ per head
+GHA,Ghana,Sub-Saharan Africa,Lower middle income,0.404379797695834,0.010892591546814424,0.4872568343350197,0.8299109816442255,57.291666666666664,83,192,Environment,co2_pc,× CO₂ per head
+GIN,Guinea,Sub-Saharan Africa,Low income,0.22942342456503897,0.030875720752516083,0.1987306532889609,1.154444071752986,38.54166666666667,119,192,Environment,co2_pc,× CO₂ per head
+GMB,The Gambia,Sub-Saharan Africa,Low income,0.24109841695638698,0.024302315512689358,0.3012390380772182,0.8003558187388214,60.416666666666664,77,192,Environment,co2_pc,× CO₂ per head
+GNB,Guinea-Bissau,Sub-Saharan Africa,Low income,0.146810683420286,0.02391376709962877,0.29141957210111386,0.5037777056694981,81.77083333333334,36,192,Environment,co2_pc,× CO₂ per head
+GNQ,Equatorial Guinea,Sub-Saharan Africa,High income,8.9072415363595,0.01978237996932653,5.232881789767274,1.7021675425149703,26.041666666666668,143,192,Environment,co2_pc,× CO₂ per head
+GRC,Greece,Europe & Central Asia,High income,7.556057768560221,0.02146501307446887,7.059238186275648,1.070378639900616,43.22916666666667,110,192,Environment,co2_pc,× CO₂ per head
+GRD,Grenada,Latin America & Caribbean,Upper middle income,2.4081374321880697,0.00557964215827659,2.9819461119186967,0.8075724180805478,58.854166666666664,80,192,Environment,co2_pc,× CO₂ per head
+GRL,Greenland,Europe & Central Asia,High income,12.4403410089647,0.019498357527078125,11.315813227410896,1.0993766651105374,40.625,115,192,Environment,co2_pc,× CO₂ per head
+GTM,Guatemala,Latin America & Caribbean,Lower middle income,0.748055056454528,0.011413626255575689,1.293574046599612,0.5782854552632088,77.60416666666666,44,192,Environment,co2_pc,× CO₂ per head
+GUY,Guyana,Latin America & Caribbean,Lower middle income,2.3577220284091602,0.011364044692019721,0.865085603096931,2.7254204901442365,14.583333333333334,165,192,Environment,co2_pc,× CO₂ per head
+HKG,"Hong Kong SAR, China",East Asia & Pacific,High income,5.695268538944509,0.024297995451114645,12.110472906116192,0.4702763123369203,84.375,31,192,Environment,co2_pc,× CO₂ per head
+HND,Honduras,Latin America & Caribbean,Lower middle income,1.1037450530833302,0.00929850918420551,0.9143222894760081,1.2071728599287226,36.45833333333333,123,192,Environment,co2_pc,× CO₂ per head
+HRV,Croatia,Europe & Central Asia,High income,4.80153001129275,0.018393463928265918,4.317902428341013,1.1120052134057956,40.10416666666667,116,192,Environment,co2_pc,× CO₂ per head
+HTI,Haiti,Latin America & Caribbean,Low income,0.217962047888149,0.031796688232330735,0.3420020771708841,0.6373120587195805,73.95833333333334,51,192,Environment,co2_pc,× CO₂ per head
+HUN,Hungary,Europe & Central Asia,High income,4.862989931433139,0.012270780090998645,4.958521270583368,0.9807339055462013,48.4375,100,192,Environment,co2_pc,× CO₂ per head
+IDN,Indonesia,East Asia & Pacific,Lower middle income,2.3037809828095095,0.007080313092399989,0.9858386643859957,2.3368742432559797,18.75,157,192,Environment,co2_pc,× CO₂ per head
+IND,India,South Asia,Lower middle income,1.6628734828669098,0.013639658307195547,0.6984640334570822,2.380757495323611,17.708333333333336,159,192,Environment,co2_pc,× CO₂ per head
+IRL,Ireland,Europe & Central Asia,High income,7.88075932628823,0.0313009154895776,17.770841659395376,0.4434657332125686,85.41666666666666,29,192,Environment,co2_pc,× CO₂ per head
+IRN,Iran,Middle East & North Africa,Upper middle income,7.802145093494361,0.011161182033142602,1.733914634633489,4.4997284973856635,3.6458333333333335,186,192,Environment,co2_pc,× CO₂ per head
+IRQ,Iraq,Middle East & North Africa,Upper middle income,4.20163513007514,0.004176774907495414,1.277144060911368,3.2898678063591817,7.8125,178,192,Environment,co2_pc,× CO₂ per head
+ISL,Iceland,Europe & Central Asia,High income,5.896828979292441,0.03821134905018681,19.913534241626273,0.2961216681951916,95.3125,10,192,Environment,co2_pc,× CO₂ per head
+ISR,Israel,Middle East & North Africa,High income,8.95241353112365,0.02349771993406382,9.091526509475383,0.9846986115910517,47.91666666666667,101,192,Environment,co2_pc,× CO₂ per head
+ITA,Italy,Europe & Central Asia,High income,6.70255761383033,0.02569918272873832,9.892955072912754,0.6775081423529518,67.70833333333334,63,192,Environment,co2_pc,× CO₂ per head
+JAM,Jamaica,Latin America & Caribbean,Upper middle income,2.8726556926748903,0.010840414023895599,1.9666380771703926,1.4606936202557816,28.645833333333332,138,192,Environment,co2_pc,× CO₂ per head
+JOR,Jordan,Middle East & North Africa,Upper middle income,3.6011470635819394,0.015624629099297504,1.4537739317897593,2.4771025156218904,15.625,163,192,Environment,co2_pc,× CO₂ per head
+JPN,Japan,East Asia & Pacific,High income,9.29183430343302,0.030917161531678262,13.37210375770589,0.6948670509738194,67.1875,64,192,Environment,co2_pc,× CO₂ per head
+KAZ,Kazakhstan,Europe & Central Asia,Upper middle income,15.8100975441818,0.01374848348231053,2.523185617836292,6.265927259738995,2.604166666666667,188,192,Environment,co2_pc,× CO₂ per head
+KEN,Kenya,Sub-Saharan Africa,Lower middle income,0.327569171129451,0.010865746896034078,0.420946503261204,0.7781729236177766,61.458333333333336,75,192,Environment,co2_pc,× CO₂ per head
+KGZ,Kyrgyz Republic,Europe & Central Asia,Lower middle income,1.19959162949262,0.01836425046971285,0.39091538616364174,3.0686733547767218,9.895833333333332,174,192,Environment,co2_pc,× CO₂ per head
+KHM,Cambodia,East Asia & Pacific,Low income,0.308073151562941,0.034287050698626316,0.463210994731146,0.6650816907784127,69.27083333333334,60,192,Environment,co2_pc,× CO₂ per head
+KIR,Kiribati,East Asia & Pacific,Lower middle income,0.5956220978005389,0.024228703151755113,0.6924271492342584,0.860194604528759,55.208333333333336,87,192,Environment,co2_pc,× CO₂ per head
+KNA,St. Kitts and Nevis,Latin America & Caribbean,High income,5.05096418732782,0.013854276624182635,4.924365345638636,1.0257086614829076,46.35416666666667,104,192,Environment,co2_pc,× CO₂ per head
+KOR,Korea,East Asia & Pacific,High income,11.840756866690299,0.019515058973920054,9.505116850129719,1.2457244927534694,33.33333333333333,129,192,Environment,co2_pc,× CO₂ per head
+KWT,Kuwait,Middle East & North Africa,High income,28.1026617530789,0.025136717017853423,9.358895446979094,3.0027754783979344,10.416666666666668,173,192,Environment,co2_pc,× CO₂ per head
+LAO,Lao PDR,East Asia & Pacific,Lower middle income,0.18891050586713298,0.017169934103197032,0.4910081702948092,0.3847400456772605,89.58333333333334,21,192,Environment,co2_pc,× CO₂ per head
+LBN,Lebanon,Middle East & North Africa,Upper middle income,4.668312507960901,0.012968558627623158,3.3271942579446243,1.4030778325653739,29.166666666666668,137,192,Environment,co2_pc,× CO₂ per head
+LBR,Liberia,Sub-Saharan Africa,Low income,0.21842501202331396,0.026232840028744726,0.16511914970084288,1.3228327084959486,31.770833333333332,132,192,Environment,co2_pc,× CO₂ per head
+LBY,Libya,Middle East & North Africa,Upper middle income,6.204914344123349,0.013754925346033066,2.199499972316819,2.821056795735019,13.020833333333334,168,192,Environment,co2_pc,× CO₂ per head
+LCA,St. Lucia,Latin America & Caribbean,Upper middle income,2.27042358794721,0.006914118519150902,2.619317756856952,0.8667996015388385,54.6875,88,192,Environment,co2_pc,× CO₂ per head
+LIE,Liechtenstein,Europe & Central Asia,High income,1.4050962038481498,0.020819813803345612,38.7118166401232,0.03629631274890431,100.0,1,192,Environment,co2_pc,× CO₂ per head
+LKA,Sri Lanka,South Asia,Lower middle income,0.7299208395227371,0.013400977754616605,1.1244417060942595,0.649140667378936,71.875,55,192,Environment,co2_pc,× CO₂ per head
+LSO,Lesotho,Sub-Saharan Africa,Lower middle income,1.08226960820483,0.022932095158972824,0.5859685736362443,1.8469755152375762,24.479166666666664,146,192,Environment,co2_pc,× CO₂ per head
+LTU,Lithuania,Europe & Central Asia,High income,4.53755851412512,0.016581661445832393,4.818526908145652,0.9416899813207312,49.47916666666667,98,192,Environment,co2_pc,× CO₂ per head
+LUX,Luxembourg,Europe & Central Asia,High income,20.8978116975694,0.025475179710825475,25.977539148765242,0.8044569417408696,59.895833333333336,78,192,Environment,co2_pc,× CO₂ per head
+LVA,Latvia,Europe & Central Asia,High income,3.786801436513601,0.011961630889328188,4.1351034071984625,0.9157694653830104,51.5625,94,192,Environment,co2_pc,× CO₂ per head
+MAC,"Macao SAR, China",East Asia & Pacific,High income,2.13306090195031,0.022193756909505105,18.49478862115694,0.11533307817912636,98.95833333333334,3,192,Environment,co2_pc,× CO₂ per head
+MAR,Morocco,Middle East & North Africa,Lower middle income,1.73791554669125,0.00948702177305808,1.2983939527022303,1.3385117383474274,30.729166666666668,134,192,Environment,co2_pc,× CO₂ per head
+MDA,Moldova,Europe & Central Asia,Lower middle income,1.39882179311941,0.018972964356185527,0.7173210913095777,1.9500636605646855,22.395833333333336,150,192,Environment,co2_pc,× CO₂ per head
+MDG,Madagascar,Sub-Saharan Africa,Low income,0.11299280538969099,0.04528612440176944,0.19854939326322718,0.5690916679855607,78.125,43,192,Environment,co2_pc,× CO₂ per head
+MDV,Maldives,South Asia,Upper middle income,2.92776392572944,0.014598885998496002,2.3956937259701174,1.2220944163235494,34.375,127,192,Environment,co2_pc,× CO₂ per head
+MEX,Mexico,Latin America & Caribbean,Upper middle income,3.8761076108074395,0.005508358439582433,3.686307384579226,1.051487900065577,44.27083333333333,108,192,Environment,co2_pc,× CO₂ per head
+MHL,Marshall Islands,East Asia & Pacific,Upper middle income,1.95420719057498,0.014085019974850042,1.4686510825760415,1.3306136588598458,31.25,133,192,Environment,co2_pc,× CO₂ per head
+MKD,Macedonia,Europe & Central Asia,Upper middle income,4.51921014111123,0.010256849824725729,1.9131793396827024,2.36214663590332,18.229166666666664,158,192,Environment,co2_pc,× CO₂ per head
+MLI,Mali,Sub-Saharan Africa,Low income,0.07995637860582258,0.026059792234260616,0.3234331536712297,0.24721144909930404,96.875,7,192,Environment,co2_pc,× CO₂ per head
+MLT,Malta,Middle East & North Africa,High income,6.034321638944139,0.017472439884913364,6.6072454831019005,0.9132885488176548,52.083333333333336,93,192,Environment,co2_pc,× CO₂ per head
+MNE,Montenegro,Europe & Central Asia,Upper middle income,4.14554758345308,0.010775308629958015,2.1888943033268866,1.8939003026104497,23.958333333333336,147,192,Environment,co2_pc,× CO₂ per head
+MNG,Mongolia,East Asia & Pacific,Upper middle income,6.91514653104629,0.012234139094613135,1.0140386181937744,6.8194114178449,1.0416666666666665,191,192,Environment,co2_pc,× CO₂ per head
+MOZ,Mozambique,Sub-Saharan Africa,Low income,0.131189805492051,0.027270196801508207,0.34422942850927696,0.3811115338400402,91.14583333333334,18,192,Environment,co2_pc,× CO₂ per head
+MRT,Mauritania,Sub-Saharan Africa,Lower middle income,0.6272254637992131,0.0322100173825432,0.5448960065105464,1.1510920548232597,39.0625,118,192,Environment,co2_pc,× CO₂ per head
+MUS,Mauritius,Sub-Saharan Africa,Upper middle income,3.1270708174039705,0.014614331604763385,3.238519341326777,0.9655865807251447,48.95833333333333,99,192,Environment,co2_pc,× CO₂ per head
+MWI,Malawi,Sub-Saharan Africa,Low income,0.0792314846186132,0.0415417095222121,0.2069424834808083,0.38286717780673135,90.625,19,192,Environment,co2_pc,× CO₂ per head
+MYS,Malaysia,East Asia & Pacific,Upper middle income,7.898823573468209,0.007991176368580882,3.2884713643282173,2.4019742604879926,16.666666666666664,161,192,Environment,co2_pc,× CO₂ per head
+NAM,Namibia,Sub-Saharan Africa,Upper middle income,1.23916048891129,0.009924328684508748,2.2332191828178827,0.5548763410440141,79.16666666666666,41,192,Environment,co2_pc,× CO₂ per head
+NER,Niger,Sub-Saharan Africa,Low income,0.08395817775780638,0.01165464042302517,0.21868075399354797,0.38393034697641254,90.10416666666666,20,192,Environment,co2_pc,× CO₂ per head
+NGA,Nigeria,Sub-Saharan Africa,Lower middle income,0.537497560078966,0.014697868033539275,0.6270795221256981,0.8571441756811581,55.729166666666664,86,192,Environment,co2_pc,× CO₂ per head
+NIC,Nicaragua,Latin America & Caribbean,Lower middle income,0.8435419549649459,0.01844429663570877,0.8304710621186222,1.0157391310095483,47.39583333333333,102,192,Environment,co2_pc,× CO₂ per head
+NLD,Netherlands,Europe & Central Asia,High income,10.0644897398765,0.027005969924962007,15.784860039802304,0.6376039898040522,73.4375,52,192,Environment,co2_pc,× CO₂ per head
+NOR,Norway,Europe & Central Asia,High income,9.19287906857298,0.03884869272916004,21.10178208833457,0.4356446782594235,87.5,25,192,Environment,co2_pc,× CO₂ per head
+NPL,Nepal,South Asia,Low income,0.15947445470967397,0.017112570530164205,0.29819035342633826,0.5348075579147427,80.72916666666666,38,192,Environment,co2_pc,× CO₂ per head
+NZL,New Zealand,East Asia & Pacific,High income,7.124050866788321,0.033409964194330635,10.965628917843974,0.6496709783052761,71.35416666666666,56,192,Environment,co2_pc,× CO₂ per head
+OMN,Oman,Middle East & North Africa,High income,20.203894513494202,0.023821846365009943,4.605192226359969,4.387198952922698,4.166666666666666,185,192,Environment,co2_pc,× CO₂ per head
+PAK,Pakistan,South Asia,Lower middle income,0.9411711250776529,0.014088941913136461,0.486705014182051,1.9337608975723637,23.4375,148,192,Environment,co2_pc,× CO₂ per head
+PAN,Panama,Latin America & Caribbean,Upper middle income,2.6252762441067703,0.0057550126442709616,3.5508936827075264,0.7393283152609118,64.0625,70,192,Environment,co2_pc,× CO₂ per head
+PER,Peru,Latin America & Caribbean,Upper middle income,1.7832331442343,0.01172046148921618,1.9638296382566423,0.9080386147025137,53.125,91,192,Environment,co2_pc,× CO₂ per head
+PHL,Philippines,East Asia & Pacific,Lower middle income,0.8678453433512341,0.017970544444416963,0.9239493250400393,0.9392780749243212,50.0,97,192,Environment,co2_pc,× CO₂ per head
+PLW,Palau,East Asia & Pacific,Upper middle income,10.855430457148397,0.0030304722208056778,3.971148014695389,2.733574879852741,13.541666666666666,167,192,Environment,co2_pc,× CO₂ per head
+PNG,Papua New Guinea,East Asia & Pacific,Lower middle income,0.746895234112231,0.015298033023715301,0.6910614132653707,1.0807942966791286,42.70833333333333,111,192,Environment,co2_pc,× CO₂ per head
+POL,Poland,Europe & Central Asia,High income,8.33578670557733,0.012519056604270913,4.696934951410928,1.7747290077060391,25.0,145,192,Environment,co2_pc,× CO₂ per head
+PRT,Portugal,Europe & Central Asia,High income,4.7098496243450185,0.015014632721332678,7.054796843144026,0.6676095327850768,68.75,61,192,Environment,co2_pc,× CO₂ per head
+PRY,Paraguay,Latin America & Caribbean,Upper middle income,0.841915242121446,0.012075842605972246,1.1326555870322756,0.7433108985295237,63.541666666666664,71,192,Environment,co2_pc,× CO₂ per head
+QAT,Qatar,Middle East & North Africa,High income,44.018926367022395,0.02977082171860214,20.583083102176396,2.1385973203580937,20.833333333333336,153,192,Environment,co2_pc,× CO₂ per head
+ROM,Romania,Europe & Central Asia,Upper middle income,4.21056012429912,0.019739222399616462,2.80243490492825,1.5024649160965693,27.604166666666668,140,192,Environment,co2_pc,× CO₂ per head
+RUS,Russia,Europe & Central Asia,High income,12.647328232506299,0.015988413035106876,3.028989926994562,4.17542763011275,4.6875,184,192,Environment,co2_pc,× CO₂ per head
+RWA,Rwanda,Sub-Saharan Africa,Low income,0.06287419732562968,0.033396441621710515,0.2974766526561436,0.21135842683528724,97.91666666666666,5,192,Environment,co2_pc,× CO₂ per head
+SAU,Saudi Arabia,Middle East & North Africa,High income,18.072450717888895,0.031498616241045906,6.6239547655556255,2.728347544259378,14.0625,166,192,Environment,co2_pc,× CO₂ per head
+SDN,Sudan,Sub-Saharan Africa,Lower middle income,0.349548724216747,0.02955061651621854,0.5879737527094033,0.5944971567285349,76.5625,46,192,Environment,co2_pc,× CO₂ per head
+SEN,Senegal,Sub-Saharan Africa,Lower middle income,0.588334149509437,0.024632527889230156,0.5027553181242733,1.1702196442286263,38.02083333333333,120,192,Environment,co2_pc,× CO₂ per head
+SGP,Singapore,East Asia & Pacific,High income,4.32015143623281,0.01657938552753435,13.78446236454161,0.3134073220980841,94.79166666666666,11,192,Environment,co2_pc,× CO₂ per head
+SLB,Solomon Islands,East Asia & Pacific,Lower middle income,0.36830416927060106,0.021211410124106333,0.6546310610483717,0.5626133423622967,78.64583333333334,42,192,Environment,co2_pc,× CO₂ per head
+SLE,Sierra Leone,Sub-Saharan Africa,Low income,0.15204416789024303,0.02769027929717763,0.33785260705551506,0.45003106299919576,84.89583333333334,30,192,Environment,co2_pc,× CO₂ per head
+SLV,El Salvador,Latin America & Caribbean,Lower middle income,1.10399857445029,0.017509314768666188,1.6325826356989386,0.6762282963873666,68.22916666666666,62,192,Environment,co2_pc,× CO₂ per head
+SRB,Serbia,Europe & Central Asia,Upper middle income,6.799114996905629,0.012258741886486978,2.0290562458743104,3.3508755662788063,6.770833333333333,180,192,Environment,co2_pc,× CO₂ per head
+STP,São Tomé and Principe,Sub-Saharan Africa,Lower middle income,0.587909256438739,0.02438641805736724,0.626396537810756,0.9385576403303101,50.520833333333336,96,192,Environment,co2_pc,× CO₂ per head
+SUR,Suriname,Latin America & Caribbean,Upper middle income,3.64991336144231,0.008594309155651682,2.233304945030261,1.6343103388385924,26.5625,142,192,Environment,co2_pc,× CO₂ per head
+SVK,Slovak Republic,Europe & Central Asia,High income,6.367545917444919,0.006517651166737446,6.191383528527266,1.0284528309554677,45.83333333333333,105,192,Environment,co2_pc,× CO₂ per head
+SVN,Slovenia,Europe & Central Asia,High income,7.50425970227631,0.012287890597928928,7.359686524864679,1.0196439314260453,46.875,103,192,Environment,co2_pc,× CO₂ per head
+SWE,Sweden,Europe & Central Asia,High income,5.5184214812387,0.021911142632452724,15.737454253424556,0.35065528340060853,93.22916666666666,14,192,Environment,co2_pc,× CO₂ per head
+SWZ,Swaziland,Sub-Saharan Africa,Lower middle income,0.864988312997234,0.011606299177746993,1.3278316422293281,0.6514292064504387,70.83333333333334,57,192,Environment,co2_pc,× CO₂ per head
+SYC,Seychelles,Sub-Saharan Africa,High income,6.835706362004089,0.028762741614838997,6.2303127121104005,1.0971690632344877,41.66666666666667,113,192,Environment,co2_pc,× CO₂ per head
+SYR,Syrian Arab Republic,Middle East & North Africa,Lower middle income,2.7369909434886,0.01139925669685663,0.8896642359269054,3.0764313467507653,9.375,175,192,Environment,co2_pc,× CO₂ per head
+TCD,Chad,Sub-Saharan Africa,Low income,0.043830424363532794,0.03207092403977214,0.491143436760212,0.08924159641154251,99.47916666666666,2,192,Environment,co2_pc,× CO₂ per head
+TGO,Togo,Sub-Saharan Africa,Low income,0.31944362162530104,0.03350328256875021,0.284947543642403,1.121061152315772,39.58333333333333,117,192,Environment,co2_pc,× CO₂ per head
+THA,Thailand,East Asia & Pacific,Upper middle income,4.53449173353441,0.015153091602197683,1.8750268524069156,2.4183609571850235,16.145833333333336,162,192,Environment,co2_pc,× CO₂ per head
+TJK,Tajikistan,Europe & Central Asia,Lower middle income,0.358947629748805,0.02054131810101655,0.3313485799905266,1.0832930980391329,42.1875,112,192,Environment,co2_pc,× CO₂ per head
+TKM,Turkmenistan,Europe & Central Asia,Upper middle income,12.183666583638002,0.013592489142701145,1.878295695693547,6.486554066844769,1.5625,190,192,Environment,co2_pc,× CO₂ per head
+TMP,Timor-Leste,East Asia & Pacific,Lower middle income,0.16364808031474695,0.025452716127032465,0.49734319702342994,0.32904457383587665,94.27083333333334,12,192,Environment,co2_pc,× CO₂ per head
+TON,Tonga,East Asia & Pacific,Upper middle income,0.983561958770787,0.013421769963352379,1.3390397916361452,0.7345278048600729,64.58333333333334,69,192,Environment,co2_pc,× CO₂ per head
+TTO,Trinidad and Tobago,Latin America & Caribbean,High income,37.140054240741996,0.013627091379792124,5.811822065752155,6.390432091787621,2.083333333333333,189,192,Environment,co2_pc,× CO₂ per head
+TUN,Tunisia,Middle East & North Africa,Upper middle income,2.4024556390413903,0.015528033304718195,1.9059422889890187,1.2605080714777257,32.8125,130,192,Environment,co2_pc,× CO₂ per head
+TUR,Turkey,Europe & Central Asia,Upper middle income,4.383104516251859,0.01596279147459336,3.7404701546183485,1.1718057717530648,37.5,121,192,Environment,co2_pc,× CO₂ per head
+TZA,Tanzania,Sub-Saharan Africa,Low income,0.154934900364361,0.012676138871419274,0.3586290049532168,0.4320199934318538,88.02083333333334,24,192,Environment,co2_pc,× CO₂ per head
+UGA,Uganda,Sub-Saharan Africa,Low income,0.110886575504705,0.035890502958488335,0.3083210520907239,0.359646461870779,92.1875,16,192,Environment,co2_pc,× CO₂ per head
+UKR,Ukraine,Europe & Central Asia,Lower middle income,6.2623519617731604,0.014280954297506435,1.1132250426450359,5.6254141991755215,3.125,187,192,Environment,co2_pc,× CO₂ per head
+URY,Uruguay,Latin America & Caribbean,High income,2.29620068466244,0.013564987372895795,3.5208269344855556,0.6521765276707497,70.3125,58,192,Environment,co2_pc,× CO₂ per head
+USA,United States,North America,High income,17.0202163384029,0.0366088700275397,15.99712705865176,1.0639545635913306,43.75,109,192,Environment,co2_pc,× CO₂ per head
+UZB,Uzbekistan,Europe & Central Asia,Lower middle income,3.91492126628356,0.010034624031662524,0.5523388207754647,7.087898078188937,0.5208333333333333,192,192,Environment,co2_pc,× CO₂ per head
+VCT,St. Vincent and the Grenadines,Latin America & Caribbean,Upper middle income,2.1799233590327503,0.010575284076201352,2.5585481545086886,0.8520157633895913,56.25,85,192,Environment,co2_pc,× CO₂ per head
+VEN,Venezuela,Latin America & Caribbean,High income,6.4163335811843005,0.011533665428424288,2.7894782821583055,2.3001912659523502,19.270833333333336,156,192,Environment,co2_pc,× CO₂ per head
+VNM,Vietnam,East Asia & Pacific,Lower middle income,1.97188917349727,0.02294105256754967,0.6220180706244829,3.1701477282124086,8.333333333333332,177,192,Environment,co2_pc,× CO₂ per head
+VUT,Vanuatu,East Asia & Pacific,Lower middle income,0.59126577254461,0.010971184520590989,1.103091836017972,0.5360077495261028,80.20833333333334,39,192,Environment,co2_pc,× CO₂ per head
+WBG,West Bank and Gaza,Middle East & North Africa,Lower middle income,0.5724068773234681,0.02219808405533366,0.7850899444431776,0.7290971962829631,65.10416666666666,68,192,Environment,co2_pc,× CO₂ per head
+WSM,Samoa,East Asia & Pacific,Lower middle income,1.25211007608011,0.007785049786930608,1.37339368414255,0.911690573895306,52.604166666666664,92,192,Environment,co2_pc,× CO₂ per head
+YEM,Yemen,Middle East & North Africa,Lower middle income,0.9199676170025591,0.0068457057734814366,0.4217010065396395,2.181563721062836,20.3125,154,192,Environment,co2_pc,× CO₂ per head
+ZAF,South Africa,Sub-Saharan Africa,Upper middle income,9.25721647223847,0.013413978247493664,2.700959351815199,3.4273808919105324,6.25,181,192,Environment,co2_pc,× CO₂ per head
+ZAR,Dem. Rep. Congo,Sub-Saharan Africa,Low income,0.05030268753491102,0.026379413088418516,0.20212769498609584,0.2488658842043951,96.35416666666666,8,192,Environment,co2_pc,× CO₂ per head
+ZMB,Zambia,Sub-Saharan Africa,Lower middle income,0.21244964452952503,0.02923809669116288,0.6166211332140835,0.3445383771103496,93.75,13,192,Environment,co2_pc,× CO₂ per head
+ZWE,Zimbabwe,Sub-Saharan Africa,Low income,0.6916978965166789,0.02124665822847971,0.2904451241656245,2.3815097550828312,17.1875,160,192,Environment,co2_pc,× CO₂ per head
+ABW,Aruba,Latin America & Caribbean,High income,75.32865853658541,0.2019880763153669,77.82841183986754,-2.4997533032821337,20.833333333333336,153,192,Health,life_exp,years
+AFG,Afghanistan,South Asia,Low income,60.028268292682895,0.3137902272866632,61.22997847033632,-1.2017101776534247,29.6875,136,192,Health,life_exp,years
+AGO,Angola,Sub-Saharan Africa,Upper middle income,51.8661707317073,0.20264234637218204,68.29381169244178,-16.42764096073448,1.5625,190,192,Health,life_exp,years
+ALB,Albania,Europe & Central Asia,Upper middle income,77.537243902439,0.29001864050214865,70.83759517343273,6.69964872900627,95.3125,10,192,Health,life_exp,years
+ARE,United Arab Emirates,Middle East & North Africa,High income,77.19563414634149,0.11867695094499048,79.33534187258022,-2.1397077262387256,23.4375,148,192,Health,life_exp,years
+ARG,Argentina,Latin America & Caribbean,High income,75.9860975609756,0.10717196812456599,73.84623812853323,2.139859432442364,66.66666666666666,65,192,Health,life_exp,years
+ARM,Armenia,Europe & Central Asia,Lower middle income,74.5613658536585,0.07191089618179272,68.89768104115907,5.663684812499426,91.66666666666666,17,192,Health,life_exp,years
+ATG,Antigua and Barbuda,Latin America & Caribbean,High income,75.77865853658541,0.16814327210807758,75.79842746296467,-0.019768926379256868,39.0625,118,192,Health,life_exp,years
+AUS,Australia,East Asia & Pacific,High income,82.1975609756098,0.3079958565998347,80.83960527597193,1.3579556996378699,55.729166666666664,86,192,Health,life_exp,years
+AUT,Austria,Europe & Central Asia,High income,80.890243902439,0.19876286849926214,81.04290744186588,-0.15266353942688227,36.97916666666667,122,192,Health,life_exp,years
+AZE,Azerbaijan,Europe & Central Asia,Upper middle income,70.6931463414634,0.21529538706805457,70.07565665226876,0.6174896891946418,46.875,103,192,Health,life_exp,years
+BDI,Burundi,Sub-Saharan Africa,Low income,56.2516097560976,0.37487348562974854,57.2674492225524,-1.0158394664547998,31.25,133,192,Health,life_exp,years
+BEL,Belgium,Europe & Central Asia,High income,80.3853658536585,0.0889424111911016,80.52044461020452,-0.1350787565460223,38.02083333333333,120,192,Health,life_exp,years
+BEN,Benin,Sub-Saharan Africa,Low income,59.312024390243906,0.31481113977169145,63.526045600888594,-4.214021210644688,14.583333333333334,165,192,Health,life_exp,years
+BFA,Burkina Faso,Sub-Saharan Africa,Low income,58.2406341463415,0.3233981250395672,62.39363175856787,-4.152997612226372,15.104166666666666,164,192,Health,life_exp,years
+BGD,Bangladesh,South Asia,Lower middle income,71.245243902439,0.3596283481083261,63.646446602872835,7.598797299566165,98.4375,4,192,Health,life_exp,years
+BGR,Bulgaria,Europe & Central Asia,Upper middle income,74.4658536585366,0.13695021630528964,72.04978964252632,2.4160640160102815,69.79166666666666,59,192,Health,life_exp,years
+BHR,Bahrain,Middle East & North Africa,High income,76.5459512195122,0.12868493792180133,77.41062113982814,-0.8646699203159329,32.8125,130,192,Health,life_exp,years
+BHS,The Bahamas,Latin America & Caribbean,High income,75.0735365853659,0.12822097265876864,78.01440763416558,-2.9408710487996785,17.1875,160,192,Health,life_exp,years
+BIH,Bosnia and Herzegovina,Europe & Central Asia,Upper middle income,76.27692682926829,0.17279362584301236,70.44119348121863,5.835733348049658,92.70833333333334,15,192,Health,life_exp,years
+BLR,Belarus,Europe & Central Asia,Upper middle income,72.4707317073171,0.198576669619432,71.9301713472526,0.5405603600645037,45.3125,106,192,Health,life_exp,years
+BLZ,Belize,Latin America & Caribbean,Upper middle income,69.9820487804878,0.27929630891462415,70.99925878118616,-1.0172100006983555,30.729166666666668,134,192,Health,life_exp,years
+BMU,Bermuda,North America,High income,80.5724390243902,0.38599636309779467,83.43313013940302,-2.8606911150128127,18.229166666666664,158,192,Health,life_exp,years
+BOL,Bolivia,Latin America & Caribbean,Lower middle income,67.9134390243903,0.30577777065955175,66.45045970950359,1.4629793148867094,57.291666666666664,83,192,Health,life_exp,years
+BRA,Brazil,Latin America & Caribbean,Upper middle income,74.1224390243903,0.15692556061717647,72.68702364076975,1.4354153836205512,56.770833333333336,84,192,Health,life_exp,years
+BRB,Barbados,Latin America & Caribbean,High income,75.3339512195122,0.17094914332696776,76.64643780897356,-1.3124865894613578,28.125,139,192,Health,life_exp,years
+BRN,Brunei,East Asia & Pacific,High income,78.54665853658541,0.10442995616024774,78.74557281361271,-0.19891427702729914,35.9375,124,192,Health,life_exp,years
+BTN,Bhutan,South Asia,Lower middle income,69.1029268292683,0.23808724909730503,68.11905040359962,0.9838764256686829,50.520833333333336,96,192,Health,life_exp,years
+BWA,Botswana,Sub-Saharan Africa,Upper middle income,64.3608048780488,0.15714091255714085,73.52736033478713,-9.166555456738337,6.770833333333333,180,192,Health,life_exp,years
+CAF,Central African Republic,Sub-Saharan Africa,Low income,49.8798780487805,0.43178414977945384,59.14681379500661,-9.26693574622611,6.25,181,192,Health,life_exp,years
+CAN,Canada,North America,High income,81.40112195121951,0.25920763200856484,80.87894989313138,0.522172058088131,44.79166666666667,107,192,Health,life_exp,years
+CHE,Switzerland,Europe & Central Asia,High income,82.74878048780491,0.25195495483924074,82.52306717795614,0.22571330984877136,41.66666666666667,113,192,Health,life_exp,years
+CHI,Channel Islands,Europe & Central Asia,High income,80.46282926829271,0.1534081238055104,82.91411164232025,-2.4512823740275422,21.354166666666664,152,192,Health,life_exp,years
+CHL,Chile,Latin America & Caribbean,High income,81.1979268292683,0.10867915870319007,74.89229795883864,6.305628870429658,93.22916666666666,14,192,Health,life_exp,years
+CHN,China,East Asia & Pacific,Upper middle income,75.3530243902439,0.17462944130598318,70.89771573929684,4.45530865094706,86.97916666666666,26,192,Health,life_exp,years
+CIV,Côte d'Ivoire,Sub-Saharan Africa,Lower middle income,51.2084634146342,0.21539949139798165,65.58984541162411,-14.381381996989909,3.125,187,192,Health,life_exp,years
+CMR,Cameroon,Sub-Saharan Africa,Lower middle income,55.0418048780488,0.27481394925172864,65.26432582031724,-10.222520942268439,5.208333333333334,183,192,Health,life_exp,years
+COG,Congo,Sub-Saharan Africa,Lower middle income,61.6663902439024,0.2648100441848186,68.15392783842562,-6.487537594523218,9.375,175,192,Health,life_exp,years
+COL,Colombia,Latin America & Caribbean,Upper middle income,73.8097317073171,0.2526553403923027,71.5618144913343,2.2479172159827954,67.1875,64,192,Health,life_exp,years
+COM,Comoros,Sub-Saharan Africa,Low income,62.932170731707295,0.32883372947184447,62.94418281010078,-0.012012078393482284,39.58333333333333,117,192,Health,life_exp,years
+CPV,Cabo Verde,Sub-Saharan Africa,Lower middle income,72.9723658536585,0.11217494100053826,69.44896801104801,3.5233978426104926,80.20833333333334,39,192,Health,life_exp,years
+CRI,Costa Rica,Latin America & Caribbean,Upper middle income,79.2252195121951,0.19882715454776312,72.8725005826677,6.3527189295273985,93.75,13,192,Health,life_exp,years
+CUB,Cuba,Latin America & Caribbean,Upper middle income,79.2563902439025,0.05436408654982812,72.30864764131874,6.947742602583759,96.35416666666666,8,192,Health,life_exp,years
+CYP,Cyprus,Europe & Central Asia,High income,79.94978048780492,0.11671191919694579,78.24910939683568,1.7006710909692373,61.458333333333336,75,192,Health,life_exp,years
+CZE,Czech Republic,Europe & Central Asia,High income,78.2780487804878,0.09780324058477444,76.56273247741055,1.7153163030772447,62.5,73,192,Health,life_exp,years
+DEU,Germany,Europe & Central Asia,High income,81.04390243902441,0.19130111129428357,80.78592325026928,0.2579791887551295,42.1875,112,192,Health,life_exp,years
+DJI,Djibouti,Middle East & North Africa,Lower middle income,61.6864634146342,0.2294851353037006,66.02686772553496,-4.340404310900759,14.0625,166,192,Health,life_exp,years
+DNK,Denmark,Europe & Central Asia,High income,80.3024390243903,0.12152966612142532,81.59395746002335,-1.2915184356330514,28.645833333333332,138,192,Health,life_exp,years
+DOM,Dominican Republic,Latin America & Caribbean,Upper middle income,73.3199024390244,0.15207544800396844,72.11063603668929,1.2092664023351176,53.125,91,192,Health,life_exp,years
+DZA,Algeria,Middle East & North Africa,Upper middle income,74.5689512195122,0.19709923172375793,70.05550137217155,4.513449847340652,88.02083333333334,24,192,Health,life_exp,years
+ECU,Ecuador,Latin America & Caribbean,Upper middle income,75.64851219512201,0.25147098796637324,70.6726436849471,4.975868510174905,90.10416666666666,20,192,Health,life_exp,years
+EGY,Egypt,Middle East & North Africa,Lower middle income,70.92578048780491,0.2209661392572989,66.69407612870182,4.231704359103091,85.41666666666666,29,192,Health,life_exp,years
+ERI,Eritrea,Sub-Saharan Africa,Low income,63.1778780487805,0.3065561422918114,58.367542952857264,4.810335095923236,89.58333333333334,21,192,Health,life_exp,years
+ESP,Spain,Europe & Central Asia,High income,82.4268292682927,0.16247903591136864,78.85362896906108,3.5732002992316296,81.77083333333334,36,192,Health,life_exp,years
+EST,Estonia,Europe & Central Asia,High income,76.42439024390251,0.15152575711077218,75.8787683241604,0.5456219197421035,45.83333333333333,105,192,Health,life_exp,years
+ETH,Ethiopia,Sub-Saharan Africa,Low income,63.4421951219512,0.4722857949982758,59.892792302187125,3.549402819764076,81.25,37,192,Health,life_exp,years
+FIN,Finland,Europe & Central Asia,High income,80.8317073170732,0.12284238677464676,80.78611143877852,0.045595878294676595,40.625,115,192,Health,life_exp,years
+FJI,Fiji,East Asia & Pacific,Upper middle income,69.9179268292683,0.27242083498082587,70.91235566633432,-0.9944288370660246,31.770833333333332,132,192,Health,life_exp,years
+FRA,France,Europe & Central Asia,High income,81.9682926829268,0.11927182420115812,80.30871879060554,1.6595738923212622,60.9375,76,192,Health,life_exp,years
+FRO,Faeroe Islands,Europe & Central Asia,High income,81.3,0.18157626128136498,80.35340082044436,0.9465991795556334,49.47916666666667,98,192,Health,life_exp,years
+FSM,Micronesia,East Asia & Pacific,Lower middle income,68.9733902439024,0.1066303476251552,68.60855152821743,0.36483871568496795,43.22916666666667,110,192,Health,life_exp,years
+GAB,Gabon,Sub-Saharan Africa,Upper middle income,63.8435853658537,0.09519016866494785,73.8029239904911,-9.959338624637397,5.729166666666666,182,192,Health,life_exp,years
+GBR,United Kingdom,Europe & Central Asia,High income,80.95609756097559,0.2926667530969133,81.15011644405469,-0.19401888307909587,36.45833333333333,123,192,Health,life_exp,years
+GEO,Georgia,Europe & Central Asia,Lower middle income,74.079512195122,0.1552532916455446,68.5037394217961,5.575772773325909,91.14583333333334,18,192,Health,life_exp,years
+GHA,Ghana,Sub-Saharan Africa,Lower middle income,61.142073170731706,0.40292104599227946,63.86472247509447,-2.7226493043627613,18.75,157,192,Health,life_exp,years
+GIN,Guinea,Sub-Saharan Africa,Low income,58.216487804878,0.3218885209713073,60.11493489025298,-1.8984470853749826,24.479166666666664,146,192,Health,life_exp,years
+GMB,The Gambia,Sub-Saharan Africa,Low income,59.9992682926829,0.5396673709323285,61.529693585917435,-1.5304252932345364,27.083333333333332,141,192,Health,life_exp,years
+GNB,Guinea-Bissau,Sub-Saharan Africa,Low income,54.838414634146396,0.38559040901732217,61.629839849878806,-6.79142521573241,8.854166666666668,176,192,Health,life_exp,years
+GNQ,Equatorial Guinea,Sub-Saharan Africa,High income,57.290829268292704,0.14072775638813179,75.95025327432305,-18.659424006030342,1.0416666666666665,191,192,Health,life_exp,years
+GRC,Greece,Europe & Central Asia,High income,80.6341463414634,0.15879569136367946,77.52321389500182,3.1109324464615895,76.04166666666666,47,192,Health,life_exp,years
+GRD,Grenada,Latin America & Caribbean,Upper middle income,73.1935609756098,0.10894603556348997,73.32985666973478,-0.136295694124982,37.5,121,192,Health,life_exp,years
+GRL,Greenland,Europe & Central Asia,High income,71.0017073170732,0.2886327387870335,79.96047865730091,-8.958771340227713,7.291666666666667,179,192,Health,life_exp,years
+GTM,Guatemala,Latin America & Caribbean,Lower middle income,71.4863902439024,0.21144423102673898,68.81623287946475,2.6701573644376566,71.35416666666666,56,192,Health,life_exp,years
+GUY,Guyana,Latin America & Caribbean,Lower middle income,66.3100243902439,0.20126033132261675,66.9602338190651,-0.6502094288211993,34.375,127,192,Health,life_exp,years
+HKG,"Hong Kong SAR, China",East Asia & Pacific,High income,83.8317073170732,0.16414552724313675,80.17962900465947,3.652078312413721,82.29166666666666,35,192,Health,life_exp,years
+HND,Honduras,Latin America & Caribbean,Lower middle income,72.94285365853659,0.22477734901029223,67.22193368269281,5.720919975843785,92.1875,16,192,Health,life_exp,years
+HRV,Croatia,Europe & Central Asia,High income,77.12682926829271,0.1434522965598891,75.16412490559455,1.9627043626981617,65.625,67,192,Health,life_exp,years
+HTI,Haiti,Latin America & Caribbean,Low income,62.401146341463395,0.288648450608968,62.362058855801386,0.0390874856620087,40.10416666666667,116,192,Health,life_exp,years
+HUN,Hungary,Europe & Central Asia,High income,75.2682926829268,0.14312004571554227,75.6761809933377,-0.4078883104108968,34.89583333333333,126,192,Health,life_exp,years
+IDN,Indonesia,East Asia & Pacific,Lower middle income,68.7046097560976,0.1728264446965642,67.8214650566382,0.8831446994593932,48.95833333333333,99,192,Health,life_exp,years
+IND,India,South Asia,Lower middle income,67.6604146341463,0.3696757406738751,65.82847612309433,1.8319385110519733,64.0625,70,192,Health,life_exp,years
+IRL,Ireland,Europe & Central Asia,High income,81.04390243902441,0.22997648666537174,82.0612930029759,-1.0173905639514942,30.208333333333332,135,192,Health,life_exp,years
+IRN,Iran,Middle East & North Africa,Upper middle income,75.1259756097561,0.0987828324931733,70.63223296839898,4.493742641357116,87.5,25,192,Health,life_exp,years
+IRQ,Iraq,Middle East & North Africa,Upper middle income,69.4716829268293,0.20288456968039328,68.85353052489026,0.6181524019390423,47.39583333333333,102,192,Health,life_exp,years
+ISL,Iceland,Europe & Central Asia,High income,83.1170731707317,0.17867374488526266,82.5475177611822,0.5695554095494941,46.35416666666667,104,192,Health,life_exp,years
+ISR,Israel,Middle East & North Africa,High income,82.05609756097559,0.20542175170997945,78.74149222117765,3.314605339797936,77.60416666666666,44,192,Health,life_exp,years
+ITA,Italy,Europe & Central Asia,High income,82.290243902439,0.2759162704379123,79.56965706790876,2.7205868345302378,72.39583333333334,54,192,Health,life_exp,years
+JAM,Jamaica,Latin America & Caribbean,Upper middle income,73.4689268292683,0.27195299762451713,71.09692350020407,2.3720033290642277,67.70833333333334,63,192,Health,life_exp,years
+JOR,Jordan,Middle East & North Africa,Upper middle income,73.9014146341463,0.2005366725350831,69.63073700004381,4.270677634102498,85.9375,28,192,Health,life_exp,years
+JPN,Japan,East Asia & Pacific,High income,83.3319512195122,0.2517495296576675,80.50436224648604,2.8275889730261667,73.95833333333334,51,192,Health,life_exp,years
+KAZ,Kazakhstan,Europe & Central Asia,Upper middle income,70.45,0.12324298988220472,72.52374820995541,-2.0737482099554114,23.958333333333336,147,192,Health,life_exp,years
+KEN,Kenya,Sub-Saharan Africa,Lower middle income,60.9537804878049,0.3294695220654285,63.47373391721385,-2.5199534294089503,20.3125,154,192,Health,life_exp,years
+KGZ,Kyrgyz Republic,Europe & Central Asia,Lower middle income,70.2024390243902,0.2683732202696367,63.15358751267676,7.048851511713444,96.875,7,192,Health,life_exp,years
+KHM,Cambodia,East Asia & Pacific,Low income,67.7720487804878,0.2364435318365412,63.81648363991319,3.955565140574606,83.33333333333334,33,192,Health,life_exp,years
+KIR,Kiribati,East Asia & Pacific,Lower middle income,65.7665853658537,0.33961867702623727,65.36332728955101,0.4032580763026914,43.75,109,192,Health,life_exp,years
+KOR,Korea,East Asia & Pacific,High income,81.459756097561,0.16064796332633213,78.80286919114735,2.6568869064136464,70.83333333333334,57,192,Health,life_exp,years
+KSV,Kosovo,Europe & Central Asia,Lower middle income,70.7975609756098,0.12288027012980093,69.49814552360466,1.2994154520051353,54.6875,88,192,Health,life_exp,years
+KWT,Kuwait,Middle East & North Africa,High income,74.462756097561,0.14865589837046594,79.20652604995723,-4.743769952396235,12.5,169,192,Health,life_exp,years
+LAO,Lao PDR,East Asia & Pacific,Lower middle income,65.68724390243901,0.20651532416517487,64.20212569205906,1.4851182103799516,58.854166666666664,80,192,Health,life_exp,years
+LBN,Lebanon,Middle East & North Africa,Upper middle income,80.12887804878049,0.1485121342908374,73.5424777639067,6.58640028487379,94.79166666666666,11,192,Health,life_exp,years
+LBR,Liberia,Sub-Saharan Africa,Low income,60.5203902439024,0.6655631443793338,58.64697438515144,1.8734158587509597,65.10416666666666,68,192,Health,life_exp,years
+LBY,Libya,Middle East & North Africa,Upper middle income,71.6576829268293,0.0711352762493753,71.74253212249444,-0.08484919566514293,38.54166666666667,119,192,Health,life_exp,years
+LCA,St. Lucia,Latin America & Caribbean,Upper middle income,74.9127073170732,0.11509514145379378,72.52385996482533,2.388847352247865,68.75,61,192,Health,life_exp,years
+LIE,Liechtenstein,Europe & Central Asia,High income,82.3829268292683,0.2882620116991999,85.28163401079868,-2.8987071815303835,17.708333333333336,159,192,Health,life_exp,years
+LKA,Sri Lanka,South Asia,Lower middle income,74.24029268292679,0.23795495037594924,67.87129748521089,6.368995197715904,94.27083333333334,12,192,Health,life_exp,years
+LSO,Lesotho,Sub-Saharan Africa,Lower middle income,49.3314634146342,0.1976410648704881,65.29346195579993,-15.961998541165727,2.604166666666667,188,192,Health,life_exp,years
+LTU,Lithuania,Europe & Central Asia,High income,74.1634146341464,0.15382284771605936,75.4006142441718,-1.2371996100253995,29.166666666666668,137,192,Health,life_exp,years
+LUX,Luxembourg,Europe & Central Asia,High income,81.7975609756098,0.285742923373383,84.11728451034257,-2.3197235347327734,22.395833333333336,150,192,Health,life_exp,years
+LVA,Latvia,Europe & Central Asia,High income,73.9804878048781,0.07763770492934739,74.87476122288813,-0.8942734180100302,32.29166666666667,131,192,Health,life_exp,years
+MAC,"Macao SAR, China",East Asia & Pacific,High income,80.3391463414634,0.12992538901252837,82.19372308228787,-1.85457674082447,25.0,145,192,Health,life_exp,years
+MAR,Morocco,Middle East & North Africa,Lower middle income,73.70904878048779,0.11184474459299233,69.13007588032788,4.578972900159911,88.54166666666666,23,192,Health,life_exp,years
+MDA,Moldova,Europe & Central Asia,Lower middle income,68.811512195122,0.3110508069602965,65.77996918203374,3.0315430130882675,75.52083333333334,48,192,Health,life_exp,years
+MDG,Madagascar,Sub-Saharan Africa,Low income,64.6739024390244,0.4187164858764398,59.56882160624714,5.105080832777261,90.625,19,192,Health,life_exp,years
+MDV,Maldives,South Asia,Upper middle income,76.60260975609759,0.17298571588680722,72.14935239431352,4.453257361784068,86.45833333333334,27,192,Health,life_exp,years
+MEX,Mexico,Latin America & Caribbean,Upper middle income,76.5326585365854,0.15905918049201168,74.15182502417862,2.380833512406781,68.22916666666666,62,192,Health,life_exp,years
+MKD,Macedonia,Europe & Central Asia,Upper middle income,75.1870487804878,0.2948584205276949,71.032782777128,4.154266003359794,84.89583333333334,30,192,Health,life_exp,years
+MLI,Mali,Sub-Saharan Africa,Low income,57.5351951219512,0.4419483711960547,61.88253351295721,-4.347338391006012,13.541666666666666,167,192,Health,life_exp,years
+MLT,Malta,Middle East & North Africa,High income,80.7463414634146,0.16346036395151609,77.07222193317007,3.674119530244525,82.8125,34,192,Health,life_exp,years
+MNE,Montenegro,Europe & Central Asia,Upper middle income,74.7583658536585,0.0755438759196222,71.79729839897213,2.961067454686372,75.0,49,192,Health,life_exp,years
+MNG,Mongolia,East Asia & Pacific,Upper middle income,69.0618048780488,0.08984189981295178,67.949589867896,1.1122150101528092,52.604166666666664,92,192,Health,life_exp,years
+MOZ,Mozambique,Sub-Saharan Africa,Low income,54.641512195122004,0.19004397954750388,62.64155746142286,-8.000045266300859,7.8125,178,192,Health,life_exp,years
+MRT,Mauritania,Sub-Saharan Africa,Lower middle income,62.8027073170732,0.2915500282807718,64.58549944290758,-1.7827921258343764,25.520833333333332,144,192,Health,life_exp,years
+MUS,Mauritius,Sub-Saharan Africa,Upper middle income,74.46,0.16825047482345545,73.41623588422624,1.0437641157737545,51.5625,94,192,Health,life_exp,years
+MWI,Malawi,Sub-Saharan Africa,Low income,61.466,0.3873340995799171,59.643065839619666,1.8229341603803348,63.541666666666664,71,192,Health,life_exp,years
+MYS,Malaysia,East Asia & Pacific,Upper middle income,74.567512195122,0.17777453892333372,73.56179839973828,1.005713795383727,51.041666666666664,95,192,Health,life_exp,years
+NAM,Namibia,Sub-Saharan Africa,Upper middle income,64.3438780487805,0.15430565272420357,71.71979403400437,-7.37591598522387,8.333333333333332,177,192,Health,life_exp,years
+NER,Niger,Sub-Saharan Africa,Low income,60.828146341463395,0.5178031433271556,59.48066547600621,1.347480865457186,55.208333333333336,87,192,Health,life_exp,years
+NGA,Nigeria,Sub-Saharan Africa,Lower middle income,52.44214634146339,0.2636048671708118,65.67935996621185,-13.237213624748456,3.6458333333333335,186,192,Health,life_exp,years
+NIC,Nicaragua,Latin America & Caribbean,Lower middle income,74.51475609756099,0.1998490397297163,66.78239234698677,7.732363750574223,98.95833333333334,3,192,Health,life_exp,years
+NLD,Netherlands,Europe & Central Asia,High income,81.10487804878049,0.28870209957519694,81.41585710558452,-0.3109790568040296,35.41666666666667,125,192,Health,life_exp,years
+NOR,Norway,Europe & Central Asia,High income,81.4512195121951,0.2775824068459347,83.07809625210339,-1.6268767399082975,26.041666666666668,143,192,Health,life_exp,years
+NPL,Nepal,South Asia,Low income,69.222,0.3690934253782396,60.99749856499771,8.224501435002281,99.47916666666666,2,192,Health,life_exp,years
+NZL,New Zealand,East Asia & Pacific,High income,81.4073170731707,0.1268615746139066,79.53497189381571,1.8723451793549941,64.58333333333334,69,192,Health,life_exp,years
+OMN,Oman,Middle East & North Africa,High income,76.8410487804878,0.1318190484358681,75.47758548739421,1.363463293093588,56.25,85,192,Health,life_exp,years
+PAK,Pakistan,South Asia,Lower middle income,65.9636829268293,0.37446755589188363,64.25376612781768,1.7099167990116229,61.979166666666664,74,192,Health,life_exp,years
+PAN,Panama,Latin America & Caribbean,Upper middle income,77.41921951219508,0.14472391781186794,74.01242164162561,3.406797870569477,78.64583333333334,42,192,Health,life_exp,years
+PER,Peru,Latin America & Caribbean,Upper middle income,74.2838536585366,0.20130300916978333,71.02406287324777,3.2597907852888284,76.5625,46,192,Health,life_exp,years
+PHL,Philippines,East Asia & Pacific,Lower middle income,68.1315609756097,0.28637446084799456,67.07515968455401,1.0564012910556926,52.083333333333336,93,192,Health,life_exp,years
+PLW,Palau,East Asia & Pacific,Upper middle income,69.1292682926829,0.11535144885364199,74.67662139829244,-5.547353105609545,11.458333333333332,171,192,Health,life_exp,years
+PNG,Papua New Guinea,East Asia & Pacific,Lower middle income,62.4491707317073,0.06154268892337316,65.71774550636567,-3.2685747746583758,16.145833333333336,162,192,Health,life_exp,years
+POL,Poland,Europe & Central Asia,High income,76.8487804878049,0.19513006870619623,75.55452424747082,1.2942562403340787,54.166666666666664,89,192,Health,life_exp,years
+PRI,Puerto Rico,Latin America & Caribbean,High income,78.71119512195119,0.24143966663958005,77.91986058478813,0.7913345371630669,47.91666666666667,101,192,Health,life_exp,years
+PRT,Portugal,Europe & Central Asia,High income,80.37317073170729,0.2251739453528952,77.67652038415856,2.696650347548726,71.875,55,192,Health,life_exp,years
+PRY,Paraguay,Latin America & Caribbean,Upper middle income,72.79917073170729,0.1417334672706498,68.19856005384909,4.600610677858199,89.0625,22,192,Health,life_exp,years
+QAT,Qatar,Middle East & North Africa,High income,78.4184878048781,0.3186157762935921,82.90688202244124,-4.48839421756314,13.020833333333334,168,192,Health,life_exp,years
+ROM,Romania,Europe & Central Asia,Upper middle income,74.4634146341463,0.07675721836960896,72.92523233676397,1.5381822973823347,59.375,79,192,Health,life_exp,years
+RUS,Russia,Europe & Central Asia,High income,71.0731707317073,0.16776947724797583,73.34349516646814,-2.2703244347608518,22.916666666666664,149,192,Health,life_exp,years
+RWA,Rwanda,Sub-Saharan Africa,Low income,63.3948292682927,0.2875282673273589,61.816906315966364,1.5779229523263396,59.895833333333336,78,192,Health,life_exp,years
+SAU,Saudi Arabia,Middle East & North Africa,High income,74.17763414634149,0.1826851163566768,77.25459498533246,-3.0769608389909706,16.666666666666664,161,192,Health,life_exp,years
+SDN,Sudan,Sub-Saharan Africa,Lower middle income,63.1670487804878,0.4378875042721801,64.75630221647098,-1.5892534359831885,26.5625,142,192,Health,life_exp,years
+SEN,Senegal,Sub-Saharan Africa,Lower middle income,65.878756097561,0.26079430131840736,64.4018813015811,1.4768747959798958,58.333333333333336,81,192,Health,life_exp,years
+SGP,Singapore,East Asia & Pacific,High income,82.34634146341459,0.10455421417152412,80.70528185599782,1.6410596074167643,60.416666666666664,77,192,Health,life_exp,years
+SLB,Solomon Islands,East Asia & Pacific,Lower middle income,67.7189268292683,0.19848635905079703,65.65879217191141,2.0601346573568833,66.14583333333334,66,192,Health,life_exp,years
+SLE,Sierra Leone,Sub-Saharan Africa,Low income,50.363121951219505,0.27261579147261217,62.28317895190535,-11.920057000685844,4.6875,184,192,Health,life_exp,years
+SLV,El Salvador,Latin America & Caribbean,Lower middle income,72.49814634146341,0.16460205208484735,70.09927134338878,2.398874998074632,69.27083333333334,60,192,Health,life_exp,years
+SMR,San Marino,Europe & Central Asia,High income,83.3232150776053,0.1903782972023935,81.84705073095877,1.4761643466465273,57.8125,82,192,Health,life_exp,years
+SRB,Serbia,Europe & Central Asia,Upper middle income,75.1365853658537,0.25046656578325227,71.17819626962932,3.95838909622438,83.85416666666666,32,192,Health,life_exp,years
+STP,São Tomé and Principe,Sub-Saharan Africa,Lower middle income,66.259512195122,0.0637945020981828,65.27982271875396,0.979689476368037,50.0,97,192,Health,life_exp,years
+SUR,Suriname,Latin America & Caribbean,Upper middle income,70.99,0.14394566493144728,71.6625734851422,-0.6725734851422089,33.85416666666667,128,192,Health,life_exp,years
+SVK,Slovak Republic,Europe & Central Asia,High income,76.2609756097561,0.08580483937037067,76.94098059368409,-0.6800049839279865,33.33333333333333,129,192,Health,life_exp,years
+SVN,Slovenia,Europe & Central Asia,High income,80.2780487804878,0.10623052694957152,77.71783358036741,2.560215200120382,70.3125,58,192,Health,life_exp,years
+SWE,Sweden,Europe & Central Asia,High income,81.7048780487805,0.16834503026158515,81.41973901188135,0.2851390368991531,42.70833333333333,111,192,Health,life_exp,years
+SWZ,Swaziland,Sub-Saharan Africa,Lower middle income,48.93792682926829,0.2869101414680569,69.06584753450066,-20.12792070523237,0.5208333333333333,192,192,Health,life_exp,years
+SYC,Seychelles,Sub-Saharan Africa,High income,74.2268292682927,0.08419476795753461,76.92225747138184,-2.6954282030891363,19.270833333333336,156,192,Health,life_exp,years
+SYR,Syrian Arab Republic,Middle East & North Africa,Lower middle income,74.7157804878049,0.37992243188202557,67.13819488099469,7.577585606810217,97.91666666666666,5,192,Health,life_exp,years
+TCD,Chad,Sub-Saharan Africa,Low income,51.1914878048781,0.16665617399446644,64.17287670416161,-12.981388899283509,4.166666666666666,185,192,Health,life_exp,years
+TGO,Togo,Sub-Saharan Africa,Low income,59.132365853658506,0.5663916342349438,61.48881039213389,-2.3564445384753867,21.875,151,192,Health,life_exp,years
+THA,Thailand,East Asia & Pacific,Upper middle income,74.24692682926829,0.11155889012375302,70.74600206648664,3.5009247627816507,79.6875,40,192,Health,life_exp,years
+TJK,Tajikistan,Europe & Central Asia,Lower middle income,69.40017073170729,0.3400768222583699,62.119197852936836,7.280972878770456,97.39583333333334,6,192,Health,life_exp,years
+TKM,Turkmenistan,Europe & Central Asia,Upper middle income,65.4565609756098,0.09425138868147907,71.00088350812672,-5.544322532516915,11.979166666666668,170,192,Health,life_exp,years
+TMP,Timor-Leste,East Asia & Pacific,Lower middle income,67.5223658536585,0.22295784716356332,64.13387214078864,3.3884937128698596,78.125,43,192,Health,life_exp,years
+TON,Tonga,East Asia & Pacific,Upper middle income,72.64034146341471,0.19402737600461817,69.1080455054656,3.532295957949117,80.72916666666666,38,192,Health,life_exp,years
+TTO,Trinidad and Tobago,Latin America & Caribbean,High income,70.3052926829268,0.09523861292142385,76.58884076857609,-6.2835480856492865,9.895833333333332,174,192,Health,life_exp,years
+TUN,Tunisia,Middle East & North Africa,Upper middle income,73.64634146341471,0.25362656745030965,70.92203533331242,2.724306130102292,72.91666666666666,53,192,Health,life_exp,years
+TUR,Turkey,Europe & Central Asia,Upper middle income,75.1759512195122,0.17066168669007298,74.37035533352011,0.8055958859920906,48.4375,100,192,Health,life_exp,years
+TZA,Tanzania,Sub-Saharan Africa,Low income,64.2918292682927,0.28893781815211683,62.52476127539978,1.767067992892919,63.020833333333336,72,192,Health,life_exp,years
+UGA,Uganda,Sub-Saharan Africa,Low income,57.7676829268293,0.2812073079540822,61.573944255905495,-3.806261329076193,15.625,163,192,Health,life_exp,years
+UKR,Ukraine,Europe & Central Asia,Lower middle income,71.159512195122,0.24930460387615966,68.26535352412183,2.89415867100017,74.47916666666666,50,192,Health,life_exp,years
+URY,Uruguay,Latin America & Caribbean,High income,76.83619512195119,0.13072498593407939,74.05931673104963,2.776878390901558,73.4375,52,192,Health,life_exp,years
+USA,United States,North America,High income,78.84146341463409,0.16699894057255046,81.39742837662824,-2.5559649619941496,19.791666666666664,155,192,Health,life_exp,years
+UZB,Uzbekistan,Europe & Central Asia,Lower middle income,68.2275853658537,0.23259927429485383,64.92588637575776,3.301698990095943,77.08333333333334,45,192,Health,life_exp,years
+VCT,St. Vincent and the Grenadines,Latin America & Caribbean,Upper middle income,72.8108780487805,0.18677566633341233,72.3759689482051,0.4349091005753962,44.27083333333333,108,192,Health,life_exp,years
+VEN,Venezuela,Latin America & Caribbean,High income,74.07441463414641,0.10044262448864241,72.82971618031686,1.2446984538295425,53.645833333333336,90,192,Health,life_exp,years
+VNM,Vietnam,East Asia & Pacific,Lower middle income,75.75648780487799,0.5123652577196823,65.25261852701787,10.503869277860119,100.0,1,192,Health,life_exp,years
+VUT,Vanuatu,East Asia & Pacific,Lower middle income,71.669243902439,0.3263329090073741,68.20573078330075,3.4635131191382555,79.16666666666666,41,192,Health,life_exp,years
+WBG,West Bank and Gaza,Middle East & North Africa,Lower middle income,73.20334146341459,0.2290218797633487,66.28641743418999,6.916924029224603,95.83333333333334,9,192,Health,life_exp,years
+WSM,Samoa,East Asia & Pacific,Lower middle income,73.2503902439024,0.3466093438266031,69.22783130446237,4.022558939440032,84.375,31,192,Health,life_exp,years
+YEM,Yemen,Middle East & North Africa,Lower middle income,63.583512195122005,0.41728035425996857,63.415237742740736,0.1682744523812687,41.14583333333333,114,192,Health,life_exp,years
+ZAF,South Africa,Sub-Saharan Africa,Upper middle income,56.7365853658537,0.11186241473890422,72.85407986869113,-16.11749450283743,2.083333333333333,189,192,Health,life_exp,years
+ZAR,Dem. Rep. Congo,Sub-Saharan Africa,Low income,58.271926829268295,0.3720595114781752,59.787140486164944,-1.5152136568966483,27.604166666666668,140,192,Health,life_exp,years
+ZMB,Zambia,Sub-Saharan Africa,Lower middle income,59.2373658536585,0.23010854130591424,65.41687704810174,-6.179511194443236,10.416666666666668,173,192,Health,life_exp,years
+ZWE,Zimbabwe,Sub-Saharan Africa,Low income,55.633,0.4844042246938564,61.68167814833072,-6.0486781483307155,10.9375,172,192,Health,life_exp,years
+ABW,Aruba,Latin America & Caribbean,High income,83.78,0.525733523892511,71.51604570527881,12.263954294721188,86.15384615384616,28,195,Technology,internet,users per 100
+ADO,Andorra,Europe & Central Asia,High income,95.9,0.8385712435824384,80.25127777449127,15.648722225508735,91.7948717948718,17,195,Technology,internet,users per 100
+AFG,Afghanistan,South Asia,Low income,6.39,0.340028727013558,6.979046401875439,-0.5890464018754393,43.58974358974359,111,195,Technology,internet,users per 100
+AGO,Angola,Sub-Saharan Africa,Upper middle income,21.26,0.3838742215792175,33.746926101053305,-12.486926101053303,15.384615384615385,166,195,Technology,internet,users per 100
+ALB,Albania,Europe & Central Asia,Upper middle income,60.1,0.36616322614097957,44.2911353509621,15.8088646490379,92.3076923076923,16,195,Technology,internet,users per 100
+ARE,United Arab Emirates,Middle East & North Africa,High income,90.4,0.48349032128548325,75.96319687776693,14.436803122233073,91.28205128205128,18,195,Technology,internet,users per 100
+ARG,Argentina,Latin America & Caribbean,High income,64.7,0.36545643704786246,55.3849327721565,9.3150672278435,78.46153846153847,43,195,Technology,internet,users per 100
+ARM,Armenia,Europe & Central Asia,Lower middle income,46.3,0.4164589842529609,36.212487948020915,10.087512051979083,81.02564102564102,38,195,Technology,internet,users per 100
+ATG,Antigua and Barbuda,Latin America & Caribbean,High income,64.0,0.5949795323897654,62.52915083084815,1.4708491691518475,49.743589743589745,99,195,Technology,internet,users per 100
+AUS,Australia,East Asia & Pacific,High income,84.56,0.4763591754443678,81.88797389504688,2.672026104953119,55.38461538461539,88,195,Technology,internet,users per 100
+AUT,Austria,Europe & Central Asia,High income,81.0,0.5024923509118416,83.10890451246262,-2.1089045124626153,40.0,118,195,Technology,internet,users per 100
+AZE,Azerbaijan,Europe & Central Asia,Upper middle income,61.0,0.6183259016856226,41.41599181619461,19.584008183805388,94.35897435897435,12,195,Technology,internet,users per 100
+BDI,Burundi,Sub-Saharan Africa,Low income,1.38,0.7175001142587528,-8.881070394757552,10.261070394757553,82.56410256410255,35,195,Technology,internet,users per 100
+BEL,Belgium,Europe & Central Asia,High income,85.0,0.546098766155931,81.9490299350534,3.050970064946597,57.948717948717956,83,195,Technology,internet,users per 100
+BEN,Benin,Sub-Saharan Africa,Low income,5.3,0.562229182667611,14.938591641769785,-9.638591641769786,20.0,157,195,Technology,internet,users per 100
+BFA,Burkina Faso,Sub-Saharan Africa,Low income,9.4,0.5246824220647427,10.577011724587274,-1.177011724587274,41.53846153846154,115,195,Technology,internet,users per 100
+BGD,Bangladesh,South Asia,Lower middle income,9.6,0.7237043661187926,16.84166808499333,-7.24166808499333,25.128205128205128,147,195,Technology,internet,users per 100
+BGR,Bulgaria,Europe & Central Asia,Upper middle income,55.49,0.2590456275804591,48.5923858440166,6.897614155983405,69.74358974358974,60,195,Technology,internet,users per 100
+BHR,Bahrain,Middle East & North Africa,High income,90.99998,0.6941804178119836,69.06813360454973,21.931846395450265,96.92307692307692,7,195,Technology,internet,users per 100
+BHS,The Bahamas,Latin America & Caribbean,High income,76.92,0.2655283974600636,71.48229474756019,5.437705252439812,66.66666666666666,66,195,Technology,internet,users per 100
+BIH,Bosnia and Herzegovina,Europe & Central Asia,Upper middle income,60.8,0.5246353950790168,42.09532751244643,18.704672487553566,93.84615384615384,13,195,Technology,internet,users per 100
+BLR,Belarus,Europe & Central Asia,Upper middle income,59.02,0.3667382250120374,48.48643872433498,10.533561275665022,83.07692307692308,34,195,Technology,internet,users per 100
+BLZ,Belize,Latin America & Caribbean,Upper middle income,38.7,0.3800192439264757,44.95383534170581,-6.253835341705809,27.692307692307693,142,195,Technology,internet,users per 100
+BMU,Bermuda,North America,High income,96.8,0.6051787835551283,91.92064878946401,4.879351210535987,63.07692307692307,73,195,Technology,internet,users per 100
+BOL,Bolivia,Latin America & Caribbean,Lower middle income,39.02,0.499443298429715,26.947191430984766,12.072808569015237,85.64102564102564,29,195,Technology,internet,users per 100
+BRA,Brazil,Latin America & Caribbean,Upper middle income,57.6,0.30434846137866994,50.96435572567247,6.635644274327532,69.23076923076923,61,195,Technology,internet,users per 100
+BRB,Barbados,Latin America & Caribbean,High income,76.67,0.5093426151966617,65.8070260941283,10.862973905871698,84.61538461538461,31,195,Technology,internet,users per 100
+BRN,Brunei,East Asia & Pacific,High income,68.77,0.5074213396241473,74.12048732299259,-5.350487322992592,29.743589743589745,138,195,Technology,internet,users per 100
+BTN,Bhutan,South Asia,Lower middle income,34.37,0.6737663047467376,33.43835305465766,0.9316469453423366,48.205128205128204,102,195,Technology,internet,users per 100
+BWA,Botswana,Sub-Saharan Africa,Upper middle income,18.5,0.2905618845497397,54.169523191052676,-35.669523191052676,2.051282051282051,192,195,Technology,internet,users per 100
+CAF,Central African Republic,Sub-Saharan Africa,Low income,4.03,0.6774120069718718,-3.1741041317982335,7.204104131798234,70.25641025641025,59,195,Technology,internet,users per 100
+CAN,Canada,North America,High income,87.12,0.1377321047315345,82.42771708843968,4.692282911560326,61.53846153846154,76,195,Technology,internet,users per 100
+CHE,Switzerland,Europe & Central Asia,High income,87.0,0.4075238279912501,89.1928100479373,-2.1928100479373,38.97435897435898,120,195,Technology,internet,users per 100
+CHL,Chile,Latin America & Caribbean,High income,72.35,0.5797455263430531,59.6488241043571,12.701175895642898,86.66666666666667,27,195,Technology,internet,users per 100
+CHN,China,East Asia & Pacific,Upper middle income,49.3,0.326895883466574,44.20998321178003,5.09001678821997,64.61538461538461,70,195,Technology,internet,users per 100
+CIV,Côte d'Ivoire,Sub-Saharan Africa,Lower middle income,14.6,0.4834996223286809,23.239372234491405,-8.639372234491406,22.05128205128205,153,195,Technology,internet,users per 100
+CMR,Cameroon,Sub-Saharan Africa,Lower middle income,11.0,0.20859379515793686,21.805591769716038,-10.805591769716038,17.94871794871795,161,195,Technology,internet,users per 100
+COG,Congo,Sub-Saharan Africa,Lower middle income,7.11,0.3328325784729307,34.06628145965158,-26.956281459651578,4.102564102564102,188,195,Technology,internet,users per 100
+COL,Colombia,Latin America & Caribbean,Upper middle income,52.57,0.37956304048027495,47.3634661665961,5.206533833403903,65.12820512820512,69,195,Technology,internet,users per 100
+COM,Comoros,Sub-Saharan Africa,Low income,6.98,0.5567744150391459,13.578462454162581,-6.598462454162581,26.666666666666668,144,195,Technology,internet,users per 100
+CPV,Cabo Verde,Sub-Saharan Africa,Lower middle income,40.26,0.4730943790972125,38.298761513594904,1.9612384864050938,52.307692307692314,94,195,Technology,internet,users per 100
+CRI,Costa Rica,Latin America & Caribbean,Upper middle income,49.41,0.4811013668275096,51.700467416942715,-2.290467416942718,38.46153846153847,121,195,Technology,internet,users per 100
+CUB,Cuba,Latin America & Caribbean,Upper middle income,30.0,0.5209048373134437,49.17434307896083,-19.17434307896083,6.153846153846154,184,195,Technology,internet,users per 100
+CYP,Cyprus,Europe & Central Asia,High income,69.33,0.3780840705359701,72.94064775089171,-3.610647750891715,35.38461538461539,127,195,Technology,internet,users per 100
+CZE,Czech Republic,Europe & Central Asia,High income,79.71,0.5955396528966687,66.00094343850506,13.709056561494933,89.23076923076924,22,195,Technology,internet,users per 100
+DEU,Germany,Europe & Central Asia,High income,86.19,0.4226143540911306,82.08601353561153,4.10398646438847,60.51282051282051,78,195,Technology,internet,users per 100
+DJI,Djibouti,Middle East & North Africa,Lower middle income,10.71,0.6136518233066919,25.17418223434697,-14.464182234346968,11.794871794871794,173,195,Technology,internet,users per 100
+DMA,Dominica,Latin America & Caribbean,Upper middle income,62.86,0.3386721464201407,51.87363047184149,10.986369528158512,85.12820512820512,30,195,Technology,internet,users per 100
+DNK,Denmark,Europe & Central Asia,High income,95.99,0.890154917706798,85.25604385309964,10.733956146900354,83.58974358974359,33,195,Technology,internet,users per 100
+DOM,Dominican Republic,Latin America & Caribbean,Upper middle income,49.58,0.5471475569872228,49.0629564674843,0.5170435325157001,47.69230769230769,103,195,Technology,internet,users per 100
+DZA,Algeria,Middle East & North Africa,Upper middle income,18.09,0.14181287939566803,42.260425892546145,-24.170425892546145,5.128205128205128,186,195,Technology,internet,users per 100
+ECU,Ecuador,Latin America & Caribbean,Upper middle income,43.0,0.5292196107062698,43.80982496667308,-0.8098249666730766,42.05128205128205,114,195,Technology,internet,users per 100
+EGY,Egypt,Middle East & North Africa,Lower middle income,31.7,0.6129342881770046,28.206661569161753,3.4933384308382465,58.97435897435898,81,195,Technology,internet,users per 100
+ERI,Eritrea,Sub-Saharan Africa,Low income,0.99,0.8877612440453286,-1.956104761342192,2.946104761342192,56.92307692307692,85,195,Technology,internet,users per 100
+ESP,Spain,Europe & Central Asia,High income,76.19,0.6394049594086445,74.64164183702692,1.5483581629730736,50.256410256410255,98,195,Technology,internet,users per 100
+EST,Estonia,Europe & Central Asia,High income,84.24,0.5081486762838912,63.23166791692228,21.00833208307772,96.41025641025641,8,195,Technology,internet,users per 100
+ETH,Ethiopia,Sub-Saharan Africa,Low income,2.9,0.5211193637947478,3.3175422533963923,-0.4175422533963924,44.1025641025641,110,195,Technology,internet,users per 100
+FIN,Finland,Europe & Central Asia,High income,92.38,0.5043386251644326,82.21237236481133,10.167627635188666,82.05128205128204,36,195,Technology,internet,users per 100
+FJI,Fiji,East Asia & Pacific,Upper middle income,41.8,0.30880018225233535,44.377150514972534,-2.577150514972537,37.43589743589744,123,195,Technology,internet,users per 100
+FRA,France,Europe & Central Asia,High income,83.75,0.9383796694670804,81.06732051098649,2.682679489013509,55.8974358974359,87,195,Technology,internet,users per 100
+FRO,Faeroe Islands,Europe & Central Asia,High income,94.66,0.795298147613936,80.82524837381047,13.83475162618953,89.74358974358975,21,195,Technology,internet,users per 100
+FSM,Micronesia,East Asia & Pacific,Lower middle income,29.65,0.537897477601033,35.2155216872977,-5.565521687297704,28.205128205128204,141,195,Technology,internet,users per 100
+GAB,Gabon,Sub-Saharan Africa,Upper middle income,9.81,0.40032591141450763,55.245054788449025,-45.43505478844902,0.5128205128205128,195,195,Technology,internet,users per 100
+GBR,United Kingdom,Europe & Central Asia,High income,91.61,0.7448586603189643,83.21130020584735,8.398699794152648,74.87179487179488,50,195,Technology,internet,users per 100
+GEO,Georgia,Europe & Central Asia,Lower middle income,48.9,0.44592200892825506,34.88180562464194,14.018194375358057,90.25641025641026,20,195,Technology,internet,users per 100
+GHA,Ghana,Sub-Saharan Africa,Lower middle income,18.9,0.8246808659718764,17.2826367137877,1.6173632862122993,50.76923076923077,97,195,Technology,internet,users per 100
+GIN,Guinea,Sub-Saharan Africa,Low income,1.72,0.8002106319298239,1.82391382092204,-0.10391382092204005,45.12820512820513,108,195,Technology,internet,users per 100
+GMB,The Gambia,Sub-Saharan Africa,Low income,15.56,0.5331725273041882,8.325868481621274,7.234131518378726,70.76923076923077,58,195,Technology,internet,users per 100
+GNB,Guinea-Bissau,Sub-Saharan Africa,Low income,3.32,0.5964799553386892,7.946217690941692,-4.626217690941692,33.84615384615385,130,195,Technology,internet,users per 100
+GNQ,Equatorial Guinea,Sub-Saharan Africa,High income,18.86,0.22957492621042902,63.634452716950875,-44.774452716950876,1.0256410256410255,194,195,Technology,internet,users per 100
+GRC,Greece,Europe & Central Asia,High income,63.21,0.3229360288155922,69.7313565434512,-6.521356543451198,27.17948717948718,143,195,Technology,internet,users per 100
+GRD,Grenada,Latin America & Caribbean,Upper middle income,37.38,0.5784652580028298,53.04853045526444,-15.668530455264438,8.205128205128204,180,195,Technology,internet,users per 100
+GRL,Greenland,Europe & Central Asia,High income,66.7,0.13847834614863397,79.30679987008297,-12.606799870082966,14.871794871794872,167,195,Technology,internet,users per 100
+GTM,Guatemala,Latin America & Caribbean,Lower middle income,23.4,0.2754908162382277,36.01498391043097,-12.614983910430972,14.358974358974358,168,195,Technology,internet,users per 100
+GUY,Guyana,Latin America & Caribbean,Lower middle income,37.35,0.2871573822551292,28.788026260874624,8.561973739125378,75.38461538461539,49,195,Technology,internet,users per 100
+HKG,"Hong Kong SAR, China",East Asia & Pacific,High income,74.56,0.8198186292006978,80.05673904161968,-5.496739041619676,28.717948717948715,140,195,Technology,internet,users per 100
+HND,Honduras,Latin America & Caribbean,Lower middle income,19.08,0.40162058199702,30.483848570124895,-11.403848570124897,17.435897435897434,162,195,Technology,internet,users per 100
+HRV,Croatia,Europe & Central Asia,High income,68.57,0.3805985148629505,60.70679079281464,7.863209207185356,71.28205128205128,57,195,Technology,internet,users per 100
+HTI,Haiti,Latin America & Caribbean,Low income,11.4,0.37013075644574794,9.982803624483692,1.4171963755163084,49.23076923076923,100,195,Technology,internet,users per 100
+HUN,Hungary,Europe & Central Asia,High income,76.13,0.40844091511876546,63.022412085495674,13.107587914504322,88.71794871794872,23,195,Technology,internet,users per 100
+IDN,Indonesia,East Asia & Pacific,Lower middle income,17.14,0.5299537842061159,31.897190529110652,-14.757190529110652,10.76923076923077,175,195,Technology,internet,users per 100
+IND,India,South Asia,Lower middle income,18.0,0.326881071447039,25.469844862781052,-7.469844862781052,24.615384615384617,148,195,Technology,internet,users per 100
+IRL,Ireland,Europe & Central Asia,High income,79.69,0.45790912697479863,87.35065487959501,-7.660654879595015,24.102564102564102,149,195,Technology,internet,users per 100
+IRN,Iran,Middle East & North Africa,Upper middle income,39.35,0.24986462198995296,42.617787772100755,-3.2677877721007533,35.8974358974359,126,195,Technology,internet,users per 100
+IRQ,Iraq,Middle East & North Africa,Upper middle income,11.3,0.2975234646538753,36.8145075405913,-25.5145075405913,4.615384615384616,187,195,Technology,internet,users per 100
+ISL,Iceland,Europe & Central Asia,High income,98.16,0.9862882127035899,89.04871452947336,9.111285470526639,76.92307692307693,46,195,Technology,internet,users per 100
+ISR,Israel,Middle East & North Africa,High income,71.45,0.4265138733599035,74.64603896531617,-3.1960389653161627,36.41025641025641,125,195,Technology,internet,users per 100
+ITA,Italy,Europe & Central Asia,High income,61.96,0.2941248491594652,77.15937577414195,-15.199375774141949,9.743589743589745,177,195,Technology,internet,users per 100
+JAM,Jamaica,Latin America & Caribbean,Upper middle income,40.5,0.3836855389756544,45.30766047820924,-4.807660478209243,32.30769230769231,133,195,Technology,internet,users per 100
+JOR,Jordan,Middle East & North Africa,Upper middle income,44.0,0.1435327804789845,39.156135130777315,4.843864869222685,62.05128205128205,75,195,Technology,internet,users per 100
+JPN,Japan,East Asia & Pacific,High income,90.58,0.5817694956431732,81.4515804525728,9.1284195474272,77.43589743589745,45,195,Technology,internet,users per 100
+KAZ,Kazakhstan,Europe & Central Asia,Upper middle income,54.89,0.592516493836907,50.004101739026986,4.885898260973015,63.589743589743584,72,195,Technology,internet,users per 100
+KEN,Kenya,Sub-Saharan Africa,Lower middle income,43.4,0.4188576860307534,14.226122341588212,29.173877658411786,100.0,1,195,Technology,internet,users per 100
+KGZ,Kyrgyz Republic,Europe & Central Asia,Lower middle income,28.3,0.4099999027366304,14.231097417563173,14.068902582436827,90.76923076923077,19,195,Technology,internet,users per 100
+KHM,Cambodia,East Asia & Pacific,Low income,9.0,0.6299566058062782,16.78521802057289,-7.785218020572891,23.589743589743588,150,195,Technology,internet,users per 100
+KIR,Kiribati,East Asia & Pacific,Lower middle income,12.25,0.4065346385034916,23.834482673202977,-11.584482673202977,16.41025641025641,164,195,Technology,internet,users per 100
+KNA,St. Kitts and Nevis,Latin America & Caribbean,High income,65.4,0.6955286296427496,62.10838897790087,3.291611022099133,58.46153846153847,82,195,Technology,internet,users per 100
+KOR,Korea,East Asia & Pacific,High income,84.33,0.525822876732369,74.5219206658204,9.808079334179595,80.0,40,195,Technology,internet,users per 100
+KWT,Kuwait,Middle East & North Africa,High income,78.7,0.6426546399954424,75.96183036463574,2.738169635364258,56.41025641025641,86,195,Technology,internet,users per 100
+LAO,Lao PDR,East Asia & Pacific,Lower middle income,14.26,0.2617242752737372,18.18364189276624,-3.9236418927662395,34.87179487179487,128,195,Technology,internet,users per 100
+LBN,Lebanon,Middle East & North Africa,Upper middle income,74.7,0.6119520309596687,54.38274919171927,20.317250808280733,95.8974358974359,9,195,Technology,internet,users per 100
+LBR,Liberia,Sub-Saharan Africa,Low income,5.41,0.8657399297909819,-2.9180397793508392,8.328039779350839,74.35897435897436,51,195,Technology,internet,users per 100
+LBY,Libya,Middle East & North Africa,Upper middle income,17.76,0.4343224805713819,47.36786029098031,-29.60786029098031,3.5897435897435894,189,195,Technology,internet,users per 100
+LCA,St. Lucia,Latin America & Caribbean,Upper middle income,51.0,0.26606283932689756,50.57609143591385,0.4239085640861475,47.179487179487175,104,195,Technology,internet,users per 100
+LIE,Liechtenstein,Europe & Central Asia,High income,95.21,0.4053652822752415,100.39160283572,-5.18160283572,31.28205128205128,135,195,Technology,internet,users per 100
+LKA,Sri Lanka,South Asia,Lower middle income,25.8,0.4528550323759833,33.78070961643515,-7.980709616435153,23.076923076923077,151,195,Technology,internet,users per 100
+LSO,Lesotho,Sub-Saharan Africa,Lower middle income,11.0,0.6525363771087275,21.51288422994379,-10.51288422994379,18.461538461538463,160,195,Technology,internet,users per 100
+LTU,Lithuania,Europe & Central Asia,High income,72.13,0.1981108446772839,62.005846119857736,10.12415388014226,81.53846153846153,37,195,Technology,internet,users per 100
+LUX,Luxembourg,Europe & Central Asia,High income,94.67,0.4848392806485321,94.33382905163992,0.33617094836007766,46.666666666666664,105,195,Technology,internet,users per 100
+LVA,Latvia,Europe & Central Asia,High income,75.83,0.2957108280968088,59.015693691886575,16.814306308113423,93.33333333333333,14,195,Technology,internet,users per 100
+MAC,"Macao SAR, China",East Asia & Pacific,High income,69.78,0.8453364290437857,86.86214374795819,-17.082143747958185,7.179487179487179,182,195,Technology,internet,users per 100
+MAR,Morocco,Middle East & North Africa,Lower middle income,56.8,0.477977112350054,36.972334546308566,19.82766545369143,95.38461538461539,10,195,Technology,internet,users per 100
+MCO,Monaco,Europe & Central Asia,High income,92.4,1.2455657817710157,105.73267481098614,-13.332674810986134,12.307692307692308,172,195,Technology,internet,users per 100
+MDA,Moldova,Europe & Central Asia,Lower middle income,46.6,0.6027168018122845,24.401809459758436,22.198190540241566,97.43589743589743,6,195,Technology,internet,users per 100
+MDG,Madagascar,Sub-Saharan Africa,Low income,3.7,0.35957768970946324,0.10121317112032813,3.598786828879672,60.0,79,195,Technology,internet,users per 100
+MDV,Maldives,South Asia,Upper middle income,49.28,0.17199397589211865,49.24868063854615,0.03131936145385339,45.64102564102564,107,195,Technology,internet,users per 100
+MEX,Mexico,Latin America & Caribbean,Upper middle income,44.39,0.6854445199285844,57.13935942263949,-12.749359422639486,13.333333333333334,170,195,Technology,internet,users per 100
+MHL,Marshall Islands,East Asia & Pacific,Upper middle income,16.8,0.4812524405530507,39.10533368339227,-22.305333683392266,5.641025641025641,185,195,Technology,internet,users per 100
+MKD,Macedonia,Europe & Central Asia,Upper middle income,68.06,0.3782235527992673,44.38552016442355,23.67447983557645,98.46153846153847,4,195,Technology,internet,users per 100
+MLI,Mali,Sub-Saharan Africa,Low income,7.0,0.4262531280032766,9.184010112000964,-2.184010112000964,39.48717948717949,119,195,Technology,internet,users per 100
+MLT,Malta,Middle East & North Africa,High income,73.17,0.38007364409954003,68.3170092155834,4.852990784416605,62.56410256410256,74,195,Technology,internet,users per 100
+MNE,Montenegro,Europe & Central Asia,Upper middle income,61.0,0.2956901241607968,47.897438414175284,13.102561585824716,88.2051282051282,24,195,Technology,internet,users per 100
+MNG,Mongolia,East Asia & Pacific,Upper middle income,27.0,0.39069522913065213,31.88350782775483,-4.88350782775483,31.794871794871792,134,195,Technology,internet,users per 100
+MOZ,Mozambique,Sub-Saharan Africa,Low income,5.94,0.6824297346658014,11.341666737254354,-5.401666737254353,29.230769230769234,139,195,Technology,internet,users per 100
+MRT,Mauritania,Sub-Saharan Africa,Lower middle income,10.7,0.5452537907910175,19.63994282159896,-8.939942821598962,20.51282051282051,156,195,Technology,internet,users per 100
+MUS,Mauritius,Sub-Saharan Africa,Upper middle income,41.44,0.36197314968723754,54.07724330014933,-12.63724330014933,13.846153846153847,169,195,Technology,internet,users per 100
+MWI,Malawi,Sub-Saharan Africa,Low income,5.83,0.9428883825248594,0.5702342817112935,5.2597657182887065,65.64102564102564,68,195,Technology,internet,users per 100
+MYS,Malaysia,East Asia & Pacific,Upper middle income,67.5,0.5581224117230685,54.57361173972087,12.926388260279133,87.17948717948718,26,195,Technology,internet,users per 100
+NAM,Namibia,Sub-Saharan Africa,Upper middle income,14.84,0.37947744212057477,47.31551428972902,-32.47551428972902,2.564102564102564,191,195,Technology,internet,users per 100
+NER,Niger,Sub-Saharan Africa,Low income,1.95,0.24830938881483433,1.6934545616181182,0.2565454383818817,46.15384615384615,106,195,Technology,internet,users per 100
+NGA,Nigeria,Sub-Saharan Africa,Lower middle income,42.68,0.7873909977992375,23.063140039758515,19.616859960241484,94.87179487179486,11,195,Technology,internet,users per 100
+NIC,Nicaragua,Latin America & Caribbean,Lower middle income,17.6,0.6149842659454221,27.860400419344973,-10.260400419344972,18.974358974358974,159,195,Technology,internet,users per 100
+NLD,Netherlands,Europe & Central Asia,High income,93.17,0.8246441015310049,83.96698034192445,9.203019658075547,77.94871794871796,44,195,Technology,internet,users per 100
+NOR,Norway,Europe & Central Asia,High income,96.3,0.4893561646092502,91.4037661384283,4.896233861571702,64.1025641025641,71,195,Technology,internet,users per 100
+NPL,Nepal,South Asia,Low income,15.44,0.6763177693254672,7.440185421767785,7.999814578232215,72.82051282051282,54,195,Technology,internet,users per 100
+NZL,New Zealand,East Asia & Pacific,High income,85.5,0.24258142259094595,77.23678612075317,8.263213879246834,73.84615384615385,52,195,Technology,internet,users per 100
+OMN,Oman,Middle East & North Africa,High income,70.22,0.3955545252664782,61.32674412851653,8.893255871483468,75.8974358974359,48,195,Technology,internet,users per 100
+PAK,Pakistan,South Asia,Lower middle income,13.8,0.5331817171931715,18.16867435423216,-4.368674354232159,34.35897435897436,129,195,Technology,internet,users per 100
+PAN,Panama,Latin America & Caribbean,Upper middle income,44.92,0.4096128298175523,56.7720554027941,-11.8520554027941,15.897435897435896,165,195,Technology,internet,users per 100
+PER,Peru,Latin America & Caribbean,Upper middle income,40.2,0.549533448679707,44.82729283713882,-4.627292837138818,33.33333333333333,131,195,Technology,internet,users per 100
+PHL,Philippines,East Asia & Pacific,Lower middle income,39.69,0.3615781632107208,30.280449444958673,9.409550555041324,78.97435897435898,42,195,Technology,internet,users per 100
+PNG,Papua New Guinea,East Asia & Pacific,Lower middle income,9.38,0.3196568372228367,24.641354828640612,-15.261354828640611,8.717948717948717,179,195,Technology,internet,users per 100
+POL,Poland,Europe & Central Asia,High income,66.6,0.4615314227382613,61.951584434201024,4.64841556579897,61.02564102564103,77,195,Technology,internet,users per 100
+PRI,Puerto Rico,Latin America & Caribbean,High income,78.78,0.5288188750492877,70.59557602916821,8.184423970831787,73.33333333333333,53,195,Technology,internet,users per 100
+PRT,Portugal,Europe & Central Asia,High income,64.59,0.8126944082562745,69.85750276737551,-5.267502767375504,30.76923076923077,136,195,Technology,internet,users per 100
+PRY,Paraguay,Latin America & Caribbean,Upper middle income,43.0,0.29478758358869456,34.03567309249179,8.964326907508209,76.41025641025641,47,195,Technology,internet,users per 100
+QAT,Qatar,Middle East & North Africa,High income,91.49,0.7686029036867046,89.47537359506143,2.014626404938568,52.820512820512825,93,195,Technology,internet,users per 100
+ROM,Romania,Europe & Central Asia,Upper middle income,54.08,0.5829788952205819,52.05719584140453,2.02280415859547,53.333333333333336,92,195,Technology,internet,users per 100
+RUS,Russia,Europe & Central Asia,High income,70.52,0.4724137806668827,53.717656630868305,16.80234336913169,92.82051282051282,15,195,Technology,internet,users per 100
+RWA,Rwanda,Sub-Saharan Africa,Low income,10.6,0.6702590164358639,8.155034834329626,2.4449651656703733,54.871794871794876,89,195,Technology,internet,users per 100
+SAU,Saudi Arabia,Middle East & North Africa,High income,63.7,0.5276816457630401,68.48572281098726,-4.785722810987252,32.82051282051282,132,195,Technology,internet,users per 100
+SDN,Sudan,Sub-Saharan Africa,Lower middle income,24.64,0.26362680364621904,21.071445851981167,3.5685541480188334,59.48717948717949,80,195,Technology,internet,users per 100
+SEN,Senegal,Sub-Saharan Africa,Lower middle income,17.7,0.511792788009734,18.49546325139863,-0.7954632513986297,42.56410256410256,113,195,Technology,internet,users per 100
+SGP,Singapore,East Asia & Pacific,High income,82.0,0.5552164950298928,82.14766086479486,-0.14766086479485807,44.61538461538462,109,195,Technology,internet,users per 100
+SLB,Solomon Islands,East Asia & Pacific,Lower middle income,9.0,0.39941877405189646,23.63532412272778,-14.63532412272778,11.282051282051283,174,195,Technology,internet,users per 100
+SLE,Sierra Leone,Sub-Saharan Africa,Low income,2.1,0.8086561640331418,10.748418624588407,-8.648418624588407,21.53846153846154,154,195,Technology,internet,users per 100
+SLV,El Salvador,Latin America & Caribbean,Lower middle income,29.7,0.4627143579989633,41.10785183879424,-11.40785183879424,16.923076923076923,163,195,Technology,internet,users per 100
+SMR,San Marino,Europe & Central Asia,High income,49.6,0.25991104292452133,87.06875233193443,-37.46875233193443,1.5384615384615385,193,195,Technology,internet,users per 100
+SRB,Serbia,Europe & Central Asia,Upper middle income,53.5,0.372857698341105,45.61760037175124,7.882399628248763,71.7948717948718,56,195,Technology,internet,users per 100
+STP,São Tomé and Principe,Sub-Saharan Africa,Lower middle income,24.41,0.6171734378135587,22.58093452077419,1.829065479225811,51.28205128205128,96,195,Technology,internet,users per 100
+SUR,Suriname,Latin America & Caribbean,Upper middle income,40.08,0.5048709975942416,46.99305568424653,-6.91305568424653,25.64102564102564,146,195,Technology,internet,users per 100
+SVK,Slovak Republic,Europe & Central Asia,High income,79.98,0.4323725337297993,66.94259604719521,13.037403952804794,87.6923076923077,25,195,Technology,internet,users per 100
+SVN,Slovenia,Europe & Central Asia,High income,71.59,0.7263592296801474,70.37169633712787,1.218303662872131,48.717948717948715,101,195,Technology,internet,users per 100
+SWE,Sweden,Europe & Central Asia,High income,92.52,0.5769630435248032,84.52625648084882,7.993743519151181,72.3076923076923,55,195,Technology,internet,users per 100
+SWZ,Swaziland,Sub-Saharan Africa,Lower middle income,27.1,0.19362309027270305,37.082705035445095,-9.982705035445093,19.48717948717949,158,195,Technology,internet,users per 100
+SYC,Seychelles,Sub-Saharan Africa,High income,54.26,0.27561199772934625,67.47798225220761,-13.217982252207612,12.82051282051282,171,195,Technology,internet,users per 100
+SYR,Syrian Arab Republic,Middle East & North Africa,Lower middle income,28.09,0.3322594112846389,30.084207769652853,-1.9942077696528528,40.51282051282051,117,195,Technology,internet,users per 100
+TCD,Chad,Sub-Saharan Africa,Low income,2.5,0.4095446316305413,17.748166221321213,-15.248166221321213,9.230769230769232,178,195,Technology,internet,users per 100
+TGO,Togo,Sub-Saharan Africa,Low income,5.7,0.6326564651205112,8.072936764488379,-2.3729367644883785,37.94871794871795,122,195,Technology,internet,users per 100
+THA,Thailand,East Asia & Pacific,Upper middle income,34.89,0.6720016461230852,43.60466699405346,-8.71466699405346,21.025641025641026,155,195,Technology,internet,users per 100
+TJK,Tajikistan,Europe & Central Asia,Lower middle income,17.49,0.5840373719124949,10.910901975454244,6.579098024545754,68.71794871794872,62,195,Technology,internet,users per 100
+TKM,Turkmenistan,Europe & Central Asia,Upper middle income,12.2,0.3080197585584833,44.276552759498365,-32.07655275949837,3.076923076923077,190,195,Technology,internet,users per 100
+TMP,Timor-Leste,East Asia & Pacific,Lower middle income,1.14,0.6500665383868808,17.298900527468845,-16.158900527468845,7.6923076923076925,181,195,Technology,internet,users per 100
+TON,Tonga,East Asia & Pacific,Upper middle income,40.0,0.08885902020560907,36.96631218622134,3.0336878137786627,57.43589743589743,84,195,Technology,internet,users per 100
+TTO,Trinidad and Tobago,Latin America & Caribbean,High income,65.1,0.34087904131063784,65.72785102213292,-0.6278510221329299,43.07692307692308,112,195,Technology,internet,users per 100
+TUN,Tunisia,Middle East & North Africa,Upper middle income,46.16,0.5241935439448588,44.312056607816544,1.8479433921834527,51.7948717948718,95,195,Technology,internet,users per 100
+TUR,Turkey,Europe & Central Asia,Upper middle income,51.04,0.26742802011419897,57.940921412539964,-6.900921412539965,26.153846153846157,145,195,Technology,internet,users per 100
+TUV,Tuvalu,East Asia & Pacific,Upper middle income,37.0,0.6393876057573094,38.185697975969596,-1.185697975969596,41.02564102564102,116,195,Technology,internet,users per 100
+TZA,Tanzania,Sub-Saharan Africa,Low income,4.86,0.4875868096193964,13.240475795173765,-8.380475795173766,22.564102564102566,152,195,Technology,internet,users per 100
+UGA,Uganda,Sub-Saharan Africa,Low income,17.71,0.5382463775088028,7.989621938015503,9.720378061984498,79.48717948717949,41,195,Technology,internet,users per 100
+UKR,Ukraine,Europe & Central Asia,Lower middle income,43.4,0.6497309632844835,33.59047567268162,9.809524327318378,80.51282051282051,39,195,Technology,internet,users per 100
+URY,Uruguay,Latin America & Caribbean,High income,61.46,0.5728159361048295,55.90294498312585,5.557055016874152,67.17948717948717,65,195,Technology,internet,users per 100
+USA,United States,North America,High income,87.36,0.6126897835768024,85.232195827371,2.1278041726289985,53.84615384615385,91,195,Technology,internet,users per 100
+UZB,Uzbekistan,Europe & Central Asia,Lower middle income,43.55,0.535829050188323,20.501823551052787,23.04817644894721,97.94871794871794,5,195,Technology,internet,users per 100
+VCT,St. Vincent and the Grenadines,Latin America & Caribbean,Upper middle income,56.48,0.342929802397465,50.39413172827286,6.085868271727136,67.6923076923077,64,195,Technology,internet,users per 100
+VEN,Venezuela,Latin America & Caribbean,High income,57.0,0.4457235404677434,51.567758493132125,5.432241506867875,66.15384615384615,67,195,Technology,internet,users per 100
+VNM,Vietnam,East Asia & Pacific,Lower middle income,48.31,0.34646862792672645,22.887841166399486,25.422158833600516,98.97435897435898,3,195,Technology,internet,users per 100
+VUT,Vanuatu,East Asia & Pacific,Lower middle income,18.8,0.47812191164051104,33.7075988450982,-14.907598845098196,10.256410256410255,176,195,Technology,internet,users per 100
+WBG,West Bank and Gaza,Middle East & North Africa,Lower middle income,53.67,0.4659225045797575,26.899626699344687,26.770373300655315,99.48717948717949,2,195,Technology,internet,users per 100
+WSM,Samoa,East Asia & Pacific,Lower middle income,21.2,0.28806166585993825,38.3330453270379,-17.1330453270379,6.666666666666667,183,195,Technology,internet,users per 100
+YEM,Yemen,Middle East & North Africa,Lower middle income,22.55,0.491501508891577,16.157959595952303,6.392040404047698,68.2051282051282,63,195,Technology,internet,users per 100
+ZAF,South Africa,Sub-Saharan Africa,Upper middle income,49.0,0.6125430068992227,51.645692107497595,-2.645692107497595,36.92307692307693,124,195,Technology,internet,users per 100
+ZAR,Dem. Rep. Congo,Sub-Saharan Africa,Low income,3.0,0.8809092912169102,0.6931079554219707,2.306892044578029,54.35897435897436,90,195,Technology,internet,users per 100
+ZMB,Zambia,Sub-Saharan Africa,Lower middle income,17.34,0.39695879332650463,22.681479703282935,-5.3414797032829355,30.256410256410255,137,195,Technology,internet,users per 100
+ZWE,Zimbabwe,Sub-Saharan Africa,Low income,19.89,0.3298957765708777,9.096107257438579,10.793892742561422,84.1025641025641,32,195,Technology,internet,users per 100

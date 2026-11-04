@@ -37,6 +37,8 @@ python -m venv .venv
 .venv/Scripts/python run_models.py --mode snapshot --seeds 0 1 2 3 4
 .venv/Scripts/python run_models.py --mode panel                      # slower, ~1 h on a laptop
 .venv/Scripts/python tests/test_models.py
+.venv/Scripts/python run_story.py --part 2                          # storyline experiments -> results/story/ (~5 s)
+.venv/Scripts/python tests/test_part2.py
 # 3. app
 .venv/Scripts/streamlit run app.py
 ```
