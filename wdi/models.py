@@ -123,6 +123,7 @@ class Config:
     min_coverage: float = 0.5    # drop features observed in fewer rows than this
     include_year: bool = True    # panel mode only: lets models learn the global time trend
     years: tuple = (1990, 2014)
+    feature_set: str = "all"     # "all" | "income_only" (log GDP per capita alone; used by wdi/story/part2.py)
 
 
 def load(mode="panel", years=(1990, 2014)):
@@ -136,15 +137,22 @@ def load(mode="panel", years=(1990, 2014)):
 def dataset(df, theme, cfg):
     """Return X, y, groups (country), and the row metadata for one theme."""
     spec = THEMES[theme]
-    d = df[df[spec["target"]].notna()].reset_index(drop=True)
+    keep = df[spec["target"]].notna()
+    if cfg.feature_set == "income_only":   # a single predictor: never impute it
+        keep &= df["gdp_pc"].notna()
+    d = df[keep].reset_index(drop=True)
     y = np.log10(d[spec["target"]].clip(lower=1e-3)) if spec["log"] else d[spec["target"]]
     drop = NON_FEATURES | {spec["target"]} | set(spec["leak"])
     feats = [c for c in d.columns if c not in drop and pd.api.types.is_numeric_dtype(d[c])
              and d[c].notna().mean() >= cfg.min_coverage]
+    if cfg.feature_set == "income_only":
+        if spec["target"] == "gdp_pc":
+            raise ValueError("income_only is undefined when the target is income itself")
+        feats = ["gdp_pc"]
     X = d[feats].copy()
     for c in set(LOG_FEATURES) & set(feats):
         X[c] = np.sign(X[c]) * np.log10(1 + X[c].abs())
-    if cfg.mode == "panel" and cfg.include_year:
+    if cfg.mode == "panel" and cfg.include_year and cfg.feature_set == "all":
         X["Year"] = d["Year"]
     meta = d[["CountryCode", "Year", "ShortName", "Region", "Income"]]
     return X, y.to_numpy(), d["CountryCode"].to_numpy(), meta
