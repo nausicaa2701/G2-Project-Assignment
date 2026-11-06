@@ -1,0 +1,33 @@
+indicator,scale,n,n_outliers,examples
+gdp_pc,log10,199,0,
+gdp_pc_ppp,log10,192,0,
+gdp_growth,raw,199,4,"Libya (-24), Ukraine (-6.8), Aruba (-5.65)"
+inflation,raw,176,8,"Venezuela (62.2), South Sudan (47.3), Sudan (36.9)"
+unemployment,raw,174,11,"Mauritania (31), Macedonia (27.9), Bosnia and Herzegovina (27.9)"
+trade_open,raw,189,5,"Hong Kong SAR, China (439), Luxembourg (374), Singapore (351)"
+gini,raw,145,4,"South Africa (63.4), Namibia (61), Haiti (60.8)"
+poverty_190,raw,118,0,
+population,log10,214,0,
+pop_growth,raw,214,2,"Oman (8.09), Andorra (-4.19)"
+urban,raw,212,0,
+fertility,raw,203,1,Niger (7.62)
+age65,raw,195,0,
+age0_14,raw,195,0,
+female_lfp,raw,186,7,"Syrian Arab Republic (13.6), Iraq (15), Algeria (15.4)"
+life_exp,raw,203,0,
+infant_mort,log10,192,0,
+u5_mort,log10,192,0,
+health_exp,raw,188,3,"Tuvalu (19.7), United States (17.1), Marshall Islands (16.5)"
+safe_water,raw,199,17,"Somalia (31.7), Papua New Guinea (40), Equatorial Guinea (47.8)"
+enrol_primary,raw,188,16,"Somalia (29.2), Curaçao (165), Gabon (165)"
+enrol_secondary,raw,185,1,Belgium (166)
+enrol_tertiary,raw,169,0,
+literacy,raw,155,6,"Niger (15.5), Guinea (25.3), South Sudan (26.8)"
+edu_exp,raw,165,6,"Lesotho (13), Cuba (12.8), Solomon Islands (9.85)"
+co2_pc,log10,199,1,Burundi (0.0213)
+energy_pc,log10,168,3,"Lesotho (9.72), Timor-Leste (60.2), Guinea-Bissau (62.2)"
+forest,raw,207,0,
+renewables,raw,186,0,
+electricity,raw,212,0,
+internet,raw,204,0,
+mobile,raw,205,3,"Macao SAR, China (323), Hong Kong SAR, China (239), Kuwait (218)"

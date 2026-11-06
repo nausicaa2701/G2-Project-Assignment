@@ -1,0 +1,13 @@
+\footnotesize
+\begin{tabular}{llp{10cm}}
+\toprule
+Theme & Model & Top-3 features (permutation importance, drop in $R^2$) \\
+\midrule
+Economy & ExtraTrees & \texttt{internet} (0.17), \texttt{co2\_pc} (0.13), \texttt{life\_exp} (0.03) \\
+Demography & Voting & \texttt{u5\_mort} (0.12), \texttt{life\_exp} (0.06), \texttt{electricity} (0.03) \\
+Health & Voting & \texttt{fertility} (0.16), \texttt{electricity} (0.09), \texttt{gdp\_pc} (0.06) \\
+Education & Stacking & \texttt{age0\_14} (0.09), \texttt{electricity} (0.03), \texttt{u5\_mort} (0.03) \\
+Environment & Voting & \texttt{gdp\_pc\_ppp} (0.25), \texttt{renewables} (0.15), \texttt{internet} (0.07) \\
+Technology & ExtraTrees & \texttt{gdp\_pc} (0.16), \texttt{u5\_mort} (0.04), \texttt{infant\_mort} (0.04) \\
+\bottomrule
+\end{tabular}
