@@ -1,4 +1,6 @@
-"""CLI: run the storyline experiments and write results/story/ for the app.
+"""CLI: run the per-part story experiments behind the app pages and write results/story/part{N}/.
+
+The report experiments (E1.1-E3.3, A2, A3) are a separate CLI: `python -m wdi.story`, writing results/story/.
 
 Examples
   python run_story.py --part 2                      # E2.1-E2.3, seeds 0-4, 5 folds
@@ -23,5 +25,5 @@ for part in a.part:
     except ModuleNotFoundError:
         print(f"part {part}: wdi/story/part{part}.py not written yet, skipped")
         continue
-    mod.run(seeds=a.seeds, folds=a.folds, out=a.out, log=lambda m: print(f"[{time.time() - t0:5.0f}s] {m}", flush=True))
-print(f"done in {time.time() - t0:.0f}s -> {a.out}/")
+    mod.run(seeds=a.seeds, folds=a.folds, out=f"{a.out}/part{part}", log=lambda m: print(f"[{time.time() - t0:5.0f}s] {m}", flush=True))
+print(f"done in {time.time() - t0:.0f}s -> {a.out}/part*/")

@@ -1,0 +1,193 @@
+CountryCode,ShortName,reference,modal_share
+AFG,Afghanistan,Low development,1.0
+ALB,Albania,Emerging,0.5166666666666667
+DZA,Algeria,Emerging,0.75
+AGO,Angola,Low development,0.9833333333333333
+ATG,Antigua and Barbuda,Emerging,0.5833333333333334
+ARG,Argentina,Emerging,0.5333333333333333
+ARM,Armenia,Emerging,0.5333333333333333
+ABW,Aruba,Advanced,0.5666666666666667
+AUS,Australia,Advanced,0.5666666666666667
+AUT,Austria,Advanced,0.5666666666666667
+AZE,Azerbaijan,Emerging,0.6333333333333333
+BHR,Bahrain,Advanced,0.8666666666666667
+BGD,Bangladesh,Transition,0.5
+BRB,Barbados,Emerging,0.6
+BLR,Belarus,Advanced,0.5166666666666667
+BEL,Belgium,Advanced,0.6
+BLZ,Belize,Transition,0.9833333333333333
+BEN,Benin,Low development,1.0
+BMU,Bermuda,Advanced,0.5666666666666667
+BTN,Bhutan,Transition,0.9833333333333333
+BOL,Bolivia,Transition,0.9833333333333333
+BIH,Bosnia and Herzegovina,Emerging,0.8833333333333333
+BWA,Botswana,Transition,0.9666666666666667
+BRA,Brazil,Emerging,0.5166666666666667
+BRN,Brunei,Advanced,0.55
+BGR,Bulgaria,Advanced,0.55
+BFA,Burkina Faso,Low development,1.0
+BDI,Burundi,Low development,1.0
+CPV,Cabo Verde,Transition,0.9833333333333333
+KHM,Cambodia,Transition,0.8333333333333334
+CMR,Cameroon,Low development,1.0
+CAN,Canada,Advanced,0.5666666666666667
+CAF,Central African Republic,Low development,1.0
+TCD,Chad,Low development,1.0
+CHL,Chile,Advanced,0.5666666666666667
+CHN,China,Emerging,0.5
+COL,Colombia,Emerging,0.5666666666666667
+COM,Comoros,Low development,0.9833333333333333
+COG,Congo,Low development,0.9666666666666667
+CRI,Costa Rica,Emerging,0.5333333333333333
+CIV,Côte d'Ivoire,Low development,1.0
+HRV,Croatia,Advanced,0.55
+CUB,Cuba,Emerging,0.55
+CYP,Cyprus,Advanced,0.5333333333333333
+CZE,Czech Republic,Advanced,0.55
+PRK,Dem. People's Rep. Korea,Transition,0.6
+ZAR,Dem. Rep. Congo,Low development,1.0
+DNK,Denmark,Advanced,0.5666666666666667
+DJI,Djibouti,Transition,0.6333333333333333
+DMA,Dominica,Emerging,0.6333333333333333
+DOM,Dominican Republic,Emerging,0.7166666666666667
+ECU,Ecuador,Emerging,0.6333333333333333
+EGY,Egypt,Transition,0.9666666666666667
+SLV,El Salvador,Emerging,0.6666666666666666
+GNQ,Equatorial Guinea,Low development,0.9833333333333333
+ERI,Eritrea,Low development,1.0
+EST,Estonia,Advanced,0.55
+ETH,Ethiopia,Low development,1.0
+FJI,Fiji,Transition,0.9833333333333333
+FIN,Finland,Advanced,0.5666666666666667
+FRA,France,Advanced,0.5666666666666667
+GAB,Gabon,Emerging,0.55
+GEO,Georgia,Emerging,0.55
+DEU,Germany,Advanced,0.5666666666666667
+GHA,Ghana,Transition,0.6666666666666666
+GRC,Greece,Advanced,0.5666666666666667
+GRD,Grenada,Emerging,0.5166666666666667
+GTM,Guatemala,Transition,0.9833333333333333
+GIN,Guinea,Low development,1.0
+GNB,Guinea-Bissau,Low development,1.0
+GUY,Guyana,Transition,0.9833333333333333
+HTI,Haiti,Low development,1.0
+HND,Honduras,Transition,0.9833333333333333
+HKG,"Hong Kong SAR, China",Advanced,0.9666666666666667
+HUN,Hungary,Advanced,0.55
+ISL,Iceland,Advanced,0.6166666666666667
+IND,India,Transition,0.9833333333333333
+IDN,Indonesia,Transition,0.9
+IRN,Iran,Emerging,0.5333333333333333
+IRQ,Iraq,Transition,0.9833333333333333
+IRL,Ireland,Advanced,0.5833333333333334
+ISR,Israel,Advanced,0.5666666666666667
+ITA,Italy,Advanced,0.5666666666666667
+JAM,Jamaica,Emerging,0.5166666666666667
+JPN,Japan,Advanced,0.5666666666666667
+JOR,Jordan,Emerging,0.5166666666666667
+KAZ,Kazakhstan,Emerging,0.55
+KEN,Kenya,Low development,1.0
+KIR,Kiribati,Low development,0.9
+KOR,Korea,Advanced,0.5166666666666667
+KWT,Kuwait,Advanced,0.8666666666666667
+KGZ,Kyrgyz Republic,Transition,0.9833333333333333
+LAO,Lao PDR,Transition,0.7833333333333333
+LVA,Latvia,Advanced,0.55
+LBN,Lebanon,Emerging,0.9333333333333333
+LSO,Lesotho,Low development,1.0
+LBR,Liberia,Low development,1.0
+LBY,Libya,Emerging,0.5666666666666667
+LTU,Lithuania,Advanced,0.5
+LUX,Luxembourg,Advanced,0.9666666666666667
+MAC,"Macao SAR, China",Advanced,0.8666666666666667
+MKD,Macedonia,Emerging,0.8833333333333333
+MDG,Madagascar,Low development,1.0
+MWI,Malawi,Low development,1.0
+MYS,Malaysia,Emerging,0.5666666666666667
+MDV,Maldives,Emerging,0.5666666666666667
+MLI,Mali,Low development,1.0
+MLT,Malta,Advanced,0.5833333333333334
+MHL,Marshall Islands,Transition,0.9833333333333333
+MRT,Mauritania,Low development,1.0
+MUS,Mauritius,Emerging,0.55
+MEX,Mexico,Emerging,0.5166666666666667
+FSM,Micronesia,Transition,0.9833333333333333
+MDA,Moldova,Emerging,0.6666666666666666
+MNG,Mongolia,Emerging,0.7666666666666667
+MNE,Montenegro,Emerging,0.85
+MAR,Morocco,Emerging,0.7166666666666667
+MOZ,Mozambique,Low development,1.0
+MMR,Myanmar,Transition,0.7833333333333333
+NAM,Namibia,Transition,0.9833333333333333
+NPL,Nepal,Transition,0.5833333333333334
+NLD,Netherlands,Advanced,0.6
+NZL,New Zealand,Advanced,0.5666666666666667
+NIC,Nicaragua,Transition,0.9833333333333333
+NER,Niger,Low development,1.0
+NGA,Nigeria,Low development,1.0
+NOR,Norway,Advanced,0.5666666666666667
+OMN,Oman,Emerging,0.5333333333333333
+PAK,Pakistan,Transition,0.5
+PLW,Palau,Emerging,0.65
+PAN,Panama,Emerging,0.5166666666666667
+PNG,Papua New Guinea,Low development,0.9833333333333333
+PRY,Paraguay,Transition,0.9666666666666667
+PER,Peru,Emerging,0.5666666666666667
+PHL,Philippines,Transition,0.9833333333333333
+POL,Poland,Advanced,0.5666666666666667
+PRT,Portugal,Advanced,0.5666666666666667
+PRI,Puerto Rico,Advanced,0.55
+QAT,Qatar,Advanced,0.8666666666666667
+ROM,Romania,Emerging,0.8166666666666667
+RUS,Russia,Emerging,0.8666666666666667
+RWA,Rwanda,Low development,1.0
+WSM,Samoa,Transition,0.9833333333333333
+STP,São Tomé and Principe,Transition,0.6666666666666666
+SAU,Saudi Arabia,Emerging,0.5166666666666667
+SEN,Senegal,Low development,1.0
+SRB,Serbia,Emerging,0.7833333333333333
+SYC,Seychelles,Emerging,0.5333333333333333
+SLE,Sierra Leone,Low development,1.0
+SGP,Singapore,Advanced,0.9666666666666667
+SVK,Slovak Republic,Advanced,0.5166666666666667
+SVN,Slovenia,Advanced,0.55
+SLB,Solomon Islands,Low development,1.0
+SOM,Somalia,Low development,1.0
+ZAF,South Africa,Emerging,0.5333333333333333
+ESP,Spain,Advanced,0.5666666666666667
+LKA,Sri Lanka,Transition,0.9833333333333333
+KNA,St. Kitts and Nevis,Emerging,0.6
+LCA,St. Lucia,Emerging,0.5166666666666667
+VCT,St. Vincent and the Grenadines,Emerging,0.65
+SDN,Sudan,Low development,1.0
+SUR,Suriname,Emerging,0.5166666666666667
+SWZ,Swaziland,Low development,1.0
+SWE,Sweden,Advanced,0.5666666666666667
+CHE,Switzerland,Advanced,0.5666666666666667
+SYR,Syrian Arab Republic,Transition,0.9833333333333333
+TJK,Tajikistan,Transition,0.9833333333333333
+TZA,Tanzania,Low development,1.0
+THA,Thailand,Emerging,0.5833333333333334
+BHS,The Bahamas,Emerging,0.9333333333333333
+GMB,The Gambia,Low development,1.0
+TMP,Timor-Leste,Low development,1.0
+TGO,Togo,Low development,1.0
+TON,Tonga,Transition,0.9833333333333333
+TTO,Trinidad and Tobago,Emerging,0.6166666666666667
+TUN,Tunisia,Emerging,0.5833333333333334
+TUR,Turkey,Emerging,0.5666666666666667
+TKM,Turkmenistan,Emerging,0.75
+UGA,Uganda,Low development,1.0
+UKR,Ukraine,Emerging,0.9166666666666666
+ARE,United Arab Emirates,Advanced,0.8666666666666667
+GBR,United Kingdom,Advanced,0.5666666666666667
+USA,United States,Advanced,0.5666666666666667
+URY,Uruguay,Emerging,0.5
+UZB,Uzbekistan,Transition,0.9666666666666667
+VUT,Vanuatu,Transition,0.6666666666666666
+VEN,Venezuela,Emerging,0.5166666666666667
+VNM,Vietnam,Emerging,0.5833333333333334
+WBG,West Bank and Gaza,Transition,0.9833333333333333
+YEM,Yemen,Low development,1.0
+ZMB,Zambia,Low development,1.0
+ZWE,Zimbabwe,Low development,1.0

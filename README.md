@@ -37,8 +37,11 @@ python -m venv .venv
 .venv/Scripts/python run_models.py --mode snapshot --seeds 0 1 2 3 4
 .venv/Scripts/python run_models.py --mode panel                      # slower, ~1 h on a laptop
 .venv/Scripts/python tests/test_models.py
-.venv/Scripts/python run_story.py --part 2                          # storyline experiments -> results/story/ (~5 s)
+.venv/Scripts/python run_story.py --part 2                          # Part 2 page experiments -> results/story/part2/ (~5 s)
 .venv/Scripts/python tests/test_part2.py
+.venv/Scripts/python -m wdi.story                                  # report experiments E1.1-E3.3, A2, A3 -> results/story/, figures/story/
+.venv/Scripts/python tests/test_story.py
+.venv/Scripts/python report/make_tables.py                          # LaTeX tables for report/FINAL_REPORT.tex
 # 3. app
 .venv/Scripts/streamlit run app.py
 ```

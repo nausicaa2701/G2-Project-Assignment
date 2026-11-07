@@ -6,13 +6,11 @@ import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
 import streamlit as st
-from sklearn.cluster import AgglomerativeClustering, KMeans
 from sklearn.decomposition import PCA
 from sklearn.metrics import silhouette_score
-from sklearn.mixture import GaussianMixture
-from sklearn.preprocessing import StandardScaler
 
 from wdi.models import MODEL_NAMES, THEMES, Config, data_path, evaluate, summarise, trends
+from wdi.story import CLUSTER_VARS, cluster_matrix, fit_clusters
 
 st.set_page_config(page_title="World Development", page_icon="🌍", layout="wide")
 RESULTS = Path(__file__).parent / "results"
@@ -369,27 +367,14 @@ def run_live(themes, models, seeds, folds, mode, impute, cov):
 
 def page_clusters():
     section("Development profiles", "Unsupervised clustering on 15 standardised indicators, projected with PCA.")
-    vars_ = ["gdp_pc", "life_exp", "u5_mort", "fertility", "urban", "age65", "enrol_secondary", "internet", "mobile",
-             "electricity", "co2_pc", "energy_pc", "safe_water", "forest", "trade_open"]
+    vars_ = CLUSTER_VARS
     c1, c2, c3 = st.columns(3)
     algo = c1.selectbox("Algorithm", ["K-means", "Gaussian mixture", "Agglomerative (Ward)"])
     k = c2.slider("Clusters (k)", 2, 8, 4)
     seed = c3.number_input("Seed", 0, 10_000, 42)
-    d = snap[["CountryCode", "ShortName", "Region", "Income"] + vars_]
-    d = d[d[vars_].notna().mean(axis=1) >= 0.7].reset_index(drop=True)
-    X = d[vars_].copy()
-    for v in ["gdp_pc", "u5_mort", "co2_pc", "energy_pc", "trade_open"]:
-        X[v] = np.log10(X[v].clip(lower=1e-2))
-    X = X.fillna(X.groupby(d.Income, observed=True).transform("median")).fillna(X.median())
-    Z = StandardScaler().fit_transform(X)
-    if algo == "K-means":
-        lab = KMeans(k, n_init=20, random_state=seed).fit_predict(Z)
-    elif algo == "Gaussian mixture":
-        lab = GaussianMixture(k, n_init=5, random_state=seed).fit(Z).predict(Z)
-    else:
-        lab = AgglomerativeClustering(k, linkage="ward").fit_predict(Z)
-    order = pd.Series(snap.set_index("CountryCode").loc[d.CountryCode, "gdp_pc"].values).groupby(lab).median().rank().astype(int)
-    d["Cluster"] = pd.Series(lab).map(order).map(lambda c: f"Cluster {c}")
+    d, X, Z = cluster_matrix(snap)
+    lab = fit_clusters(Z, X.gdp_pc, algo, k, seed)
+    d["Cluster"] = pd.Series(lab).map(lambda c: f"Cluster {c}")
     pcs = PCA(2, random_state=seed).fit(Z)
     P = pcs.transform(Z)
     if np.corrcoef(P[:, 0], X["gdp_pc"])[0, 1] < 0:
@@ -491,11 +476,11 @@ def _p2_income_scatter(theme, fit, codes, title, h=480):
 
 
 def page_part2():
-    layers = load_results("story/E2_1_r2_layers.csv")
-    res = load_results("story/E2_2_residuals.csv")
-    fit = load_results("story/E2_2_income_fit.csv")
-    fe = load_results("story/E2_3_fixed_effects.csv")
-    yfx = load_results("story/E2_3_year_effects.csv")
+    layers = load_results("story/part2/E2_1_r2_layers.csv")
+    res = load_results("story/part2/E2_2_residuals.csv")
+    fit = load_results("story/part2/E2_2_income_fit.csv")
+    fe = load_results("story/part2/E2_3_fixed_effects.csv")
+    yfx = load_results("story/part2/E2_3_year_effects.csv")
     if any(x is None for x in (layers, res, fit, fe, yfx)):
         st.warning("Story results are missing. Run `python run_story.py --part 2` first.")
         return

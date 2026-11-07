@@ -18,7 +18,7 @@ import pandas as pd
 from wdi.models import THEMES, Config, data_path, evaluate
 
 ROOT = Path(__file__).resolve().parents[2]
-OUT = ROOT / "results" / "story"
+OUT = ROOT / "results" / "story" / "part2"  # apart from the report CSVs of `python -m wdi.story`
 
 # Themes where "income explains X" makes sense (Economy's target *is* income).
 STORY_THEMES = [t for t in THEMES if THEMES[t]["target"] != "gdp_pc"]
