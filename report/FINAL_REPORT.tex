@@ -2,10 +2,11 @@
 \documentclass[11pt,a4paper]{article}
 \usepackage[margin=2.2cm]{geometry}
 \usepackage{graphicx,booktabs,float,caption,subcaption,xcolor,pifont,enumitem,amsmath}
+\usepackage{tikz,array}
 \usepackage[most]{tcolorbox}
 \usepackage{adjustbox}
 \usepackage[colorlinks=true,linkcolor=blue!50!black,urlcolor=blue!50!black,citecolor=blue!50!black]{hyperref}
-\graphicspath{{../figures/}{../figures/story/}{../docs/screenshots/}}
+\graphicspath{{../Logos/}{../figures/}{../figures/story/}{../docs/screenshots/}}
 \definecolor{vn}{HTML}{C0392B}
 \setlist{itemsep=2pt,topsep=3pt}
 \captionsetup{font=small,labelfont=bf}
@@ -15,41 +16,64 @@
 \newcommand{\tab}[1]{\begin{adjustbox}{max width=\textwidth}\input{tables/#1.tex}\end{adjustbox}}
 \setlength{\parskip}{4pt}\setlength{\parindent}{0pt}
 
+\let\oldsection\section
+\renewcommand{\section}{\clearpage\oldsection}
+
 \begin{document}
 
 % ------------------------------------------------------------------ cover
 \begin{titlepage}
 \centering
-\vspace*{2.5cm}
-{\Large Data Analytics · Group Project G2\par}
-\vspace{1.2cm}
-{\Huge\bfseries Does richer mean more developed?\par}
+\setlength{\parskip}{0pt}
+\vspace*{0.45cm}
+\begin{tikzpicture}[remember picture,overlay]
+\draw[line width=2.2pt] ([xshift=1.2cm,yshift=-1.2cm]current page.north west) rectangle ([xshift=-1.2cm,yshift=1.2cm]current page.south east);
+\draw[line width=0.5pt] ([xshift=1.55cm,yshift=-1.55cm]current page.north west) rectangle ([xshift=-1.55cm,yshift=1.55cm]current page.south east);
+\end{tikzpicture}%
+{\large\bfseries VIET NAM NATIONAL UNIVERSITY HO CHI MINH CITY\par}
 \vspace{0.4cm}
-{\Large A data-mining study of the World Development Indicators, 1960--2014\par}
-\vspace{1.5cm}
-\includegraphics[width=0.8\textwidth]{17_preston_curve.png}\par
-\vspace{1.2cm}
-{\large Group G2\par}
+{\large\bfseries HO CHI MINH CITY UNIVERSITY OF TECHNOLOGY\par}
 \vspace{0.4cm}
-{\normalsize
-\begin{tabular}{ll}
-\toprule
-Member & Student ID \\
-\midrule
-Le Thi Hong Cuc & 2470882 \\
-Phan Van Nguyen Khanh & 2470883 \\
-Nguyen Tuong Phuc & 2470886 \\
-\bottomrule
-\end{tabular}\par}
+{\large\bfseries FACULTY OF COMPUTER SCIENCE AND ENGINEERING\par}
+\vspace{0.5cm}
+\includegraphics[width=6.3cm]{01_logobachkhoasang.png}\par
+\vspace{1.0cm}
+{\itshape Report of\par}
 \vspace{0.3cm}
-{\large November 2026\par}
+{\Large\bfseries RESEARCH TOPIC: DATA ANALYTICS\par}
+\vspace{1.3cm}
+{\itshape Topic:\par}
+\vspace{0.3cm}
+{\LARGE\bfseries DOES RICHER MEAN\\[3pt] MORE DEVELOPED?\par}
+\vspace{0.3cm}
+{\Large\bfseries A data-mining study of the World\\[2pt] Development Indicators, 1960--2014\par}
+\vspace{1.1cm}
+{\large\bfseries Lecturer:\quad Dr. Nguyen Thi Ai Thao\par}
+\vspace{1.2cm}
+{\renewcommand{\arraystretch}{1.6}\small
+\begin{tabular}{|>{\centering\arraybackslash}p{5.6cm}|>{\centering\arraybackslash}p{4.2cm}|}
+\hline
+\textbf{Member} & \textbf{Student's ID} \\
+\hline
+Le Thi Hong Cuc & 2470882 \\
+\hline
+Phan Van Nguyen Khanh & 2470883 \\
+\hline
+Nguyen Tuong Phuc & 2470886 \\
+\hline
+\end{tabular}\par}
 \vfill
-{\small Data: World Bank WDI via Kaggle (\texttt{kaggle/world-development-indicators}) \cite{wdi,kaggle}.\\
-Code, notebook and interactive app: this repository (\texttt{WDI\_Analysis.ipynb}, \texttt{wdi/}, \texttt{app.py}).\par}
+{\large\bfseries HO CHI MINH CITY, NOVEMBER 2026\par}
+\vspace{1.3cm}
 \end{titlepage}
 
 \tableofcontents
-\newpage
+\clearpage
+\addcontentsline{toc}{section}{List of Figures}
+\listoffigures
+\clearpage
+\addcontentsline{toc}{section}{List of Tables}
+\listoftables
 
 % ------------------------------------------------------------------ 0
 \section{Introduction}
@@ -59,16 +83,25 @@ The World Development Indicators (WDI) are the World Bank's main collection of c
 
 We answer it in three steps that follow the levels of analytics, stating the answer first \cite{minto}. \textbf{What} happened (descriptive: trends and convergence), \textbf{why} (diagnostic: how much income explains, and who does better or worse than their income predicts), and \textbf{so what} (prescriptive: data-driven country groups and Vietnam's position). Vietnam is our running case study and is drawn in \textcolor{vn}{\textbf{red}} in every figure.
 
+\subsection*{Background and related work}
+The question has a long empirical tradition. Preston \cite{preston} showed that life expectancy rises steeply with national income at low levels and flattens at high levels, and that the whole curve shifts upward over time. In a later retrospective he argued that the curve keeps moving because of factors other than income, such as medical knowledge and public health \cite{preston07}; Bloom and Canning \cite{bloom07} discuss why the relationship is still debated three decades on. Whether income itself \emph{causes} better health is a separate question. Pritchett and Summers \cite{pritchett} use instrumental variables on cross-country time series and find a clearly negative long-run income elasticity of infant and child mortality in developing countries (between $-0.2$ and $-0.4$), which supports the view that richer is healthier. Deaton \cite{deaton} reviews the evidence on health, income and inequality and stresses that raw correlations hide other mechanisms.
+
+A second strand argues that income is neither necessary nor sufficient. Caldwell \cite{caldwell} studied societies with unusually low mortality for their income, such as Sri Lanka, Kerala and Costa Rica, and attributed it to female education and accessible health services rather than to growth. Anand and Ravallion \cite{anand} reach a related conclusion: income matters mainly through poverty reduction and the public services it finances. These are exactly the ``over-achievers'' that our residual analysis (E2.2) tries to detect, and Vietnam is a recent example.
+
+A third strand asks whether poor countries catch up. Barro and Sala-i-Martin \cite{barro} introduced the $\beta$- and $\sigma$-convergence concepts we use in E1.1--E1.3. Mankiw, Romer and Weil \cite{mrw} found that convergence appears once physical and human capital are held constant, and Sala-i-Martin \cite{sala06} showed that global income inequality between individuals fell in the 1980s and 1990s even while gaps between countries persisted. Together these works motivate looking at several development indicators, not only income.
+
+Most of these studies test one hypothesis on one or two indicators. Our contribution is a reproducible, data-mining pipeline on the full WDI extract: it measures how much income explains across six themes, uses country-grouped cross-validation to avoid leakage between neighbouring observations, and adds clustering and ``development twins'' to describe where a country stands beyond its income.
+
 \textbf{Short answer.} Mostly yes. Log GDP per capita alone explains 51--77\,\% of the cross-country variance of the other themes (cross-validated $R^2$). But the remainder is where the story is: Vietnam lives 10.4 years longer than its income predicts, the highest residual of 203 countries.
 
 \textbf{Tools.} Python (pandas \cite{pandas}, NumPy, SciPy, scikit-learn \cite{sklearn}, XGBoost \cite{xgb}, LightGBM \cite{lgbm}), Matplotlib/Seaborn for the report figures, Plotly and Streamlit \cite{streamlit} for the interactive web app (Section~\ref{sec:app}).
 
-The report follows the assignment structure: Section~\ref{sec:A} explores the raw data (A1--A3), Section~\ref{sec:B} lists the preprocessing techniques we applied (B1--B5), Section~\ref{sec:C} describes the data-mining actions, Section~\ref{sec:D} evaluates them, Section~\ref{sec:app} presents the web app, and Sections~\ref{sec:findings}--\ref{sec:conclusion} discuss findings, limitations and conclusions.
+In all tables, \textbf{bold} marks the figures that carry the main message. The report follows the assignment structure: Section~\ref{sec:A} explores the raw data, Section~\ref{sec:B} lists the preprocessing techniques we applied, Section~\ref{sec:C} describes the data-mining actions, Section~\ref{sec:D} evaluates them, Section~\ref{sec:app} presents the web app, and Sections~\ref{sec:findings}--\ref{sec:conclusion} discuss findings, limitations and conclusions.
 
 % ------------------------------------------------------------------ A
 \section{Initial data exploration}\label{sec:A}
 
-\subsection{A1. Dataset overview: size and attributes}
+\subsection{Dataset overview: size and attributes}
 The Kaggle dataset has six CSV files and an equivalent SQLite database. We use three of them (Table~\ref{tab:files}).
 
 \begin{table}[H]\centering\small
@@ -91,7 +124,7 @@ File & Size & Rows & Columns & Content \\
 
 \textbf{Selected attributes.} Working with 1,344 sparse indicators is neither feasible nor meaningful, so we selected 32 indicators in six themes (Table~\ref{tab:vars} in the appendix): Economy (8), Demography (7), Health (5), Education (5), Environment (4) and Technology (3). Selection criteria were relevance to development, coverage, and comparability across countries.
 
-\begin{summary}[A1. Summary]
+\begin{summary}[Summary: dataset overview]
 \begin{itemize}
 \item 5.66\,M observations in long format (country, indicator, year, value), 247 economies (214 countries + 33 aggregates), 1,344 indicators, 1960--2015; 574\,MB on disk.
 \item Attributes: two nominal keys (country, indicator), one discrete time attribute (year), one continuous value; plus nominal \var{Region} and ordinal \var{IncomeGroup} from the metadata.
@@ -99,7 +132,7 @@ File & Size & Rows & Columns & Content \\
 \end{itemize}
 \end{summary}
 
-\subsection{A2. Summary statistics of the attributes}
+\subsection{Summary statistics of the attributes}
 Table~\ref{tab:summary} gives the summary statistics of the 32 attributes in the cross-country snapshot (latest value per country in 2005--2014, so each country counts once). Figure~\ref{fig:dist} shows the distributions of key attributes.
 
 \begin{table}[H]\centering
@@ -109,7 +142,7 @@ Table~\ref{tab:summary} gives the summary statistics of the 32 attributes in the
 
 \textbf{Observations.}
 \begin{itemize}
-\item \textbf{Strong right skew} in income, population, CO$_2$, energy, trade and mortality (skew 1.4--8.9). The mean GDP per capita (US\$13,104) is three times the median (US\$4,112). We therefore report medians and use $\log_{10}$ for these attributes in correlation, regression and clustering (B3).
+\item \textbf{Strong right skew} in income, population, CO$_2$, energy, trade and mortality (skew 1.2--8.9). The mean GDP per capita (US\$13,104) is three times the median (US\$4,112). We therefore report medians and use $\log_{10}$ for these attributes in correlation, regression and clustering (Section~\ref{sec:B}).
 \item \textbf{Bounded percentages} (electricity, water, literacy) are left-skewed with a ceiling at 100\,\%; enrolment ratios can exceed 100\,\% because they are gross ratios (over-age pupils).
 \item \textbf{Scales differ by orders of magnitude} (population up to $1.36\times10^9$, fertility 1.1--7.6), so attributes must be standardised before distance-based methods.
 \end{itemize}
@@ -137,7 +170,7 @@ Missingness is \textbf{not random} \cite{little}: it depends on the income group
 To \textbf{demonstrate the impact} on the summary statistics, Table~\ref{tab:missing} compares the mean and median computed on reporting countries only with the same statistics after filling each missing value with the median of its income group.
 
 \begin{table}[H]\centering
-\caption{Impact of missing values on summary statistics. ``rep.'' = reporting countries only; ``imp.'' = after income-group median imputation; Cov.\ = \% of countries reporting in each income group (LI, LMI, UMI, HI).}\label{tab:missing}
+\caption[Impact of missing values on summary statistics]{Impact of missing values on summary statistics. ``rep.'' = reporting countries only; ``imp.'' = after income-group median imputation; Cov.\ = \% of countries reporting in each income group (LI, LMI, UMI, HI).}\label{tab:missing}
 \tab{missing}
 \end{table}
 
@@ -145,10 +178,10 @@ To \textbf{demonstrate the impact} on the summary statistics, Table~\ref{tab:mis
 \item For well-covered indicators (GDP, life expectancy, internet, CO$_2$; $<$\,8\,\% missing) the mean moves by less than 3\,\%: missing values barely matter.
 \item For \textbf{poverty}, the reporting-only mean (19.2\,\%) overstates world poverty because rich countries are absent; with imputation the mean falls by 30\,\% to 13.4\,\% and the median from 7.8\,\% to 1.8\,\%.
 \item For \textbf{literacy} the bias goes the other way: rich countries are missing, so the reporting-only mean (82.0\,\%) is too low (85.5\,\% after imputation). Under-5 mortality is 8\,\% too high for the same reason.
-\item Conclusion: summary statistics of sparse, survey-based indicators describe the countries that report, not the world. We therefore exclude indicators with $<$\,60\,\% coverage from the main analysis and state the bias wherever they are used.
+\item Conclusion: summary statistics of sparse, survey-based indicators describe the countries that report, not the world. We therefore exclude indicators with $<$\,60\,\% coverage from the exploratory analysis (the model suite uses a looser 50\,\% threshold and keeps poverty as a feature) and state the bias wherever they are used.
 \end{itemize}
 
-\begin{summary}[A2. Summary]
+\begin{summary}[Summary: summary statistics]
 \begin{itemize}
 \item Income, population, CO$_2$, energy and mortality are strongly right-skewed (mean $\gg$ median), so we use medians and log scales; percentages are bounded and left-skewed.
 \item 44.9\,\% of panel cells are missing, mostly structurally. Missingness depends on income group (missing not at random).
@@ -156,7 +189,7 @@ To \textbf{demonstrate the impact} on the summary statistics, Table~\ref{tab:mis
 \end{itemize}
 \end{summary}
 
-\subsection{A3. Exploration: outliers, clusters, interesting attributes}
+\subsection{Exploration: outliers, clusters, interesting attributes}
 
 \paragraph{Outliers.} We flagged values beyond 1.5 interquartile ranges from the quartiles, on a log scale for skewed indicators (Table~\ref{tab:outliers}). In the raw panel we also found 29 \textbf{hyperinflation} country-years above 500\,\% (DR Congo 1994: 23,773\,\%; Bolivia 1985: 11,750\,\%; Peru 1990: 7,482\,\%).
 
@@ -165,7 +198,7 @@ To \textbf{demonstrate the impact} on the summary statistics, Table~\ref{tab:mis
 \tab{outliers}
 \end{table}
 
-Most outliers are \emph{real} values, not errors: small trading hubs (Hong Kong, Luxembourg, Singapore) have trade above 300\,\% of GDP; Gulf states have very high CO$_2$; Libya's GDP fell 24\,\% in a war year; small island states spend heavily on health. Gross primary enrolment above 160\,\% (Gabon, Curaçao) reflects over-age pupils. Because the outliers are genuine, we keep them, use robust statistics (medians, Spearman correlation, log scales) and only \emph{flag} hyperinflation years (B1).
+Most outliers are \emph{real} values, not errors: small trading hubs (Hong Kong, Luxembourg, Singapore) have trade above 300\,\% of GDP; Gulf states have very high CO$_2$; Libya's GDP fell 24\,\% in a war year; small island states spend heavily on health. Gross primary enrolment above 160\,\% (Gabon, Curaçao) reflects over-age pupils. Because the outliers are genuine, we keep them, use robust statistics (medians, Spearman correlation, log scales) and only \emph{flag} hyperinflation years (Section~\ref{sec:B}).
 
 \paragraph{Clusters of similar instances.} Even before modelling, countries group clearly. The correlation matrix (Figure~\ref{fig:corr}) shows one large block: income, life expectancy, internet, CO$_2$, energy, water and schooling all correlate with GDP per capita at $|\rho| = 0.76$--$0.90$, and with each other. A PCA of 15 standardised indicators puts 63.5\,\% of the variance on the first component (Figure~\ref{fig:pca}), so countries lie along a single ``development axis''. Along that axis, Sub-Saharan Africa forms a distinct low group, and oil exporters form a group that is rich but has poor health outcomes.
 
@@ -181,11 +214,11 @@ Most outliers are \emph{real} values, not errors: small trading hubs (Hong Kong,
 \item \textbf{Fertility} separates Sub-Saharan Africa from all other regions: it fell only 28\,\% there (6.7 $\to$ 4.8) against 60--67\,\% elsewhere; Niger (7.6) is the only fertility outlier.
 \item \textbf{GDP per capita} spans three orders of magnitude (US\$153 to US\$158,603); the p90/p10 ratio is about 80.
 \item \textbf{Vietnam} is an interesting value in almost every relationship: GDP per capita of US\$1,078 but a life expectancy of 75.8 years, equal to China and Thailand, which are 3.5 times richer (Figure~\ref{fig:preston}).
-\item Large negative residuals: Swaziland, Equatorial Guinea, Angola and South Africa live 15--20 years less than their income predicts (HIV and oil-based income).
+\item Large negative residuals: Swaziland, Equatorial Guinea, Angola and South Africa live 15--20 years less than their income predicts in the full-sample fit (HIV and oil-based income); in the cross-validated income-only model of E2.2 Somalia ranks fourth and South Africa fifth.
 \end{itemize}
 
 \begin{figure}[H]\centering
-\includegraphics[width=0.78\textwidth]{17_preston_curve.png}
+\includegraphics[width=1.00\textwidth]{17_preston_curve.png}
 \caption{The Preston curve \cite{preston}: life expectancy vs log GDP per capita. Vietnam (red) is the furthest above the curve.}\label{fig:preston}
 \end{figure}
 
@@ -199,10 +232,10 @@ Most outliers are \emph{real} values, not errors: small trading hubs (Hong Kong,
 \begin{itemize}
 \item For well-covered pairs the correlation changes by $\le$\,0.03, so the exploration is robust.
 \item For sparse indicators imputation \emph{changes the conclusion}: the Gini--income correlation goes from $-0.26$ to $-0.42$. Income-group medians are a function of income, so imputation artificially strengthens relationships with income. We therefore never use imputed values for correlation or regression on sparse indicators.
-\item Listwise deletion is not an option: only \textbf{69 of 214} countries report all 32 indicators, and 147 report all 15 clustering indicators. Dropping incomplete countries would remove mostly poor and small countries and bias every result towards rich countries. This motivates the strategy in B1.
+\item Listwise deletion is not an option: only \textbf{69 of 214} countries report all 32 indicators, and 147 report all 15 clustering indicators. Dropping incomplete countries would remove mostly poor and small countries and bias every result towards rich countries. This motivates the missing-value strategy in Section~\ref{sec:B}.
 \end{itemize}
 
-\begin{summary}[A3. Summary]
+\begin{summary}[Summary: exploration]
 \begin{itemize}
 \item Outliers are mostly genuine (trade hubs, Gulf CO$_2$, wars, hyperinflation); we keep them and use robust methods. 29 hyperinflation years are flagged.
 \item Clusters: indicators form one correlated block around income, and countries lie on one main axis (PC1 = 63.5\,\%), with Sub-Saharan Africa and oil exporters as distinct groups.
@@ -229,48 +262,48 @@ Integration & join \texttt{Country.csv}, \texttt{Series.csv} & region, income gr
 Transformation & long $\to$ wide & panel 11,935 country-years $\times$ 32 \\
 Cleaning & interpolation of gaps $\le$\,3 years & missing cells 44.9\,\% $\to$ 42.1\,\% \\
 Reduction & 2005--2014 snapshot & 214 countries $\times$ 32, median data year 2014 \\
-Reduction & coverage threshold 60\,\% & 31 indicators kept (poverty excluded) \\
+Reduction & coverage threshold & exploration: 60\,\%, 31 indicators (poverty excluded); model suite: 50\,\%, poverty kept \\
 Transformation & $\log_{10}$, standardisation & symmetric, comparable features \\
 Reduction & PCA (15 indicators) & PC1 63.5\,\%, PC1+PC2 70.8\,\% \\
 \bottomrule
 \end{tabular}\end{adjustbox}
 \end{table}
 
-\subsection{B1. Data cleaning}
+\subsection{Data cleaning}
 \begin{itemize}
 \item \textbf{Aggregates removed.} The 33 aggregates (World, regions, income groups) would double-count countries; they are identified by an empty \var{Region} and set aside.
 \item \textbf{Validation.} No duplicate (country, indicator, year) keys, no infinite values, and no values outside the valid domain (e.g.\ percentages within 0--100 where applicable).
-\item \textbf{Outliers.} Genuine extremes are kept (A3). The 29 hyperinflation years are flagged rather than deleted, and inflation is log-transformed for modelling.
+\item \textbf{Outliers.} Genuine extremes are kept (Section~\ref{sec:A}). The 29 hyperinflation years are flagged rather than deleted, and inflation is log-transformed for modelling.
 \item \textbf{Missing values}, handled according to their type:
   \begin{enumerate}
   \item interpolate only short internal gaps ($\le$\,3 years, linear, never extrapolate): 44.9\,\% $\to$ 42.1\,\% missing;
   \item for the cross-country snapshot, take the latest value in a 10-year window (2005--2014);
-  \item impute income-group medians only inside models and clustering (fitted inside each cross-validation fold, so no information leaks from test countries);
-  \item exclude indicators below 60\,\% coverage from the analysis (poverty at \$1.90, 55\,\%);
+  \item impute only where a method needs complete input: the model suite uses the median of the training fold (fitted inside each cross-validation fold, so no information leaks from test countries), while clustering and the missing-data tables use income-group medians computed on the full sample;
+  \item exclude indicators below 60\,\% coverage from the exploratory analysis (poverty at \$1.90, 55\,\%); the model suite uses a looser 50\,\% threshold, so poverty is kept there as a feature;
   \item plot group trends only for years where at least 30\,\% of the group's countries report.
   \end{enumerate}
 \end{itemize}
-Result: no country is dropped because of a few gaps (192 countries enter the models instead of 69 under listwise deletion), and E1.3 (Section~\ref{sec:C}) checks that the conclusions do not depend on the changing set of reporting countries.
+Result: no country is dropped because of a few gaps (the model suite uses 185--204 countries per target and the clustering 192, instead of 69 under listwise deletion), and E1.3 (Section~\ref{sec:C}) checks that the conclusions do not depend on the changing set of reporting countries.
 
-\subsection{B2. Data integration}
+\subsection{Data integration}
 The three files are joined on their keys: \texttt{Indicators.CountryCode} $\to$ \texttt{Country.CountryCode} adds \var{ShortName}, \var{Region} and \var{IncomeGroup}; \texttt{Indicators.IndicatorCode} $\to$ \texttt{Series.SeriesCode} adds the indicator name, topic and unit. The two high-income groups (OECD and non-OECD) are merged into one ``High income'' level, giving an ordinal income attribute with four levels. Every indicator receives a short alias (e.g.\ \var{SP.DYN.LE00.IN} $\to$ \var{life\_exp}) and a theme.
 
-\subsection{B3. Data transformation}
+\subsection{Data transformation}
 \begin{itemize}
 \item \textbf{Reshaping:} long table $\to$ wide country-year panel (one column per indicator) and a wide country snapshot.
-\item \textbf{Log transform} ($\log_{10}$) of right-skewed attributes: GDP per capita, CO$_2$, energy, trade, inflation (signed log), mortality and population. This makes relationships close to linear (e.g.\ the Preston curve) and reduces the leverage of outliers.
+\item \textbf{Log transform} ($\log_{10}$) of right-skewed attributes: the model suite transforms GDP per capita (market and PPP), CO$_2$, energy, trade and inflation (signed, $\log_{10}(1+|x|)$); clustering transforms GDP per capita, CO$_2$, energy, trade and under-5 mortality. This makes relationships close to linear (e.g.\ the Preston curve) and reduces the leverage of outliers.
 \item \textbf{Standardisation} (z-scores) before PCA, clustering, distance computations and linear models, fitted inside each cross-validation fold.
 \item \textbf{Derived attributes:} annual growth rates (CAGR, log growth) for convergence analysis; country and year means for the fixed-effects model; out-of-fold residuals as ``performance vs income''.
 \end{itemize}
 
-\subsection{B4. Data reduction}
+\subsection{Data reduction}
 \begin{itemize}
-\item \textbf{Attribute selection:} 1,344 $\to$ 32 indicators (domain knowledge + coverage), then 31 after the coverage threshold; 15 for clustering; 10 social indicators without income for the ``development twins'' (E3.2).
+\item \textbf{Attribute selection:} 1,344 $\to$ 32 indicators (domain knowledge + coverage), then 31 after the 60\,\% coverage threshold of the exploratory analysis; 15 for clustering; 10 social indicators without income for the ``development twins'' (E3.2).
 \item \textbf{Instance reduction:} chunked filtering reduced 5.66\,M rows to 247k without loading the 574\,MB file at once; the snapshot reduces 55 years to one value per country.
 \item \textbf{Dimensionality reduction:} PCA on 15 standardised indicators: PC1 explains 63.5\,\% and PC2 7.3\,\%. PC1 loads almost equally on income, health, schooling, internet and CO$_2$, which confirms a single development dimension; PC2 is mostly forest cover.
 \end{itemize}
 
-\subsection{B5. Other techniques}
+\subsection{Other techniques}
 \begin{itemize}
 \item \textbf{Leakage control.} For each model target we drop near-definitional features: infant and under-5 mortality when predicting life expectancy, age structure and population growth when predicting fertility, PPP GDP and GDP growth when predicting GDP, primary and tertiary enrolment when predicting secondary enrolment, energy use when predicting CO$_2$, mobile when predicting internet.
 \item \textbf{Grouped cross-validation.} Folds are split by country, so the same country never appears in training and test data (in the panel, its other years would otherwise leak).
@@ -279,7 +312,7 @@ The three files are joined on their keys: \texttt{Indicators.CountryCode} $\to$ 
 
 % ------------------------------------------------------------------ C
 \section{Data mining actions}\label{sec:C}
-Table~\ref{tab:actions} lists the data-mining tasks. Items 1--6 come from the analysis notebook; E1.1--E3.3 are the nine storyline experiments implemented in \texttt{wdi/story.py}.
+Table~\ref{tab:actions} lists the data-mining tasks. Items 1, 3 and 4 come from the analysis notebook and the model suite; items 2 and 5--8 combine notebook results with, or consist of, the nine storyline experiments E1.1--E3.3 implemented in \texttt{wdi/story.py}.
 
 \begin{table}[H]\centering\small
 \caption{Data-mining actions.}\label{tab:actions}
@@ -309,7 +342,7 @@ Group-median trends (Figure~\ref{fig:trends}) show broad social progress. Life e
 \end{figure}
 
 \subsection{Convergence (E1.1--E1.3)}
-\textbf{E1.1 $\sigma$-convergence} measures the cross-country coefficient of variation (CV) each year. Social indicators converge strongly; income does not move (Figure~\ref{fig:sigma}, Table~\ref{tab:sigma}).
+\textbf{E1.1 $\sigma$-convergence} measures the cross-country coefficient of variation (CV) each year. Social indicators converge strongly; income barely moves (Figure~\ref{fig:sigma}, Table~\ref{tab:sigma}).
 
 \begin{figure}[H]\centering
 \includegraphics[width=0.85\textwidth]{E1_1_sigma.png}
@@ -320,7 +353,7 @@ Group-median trends (Figure~\ref{fig:trends}) show broad social progress. Life e
 \caption{E1.1 $\sigma$-convergence (years with $>$\,100 reporting countries).}\label{tab:sigma}
 \tab{sigma}
 \end{table}
-Under-5 mortality ``diverges'' only in relative terms: as rich countries approach zero, the ratio between countries grows even though absolute gaps shrink.
+Under-5 mortality ``diverges'' only in relative terms: as rich countries approach zero, the ratio between countries grows even though absolute gaps shrink. The flat GDP line also compares 101 countries in 1967 with 179 in 2014; on the same countries over 1990--2013 the CV falls by 5\,\% (E1.3).
 
 \textbf{E1.2 $\beta$-convergence} \cite{barro} regresses the annual change since 1990 on the 1990 level (Figure~\ref{fig:beta}, Table~\ref{tab:beta}). A negative $\beta$ means that countries starting lower improve faster.
 
@@ -344,7 +377,7 @@ Under-5 mortality ``diverges'' only in relative terms: as rich countries approac
 \textbf{E2.1} splits the cross-validated $R^2$ into three layers per theme: \ding{172} Ridge on log GDP only, \ding{173} Ridge on all non-leaking features, \ding{174} the best of the 19-model suite (Figure~\ref{fig:r2}, Table~\ref{tab:r2}).
 
 \begin{figure}[H]\centering
-\includegraphics[width=0.85\textwidth]{E2_1_r2_layers.png}
+\includegraphics[width=0.95\textwidth]{E2_1_r2_layers.png}
 \caption{E2.1: income alone (dark) carries most of the explained variance; complex models (yellow) add little.}\label{fig:r2}
 \end{figure}
 \begin{table}[H]\centering
@@ -371,7 +404,7 @@ Across all countries the largest positive life-expectancy residual is Vietnam's;
 \tab{fe}
 \end{table}
 \begin{figure}[H]\centering
-\includegraphics[width=0.7\textwidth]{E2_3_fixed_effects.png}
+\includegraphics[width=0.9\textwidth]{E2_3_fixed_effects.png}
 \caption{E2.3: within-country slope is about one third of the between-country slope.}\label{fig:fe}
 \end{figure}
 
@@ -379,7 +412,7 @@ Across all countries the largest positive life-expectancy residual is Vietnam's;
 \textbf{Clustering.} K-means on 15 standardised indicators (192 countries with $\ge$\,70\,\% coverage, 2.5\,\% of cells imputed). Silhouette is highest at $k=2$ (0.40) and falls to 0.19 at $k=4$ (Figure~\ref{fig:k}); we use $k=4$ for interpretability and comparability with the four income groups. Clusters are named by median GDP: low development, transition, emerging, advanced.
 
 \begin{figure}[H]\centering
-\includegraphics[width=0.75\textwidth]{20_cluster_k.png}
+\includegraphics[width=0.85\textwidth]{20_cluster_k.png}
 \caption{Choice of $k$: elbow and silhouette. Low silhouettes suggest a continuum rather than well-separated groups.}\label{fig:k}
 \end{figure}
 
@@ -390,11 +423,11 @@ Across all countries the largest positive life-expectancy residual is Vietnam's;
 \tab{clu}
 \end{table}
 \begin{figure}[H]\centering
-\includegraphics[width=0.75\textwidth]{E3_1_cluster_robustness.png}
+\includegraphics[width=0.95\textwidth]{E3_1_cluster_robustness.png}
 \caption{E3.1: K-means is stable across seeds, but the partition depends on the algorithm.}\label{fig:clu}
 \end{figure}
 
-\textbf{E3.2 development twins.} Nearest neighbours of Vietnam by GDP per capita alone vs by 10 standardised social indicators without income (Table~\ref{tab:twins}).
+\textbf{E3.2 development twins.} Nearest neighbours of Vietnam by GDP per capita alone vs by 10 standardised social indicators without income (Table~\ref{tab:twins}). Vietnam's missing secondary enrolment is filled with the income-group median in this distance.
 
 \begin{table}[H]\centering
 \caption{E3.2: Vietnam's five nearest countries in two spaces.}\label{tab:twins}
@@ -408,7 +441,7 @@ Across all countries the largest positive life-expectancy residual is Vietnam's;
 \tab{gaps}
 \end{table}
 \begin{figure}[H]\centering
-\includegraphics[width=0.7\textwidth]{E3_3_gaps.png}
+\includegraphics[width=0.9\textwidth]{E3_3_gaps.png}
 \caption{E3.3: Vietnam is behind the emerging cluster on urbanisation and income, level on health and technology, ahead on trade openness and forest cover.}\label{fig:gaps}
 \end{figure}
 
@@ -427,7 +460,7 @@ Across all countries the largest positive life-expectancy residual is Vietnam's;
 Each theme has one target predicted from the other indicators (leaking features removed). Table~\ref{tab:models} compares the linear baseline, random forest and the best of the 19 models; Figure~\ref{fig:apppmodels} in Section~\ref{sec:app} shows all models.
 
 \begin{table}[H]\centering
-\caption{Model suite: cross-validated $R^2$, and MAE/RMSE of the best model in target units (log$_{10}$ for GDP and CO$_2$; years for life expectancy; births per woman for fertility; percentage points for enrolment and internet).}\label{tab:models}
+\caption[Model suite: cross-validated $R^2$ (best model as mean $\pm$ SD over seeds), MAE and RMSE]{Model suite (bold: best $R^2$, and gains of at least 0.1 over the linear model). Linear and RF columns: mean $R^2$ over seeds. Best model: highest mean $R^2$; its $R^2$ is given as mean $\pm$ standard deviation over seeds (5 for snapshot, 3 for panel), so $\pm$ is seed-to-seed spread, not fold-to-fold. Each seed's $R^2$ uses out-of-fold predictions pooled over the 5 country-grouped folds. MAE/RMSE are means for the best model in target units (log$_{10}$ for GDP and CO$_2$; years for life expectancy; births per woman for fertility; percentage points for enrolment and internet).}\label{tab:models}
 \tab{models}
 \end{table}
 
@@ -446,12 +479,12 @@ Feature importance (Table~\ref{tab:imp}) confirms that development indicators su
 
 \subsection{Evaluation of the experiments}
 \begin{itemize}
-\item \textbf{Convergence (E1.1--E1.3).} Accepted: social indicators converge (life-expectancy CV $-47$\,\%, primary enrolment $-67$\,\%, internet $-85$\,\%) while GDP is flat (1.46 $\to$ 1.46). $\beta$ is strongly negative and significant for health, schooling and fertility ($r = -0.52$ to $-0.85$, $p<0.001$) but weak for GDP ($r=-0.15$, $p=0.054$). The directions hold on a balanced panel and with population weights. One correction: more than half of GDP's small CV decline since 1990 is a \emph{composition effect} ($-13$\,\% with all reporters, $-5$\,\% on the balanced panel).
+\item \textbf{Convergence (E1.1--E1.3).} Accepted: social indicators converge (life-expectancy CV $-47$\,\%, primary enrolment $-67$\,\%, internet $-85$\,\%) while GDP is flat on the changing country set (1.46 $\to$ 1.46; $-5$\,\% on a balanced 1990--2013 panel). $\beta$ is strongly negative and significant for health, schooling and fertility ($r = -0.52$ to $-0.85$, $p<0.001$) but weak for GDP ($r=-0.15$, $p=0.054$). The directions hold on a balanced panel and with population weights. One correction: more than half of GDP's small CV decline since 1990 is a \emph{composition effect} ($-13$\,\% with all reporters, $-5$\,\% on the balanced panel).
 \item \textbf{Income share (E2.1).} Income alone gives $R^2$ 0.51--0.77 (mean 0.63), about three quarters of what the best model reaches (mean 0.82). Other indicators add 0.16 and model complexity only 0.03.
 \item \textbf{Residuals (E2.2).} Vietnam is the largest positive life-expectancy residual of 203 countries (+10.4 years), fourth for internet (+25 per 100), and third-lowest fertility relative to income ($-1.9$). But it emits 3.2$\times$ the CO$_2$ its income predicts (rank 17 of 199).
-\item \textbf{Within vs between (E2.3).} A 10$\times$ income difference between countries goes with +10.9 years; within a country over time only +3.2 years (95\,\% CI 1.3--5.2). Most of the gain over time is common to all countries (year effects: medicine, vaccines), which is why the Preston curve shifted up about 5 years.
+\item \textbf{Within vs between (E2.3).} A 10$\times$ income difference between countries goes with +10.9 years; within a country over time only +3.2 years (95\,\% CI 1.3--5.2). Most of the gain over time is common to all countries (year effects: medicine, vaccines), which is why the Preston curve shifted up (about 5 years at an income of US\$1,000, about 4 years on average across incomes).
 \item \textbf{Clusters (E3.1).} K-means is stable (ARI 0.93 between seeds) and agrees with income groups for 74\,\% of countries. Across algorithms the partition changes (ARI about 0.55), and 77 of 192 countries stay in the same cluster in fewer than 60\,\% of the 60 runs. This, with the low silhouette, supports the reading of development as a continuum. Vietnam is ``emerging'' in 90\,\% of K-means runs but 35\,\% of Gaussian-mixture runs and never with Ward, so it sits on the boundary between transition and emerging.
-\item \textbf{Twins and gaps (E3.2--E3.3).} By income Vietnam resembles Côte d'Ivoire, Nigeria and Zambia (life expectancy 51--68). By social outcomes it resembles Seychelles, Mauritius and Thailand, which are 3.5--14.5 times richer. Against the emerging cluster, Vietnam's largest gaps are urbanisation (33 vs 66\,\%, $-1.4$\,SD) and income ($-1.0$\,SD); under-5 mortality (22 vs 15 per 1,000) is a moderate gap that becomes large ($+1.4$\,SD) against advanced economies.
+\item \textbf{Twins and gaps (E3.2--E3.3).} By income Vietnam resembles Côte d'Ivoire, Nigeria, Zambia, São Tomé and Príncipe and the Solomon Islands (life expectancy 51--68). By social outcomes it resembles Seychelles, Mauritius and Thailand, which are 3.5--14.5 times richer. Against the emerging cluster, Vietnam's largest gaps are urbanisation (33 vs 66\,\%, $-1.4$\,SD) and income ($-1.0$\,SD); under-5 mortality (22 vs 15 per 1,000) is a moderate gap that becomes large ($+1.4$\,SD) against advanced economies.
 \end{itemize}
 
 % ------------------------------------------------------------------ E app
@@ -460,7 +493,7 @@ All results are also available in an interactive Streamlit app (\texttt{app.py})
 
 \begin{center}\texttt{pip install -r requirements.txt \&\& streamlit run app.py}\end{center}
 
-The app has five pages in a top navigation bar and a light/dark switch (top right). Every chart is an interactive Plotly figure (hover, zoom, legend filtering).
+The app has five pages in a top navigation bar and a light/dark switch (top right). Every chart is an interactive Plotly figure (hover, zoom, legend filtering). Figure~\ref{fig:appoverview} shows the Overview page, Figure~\ref{fig:appexplore} the exploration pages (Trends and Compare) and Figure~\ref{fig:appmodel} the modelling pages (Models and Clusters, in dark mode).
 
 \begin{figure}[H]\centering
 \includegraphics[width=0.8\textwidth]{overview_light.png}
@@ -492,10 +525,10 @@ The app is also the presentation medium: the planned story pages (Part 1 What, P
 \section{Key findings}\label{sec:findings}
 \begin{enumerate}
 \item \textbf{Broad social progress, led by health.} Life expectancy rose in every region (South Asia +30 years); the rich--poor gap fell from 30.1 to 20.8 years; cross-country dispersion of life expectancy halved and that of primary enrolment fell by two thirds.
-\item \textbf{Income did not converge.} Middle-income countries grew faster than rich ones, but income dispersion did not change (CV 1.46 $\to$ 1.46; Gini 0.70 $\to$ 0.67; p90/p10 77$\times$ $\to$ 81$\times$). Catch-up came from specific countries: China (9.2\,\%/yr), Vietnam (5.3--5.5\,\%), Lao PDR, India.
+\item \textbf{Income did not converge.} Middle-income countries grew faster than rich ones, but income dispersion between countries barely changed (CV 1.46 $\to$ 1.46 over 1967--2014 on a changing country set, $-5$\,\% on a balanced 1990--2013 panel; between-country Gini 0.70 $\to$ 0.67 and p90/p10 77$\times$ $\to$ 81$\times$ over 1990--2011). Catch-up came from specific countries: China (9.2\,\%/yr), Vietnam (5.3--5.5\,\%), Lao PDR, India.
 \item \textbf{Sub-Saharan Africa is the outlier in the demographic transition.} Fertility fell 28\,\% there against 60--67\,\% elsewhere, so fertility diverged across countries.
 \item \textbf{Income explains most, but not all.} Income alone explains about 60\,\% of the variance in the other themes; ten times richer goes with about ten more years of life. But within a country, getting richer goes with only about three more years: most of the gain over time is shared by all countries.
-\item \textbf{The residual is the story.} Vietnam, Nepal, Nicaragua and Bangladesh live 7--10 years longer than their income predicts; HIV-affected Southern Africa and oil economies live 15--20 years less.
+\item \textbf{The residual is the story.} Vietnam, Nepal, Nicaragua, Syria and Bangladesh live 7--10 years longer than their income predicts; HIV-affected Southern Africa and oil economies live 15--20 years less.
 \item \textbf{Growth still means more CO$_2$.} CO$_2$ correlates with income as tightly as life expectancy ($\rho$ 0.86 vs 0.85); the environmental Kuznets \cite{grossman} turning point is about US\$51,000 and only 9 of 192 countries are above it; only 26 of 56 high-income countries cut per-capita CO$_2$ between 1990 and 2011.
 \item \textbf{Development is one continuous axis.} PC1 explains 63.5\,\%; four clusters match income groups for 74\,\% of countries, with informative mismatches (oil-rich Equatorial Guinea and Angola in the low cluster), but clusters are not robust across algorithms.
 \item \textbf{Vietnam} is lower-middle income with the social outcomes of countries 3.5--14.5 times richer, but it emits 3.2 times the CO$_2$ its income predicts. Its next gaps are income, urbanisation and child mortality.
@@ -574,10 +607,19 @@ streamlit run app.py
 \end{tabular}\end{adjustbox}
 
 
+\clearpage
 \begin{thebibliography}{99}\addcontentsline{toc}{section}{References}
 \bibitem{wdi} World Bank (2016). \emph{World Development Indicators}. Washington, DC: The World Bank. \url{https://datatopics.worldbank.org/world-development-indicators/}
 \bibitem{kaggle} Kaggle / World Bank (2017). \emph{World Development Indicators} dataset. \url{https://www.kaggle.com/datasets/kaggle/world-development-indicators}
 \bibitem{preston} Preston, S.~H. (1975). The changing relation between mortality and level of economic development. \emph{Population Studies}, 29(2), 231--248.
+\bibitem{preston07} Preston, S.~H. (2007). The changing relation between mortality and level of economic development. \emph{International Journal of Epidemiology}, 36(3), 484--490.
+\bibitem{bloom07} Bloom, D.~E. and Canning, D. (2007). Commentary: The Preston Curve 30 years on: still sparking fires. \emph{International Journal of Epidemiology}, 36(3), 498--499.
+\bibitem{pritchett} Pritchett, L. and Summers, L.~H. (1996). Wealthier is healthier. \emph{Journal of Human Resources}, 31(4), 841--868.
+\bibitem{deaton} Deaton, A. (2003). Health, inequality, and economic development. \emph{Journal of Economic Literature}, 41(1), 113--158.
+\bibitem{caldwell} Caldwell, J.~C. (1986). Routes to low mortality in poor countries. \emph{Population and Development Review}, 12(2), 171--220.
+\bibitem{anand} Anand, S. and Ravallion, M. (1993). Human development in poor countries: on the role of private incomes and public services. \emph{Journal of Economic Perspectives}, 7(1), 133--150.
+\bibitem{mrw} Mankiw, N.~G., Romer, D. and Weil, D.~N. (1992). A contribution to the empirics of economic growth. \emph{Quarterly Journal of Economics}, 107(2), 407--437.
+\bibitem{sala06} Sala-i-Martin, X. (2006). The world distribution of income: falling poverty and \ldots\ convergence, period. \emph{Quarterly Journal of Economics}, 121(2), 351--397.
 \bibitem{barro} Barro, R.~J. and Sala-i-Martin, X. (1992). Convergence. \emph{Journal of Political Economy}, 100(2), 223--251.
 \bibitem{grossman} Grossman, G.~M. and Krueger, A.~B. (1995). Economic growth and the environment. \emph{Quarterly Journal of Economics}, 110(2), 353--377.
 \bibitem{little} Little, R.~J.~A. and Rubin, D.~B. (2019). \emph{Statistical Analysis with Missing Data} (3rd ed.). Wiley.
