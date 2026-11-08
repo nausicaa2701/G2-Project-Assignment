@@ -1,20 +1,11 @@
-"""Part 2 · WHY: "Income explains most of development; the residual is the story."
+"""Part 2 · WHY: how much of development does income explain?
 
-E2.1  r2_layers        How much does income alone explain? R² in three layers per theme:
-                       (1) Ridge on log GDP only, (2) Ridge on all features, (3) best of the 19-model zoo.
-E2.2  residuals        Who does better or worse than their income predicts? Out-of-fold residuals of the
-                       income-only model, in natural units, ranked across countries.
-E2.3  fixed_effects    "Richer" vs "getting richer": the income slope between countries vs within a
-                       country over time (two-way fixed effects, panel 1990-2014), plus year effects.
+E2.1  r2_layers      R² per theme: Ridge on log GDP only, Ridge on all features, best of the 19 models.
+E2.2  residuals      Out-of-fold residuals of the income-only model: who beats its income.
+E2.3  fixed_effects  Income slope between countries vs within countries (two-way fixed effects, 1990-2014).
 
-Everything reuses the pipeline in wdi/models.py (snapshot data, leak lists, grouped K-fold by country,
-several seeds), so the numbers are directly comparable with results/summary_snapshot.csv.
-
-Two variants live here:
-  * app variant (r2_layers, residuals, income_fit, fixed_effects; `python run_story.py --part 2`
-    -> results/story/part2/): all five themes, income-only rows need an observed GDP, year effects.
-  * analysis variant (e2_1_r2_layers, e2_2_residuals, e2_3_fixed_effects; `python -m wdi.story E2.1 E2.2 E2.3`
-    -> results/story/E2_*.csv): the headline numbers of the analysis and of the home page.
+App variant: `python run_story.py --part 2` -> results/story/part2/ (used by Home and the Why tab).
+Analysis variant: `python -m wdi.story E2.1 E2.2 E2.3` -> results/story/E2_*.csv.
 """
 from pathlib import Path
 
@@ -46,7 +37,7 @@ def _cfg(feature_set, seeds, folds, themes=None):
                   mode="snapshot", feature_set=feature_set)
 
 
-# ---------------------------------------------------------------- E2.1
+# E2.1
 def r2_layers(seeds=(0, 1, 2, 3, 4), folds=5, summary_path=ROOT / "results" / "summary_snapshot.csv"):
     """R² of income-only Ridge, all-feature Ridge, and the best zoo model (from run_models.py)."""
     rows = []
@@ -73,7 +64,7 @@ def layer_table(layers):
     return w.reset_index().sort_values("income", ascending=False)
 
 
-# ---------------------------------------------------------------- E2.2
+# E2.2
 def residuals(seeds=(0, 1, 2, 3, 4), folds=5):
     """Out-of-fold residuals of the income-only model for every country and theme.
 
@@ -127,7 +118,7 @@ def scorecard(res, codes=PEERS):
     return s.sort_values(["order", "theme"]).drop(columns="order")
 
 
-# ---------------------------------------------------------------- E2.3
+# E2.3
 def _demean(df, cols, keys, tol=1e-10, max_iter=500):
     """Remove one or more sets of fixed effects by alternating projections (works on unbalanced panels)."""
     out = df[cols].astype(float).copy()
@@ -193,7 +184,7 @@ def fixed_effects(years=(1990, 2014)):
     return pd.DataFrame(rows), pd.concat(years_out, ignore_index=True)
 
 
-# ---------------------------------------------------------------- run all
+# run all
 def run(seeds=(0, 1, 2, 3, 4), folds=5, out=OUT, log=print):
     out = Path(out)
     out.mkdir(parents=True, exist_ok=True)
@@ -210,7 +201,7 @@ def run(seeds=(0, 1, 2, 3, 4), folds=5, out=OUT, log=print):
     return layers
 
 
-# ================================================================ analysis variant
+# analysis variant
 R2_THEMES = [t for t in THEMES if t != "Economy"]  # income-only makes no sense when income is the target
 
 
@@ -316,7 +307,7 @@ def e2_3_fixed_effects(years=(1990, 2014), y_var="life_exp"):
 
 
 
-# ------------------------------------------------------------------ figures (analysis variant)
+# figures (analysis variant)
 def fig_r2(d):
     d = d.set_index("theme")
     inc = d["income only mean"]

@@ -49,7 +49,7 @@ imps = []
 for theme in a.themes:
     best = summary[summary.theme == theme].iloc[0]["model"]
     imps.append(importance(theme, best, cfg).assign(theme=theme, model=best))
-import pandas as pd  # noqa: E402
+import pandas as pd
 pd.concat(imps).to_csv(out / f"importance_{tag}.csv", index=False)
 
 print(f"\nDone in {time.time() - t0:.0f}s. Best model per theme (mean ± std R² over seeds {a.seeds}):")

@@ -3,7 +3,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from wdi.models import THEMES, Config, dataset, evaluate, load, summarise  # noqa: E402
+from wdi.models import THEMES, Config, dataset, evaluate, load, summarise
 
 cfg = Config(themes=["Health"], models=["Ridge", "RandomForest"], seeds=[0, 1], folds=3)
 

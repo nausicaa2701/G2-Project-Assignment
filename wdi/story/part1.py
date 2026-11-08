@@ -74,7 +74,7 @@ def e1_2_beta(p=None, start=1990, end=2014):
 
 
 
-# ------------------------------------------------------------------ figures
+# figures
 SIGMA_NAMES = {"life_exp": "Life expectancy", "enrol_primary": "Primary enrolment", "gdp_pc": "GDP per capita",
                "fertility": "Fertility", "u5_mort": "Under-5 mortality", "internet": "Internet users"}
 

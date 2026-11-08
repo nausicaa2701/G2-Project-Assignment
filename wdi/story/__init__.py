@@ -13,17 +13,17 @@ Everything is re-exported here, so `from wdi import story; story.e1_1_sigma()` k
 """
 import sys
 
-from wdi.story.common import *  # noqa: F401,F403
+from wdi.story.common import *
 from wdi.story.common import OUT
-from wdi.story.explore import *  # noqa: F401,F403
+from wdi.story.explore import *
 from wdi.story.explore import (coverage_by_decade, coverage_table, fig_missing, missing_corr_impact,
                                missing_impact, obs_per_year, outliers, pca_variance, sample_sizes,
                                skew_transform, summary_stats, validation)
-from wdi.story.part1 import *  # noqa: F401,F403
+from wdi.story.part1 import *
 from wdi.story.part1 import e1_1_sigma, e1_2_beta, e1_3_robustness, fig_beta, fig_sigma
-from wdi.story.part2 import (_demean2, _ols_cluster, e2_1_r2_layers, e2_2_residuals,  # noqa: F401
+from wdi.story.part2 import (_demean2, _ols_cluster, e2_1_r2_layers, e2_2_residuals,
                              e2_3_fixed_effects, fig_fe, fig_r2, fig_residuals)
-from wdi.story.part3 import *  # noqa: F401,F403
+from wdi.story.part3 import *
 from wdi.story.part3 import (e3_1_cluster_robustness, e3_2_twins, e3_3_gaps, fig_clusters,
                              fig_gaps)
 
@@ -45,7 +45,7 @@ def main(argv):
         d.to_csv(OUT / name, index=index)
         print(f"\n== {name}\n{d.head(30).to_string()}")
 
-    # ---- A · exploration, B · preprocessing
+    # A · exploration, B · preprocessing
     if "A1" in want:
         save(obs_per_year(), "A1_obs_per_year.csv")
         save(coverage_by_decade().round(1), "A1_coverage_decade.csv", index=True)
@@ -66,7 +66,7 @@ def main(argv):
         var, load = pca_variance()
         save(var, "B4_pca_variance.csv")
         save(load, "B4_pca_loadings.csv")
-    # ---- Part 1 · WHAT
+    # Part 1 · WHAT
     if "E1.1" in want:
         d = e1_1_sigma()
         save(d, "E1_1_sigma.csv")
@@ -77,7 +77,7 @@ def main(argv):
         fig_beta(pts, res)
     if "E1.3" in want:
         save(e1_3_robustness(), "E1_3_robustness.csv")
-    # ---- Part 2 · WHY (analysis variant; the app variant is `python run_story.py --part 2`)
+    # Part 2 · WHY
     if "E2.1" in want:
         d = e2_1_r2_layers(seeds)
         save(d, "E2_1_r2_layers.csv")
@@ -91,7 +91,7 @@ def main(argv):
         d, _ = e2_3_fixed_effects()
         save(d, "E2_3_fixed_effects.csv")
         fig_fe(d)
-    # ---- Part 3 · SO WHAT
+    # Part 3 · SO WHAT
     if "E3.1" in want:
         summ, runs, stab = e3_1_cluster_robustness()
         runs.to_csv(OUT / "E3_1_runs.csv", index=False)

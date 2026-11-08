@@ -5,8 +5,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from wdi.models import Config, dataset, load  # noqa: E402
-from wdi.story import part2  # noqa: E402
+from wdi.models import Config, dataset, load
+from wdi.story import part2
 
 # income_only really is a single predictor, never imputed, and is refused for the income target itself.
 cfg = Config(mode="snapshot", feature_set="income_only")
@@ -24,7 +24,7 @@ layers = part2.layer_table(part2.r2_layers(seeds=[0, 1], folds=5))
 assert (layers.income <= layers.best + 1e-9).all(), layers
 assert layers.income_share.mean() > 0.6, layers
 
-# E2.2: Vietnam is the top over-performer on life expectancy (REPORT: +10.4 years).
+# E2.2: Vietnam is the top over-performer on life expectancy (+10.4 years).
 res = part2.residuals(seeds=[0, 1], folds=5)
 vn = res[(res.CountryCode == "VNM") & (res.theme == "Health")].iloc[0]
 assert 9 < vn.gap < 12 and vn["rank"] <= 3, vn

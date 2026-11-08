@@ -15,7 +15,7 @@ from sklearn.compose import TransformedTargetRegressor
 from sklearn.ensemble import (AdaBoostRegressor, ExtraTreesRegressor, GradientBoostingRegressor,
                               HistGradientBoostingRegressor, RandomForestRegressor,
                               StackingRegressor, VotingRegressor)
-from sklearn.experimental import enable_iterative_imputer  # noqa: F401  (registers IterativeImputer)
+from sklearn.experimental import enable_iterative_imputer
 from sklearn.impute import IterativeImputer, KNNImputer, SimpleImputer
 from sklearn.inspection import permutation_importance
 from sklearn.linear_model import (BayesianRidge, ElasticNet, HuberRegressor, Lasso, LinearRegression,
@@ -42,7 +42,7 @@ except ImportError:
 
 ROOT = Path(__file__).resolve().parents[1]
 PROCESSED = ROOT / "data" / "processed"
-APP_DATA = ROOT / "app_data"   # gzipped copies committed for hosting (data/ itself is gitignored)
+APP_DATA = ROOT / "app_data"   # compressed copies, used when data/processed/ is absent
 
 
 def data_path(name):

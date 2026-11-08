@@ -8,6 +8,24 @@ from ui.core import VN, goto, grid, load_results, scroll_top, tiles
 
 MEMBERS = [("Le Thi Hong Cuc", "2470882"), ("Phan Van Nguyen Khanh", "2470883"), ("Nguyen Tuong Phuc", "2470886")]
 
+ROLES = {
+    "Le Thi Hong Cuc": ("Data and the role of income", [
+        "Data audit and preprocessing pipeline (A, B)",
+        "RQ2 · Why: income layers, residuals, fixed effects",
+        "Data and Findings 2 pages; reproducibility (notebook, Makefile, tests)",
+        "Report: data, preprocessing and RQ2 chapters"]),
+    "Phan Van Nguyen Khanh": ("Exploration and convergence", [
+        "Exploratory analysis, trends and group comparisons",
+        "RQ1 · What changed: σ- and β-convergence",
+        "Findings 1 page; Lab Trends and Compare",
+        "Report: background, EDA and RQ1 chapters"]),
+    "Nguyen Tuong Phuc": ("Models, clusters and Vietnam", [
+        "Suite of 19 models with country-grouped cross-validation",
+        "RQ3 · So what: clustering, Vietnam and its peers",
+        "Findings 3 page; Lab Models and Clusters",
+        "Report: methods, RQ3 and discussion chapters"]),
+}
+
 
 @st.cache_data(show_spinner=False)
 def _headlines():
@@ -85,6 +103,15 @@ def page():
     for col, (parent, slug, t, _) in zip(st.columns(3), parts):
         if col.button(f"Open {t} →", key=f"go_{parent}", type="tertiary"):
             goto(parent, slug)
+
+    st.markdown('<div class="section-title">Contributions</div>'
+                '<div class="section-sub">Equal contribution: each member led one strand of the pipeline end to end '
+                '(data, analysis, application and report section) and reviewed the work of the other two.</div>',
+                unsafe_allow_html=True)
+    grid([f'<div class="card contrib"><div class="t">{n}</div><div class="id">{i} · {ROLES[n][0]}</div>'
+          '<ul>' + "".join(f"<li>{x}</li>" for x in ROLES[n][1]) + '</ul>'
+          '<div class="share"><span style="width:33.3%"></span></div><div class="pct">33.3 %</div></div>'
+          for n, i in MEMBERS])
 
     st.markdown('<div class="footer">Source: World Bank, World Development Indicators (Kaggle release). '
                 'Results are associations, not causal effects; country medians are not population-weighted.</div>',

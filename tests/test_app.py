@@ -8,9 +8,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from streamlit.testing.v1 import AppTest  # noqa: E402
+from streamlit.testing.v1 import AppTest
 
-from ui.sections import sections  # noqa: E402
+from ui.sections import sections
 
 LANDING = """
 import sys

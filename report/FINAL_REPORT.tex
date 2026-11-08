@@ -163,7 +163,7 @@ The study uses the Kaggle release of the WDI \cite{kaggle}, which ends in 2014--
 The contributions of this work are threefold. First, it provides a systematic audit of the WDI extract, including a quantitative assessment of how missing values bias summary statistics and correlations. Second, it measures the explanatory power of income across five development themes within a single, leakage-controlled framework (country-grouped cross-validation over 19 regressors), and complements the cross-sectional view with a within-country panel estimate. Third, it combines residual analysis, clustering and nearest-neighbour search to position an individual country on outcomes rather than on income, and tests the robustness of each result.
 
 \subsection{Organisation of the report}
-Section~\ref{sec:related} defines the key concepts and reviews related work. Section~\ref{sec:A} reports the initial data exploration and Section~\ref{sec:B} the preprocessing pipeline. Section~\ref{sec:method} describes the analytical methods and the evaluation protocol, and Section~\ref{sec:results} presents the results by research question. Section~\ref{sec:app} describes the interactive web application. Section~\ref{sec:discussion} discusses the findings, their relation to the literature and the threats to validity, and Section~\ref{sec:conclusion} concludes. The appendices list the selected indicators, the reproduction steps and the repository structure.
+Section~\ref{sec:related} defines the key concepts and reviews related work. Section~\ref{sec:A} reports the initial data exploration and Section~\ref{sec:B} the preprocessing pipeline. Section~\ref{sec:method} describes the analytical methods and the evaluation protocol, and Section~\ref{sec:results} presents the results by research question. Section~\ref{sec:app} describes the interactive web application. Section~\ref{sec:discussion} discusses the findings, their relation to the literature and the threats to validity, and Section~\ref{sec:conclusion} concludes. The appendices list the selected indicators and the repository structure.
 
 % ================================================================== 2
 \section{Background and related work}\label{sec:related}
@@ -696,7 +696,7 @@ The application is implemented in Streamlit and organised as a home page and thr
 \toprule
 Page & Tab & Content & Report section \\
 \midrule
-Home & -- & title, group information, a short summary of the findings (TL;DR), key numbers & Abstract \\
+Home & -- & title, group information, a short summary of the findings (TL;DR), key numbers, contributions of the members & Abstract \\
 Data & A · Exploration & dataset overview, summary statistics, missing-value impact, outliers, groups & Section~\ref{sec:A} \\
  & B · Preprocessing & problem-to-technique mapping and the result of each technique (B1--B5) & Section~\ref{sec:B} \\
 Findings & 1 · What changed & trends, $\sigma$- and $\beta$-convergence, robustness & Section~\ref{sec:conv} \\
@@ -713,8 +713,8 @@ The source code separates a shared design and navigation module from one module 
 Figure~\ref{fig:applanding} shows the home page, Figure~\ref{fig:appdata} the two data tabs, Figure~\ref{fig:appfindings} the three findings tabs and Figure~\ref{fig:applab} two of the laboratory tabs. Each findings section opens with a one-sentence conclusion whose key number is highlighted, followed by the supporting chart; methodological details are available in collapsible panels. All charts are interactive (hover, zoom and legend filtering), and Vietnam is drawn in red throughout.
 
 \begin{figure}[htbp]\centering
-\includegraphics[width=0.72\textwidth]{app_report.png}
-\caption{Web application: home page with the title, group information and a short summary of the findings.}\label{fig:applanding}
+\includegraphics[width=0.62\textwidth]{app_report.png}
+\caption{Web application: home page with the title, group information, a short summary of the findings and the contributions of the three members.}\label{fig:applanding}
 \end{figure}
 
 \begin{figure}[htbp]\centering

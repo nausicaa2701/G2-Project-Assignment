@@ -111,7 +111,7 @@ def e3_3_gaps(country=VN):
 
 
 
-# ------------------------------------------------------------------ figures
+# figures
 def fig_clusters(summ):
     fig, ax = plt.subplots(figsize=(8, 3.4))
     x = np.arange(len(summ))

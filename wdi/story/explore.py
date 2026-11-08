@@ -20,7 +20,7 @@ from sklearn.decomposition import PCA
 from wdi.models import THEMES
 from wdi.story.common import CLUSTER_VARS, INCOME_ORDER, _save, numeric, panel, snapshot
 
-# ------------------------------------------------------------------ A1 · dataset overview
+# A1 · dataset overview
 RAW_FILES = pd.DataFrame([
     ("Indicators.csv", "574 MB", 5_656_458, 6, "one value per country × indicator × year", "used"),
     ("Country.csv", "0.13 MB", 247, 31, "country metadata: region, income group, names", "used"),
@@ -60,7 +60,7 @@ def coverage_by_decade(p=None):
     return cov.T.loc[cov.mean().sort_values(ascending=False).index]
 
 
-# ------------------------------------------------------------------ A2 · summary statistics
+# A2 · summary statistics
 def summary_stats(snap=None):
     """A2: summary statistics of every indicator in the 2005-2014 snapshot (one value per country)."""
     snap = snapshot() if snap is None else snap
@@ -155,7 +155,7 @@ def hyperinflation(p=None, threshold=500):
     return h.sort_values("inflation", ascending=False).reset_index(drop=True)
 
 
-# ------------------------------------------------------------------ B · preprocessing
+# B · preprocessing
 PIPELINE = pd.DataFrame([
     ("B4 Reduction", "chunked read of Indicators.csv, keep 32 of 1,344 indicators", "5,656,458 → 247,446 rows"),
     ("B1 Cleaning", "separate the 33 aggregates (empty Region)", "210,443 country rows kept, 37,003 set aside"),

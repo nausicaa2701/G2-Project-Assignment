@@ -15,7 +15,7 @@ from wdi.models import data_path
 ROOT = Path(__file__).resolve().parents[1]
 RESULTS = ROOT / "results"
 
-# ---------------------------------------------------------------- design system
+# design system
 # Minimal light and dark palettes: flat surfaces, hairline borders, one accent colour, Vietnam always in red.
 # The toggle (top-right) stores its value in session state; app.py calls apply_theme() on every rerun.
 MODES = {
@@ -158,6 +158,12 @@ def apply_theme():
     .tldr li em {{ font-style: normal; color: {VN_COLOR}; font-weight: 600; }}
     .card .t {{ color: {INK}; font-weight: 600; font-size: 1rem; }}
     .card .d {{ color: {GREY}; font-size: .88rem; line-height: 1.5; margin-top: .3rem; }}
+    .contrib {{ display: flex; flex-direction: column; }}
+    .contrib .id {{ color: {GREY}; font-size: .82rem; margin-top: .15rem; }}
+    .contrib ul {{ margin: .7rem 0 .9rem; padding-left: 1.1rem; color: {INK}; font-size: .88rem; line-height: 1.55; flex: 1; }}
+    .contrib .share {{ height: 4px; border-radius: 2px; background: {c["grid"]}; overflow: hidden; }}
+    .contrib .share span {{ display: block; height: 100%; background: {BLUE}; }}
+    .contrib .pct {{ color: {GREY}; font-size: .78rem; margin-top: .35rem; }}
     .footer {{ color: {GREY}; font-size: .82rem; padding: 1.2rem 0 .4rem; border-top: 1px solid {LINE}; margin-top: 2.6rem; line-height: 1.7; }}
     </style>""", unsafe_allow_html=True)
 
@@ -218,7 +224,7 @@ def insights(items, cols=2):
     grid([f'<div class="insight"><b>{b}</b><span>{t}</span></div>' for b, t in items], n=cols)
 
 
-# ---------------------------------------------------------------- data
+# data
 LABELS = {
     "gdp_pc": "GDP per capita (const. 2005 US$)", "gdp_pc_ppp": "GDP per capita, PPP", "gdp_growth": "GDP growth (%)",
     "inflation": "Inflation (%)", "unemployment": "Unemployment (%)", "trade_open": "Trade (% of GDP)",
@@ -279,7 +285,7 @@ def group_trend(var, by, min_share=0.3):
     return out
 
 
-# ---------------------------------------------------------------- story helpers (shared by the story pages)
+# story helpers (shared by the story pages)
 def takeaway(headline, sub=""):
     """Action title: the section's conclusion as one sentence; wrap the anchor number in <em>."""
     st.markdown(f'<div class="takeaway">{headline}</div><div class="takeaway-sub">{sub}</div>', unsafe_allow_html=True)
@@ -320,7 +326,7 @@ def missing_results(*frames, cmd):
     return False
 
 
-# ---------------------------------------------------------------- navigation
+# navigation
 # Few top-level pages (Home · Data · Findings · Lab); each parent shows its children as a tab bar.
 # app.py fills SECTIONS and PAGES. Only the selected tab is rendered (st.tabs would compute every child).
 SECTIONS = {}  # parent key -> dict(title, icon, tabs=[(slug, label, render_fn), ...])

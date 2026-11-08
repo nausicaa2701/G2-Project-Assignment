@@ -52,14 +52,14 @@ def _pca_coords():
     return d.assign(PC1=P[:, 0], PC2=P[:, 1]), pca.explained_variance_ratio_
 
 
-# ================================================================ A · exploration
+# A · exploration
 def page_a():
     r = _a_results()
     hero("A · Initial data exploration", "What is in the data,<br>and what is missing.",
          "Size and attributes of the World Bank files, summary statistics of the 32 indicators we kept, "
          "and the outliers, groups and values that stand out. Missing values are checked at every step.")
 
-    # ---------------------------------------------------------------- A1
+    # A1
     section("A1 · Dataset overview", "The raw Kaggle files, their attributes, and the subset analysed in this project.")
     tiles([("Raw observations", "5.66 M", "Indicators.csv, one row per country × indicator × year"),
            ("Economies", "247", "214 countries + 33 aggregates"),
@@ -98,7 +98,7 @@ def page_a():
                "The 32 selected attributes",
                attrs.style.format({"Panel coverage": "{:.0f} %", "Snapshot coverage": "{:.0f} %"}).hide(axis="index"))
 
-    # ---------------------------------------------------------------- A2
+    # A2
     section("A2 · Summary statistics", "Snapshot: one value per country (latest in 2005–2014), so large and small "
             "countries count the same.")
     s = r["stats"]
@@ -185,7 +185,7 @@ def page_a():
                "on sparse indicators.",
                "Impact table and reading", t.style.format(precision=1))
 
-    # ---------------------------------------------------------------- A3
+    # A3
     section("A3 · Outliers, groups and interesting values", "IQR rule on the analysis scale (log₁₀ for skewed "
             "indicators), correlation structure, and the values that stand out.")
     o = r["outliers"]
@@ -314,7 +314,7 @@ def page_a():
            "gaps that are not random → a rule per method.")
 
 
-# ================================================================ B · preprocessing
+# B · preprocessing
 FINDINGS = pd.DataFrame([
     ("A1", "1,344 sparse indicators, 5.66 M rows, 574 MB", "B4", "attribute selection (32) + chunked filtering"),
     ("A1", "33 aggregates mixed with countries", "B1", "remove aggregates (empty Region)"),
@@ -354,7 +354,7 @@ def page_b():
     method_box("Order in which the steps run in `WDI_Analysis.ipynb` and what each changed.", "Full pipeline log",
                ex.PIPELINE.style.hide(axis="index"))
 
-    # ---------------------------------------------------------------- B1
+    # B1
     section("B1 · Data cleaning", "Validation, outliers and a missing-value rule for each kind of gap.")
     v = r["valid"]
     st.markdown("**Validation of the processed panel** (recomputed on every load)")
@@ -391,7 +391,7 @@ def page_b():
     fig.update_xaxes(range=[0, 220], title="countries kept")
     chart(fig.update_layout(title="Listwise deletion (orange) vs our rules (blue)"), 640, legend=False, target=b)
 
-    # ---------------------------------------------------------------- B2
+    # B2
     section("B2 · Data integration", "Three files joined on their keys into one table per analysis.")
     a, b = st.columns(2)
     with a:
@@ -414,7 +414,7 @@ def page_b():
           .format({"gdp_pc": "{:,.0f}", "life_exp": "{:.1f}", "internet": "{:.1f}", "co2_pc": "{:.2f}"})
           .hide(axis="index"))
 
-    # ---------------------------------------------------------------- B3
+    # B3
     section("B3 · Data transformation", "Reshape, log transform and standardise.")
     st.markdown("**Long → wide.** The raw table has one row per value; analysis needs one row per country-year.")
     long = panel[(panel.CountryCode == VN) & panel.Year.between(2010, 2012)][["CountryCode", "Year", "gdp_pc",
@@ -464,7 +464,7 @@ def page_b():
                "and year means for fixed effects, and out-of-fold residuals as \"performance vs income\" (Part 2).",
                "Transformation details")
 
-    # ---------------------------------------------------------------- B4
+    # B4
     section("B4 · Data reduction", "Fewer attributes, fewer instances, fewer dimensions, with the information kept.")
     pv, pl = r["pca_var"], r["pca_load"]
     takeaway(f"One component keeps <em>{pv['explained_%'].iloc[0]:.1f} %</em> of the information in 15 indicators",
@@ -492,7 +492,7 @@ def page_b():
                 f"per country ({len(snap)}), for every cross-country comparison; the panel is kept for trends and "
                 "fixed effects.")
 
-    # ---------------------------------------------------------------- B5
+    # B5
     section("B5 · Leakage control for the models", "Near-definitional features are removed per target, and "
             "cross-validation folds are split by country.")
     table(pd.DataFrame([(t, LABELS[s["target"]], ", ".join(LABELS[f] for f in s["leak"]))

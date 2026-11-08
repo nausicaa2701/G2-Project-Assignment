@@ -5,7 +5,7 @@ from pathlib import Path
 import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from wdi import story  # noqa: E402
+from wdi import story
 
 # Within transformation removes country and year means: a pure FE panel demeans to ~0.
 c, t = np.repeat(np.arange(4), 5), np.tile(np.arange(5), 4)
@@ -20,11 +20,11 @@ fe, _ = story.e2_3_fixed_effects()
 assert fe.slope_per_10x.iloc[2] < fe.slope_per_10x.iloc[0]    # within-country slope < between (E2.3)
 d, X, Z = story.cluster_matrix(story.snapshot())
 lab = story.fit_clusters(Z, X.gdp_pc)
-assert sorted(set(lab)) == [1, 2, 3, 4] and round(story.income_agreement(lab, d.Income), 2) == 0.74   # report: 74 %
+assert sorted(set(lab)) == [1, 2, 3, 4] and round(story.income_agreement(lab, d.Income), 2) == 0.74
 tw = story.e3_2_twins()
 assert story.VN not in set(tw.CountryCode) and len(tw) == 10
 
-# A · exploration and B · preprocessing checks (wdi/story/explore.py) reproduce the report's numbers.
+# A · exploration and B · preprocessing checks (wdi/story/explore.py) reproduce the expected numbers.
 snap = story.snapshot()
 v = story.validation().set_index("check").found
 assert v["duplicate (country, year) keys"] == 0 and v["hyperinflation years (> 500 %)"] == 29

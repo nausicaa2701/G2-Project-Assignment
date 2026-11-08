@@ -1,11 +1,7 @@
-"""CLI: run the per-part story experiments behind the app pages and write results/story/part{N}/.
+"""CLI: run the per-part experiments used by the app and write results/story/part{N}/.
 
-The report experiments (E1.1-E3.3, A2, A3) are a separate CLI: `python -m wdi.story`, writing results/story/.
-
-Examples
   python run_story.py --part 2                      # E2.1-E2.3, seeds 0-4, 5 folds
   python run_story.py --part 2 --seeds 0 1 --folds 3
-Parts 1 and 3 plug in the same way: add wdi/story/part{N}.py with a run(seeds, folds, out, log) function.
 """
 import argparse
 import importlib

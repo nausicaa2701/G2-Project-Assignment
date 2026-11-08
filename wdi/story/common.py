@@ -1,11 +1,11 @@
 """Shared constants and loaders for the experiments (wdi/story/*)."""
 import matplotlib
 matplotlib.use("Agg")
-import matplotlib.pyplot as plt  # noqa: E402
-import numpy as np  # noqa: E402
-import pandas as pd  # noqa: E402
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
 
-from wdi.models import ROOT, data_path  # noqa: E402
+from wdi.models import ROOT, data_path
 
 OUT, FIG = ROOT / "results" / "story", ROOT / "figures" / "story"
 VN, VN_COLOR, GREY = "VNM", "#c0392b", "#9aa0a6"
