@@ -69,9 +69,10 @@ def apply_theme():
     .bridge {{ color: {GREY}; font-size: .98rem; padding: .9rem 0 .2rem; margin-top: 2.6rem; border-top: 1px solid {LINE}; }}
 
     /* equal-height grids of tiles and cards (CSS grid, so every block in a row has the same height) */
+    /* column counts per breakpoint are chosen in grid() so rows are always full (no orphan block) */
     .grid {{ display: grid; gap: 12px; grid-template-columns: repeat(var(--n), minmax(0, 1fr)); margin: .4rem 0 1rem; }}
-    @media (max-width: 900px) {{ .grid {{ grid-template-columns: repeat(2, minmax(0, 1fr)); }} }}
-    @media (max-width: 520px) {{ .grid {{ grid-template-columns: 1fr; }} }}
+    @media (max-width: 900px) {{ .grid {{ grid-template-columns: repeat(var(--t), minmax(0, 1fr)); }} }}
+    @media (max-width: 600px) {{ .grid {{ grid-template-columns: repeat(var(--p), minmax(0, 1fr)); gap: 10px; }} }}
     .tile, .insight, .card {{ background: {c["card"]}; border: 1px solid {LINE}; border-radius: 10px; padding: 16px 18px; }}
     .tile .k {{ color: {GREY}; font-size: .8rem; font-weight: 500; }}
     .tile .v {{ color: {INK}; font-size: 1.6rem; font-weight: 650; letter-spacing: -0.02em; line-height: 1.25; margin: .2rem 0; }}
@@ -83,9 +84,11 @@ def apply_theme():
     div[data-testid="stPlotlyChart"] {{ background: {c["card"]}; border: 1px solid {LINE}; border-radius: 10px; padding: 6px; }}
     .tbl {{ background: {c["card"]}; border: 1px solid {LINE}; border-radius: 10px; overflow-x: auto; padding: 4px 12px; }}
     .tbl table {{ border-collapse: collapse; width: 100%; font-size: .86rem; color: {INK}; }}
-    .tbl th {{ color: {GREY}; font-weight: 500; text-align: right; padding: .55rem .6rem; border-bottom: 1px solid {LINE}; }}
+    .tbl th {{ color: {GREY}; font-weight: 500; text-align: right; padding: .55rem .6rem; border-bottom: 1px solid {LINE};
+               min-width: 4.5rem; }}
     .tbl th.row_heading {{ text-align: left; }}
-    .tbl td {{ text-align: right; padding: .5rem .6rem; border-bottom: 1px solid {c["grid"]}; font-variant-numeric: tabular-nums; }}
+    .tbl td {{ text-align: right; padding: .5rem .6rem; border-bottom: 1px solid {c["grid"]}; font-variant-numeric: tabular-nums;
+               white-space: nowrap; }}
     .tbl tr:last-child td {{ border-bottom: 0; }}
     [data-testid="stExpander"] details {{ background: {c["card"]}; border: 1px solid {LINE}; border-radius: 10px; }}
     [data-testid="stExpander"] summary, [data-testid="stExpander"] summary * {{ color: {INK} !important; }}
@@ -146,7 +149,7 @@ def apply_theme():
     .home-head .sub {{ color: {GREY}; font-size: 1.05rem; }}
     .home-head [data-testid="stHeaderActionElements"] {{ display: none; }}
     .meta {{ display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 1.4rem 0 .4rem; }}
-    @media (max-width: 760px) {{ .meta {{ grid-template-columns: 1fr; }} }}
+    @media (max-width: 640px) {{ .meta {{ grid-template-columns: 1fr; }} }}
     .meta .card .k {{ color: {GREY}; font-size: .78rem; font-weight: 500; text-transform: uppercase; letter-spacing: .04em; }}
     .meta .card .v {{ color: {INK}; font-size: .93rem; line-height: 1.6; margin-top: .35rem; }}
     .tldr {{ border: 1px solid {LINE}; border-radius: 10px; padding: 18px 22px; margin: .8rem 0 0; background: {c["card"]}; }}
@@ -164,15 +167,39 @@ def apply_theme():
     .contrib .share {{ height: 4px; border-radius: 2px; background: {c["grid"]}; overflow: hidden; }}
     .contrib .share span {{ display: block; height: 100%; background: {BLUE}; }}
     .contrib .pct {{ color: {GREY}; font-size: .78rem; margin-top: .35rem; }}
+    .explore {{ min-height: 7.2rem; }}
     .footer {{ color: {GREY}; font-size: .82rem; padding: 1.2rem 0 .4rem; border-top: 1px solid {LINE}; margin-top: 2.6rem; line-height: 1.7; }}
+    /* tab bars scroll sideways instead of wrapping */
+    [class*="st-key-tab_"] [data-testid="stButtonGroup"] > div {{ flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }}
+
+    /* touch screens: no Plotly toolbar (it covers the chart titles) */
+    @media (hover: none), (max-width: 640px) {{ .modebar-container {{ display: none !important; }} }}
+
+    /* phones */
+    @media (max-width: 640px) {{
+        .block-container {{ padding: 1.2rem 1rem 2.5rem; }}
+        .tile, .insight, .card {{ padding: 13px 14px; }}
+        .tile .v {{ font-size: 1.3rem; }}
+        .tile .s {{ font-size: .76rem; }}
+        .home-head {{ padding: 1.4rem 0 1.2rem; }}
+        .tldr {{ padding: 14px 16px; }}
+        .section-title {{ margin-top: 1.8rem; }}
+        .takeaway {{ font-size: 1.05rem; margin-top: 1.9rem; }}
+        .tbl {{ padding: 2px 8px; }}
+        .tbl table {{ font-size: .8rem; }}
+        .js-plotly-plot .gtitle {{ font-size: 12.5px !important; }}
+        .explore {{ min-height: 0; }}
+        .st-key-dark {{ right: .8rem; }}
+    }}
     </style>""", unsafe_allow_html=True)
 
 
 def style(fig, h=420, legend=True):
     fig.update_layout(template=C["template"], height=h, font=dict(family=FONT, color=INK, size=12),
-                      margin=dict(l=8, r=8, t=44, b=8), paper_bgcolor=C["card"], plot_bgcolor=C["card"],
+                      margin=dict(l=8, r=18, t=44, b=8), paper_bgcolor=C["card"], plot_bgcolor=C["card"],
                       title=dict(x=0.01, xanchor="left", font=dict(size=14, weight=600)), colorway=PALETTE,
-                      showlegend=legend, legend=dict(orientation="h", y=-0.16, title=None, font=dict(size=11)),
+                      showlegend=legend, legend=dict(orientation="h", yref="container", y=0, yanchor="bottom", x=0.01, title=None,
+                                                       font=dict(size=11)),
                       hoverlabel=dict(font_family=FONT, bgcolor=C["card"], font_color=INK))
     fig.update_xaxes(showgrid=False, linecolor=LINE, ticks="", title_font=dict(size=11, color=GREY))
     fig.update_yaxes(gridcolor=C["grid"], zeroline=False, linecolor=LINE, title_font=dict(size=11, color=GREY))
@@ -197,21 +224,26 @@ def table(styler):
     df = styler.data
     text = [c for c in df.columns if not pd.api.types.is_numeric_dtype(df[c])]
     if text:
-        styler = styler.set_properties(subset=text, **{"text-align": "left"})
+        styler = styler.set_properties(subset=text, **{"text-align": "left", "white-space": "normal", "min-width": "9rem"})
         styler = styler.set_table_styles([{"selector": f"th.col{list(df.columns).index(c)}",
                                            "props": "text-align: left"} for c in text], overwrite=False)
     st.markdown(f'<div class="tbl">{styler.to_html()}</div>', unsafe_allow_html=True)
 
 
-def grid(blocks, n=None):
-    """Equal-width, equal-height blocks in one row (wraps to two columns on tablets, one on phones)."""
+def grid(blocks, n=None, compact=False):
+    """Equal-width, equal-height blocks; tablet and phone column counts keep every row full.
+
+    compact=True (small tiles) keeps two per row on phones when the count is even.
+    """
     n = n or len(blocks)
-    st.markdown(f'<div class="grid" style="--n:{n}">{"".join(blocks)}</div>', unsafe_allow_html=True)
+    t = n if n <= 3 else (3 if n % 3 == 0 else 2)
+    p = 2 if compact and n % 2 == 0 else 1
+    st.markdown(f'<div class="grid" style="--n:{n};--t:{t};--p:{p}">{"".join(blocks)}</div>', unsafe_allow_html=True)
 
 
 def tiles(items):
     grid([f'<div class="tile"><div class="k">{k}</div><div class="v">{v}</div><div class="s">{s}</div></div>'
-          for k, v, s in items])
+          for k, v, s in items], compact=True)
 
 
 def chart(fig, h=420, legend=True, target=st):

@@ -99,8 +99,9 @@ def page():
     parts = [("data", "exploration", "Data", "What is in the data, what is missing, and how it was cleaned."),
              ("findings", "what", "Findings", "Three questions: what changed, why, and what it means for Vietnam."),
              ("lab", "trends", "Lab", "Any indicator, country or model, recomputed live.")]
-    grid([f'<div class="card"><div class="t">{t}</div><div class="d">{d}</div></div>' for _, _, t, d in parts])
-    for col, (parent, slug, t, _) in zip(st.columns(3), parts):
+    for col, (parent, slug, t, d) in zip(st.columns(3), parts):   # each card keeps its button when stacked
+        col.markdown(f'<div class="card explore"><div class="t">{t}</div><div class="d">{d}</div></div>',
+                     unsafe_allow_html=True)
         if col.button(f"Open {t} →", key=f"go_{parent}", type="tertiary"):
             goto(parent, slug)
 

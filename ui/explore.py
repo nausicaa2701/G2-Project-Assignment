@@ -80,10 +80,7 @@ def page_models():
         targets = {t: LABELS[v["target"]] + (" (log)" if v["log"] else "") for t, v in THEMES.items()}
         best = summary.sort_values("r2_mean", ascending=False).groupby("theme").head(1).set_index("theme")
         tiles([(t, f"{best.loc[t, 'r2_mean']:.2f}", f"{best.loc[t, 'model']} · {targets[t]}")
-               for t in THEMES if t in best.index][:3])
-        st.write("")
-        tiles([(t, f"{best.loc[t, 'r2_mean']:.2f}", f"{best.loc[t, 'model']} · {targets[t]}")
-               for t in THEMES if t in best.index][3:])
+               for t in THEMES if t in best.index])
         st.write("")
         theme = st.selectbox("Theme", list(THEMES), format_func=lambda t: f"{t}: {targets[t]}")
         s = summary[summary.theme == theme].sort_values("r2_mean")
