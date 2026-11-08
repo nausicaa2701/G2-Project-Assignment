@@ -1,58 +1,92 @@
-# G2 Project Assignment: World Development Indicators analysis
+# Does richer mean more developed?
 
-End-to-end data-analytics project on the World Bank **World Development Indicators** (Kaggle `kaggle/world-development-indicators`, 1960–2015). It covers ETL, missing-data handling, EDA, theme trends, cross-country comparison, a multi-model evaluation suite, and an interactive Streamlit app.
+A data-mining study of the World Bank World Development Indicators (WDI), 1960–2014: ETL, missing-data audit,
+exploratory analysis, a suite of 19 models, nine experiments and an interactive Streamlit app.
 
-![Report landing page of the app](docs/screenshots/overview_light.png)
+**Live app:** <https://g2-project-assignment.streamlit.app/> · **Report:** [report/FINAL_REPORT.pdf](report/FINAL_REPORT.pdf)
 
 | | |
 |---|---|
-| ![Trends page: GDP per capita by income group](docs/screenshots/trends_light.png) | ![Compare page: world map of life expectancy](docs/screenshots/compare_light.png) |
-| **Trends**: every indicator by income group or region | **Compare**: map, rankings, any-two-indicator scatter |
-| ![Models page in dark mode: R² per theme](docs/screenshots/models_dark.png) | ![Clusters page in dark mode: PCA and world map](docs/screenshots/clusters_dark.png) |
-| **Models**: 19 models, multi-seed R², live experiments | **Clusters**: K-means / GMM / Ward with your own k and seed |
+| Course | Data Analytics, Faculty of Computer Science and Engineering, Ho Chi Minh City University of Technology |
+| Lecturer | Dr. Nguyen Thi Ai Thao |
+| Group G2 | Le Thi Hong Cuc (2470882) · Phan Van Nguyen Khanh (2470883) · Nguyen Tuong Phuc (2470886) |
 
-<p align="center"><img src="docs/screenshots/overview_dark.png" alt="Report landing page in dark mode" width="80%"><br><em>Light and dark mode, switchable from the top-right toggle.</em></p>
+![Home page of the app](figures/app/app_report.png)
 
-| File | Content |
+## Findings
+
+From 5.66 million WDI observations we kept 32 indicators in six themes for 214 countries. We then asked three
+questions: what changed, why, and what it means for Vietnam.
+
+- **Mostly yes.** Log GDP per capita alone explains 55–81 % of the cross-country differences in five development
+  themes (mean 67 %). The best of 19 models reaches 82 %.
+- **Health converged, income did not.** The spread of life expectancy between countries fell by 47 % from 1960 to
+  2013. The spread of income did not shrink.
+- **Being rich matters more than getting rich.** Ten times more income goes with about +11 years of life expectancy
+  between countries, but only about +3 years within a country over time.
+- **Income groups are a rough guide.** Data-driven clusters match the World Bank income groups for 74 % of
+  countries.
+- **Vietnam** lives about 10 years longer than its income predicts, the largest gap of 203 countries. It also emits
+  3.2 times the CO₂ its income predicts.
+
+## App
+
+| Page | Tabs |
 |---|---|
-| `WDI_Analysis.ipynb` | Main notebook, executed, with commentary in every section (writes `data/processed/`) |
-| `REPORT.md` | Short written report with the key findings |
-| `wdi/models.py` | Model suite: 19 regressors × 6 themes × N seeds, grouped CV, importance, trend predictions |
-| `run_models.py` | CLI for the model suite, writes `results/` |
-| `wdi/story/` | Experiments by section: `explore.py` (A exploration, B preprocessing checks), `part1.py` / `part2.py` / `part3.py` (storyline E1–E3), `common.py` |
-| `app.py` | Streamlit entry point: four top-level pages, **Home** (title, group, TL;DR) · **Data** (tabs A Exploration, B Preprocessing) · **Findings** (tabs 1 What, 2 Why, 3 So what) · **Lab** (tabs Trends, Compare, Models, Clusters); tabs are shareable links such as `/findings?tab=why`; light/dark toggle top-right |
-| `ui/` | One module per page group: `core.py` (design system, data, story helpers, tab navigation), `sections.py` (which tabs each parent page has), `landing.py` (Report), `data.py` (A, B), `part1.py`, `part2.py`, `part3.py`, `explore.py` (Lab tabs) |
-| `report/` | LaTeX final report, its tables (`make_tables.py`) and PDF |
-| `tests/` | `test_models.py`, `test_story.py` (A/B checks + E1–E3), `test_part2.py`, `test_app.py` (the landing page and every tab, light and dark) |
-| `figures/` | Charts exported by the notebook |
-| `results/` | Precomputed model results used by the app |
-| `app_data/` | Gzipped processed data (1.5 MB) so the app runs without the raw Kaggle files |
-| `data/` | Raw Kaggle CSVs and processed files (not committed, regenerate below) |
+| Home | title, group, TL;DR, key numbers, contributions |
+| Data | A · Exploration · B · Preprocessing |
+| Findings | 1 · What changed · 2 · Why · 3 · So what |
+| Lab | Trends · Compare · Models · Clusters, recomputed live |
 
-## Reproduce
+Every tab has its own link, for example <https://g2-project-assignment.streamlit.app/findings?tab=why>. The light
+and dark modes are switched with the toggle at the top right.
+
+| | |
+|---|---|
+| ![Findings, 2 · Why](figures/app/app_why.png) | ![Lab, Models](figures/app/app_models.png) |
+| **2 · Why**: income-only fit, residual scorecard, fixed effects | **Models**: 19 models, multi-seed R², live experiments |
+
+## Quick start
+
+Requires Python 3.11 or later and `make`.
+
 ```bash
-python -m venv .venv
-.venv/Scripts/pip install -r requirements.txt        # Linux/macOS: .venv/bin/pip
-# 1. data + notebook (needs a Kaggle API token in ~/.kaggle/kaggle.json)
-.venv/Scripts/kaggle datasets download -d kaggle/world-development-indicators --unzip -p data/raw
-.venv/Scripts/jupyter nbconvert --to notebook --execute --inplace WDI_Analysis.ipynb
-# 2. model suite
-.venv/Scripts/python run_models.py --mode snapshot --seeds 0 1 2 3 4
-.venv/Scripts/python run_models.py --mode panel                      # slower, ~1 h on a laptop
-.venv/Scripts/python tests/test_models.py
-.venv/Scripts/python run_story.py --part 2                          # Part 2 page experiments -> results/story/part2/ (~5 s)
-.venv/Scripts/python tests/test_part2.py
-.venv/Scripts/python -m wdi.story                                  # A1-A3, B, E1.1-E3.3 -> results/story/, figures/story/
-.venv/Scripts/python tests/test_story.py
-.venv/Scripts/python report/make_tables.py                          # LaTeX tables for report/FINAL_REPORT.tex
-# 3. app
-.venv/Scripts/python tests/test_app.py                             # landing page and every tab render, light and dark (~1 min)
-.venv/Scripts/streamlit run app.py
+make app        # create .venv, install requirements, open the app at http://localhost:8501
+make all        # rebuild everything from the raw data: setup, download, notebook, tests (~40 min)
 ```
-Only `Country.csv`, `Series.csv` and `Indicators.csv` are used; `database.sqlite` (1.4 GB) can be deleted.
+
+The app runs on the bundled `app_data/` and `results/`, so the raw data is not needed to start it. `make data`
+downloads the three Kaggle files used (`Country.csv`, `Series.csv`, `Indicators.csv`) into `data/raw/`. No account
+is needed. `make notebook` executes `WDI_Analysis.ipynb` end to end and `make test` runs the checks.
+
+The notebook sections can also be run from the command line:
+
+```bash
+.venv/bin/python run_models.py --mode snapshot --seeds 0 1 2 3 4    # model suite, snapshot
+.venv/bin/python run_models.py --mode panel --seeds 0 1 2           # model suite, panel (~30 min)
+.venv/bin/python -m wdi.story                                       # A1-A3, B, E1.1-E3.3 -> results/story/
+.venv/bin/python run_story.py --part 2                              # Why tab -> results/story/part2/
+```
+
+## Repository
+
+| Path | Content |
+|---|---|
+| `WDI_Analysis.ipynb` | end-to-end notebook: download, ETL, exploration, trends, comparisons, model suite, experiments |
+| `app.py`, `ui/` | Streamlit app: `core.py` (design system, data, navigation), `sections.py` (pages and tabs), one module per page |
+| `wdi/models.py` | model suite with country-grouped cross-validation |
+| `wdi/story/` | data checks (`explore.py`) and experiments by research question (`part1.py`, `part2.py`, `part3.py`) |
+| `run_models.py`, `run_story.py` | command-line runners |
+| `app_data/` | compressed processed tables (panel 11,935 × 32, snapshot 214 × 32) |
+| `results/`, `figures/` | result tables and charts |
+| `report/` | LaTeX source and PDF of the final report |
+| `tests/` | pipeline, headline-number and app checks |
+| `Makefile` | `setup`, `data`, `notebook`, `test`, `app`, `all` |
 
 ## Model suite
-Each theme gets one target that the other indicators try to explain:
+
+Each theme has one target, explained by the other indicators. Near-definitional indicators are excluded; for
+example, infant mortality is excluded when the target is life expectancy.
 
 | Theme | Target |
 |---|---|
@@ -63,21 +97,33 @@ Each theme gets one target that the other indicators try to explain:
 | Environment | CO₂ per capita (log) |
 | Technology | internet users |
 
-Near-definitional indicators are excluded as features. For example, infant and under-5 mortality are excluded when the target is life expectancy.
+**Models:** Linear, Ridge, Lasso, ElasticNet, BayesianRidge, Huber, KNN, SVR, DecisionTree, RandomForest, ExtraTrees,
+GradientBoosting, HistGB, AdaBoost, MLP, XGBoost, LightGBM, Voting and Stacking.
 
-**Models:** Linear, Ridge, Lasso, ElasticNet, BayesianRidge, Huber, KNN, SVR, DecisionTree, RandomForest, ExtraTrees, GradientBoosting, HistGB, AdaBoost, MLP, XGBoost, LightGBM, Voting and Stacking.
-
-**Evaluation:** grouped K-fold by country (a country is never in both train and test). It is repeated over several seeds and reported as mean ± std of R², MAE and RMSE.
+**Evaluation:** K-fold cross-validation grouped by country, so a country is never in both the training and the test
+fold. It is repeated over several seeds and reported as mean ± std of R², MAE and RMSE.
 
 | Option | Values |
 |---|---|
-| `--mode` | `snapshot` (latest value per country) / `panel` (country-years 1990–2014, more rows) |
-| `--seeds` | any list, e.g. `0 1 2 42` |
-| `--folds` | CV folds |
-| `--impute` | `median` / `knn` / `iterative` |
+| `--mode` | `snapshot` (latest value per country) or `panel` (country-years 1990–2014) |
+| `--seeds`, `--folds` | e.g. `--seeds 0 1 2 --folds 5` |
+| `--impute` | `median`, `knn` or `iterative` |
 | `--min-coverage` | drop sparse features |
 | `--models`, `--themes` | subsets |
 | `--no-year` | panel only: drop Year as a feature |
 
-## Deploy (free)
-**Streamlit Community Cloud:** push the repo to GitHub, open share.streamlit.io, choose the repo and set `app.py` as the entry point. The app reads `app_data/` and `results/`, so the raw data is not needed. The maps load Plotly's world shapes from its CDN.
+## Contributions
+
+Each member led one strand end to end and reviewed the other two (33.3 % each).
+
+| Member | Strand |
+|---|---|
+| Le Thi Hong Cuc | data audit and preprocessing; RQ2 · Why (income layers, residuals, fixed effects); reproducibility |
+| Phan Van Nguyen Khanh | exploratory analysis, trends and comparisons; RQ1 · What changed (convergence) |
+| Nguyen Tuong Phuc | model suite; RQ3 · So what (clustering, Vietnam and its peers) |
+
+## Data
+
+World Bank, *World Development Indicators*, Kaggle release
+<https://www.kaggle.com/datasets/kaggle/world-development-indicators>. The raw files are not committed (`data/` is
+ignored); the notebook regenerates `data/processed/`.
