@@ -2,7 +2,7 @@
 
 End-to-end data-analytics project on the World Bank **World Development Indicators** (Kaggle `kaggle/world-development-indicators`, 1960–2015). It covers ETL, missing-data handling, EDA, theme trends, cross-country comparison, a multi-model evaluation suite, and an interactive Streamlit app.
 
-![Overview page of the app](docs/screenshots/overview_light.png)
+![Report landing page of the app](docs/screenshots/overview_light.png)
 
 | | |
 |---|---|
@@ -11,7 +11,7 @@ End-to-end data-analytics project on the World Bank **World Development Indicato
 | ![Models page in dark mode: R² per theme](docs/screenshots/models_dark.png) | ![Clusters page in dark mode: PCA and world map](docs/screenshots/clusters_dark.png) |
 | **Models**: 19 models, multi-seed R², live experiments | **Clusters**: K-means / GMM / Ward with your own k and seed |
 
-<p align="center"><img src="docs/screenshots/overview_dark.png" alt="Overview page in dark mode" width="80%"><br><em>Light and dark mode, switchable from the top-right toggle.</em></p>
+<p align="center"><img src="docs/screenshots/overview_dark.png" alt="Report landing page in dark mode" width="80%"><br><em>Light and dark mode, switchable from the top-right toggle.</em></p>
 
 | File | Content |
 |---|---|
@@ -19,8 +19,11 @@ End-to-end data-analytics project on the World Bank **World Development Indicato
 | `REPORT.md` | Short written report with the key findings |
 | `wdi/models.py` | Model suite: 19 regressors × 6 themes × N seeds, grouped CV, importance, trend predictions |
 | `run_models.py` | CLI for the model suite, writes `results/` |
-| `app.py` | Streamlit app: Overview, Trends, Compare, Models (incl. live experiments), Clusters; light/dark toggle top-right |
-| `tests/test_models.py` | Smoke check for the model suite |
+| `wdi/story/` | Experiments by section: `explore.py` (A exploration, B preprocessing checks), `part1.py` / `part2.py` / `part3.py` (storyline E1–E3), `common.py` |
+| `app.py` | Streamlit entry point: four top-level pages, **Home** (title, group, TL;DR) · **Data** (tabs A Exploration, B Preprocessing) · **Findings** (tabs 1 What, 2 Why, 3 So what) · **Lab** (tabs Trends, Compare, Models, Clusters); tabs are shareable links such as `/findings?tab=why`; light/dark toggle top-right |
+| `ui/` | One module per page group: `core.py` (design system, data, story helpers, tab navigation), `sections.py` (which tabs each parent page has), `landing.py` (Report), `data.py` (A, B), `part1.py`, `part2.py`, `part3.py`, `explore.py` (Lab tabs) |
+| `report/` | LaTeX final report, its tables (`make_tables.py`) and PDF |
+| `tests/` | `test_models.py`, `test_story.py` (A/B checks + E1–E3), `test_part2.py`, `test_app.py` (the landing page and every tab, light and dark) |
 | `figures/` | Charts exported by the notebook |
 | `results/` | Precomputed model results used by the app |
 | `app_data/` | Gzipped processed data (1.5 MB) so the app runs without the raw Kaggle files |
@@ -39,10 +42,11 @@ python -m venv .venv
 .venv/Scripts/python tests/test_models.py
 .venv/Scripts/python run_story.py --part 2                          # Part 2 page experiments -> results/story/part2/ (~5 s)
 .venv/Scripts/python tests/test_part2.py
-.venv/Scripts/python -m wdi.story                                  # report experiments E1.1-E3.3, A2, A3 -> results/story/, figures/story/
+.venv/Scripts/python -m wdi.story                                  # A1-A3, B, E1.1-E3.3 -> results/story/, figures/story/
 .venv/Scripts/python tests/test_story.py
 .venv/Scripts/python report/make_tables.py                          # LaTeX tables for report/FINAL_REPORT.tex
 # 3. app
+.venv/Scripts/python tests/test_app.py                             # landing page and every tab render, light and dark (~1 min)
 .venv/Scripts/streamlit run app.py
 ```
 Only `Country.csv`, `Series.csv` and `Indicators.csv` are used; `database.sqlite` (1.4 GB) can be deleted.

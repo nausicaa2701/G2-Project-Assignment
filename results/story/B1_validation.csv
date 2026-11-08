@@ -1,0 +1,8 @@
+check,found,action
+"duplicate (country, year) keys",0,none to remove
+non-finite values (±inf),0,none to remove
+percentages outside 0–100,0,none to remove
+negative values where impossible,0,none to remove
+aggregates left (empty Region),0,33 aggregates removed earlier
+hyperinflation years (> 500 %),29,"flagged, kept; log-transformed in models"
+missing cells after interpolation,42.1 %,44.9 % before; the rest handled per method

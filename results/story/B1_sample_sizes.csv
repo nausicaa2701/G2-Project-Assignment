@@ -1,0 +1,11 @@
+sample,countries,rule
+all 214 countries,214,starting point
+listwise: all 32 indicators,69,drop any country with a gap
+listwise: 15 clustering indicators,147,drop any gap
+"ours: clustering (≥ 70 % of the 15, imputed)",192,income-group median for the rest
+ours: model target gdp_pc,199,target observed; features imputed in-fold
+ours: model target fertility,203,target observed; features imputed in-fold
+ours: model target life_exp,203,target observed; features imputed in-fold
+ours: model target enrol_secondary,185,target observed; features imputed in-fold
+ours: model target co2_pc,199,target observed; features imputed in-fold
+ours: model target internet,204,target observed; features imputed in-fold

@@ -9,16 +9,28 @@ E2.3  fixed_effects    "Richer" vs "getting richer": the income slope between co
 
 Everything reuses the pipeline in wdi/models.py (snapshot data, leak lists, grouped K-fold by country,
 several seeds), so the numbers are directly comparable with results/summary_snapshot.csv.
+
+Two variants live here:
+  * app variant (r2_layers, residuals, income_fit, fixed_effects; `python run_story.py --part 2`
+    -> results/story/part2/): all five themes, income-only rows need an observed GDP, year effects.
+  * analysis variant (e2_1_r2_layers, e2_2_residuals, e2_3_fixed_effects; `python -m wdi.story E2.1 E2.2 E2.3`
+    -> results/story/E2_*.csv): the headline numbers of the analysis and of the home page.
 """
 from pathlib import Path
 
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+from scipy import stats
+from sklearn.base import clone
+from sklearn.linear_model import Ridge
+from sklearn.model_selection import GroupKFold
 
-from wdi.models import THEMES, Config, data_path, evaluate
+from wdi.models import ROOT, THEMES, Config, data_path, dataset, evaluate, load, pipeline
+from wdi.story.common import GREY, VN, VN_COLOR, _save, panel
+from wdi.story.common import PEERS as REPORT_PEERS
 
-ROOT = Path(__file__).resolve().parents[2]
-OUT = ROOT / "results" / "story" / "part2"  # apart from the report CSVs of `python -m wdi.story`
+OUT = ROOT / "results" / "story" / "part2"  # apart from the analysis CSVs of `python -m wdi.story`
 
 # Themes where "income explains X" makes sense (Economy's target *is* income).
 STORY_THEMES = [t for t in THEMES if THEMES[t]["target"] != "gdp_pc"]
@@ -196,3 +208,164 @@ def run(seeds=(0, 1, 2, 3, 4), folds=5, out=OUT, log=print):
     slopes.to_csv(out / "E2_3_fixed_effects.csv", index=False)
     year_fx.to_csv(out / "E2_3_year_effects.csv", index=False)
     return layers
+
+
+# ================================================================ analysis variant
+R2_THEMES = [t for t in THEMES if t != "Economy"]  # income-only makes no sense when income is the target
+
+
+def _oof(X, y, groups, seed, folds=5, alpha=1.0):
+    cfg = Config(mode="snapshot")
+    est = pipeline(Ridge(alpha=alpha), cfg, seed)
+    pred = np.empty_like(y, dtype=float)
+    for tr, te in GroupKFold(folds, shuffle=True, random_state=seed).split(X, y, groups):
+        pred[te] = clone(est).fit(X.iloc[tr], y[tr]).predict(X.iloc[te])
+    return pred
+
+
+def e2_1_r2_layers(seeds=(0, 1, 2, 3, 4)):
+    """E2.1: R2 in three layers per theme: (1) Ridge on log GDP only, (2) Ridge on all features,
+    (3) best model of the 19-model suite (results/summary_snapshot.csv). Same grouped folds per seed."""
+    cfg, df = Config(mode="snapshot"), load("snapshot")
+    best = pd.read_csv(ROOT / "results" / "summary_snapshot.csv").sort_values("r2_mean").groupby("theme").tail(1)
+    rows = []
+    for theme in R2_THEMES:
+        X, y, g, _ = dataset(df, theme, cfg)
+        for s in seeds:
+            for layer, cols in [("income only", ["gdp_pc"]), ("all features", list(X.columns))]:
+                pred = _oof(X[cols], y, g, s)
+                rows.append({"theme": theme, "layer": layer, "seed": s, "n": len(y),
+                             "r2": 1 - ((y - pred) ** 2).sum() / ((y - y.mean()) ** 2).sum()})
+    d = pd.DataFrame(rows).groupby(["theme", "layer"]).r2.agg(["mean", "std"]).unstack("layer")
+    d.columns = [f"{b} {a}" for a, b in d.columns]
+    b = best.set_index("theme")
+    d["best model"], d["best mean"], d["best std"] = b.model, b.r2_mean, b.r2_std
+    return d.reset_index()
+
+
+def e2_2_residuals(seeds=(0, 1, 2, 3, 4), focus=(VN, *REPORT_PEERS)):
+    """E2.2 residual scorecard: out-of-fold residual of the income-only model (mean over seeds),
+    in the target's own units (ratio actual/predicted for log targets), with rank and percentile."""
+    cfg, df = Config(mode="snapshot"), load("snapshot")
+    out = []
+    for theme in R2_THEMES:
+        spec = THEMES[theme]
+        X, y, g, meta = dataset(df, theme, cfg)
+        pred = np.mean([_oof(X[["gdp_pc"]], y, g, s) for s in seeds], axis=0)
+        if spec["log"]:
+            resid, unit = 10 ** (y - pred), "x predicted"
+            actual, predicted = 10 ** y, 10 ** pred
+        else:
+            resid, unit, actual, predicted = y - pred, "units", y, pred
+        d = meta[["CountryCode", "ShortName"]].assign(theme=theme, target=spec["target"], actual=actual,
+                                                      predicted=predicted, residual=resid, unit=unit)
+        d["rank"] = d.residual.rank(ascending=False, method="min").astype(int)  # 1 = most above expectation
+        d["of"] = len(d)
+        d["percentile"] = 100 * d.residual.rank(pct=True)
+        out.append(d)
+    d = pd.concat(out, ignore_index=True)
+    return d, d[d.CountryCode.isin(focus)].reset_index(drop=True)
+
+
+def _demean2(v, c, t, iters=200, tol=1e-10):
+    """Two-way within transformation (country + year) for an unbalanced panel by alternating projections."""
+    v = v.astype(float).copy()
+    for _ in range(iters):
+        old = v.copy()
+        v -= pd.Series(v).groupby(c).transform("mean").to_numpy()
+        v -= pd.Series(v).groupby(t).transform("mean").to_numpy()
+        if np.abs(v - old).max() < tol:
+            break
+    return v
+
+
+def _ols_cluster(x, y, cl):
+    """Slope of y on x (no intercept, data already demeaned) with country-clustered SE."""
+    b = (x @ y) / (x @ x)
+    e = y - b * x
+    meat = pd.Series(x * e).groupby(cl).sum().pow(2).sum()
+    G = len(np.unique(cl))
+    se = np.sqrt(meat / (x @ x) ** 2 * G / (G - 1))
+    return b, se
+
+
+def e2_3_fixed_effects(years=(1990, 2014), y_var="life_exp"):
+    """E2.3: life expectancy on log10 GDP per capita: between-country, pooled, and two-way fixed effects.
+    The FE slope is the within-country association (what happens when a given country gets richer)."""
+    p = panel()
+    d = p[p.Year.between(*years)][["CountryCode", "Year", y_var, "gdp_pc"]].dropna()
+    d = d[d.gdp_pc > 0].assign(lg=lambda x: np.log10(x.gdp_pc))
+    rows = []
+    m = d.groupby("CountryCode")[[y_var, "lg"]].mean()
+    r = stats.linregress(m.lg, m[y_var])
+    rows.append({"model": "Between countries (country means)", "slope_per_10x": r.slope, "se": r.stderr,
+                 "n_obs": len(m), "n_countries": len(m)})
+    r = stats.linregress(d.lg, d[y_var])
+    b, se = _ols_cluster(d.lg.to_numpy() - d.lg.mean(), d[y_var].to_numpy() - d[y_var].mean(), d.CountryCode.to_numpy())
+    rows.append({"model": "Pooled OLS", "slope_per_10x": b, "se": se, "n_obs": len(d),
+                 "n_countries": d.CountryCode.nunique()})
+    c, t = d.CountryCode.to_numpy(), d.Year.to_numpy()
+    xw, yw = _demean2(d.lg.to_numpy(), c, t), _demean2(d[y_var].to_numpy(), c, t)
+    b, se = _ols_cluster(xw, yw, c)
+    rows.append({"model": "Two-way fixed effects (country + year)", "slope_per_10x": b, "se": se,
+                 "n_obs": len(d), "n_countries": d.CountryCode.nunique()})
+    yfe = d.assign(r=yw).groupby("Year")[y_var].mean()  # raw year means, for the common-shift remark
+    out = pd.DataFrame(rows)
+    out["ci_low"], out["ci_high"] = out.slope_per_10x - 1.96 * out.se, out.slope_per_10x + 1.96 * out.se
+    return out, yfe
+
+
+
+# ------------------------------------------------------------------ figures (analysis variant)
+def fig_r2(d):
+    d = d.set_index("theme")
+    inc = d["income only mean"]
+    allf = (d["all features mean"] - inc).clip(lower=0)
+    best = (d["best mean"] - d[["income only mean", "all features mean"]].max(axis=1)).clip(lower=0)
+    fig, ax = plt.subplots(figsize=(8, 3.8))
+    ax.barh(d.index, inc, color="#4a6fa5", label="income only (log GDP, Ridge)")
+    ax.barh(d.index, allf, left=inc, color="#9bb7d4", label="+ all other indicators (Ridge)")
+    ax.barh(d.index, best, left=inc + allf, color="#e0b04a", label="+ best of 19 models")
+    for i, (t, r) in enumerate(d.iterrows()):
+        ax.text(max(r["best mean"], r["all features mean"]) + 0.01, i, f"{r['best mean']:.2f}", va="center", fontsize=8)
+    ax.set(xlim=(0, 1), xlabel="cross-validated R²", title="E2.1 How much does income explain? R² in three layers")
+    ax.legend(fontsize=8, frameon=False, loc="upper center", bbox_to_anchor=(0.5, -0.2), ncol=3)
+    _save(fig, "E2_1_r2_layers.png")
+
+
+def fig_residuals(full, focus):
+    fig, ax = plt.subplots(figsize=(8.5, 4.2))
+    themes = list(dict.fromkeys(full.theme))
+    for i, t in enumerate(themes):
+        g = full[full.theme == t]
+        ax.scatter(g.percentile, np.full(len(g), i) + np.random.default_rng(0).uniform(-.15, .15, len(g)),
+                   s=6, color=GREY, alpha=0.4)
+        for _, r in focus[focus.theme == t].iterrows():
+            vn = r.CountryCode == VN
+            ax.scatter(r.percentile, i, s=60 if vn else 25, color=VN_COLOR if vn else "black", zorder=3,
+                       marker="o" if vn else "|")
+            if vn:
+                lab = f"{r.residual:+.1f}" if r.unit == "units" else f"{r.residual:.1f}×"
+                ha = "right" if r.percentile > 75 else "left" if r.percentile < 25 else "center"
+                dx = {"right": -6, "left": 6, "center": 0}[ha]
+                ax.annotate(f"VN {lab} (rank {r['rank']}/{r['of']})", (r.percentile, i), xytext=(dx, 9),
+                            textcoords="offset points", ha=ha, fontsize=7.5, color=VN_COLOR, fontweight="bold",
+                            bbox=dict(boxstyle="round,pad=0.15", fc="white", ec="none", alpha=0.9))
+    ax.set_yticks(range(len(themes)), [f"{t}\n({THEMES[t]['target']})" for t in themes], fontsize=8)
+    ax.set_ylim(-0.5, len(themes) - 0.25)
+    ax.set(xlabel="percentile of residual vs income-only prediction (100 = most above expectation)", xlim=(-2, 104),
+           title="E2.2 Residual scorecard: Vietnam (red) and peers CHN/THA/IDN/PHL/MYS (black ticks)")
+    ax.title.set_fontsize(10)
+    _save(fig, "E2_2_residuals.png")
+
+
+def fig_fe(d):
+    fig, ax = plt.subplots(figsize=(7, 2.8))
+    ax.errorbar(d.slope_per_10x, range(len(d)), xerr=1.96 * d.se, fmt="o", color="black", capsize=4)
+    ax.set_yticks(range(len(d)), d.model, fontsize=8)
+    ax.axvline(0, color=GREY, lw=0.8)
+    ax.set(xlabel="years of life expectancy per 10× GDP per capita (95% CI)",
+           title="E2.3 Richer vs getting richer: between vs within-country slope")
+    ax.title.set_fontsize(10)
+    _save(fig, "E2_3_fixed_effects.png")
+
