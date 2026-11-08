@@ -2,9 +2,15 @@
 
 Headline numbers are read from results/story/ (the same files as the Findings tabs), so the page never drifts.
 """
+import base64
+from pathlib import Path
+
 import streamlit as st
 
 from ui.core import VN, goto, grid, load_results, scroll_top, tiles
+
+APP_URL = "https://g2-project-assignment.streamlit.app/"
+QR = Path(__file__).parent / "assets" / "qr_app.png"
 
 MEMBERS = [("Le Thi Hong Cuc", "2470882"), ("Phan Van Nguyen Khanh", "2470883"), ("Nguyen Tuong Phuc", "2470886")]
 
@@ -25,6 +31,11 @@ ROLES = {
         "Findings 3 page; Lab Models and Clusters",
         "Report: methods, RQ3 and discussion chapters"]),
 }
+
+
+@st.cache_data(show_spinner=False)
+def _qr():
+    return base64.b64encode(QR.read_bytes()).decode()
 
 
 @st.cache_data(show_spinner=False)
@@ -55,10 +66,12 @@ def page():
     scroll_top()
     h = _headlines()
     st.markdown(
-        '<div class="home-head"><div class="eyebrow">Data Analytics · Faculty of Computer Science and Engineering · '
-        'Ho Chi Minh City University of Technology</div>'
+        '<div class="home-head"><div class="head-text"><div class="eyebrow">Data Analytics · Faculty of Computer Science '
+        'and Engineering · Ho Chi Minh City University of Technology</div>'
         '<h1>Does richer mean more developed?</h1>'
-        '<div class="sub">A data-mining study of the World Development Indicators, 1960–2014</div></div>',
+        '<div class="sub">A data-mining study of the World Development Indicators, 1960–2014</div></div>'
+        f'<a class="qr" href="{APP_URL}" target="_blank"><img src="data:image/png;base64,{_qr()}" alt="QR code to {APP_URL}">'
+        '<span>Scan to open</span></a></div>',
         unsafe_allow_html=True)
 
     members = "<br>".join(f"{n} · {i}" for n, i in MEMBERS)

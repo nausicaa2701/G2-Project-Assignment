@@ -142,7 +142,13 @@ def apply_theme():
     .pager-rule {{ border-top: 1px solid {LINE}; margin: 2.6rem 0 .8rem; }}
 
     /* landing page */
-    .home-head {{ padding: 2.2rem 0 1.6rem; border-bottom: 1px solid {LINE}; }}
+    .home-head {{ padding: 2.2rem 0 1.6rem; border-bottom: 1px solid {LINE}; display: flex; align-items: center;
+                  justify-content: space-between; gap: 24px; }}
+    .home-head .head-text {{ min-width: 0; }}
+    .qr {{ flex: none; display: flex; flex-direction: column; align-items: center; gap: 6px; text-decoration: none !important; }}
+    .qr img {{ width: 112px; height: 112px; background: #fff; padding: 8px; border: 1px solid {LINE}; border-radius: 10px;
+               image-rendering: pixelated; }}
+    .qr span {{ color: {GREY}; font-size: .75rem; font-weight: 500; }}
     .home-head .eyebrow {{ color: {GREY}; font-size: .85rem; font-weight: 500; }}
     .home-head h1 {{ font-size: clamp(2rem, 4.5vw, 2.9rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.03em;
                     margin: .6rem 0 .5rem; padding: 0; color: {INK}; }}
@@ -181,7 +187,9 @@ def apply_theme():
         .tile, .insight, .card {{ padding: 13px 14px; }}
         .tile .v {{ font-size: 1.3rem; }}
         .tile .s {{ font-size: .76rem; }}
-        .home-head {{ padding: 1.4rem 0 1.2rem; }}
+        .home-head {{ padding: 1.4rem 0 1.2rem; flex-direction: column; align-items: flex-start; gap: 14px; }}
+        .qr {{ flex-direction: row; gap: 10px; }}
+        .qr img {{ width: 84px; height: 84px; padding: 6px; }}
         .tldr {{ padding: 14px 16px; }}
         .section-title {{ margin-top: 1.8rem; }}
         .takeaway {{ font-size: 1.05rem; margin-top: 1.9rem; }}
