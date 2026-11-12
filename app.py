@@ -4,7 +4,7 @@ Pages (each parent shows its children as tabs; only the open tab is computed):
     Home       ui/landing.py
     Data       ui/data.py       A · Exploration, B · Preprocessing
     Findings   ui/part1-3.py    1 · What changed, 2 · Why, 3 · So what
-    Lab        ui/explore.py    Trends, Compare, Models, Clusters
+    Lab        ui/explore.py    Countries, Models, Clusters
 """
 import streamlit as st
 

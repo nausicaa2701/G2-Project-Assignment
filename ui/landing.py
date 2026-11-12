@@ -1,4 +1,4 @@
-"""Home page: title, group information, a TL;DR of the findings and links to the three parts.
+"""Home page: title, the answer in four numbers, links to the three parts, the team.
 
 Headline numbers are read from results/story/ (the same files as the Findings tabs), so the page never drifts.
 """
@@ -7,7 +7,7 @@ from pathlib import Path
 
 import streamlit as st
 
-from ui.core import VN, goto, grid, load_results, scroll_top, tiles
+from ui.core import VN, goto, grid, load_results, scroll_top
 
 APP_URL = "https://g2-project-assignment.streamlit.app/"
 QR = Path(__file__).parent / "assets" / "qr_app.png"
@@ -23,7 +23,7 @@ ROLES = {
     "Phan Van Nguyen Khanh": ("Exploration and convergence", [
         "Exploratory analysis, trends and group comparisons",
         "RQ1 · What changed: σ- and β-convergence",
-        "Findings 1 page; Lab Trends and Compare",
+        "Findings 1 page; Lab Countries",
         "Report: background, EDA and RQ1 chapters"]),
     "Nguyen Tuong Phuc": ("Models, clusters and Vietnam", [
         "Suite of 19 models with country-grouped cross-validation",
@@ -66,67 +66,61 @@ def page():
     scroll_top()
     h = _headlines()
     st.markdown(
-        '<div class="home-head"><div class="head-text"><div class="eyebrow">Data Analytics · Faculty of Computer Science '
-        'and Engineering · Ho Chi Minh City University of Technology</div>'
-        '<h1>Does richer mean more developed?</h1>'
-        '<div class="sub">A data-mining study of the World Development Indicators, 1960–2014</div></div>'
-        f'<a class="qr" href="{APP_URL}" target="_blank"><img src="data:image/png;base64,{_qr()}" alt="QR code to {APP_URL}">'
-        '<span>Scan to open</span></a></div>',
-        unsafe_allow_html=True)
+        '<div class="hero"><div class="eyebrow">Group G2 · Data Analytics · HCMUT</div>'
+        '<h1>Does richer mean<br>more developed?</h1>'
+        '<p>A data-mining study of the World Bank\'s development indicators: 214 countries, 32 indicators, '
+        '1960–2014.</p></div>', unsafe_allow_html=True)
 
-    members = "<br>".join(f"{n} · {i}" for n, i in MEMBERS)
-    st.markdown(
-        '<div class="meta">'
-        f'<div class="card"><div class="k">Group G2</div><div class="v">{members}</div></div>'
-        '<div class="card"><div class="k">Lecturer</div><div class="v">Dr. Nguyen Thi Ai Thao<br>November 2026</div></div>'
-        '<div class="card"><div class="k">Data</div><div class="v">World Bank World Development Indicators '
-        '(Kaggle release)<br>214 countries · 32 indicators · 55 years</div></div>'
-        '</div>', unsafe_allow_html=True)
-
-    bullets = []
-    if "r2_lo" in h:
-        bullets.append(f"<b>Mostly yes.</b> Income alone explains <em>{h['r2_lo']:.0%}–{h['r2_hi']:.0%}</em> of the "
-                       f"differences between countries (mean {h['r2_mean']:.0%}); 19 machine-learning models only "
-                       f"reach {h['r2_best']:.0%}.")
-    bullets.append(f"<b>Health converged, income did not.</b> The spread of life expectancy between countries fell "
-                   f"by <em>{h.get('le_cv', .47):.0%}</em>, while the spread of income did not change.")
+    # the answer in four numbers (same sources as the Findings tabs)
+    stats = []
+    if "r2_mean" in h:
+        stats.append((f"{h['r2_mean']:.0%}", "of the differences between countries are explained by income alone."))
+    stats.append((f"−{h.get('le_cv', .47):.0%}", "spread of life expectancy between countries. The income gap is as wide "
+                                                 "as in 1990."))
     if "within" in h:
-        bullets.append(f"<b>Being rich matters more than getting rich.</b> Ten times more income goes with "
-                       f"+{h['between']:.0f} years of life between countries, but only <em>+{h['within']:.0f} "
-                       f"years</em> within a country over time.")
-    bullets.append(f"<b>Income groups are a rough guide.</b> Data-driven clusters match them for "
-                   f"<em>{h['agree']:.0%}</em> of countries; development looks like a continuum, not four boxes.")
+        stats.append((f"+{h['within']:.0f} yrs", f"of life when a country grows 10× richer, against "
+                                                 f"+{h['between']:.0f} years between rich and poor countries."))
     if "vn_le" in h:
-        bullets.append(f"<b>Vietnam</b> lives <em>{h['vn_le']:+.0f} years</em> longer than its income predicts, the "
-                       f"best of all countries, but emits {h['vn_co2']:.1f}× the CO₂.")
-    st.markdown('<div class="tldr"><h3>TL;DR</h3><ul>' + "".join(f"<li>{b}</li>" for b in bullets) + "</ul></div>",
-                unsafe_allow_html=True)
-
-    st.markdown('<div class="section-title">The data at a glance</div>', unsafe_allow_html=True)
-    tiles([("Raw observations", "5.66 M", "country × indicator × year"),
-           ("Countries", "214", "33 regional aggregates removed"),
-           ("Indicators", "32", "selected from 1,344, in six themes"),
-           ("Missing cells", "42 %", "after filling short gaps")])
+        stats.append((f"{h['vn_le']:+.0f} yrs", "Vietnam lives longer than its income predicts, more than any other "
+                                                "country."))
+    st.markdown('<div class="section-title">Mostly yes. But not only.</div>'
+                f'<div class="section-sub">Income groups match data-driven clusters for {h["agree"]:.0%} of countries: '
+                'development is a continuum, and policy shifts the curve.</div>', unsafe_allow_html=True)
+    grid([f'<div class="card stat"><div class="num">{n}</div><div class="txt">{t}</div></div>' for n, t in stats],
+         n=2)
 
     st.markdown('<div class="section-title">Explore</div>', unsafe_allow_html=True)
     parts = [("data", "exploration", "Data", "What is in the data, what is missing, and how it was cleaned."),
-             ("findings", "what", "Findings", "Three questions: what changed, why, and what it means for Vietnam."),
-             ("lab", "trends", "Lab", "Any indicator, country or model, recomputed live.")]
+             ("findings", "what", "Findings", "What changed, why, and what it means for Vietnam."),
+             ("lab", "countries", "Lab", "Any indicator, country or model, recomputed live.")]
     for col, (parent, slug, t, d) in zip(st.columns(3), parts):   # each card keeps its button when stacked
         col.markdown(f'<div class="card explore"><div class="t">{t}</div><div class="d">{d}</div></div>',
                      unsafe_allow_html=True)
-        if col.button(f"Open {t} →", key=f"go_{parent}", type="tertiary"):
+        if col.button(f"Open {t} ›", key=f"go_{parent}", type="tertiary"):
             goto(parent, slug)
 
-    st.markdown('<div class="section-title">Contributions</div>'
-                '<div class="section-sub">Equal contribution: each member led one strand of the pipeline end to end '
-                '(data, analysis, application and report section) and reviewed the work of the other two.</div>',
-                unsafe_allow_html=True)
-    grid([f'<div class="card contrib"><div class="t">{n}</div><div class="id">{i} · {ROLES[n][0]}</div>'
-          '<ul>' + "".join(f"<li>{x}</li>" for x in ROLES[n][1]) + '</ul>'
-          '<div class="share"><span style="width:33.3%"></span></div><div class="pct">33.3 %</div></div>'
-          for n, i in MEMBERS])
+    st.markdown('<div class="section-title">Instructor</div>'
+                '<div class="section-sub">Data Analytics course, Faculty of Computer Science and Engineering, '
+                'Ho Chi Minh City University of Technology.</div>', unsafe_allow_html=True)
+    grid(['<div class="card"><div class="t">Dr. Nguyen Thi Ai Thao</div><div class="id">Lecturer</div>'
+          '<div class="d">Data Analytics · November 2026</div></div>'], n=3)
 
-    st.markdown('<div class="footer">Source: World Bank, World Development Indicators (Kaggle release). '
-                'Results are associations, not causal effects; country medians are not population-weighted.</div>',
+    st.markdown('<div class="section-title">Team</div>'
+                '<div class="section-sub">Equal contribution: each member led one strand end to end and reviewed '
+                'the other two.</div>', unsafe_allow_html=True)
+    grid([f'<div class="card"><div class="t">{n}</div><div class="id">{i}</div><div class="d">{ROLES[n][0]}</div></div>'
+          for n, i in MEMBERS])
+    with st.expander("Who did what"):
+        grid([f'<div class="card contrib"><div class="t">{n}</div><ul>'
+              + "".join(f"<li>{x}</li>" for x in ROLES[n][1]) + '</ul><div class="id">33.3 %</div></div>'
+              for n, _ in MEMBERS])
+
+    st.markdown(f'<div class="footer"><div>'
+                'Source: World Bank, World Development Indicators (Kaggle release).<br>'
+                'Results are associations, not causal effects; country medians are not population-weighted.</div>'
+                # clicking the QR toggles a hidden checkbox: CSS shows it large and centred; click again to close
+                f'<input type="checkbox" id="qr-zoom" class="qr-toggle"><label for="qr-zoom" class="qr">'
+                f'<img src="data:image/png;base64,{_qr()}" alt="QR code to {APP_URL}"><span>Tap to enlarge</span></label>'
+                f'<label for="qr-zoom" class="qr-overlay"><img src="data:image/png;base64,{_qr()}" '
+                f'alt="QR code to {APP_URL}"><span>Scan to open the app · tap anywhere to close</span></label></div>',
                 unsafe_allow_html=True)

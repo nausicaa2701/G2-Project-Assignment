@@ -16,15 +16,17 @@ ROOT = Path(__file__).resolve().parents[1]
 RESULTS = ROOT / "results"
 
 # design system
-# Minimal light and dark palettes: flat surfaces, hairline borders, one accent colour, Vietnam always in red.
+# Apple-style light and dark palettes: white page, soft grey surfaces, one blue accent, Vietnam always in red.
 # The toggle (top-right) stores its value in session state; app.py calls apply_theme() on every rerun.
 MODES = {
-    False: dict(bg="#ffffff", card="#ffffff", ink="#111827", grey="#6b7280", line="#e5e7eb", grid="#f3f4f6",
-                field="#ffffff", blue="#2563eb", soft="#bfdbfe", shadow="rgba(0,0,0,0)", template="plotly_white"),
-    True:  dict(bg="#0b0c0e", card="#111316", ink="#e5e7eb", grey="#9ca3af", line="#26292e", grid="#191b1f",
-                field="#15171a", blue="#60a5fa", soft="#1e3a8a", shadow="rgba(0,0,0,0)", template="plotly_dark"),
+    False: dict(bg="#ffffff", card="#f5f5f7", ink="#1d1d1f", grey="#6e6e73", line="#d2d2d7", grid="#e8e8ed",
+                field="#e8e8ed", pill="#ffffff", glass="rgba(255,255,255,.8)", blue="#0071e3", soft="#a8cdf7",
+                template="plotly_white"),
+    True:  dict(bg="#000000", card="#1c1c1e", ink="#f5f5f7", grey="#98989d", line="#38383a", grid="#2c2c2e",
+                field="#2c2c2e", pill="#636366", glass="rgba(22,22,23,.8)", blue="#2997ff", soft="#0a4a8f",
+                template="plotly_dark"),
 }
-FONT = 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif'
+FONT = '-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", Inter, "Helvetica Neue", "Segoe UI", Arial, sans-serif'
 INCOME_ORDER = ["Low income", "Lower middle income", "Upper middle income", "High income"]
 # Vietnam is the recurring case study: always the same red on every story chart.
 VN, VN_COLOR = "VNM", "#c0392b"
@@ -38,61 +40,75 @@ def apply_theme():
     DARK = st.session_state.get("dark", False)
     C = MODES[DARK]
     BLUE, INK, GREY, LINE = C["blue"], C["ink"], C["grey"], C["line"]
-    INCOME_COLORS = dict(zip(INCOME_ORDER, ["#e4572e", "#f2a541", "#2a9d8f", BLUE]))
-    CLUSTER_COLORS = ["#e4572e", "#f2a541", "#2a9d8f", BLUE, "#7c3aed", "#db2777", "#65a30d", GREY]
-    PALETTE = [BLUE, "#f2a541", "#2a9d8f", "#e4572e", "#7c3aed", "#db2777", "#65a30d", "#a16207"]
+    INCOME_COLORS = dict(zip(INCOME_ORDER, ["#ff6b3d", "#ffb340", "#30b0c7", BLUE]))
+    CLUSTER_COLORS = ["#ff6b3d", "#ffb340", "#30b0c7", BLUE, "#af52de", "#ff2d55", "#34c759", GREY]
+    PALETTE = [BLUE, "#ffb340", "#30b0c7", "#ff6b3d", "#af52de", "#ff2d55", "#34c759", "#a2845e"]
     px.defaults.color_discrete_sequence = PALETTE
     c = C
     st.markdown(f"""<style>
     @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
-    html, body, [class*="css"], .stMarkdown, button, input, select, textarea {{ font-family: {FONT} !important; }}
-    .block-container {{ padding: 2rem 1.5rem 3rem; max-width: 1180px; }}
-    .stApp, header[data-testid="stHeader"] {{ background: {c["bg"]}; }}
-    header[data-testid="stHeader"] {{ border-bottom: 1px solid {LINE}; }}
-    h1, h2, h3 {{ color: {INK}; letter-spacing: -0.02em; }}
+    html, body, [class*="css"], .stMarkdown, button, input, select, textarea {{ font-family: {FONT} !important;
+        -webkit-font-smoothing: antialiased; }}
+    .block-container {{ padding: 2.5rem 1.5rem 5rem; max-width: 1024px; }}
+    .stApp {{ background: {c["bg"]}; }}
+    header[data-testid="stHeader"] {{ background: {c["glass"]}; backdrop-filter: saturate(180%) blur(20px);
+        -webkit-backdrop-filter: saturate(180%) blur(20px); border-bottom: 1px solid {LINE}; }}
+    h1, h2, h3, h4 {{ color: {INK}; letter-spacing: -0.02em; }}
+    h4 {{ font-size: 1.2rem !important; font-weight: 600 !important; margin: 3.5rem 0 .2rem !important; }}
     footer, #MainMenu {{ visibility: hidden; }}
+    [data-testid="stHeaderActionElements"] {{ display: none; }}
 
-    /* page header (left-aligned) */
-    .hero {{ padding: 1.6rem 0 1.4rem; border-bottom: 1px solid {LINE}; margin-bottom: .6rem; }}
-    .hero .eyebrow {{ color: {GREY}; font-weight: 500; font-size: .85rem; margin-bottom: .5rem; }}
-    .hero h1 {{ font-size: clamp(1.6rem, 3.2vw, 2.2rem); font-weight: 650; line-height: 1.2; margin: 0; padding: 0; }}
-    .hero p {{ color: {GREY}; font-size: 1rem; line-height: 1.6; max-width: 720px; margin: .7rem 0 0; }}
-    .hero [data-testid="stHeaderActionElements"] {{ display: none; }}
+    /* page header: centred, large, quiet */
+    .hero {{ text-align: center; padding: 3.2rem 0 2.6rem; }}
+    .eyebrow {{ color: {GREY}; font-weight: 600; font-size: .95rem; letter-spacing: -0.01em; margin-bottom: .7rem; }}
+    .hero h1 {{ font-size: clamp(2.1rem, 5.2vw, 3.6rem); font-weight: 700; line-height: 1.07; letter-spacing: -0.035em;
+               margin: 0; padding: 0; color: {INK}; }}
+    .hero p {{ color: {GREY}; font-size: clamp(1.05rem, 1.7vw, 1.3rem); line-height: 1.45; max-width: 660px;
+              margin: 1.1rem auto 0; }}
 
-    /* section headings */
-    .section-title {{ color: {INK}; font-size: 1.3rem; font-weight: 650; letter-spacing: -0.01em; margin: 2.2rem 0 .2rem; }}
-    .section-sub {{ color: {GREY}; font-size: .95rem; margin-bottom: 1rem; }}
-    .takeaway {{ color: {INK}; font-size: 1.15rem; font-weight: 600; line-height: 1.4; letter-spacing: -0.01em;
-                 margin: 2.4rem 0 .3rem; }}
-    .takeaway em {{ font-style: normal; color: {VN_COLOR}; }}
-    .takeaway-sub {{ color: {GREY}; font-size: .93rem; line-height: 1.55; margin-bottom: 1rem; max-width: 900px; }}
-    .bridge {{ color: {GREY}; font-size: .98rem; padding: .9rem 0 .2rem; margin-top: 2.6rem; border-top: 1px solid {LINE}; }}
+    /* section headings and story titles */
+    .section-title {{ color: {INK}; font-size: clamp(1.6rem, 3vw, 2.25rem); font-weight: 700; letter-spacing: -0.03em;
+                      line-height: 1.12; margin: 5rem 0 .4rem; }}
+    .section-sub {{ color: {GREY}; font-size: 1.05rem; line-height: 1.5; margin-bottom: 1.4rem; max-width: 720px; }}
+    .takeaway {{ color: {INK}; font-size: clamp(1.3rem, 2.3vw, 1.7rem); font-weight: 650; line-height: 1.22;
+                 letter-spacing: -0.025em; margin: 4.5rem 0 .5rem; max-width: 880px; }}
+    .takeaway em {{ font-style: normal; color: {BLUE}; }}
+    .takeaway-sub {{ color: {GREY}; font-size: 1rem; line-height: 1.5; margin-bottom: 1.4rem; max-width: 720px; }}
+    .bridge {{ color: {INK}; font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 600; letter-spacing: -0.02em;
+               text-align: center; padding: 3rem 0 .5rem; margin-top: 5rem; border-top: 1px solid {LINE}; }}
 
-    /* equal-height grids of tiles and cards (CSS grid, so every block in a row has the same height) */
-    /* column counts per breakpoint are chosen in grid() so rows are always full (no orphan block) */
-    .grid {{ display: grid; gap: 12px; grid-template-columns: repeat(var(--n), minmax(0, 1fr)); margin: .4rem 0 1rem; }}
+    /* equal-height grids of tiles and cards; column counts per breakpoint come from grid() */
+    .grid {{ display: grid; gap: 16px; grid-template-columns: repeat(var(--n), minmax(0, 1fr)); margin: .6rem 0 1.2rem; }}
     @media (max-width: 900px) {{ .grid {{ grid-template-columns: repeat(var(--t), minmax(0, 1fr)); }} }}
-    @media (max-width: 600px) {{ .grid {{ grid-template-columns: repeat(var(--p), minmax(0, 1fr)); gap: 10px; }} }}
-    .tile, .insight, .card {{ background: {c["card"]}; border: 1px solid {LINE}; border-radius: 10px; padding: 16px 18px; }}
-    .tile .k {{ color: {GREY}; font-size: .8rem; font-weight: 500; }}
-    .tile .v {{ color: {INK}; font-size: 1.6rem; font-weight: 650; letter-spacing: -0.02em; line-height: 1.25; margin: .2rem 0; }}
-    .tile .s {{ color: {GREY}; font-size: .8rem; line-height: 1.45; }}
-    .insight b {{ display: block; color: {INK}; font-size: .98rem; font-weight: 600; margin-bottom: .3rem; }}
-    .insight span {{ color: {GREY}; font-size: .9rem; line-height: 1.55; }}
+    @media (max-width: 600px) {{ .grid {{ grid-template-columns: repeat(var(--p), minmax(0, 1fr)); gap: 12px; }} }}
+    .tile, .insight, .card {{ background: {c["card"]}; border: 0; border-radius: 18px; padding: 22px 24px; }}
+    .tile .k {{ color: {GREY}; font-size: .85rem; font-weight: 500; }}
+    .tile .v {{ color: {INK}; font-size: 1.9rem; font-weight: 700; letter-spacing: -0.03em; line-height: 1.2; margin: .3rem 0; }}
+    .tile .s {{ color: {GREY}; font-size: .82rem; line-height: 1.45; }}
+    .insight b {{ display: block; color: {INK}; font-size: 1.05rem; font-weight: 600; margin-bottom: .35rem; }}
+    .insight span {{ color: {GREY}; font-size: .93rem; line-height: 1.55; }}
 
-    /* charts, tables, expanders: flat surfaces with a hairline border */
-    div[data-testid="stPlotlyChart"] {{ background: {c["card"]}; border: 1px solid {LINE}; border-radius: 10px; padding: 6px; }}
-    .tbl {{ background: {c["card"]}; border: 1px solid {LINE}; border-radius: 10px; overflow-x: auto; padding: 4px 12px; }}
+    /* charts, tables, expanders: soft grey surfaces, no borders */
+    div[data-testid="stPlotlyChart"] {{ background: {c["card"]}; border-radius: 18px; padding: 0 6px; overflow: hidden; }}
+    .tbl {{ background: {c["card"]}; border-radius: 18px; overflow-x: auto; padding: 8px 16px; }}
     .tbl table {{ border-collapse: collapse; width: 100%; font-size: .86rem; color: {INK}; }}
-    .tbl th {{ color: {GREY}; font-weight: 500; text-align: right; padding: .55rem .6rem; border-bottom: 1px solid {LINE};
+    .tbl th {{ color: {GREY}; font-weight: 500; text-align: right; padding: .6rem .6rem; border-bottom: 1px solid {LINE};
                min-width: 4.5rem; }}
     .tbl th.row_heading {{ text-align: left; }}
-    .tbl td {{ text-align: right; padding: .5rem .6rem; border-bottom: 1px solid {c["grid"]}; font-variant-numeric: tabular-nums;
+    .tbl td {{ text-align: right; padding: .55rem .6rem; border-bottom: 1px solid {c["grid"]}; font-variant-numeric: tabular-nums;
                white-space: nowrap; }}
     .tbl tr:last-child td {{ border-bottom: 0; }}
-    [data-testid="stExpander"] details {{ background: {c["card"]}; border: 1px solid {LINE}; border-radius: 10px; }}
-    [data-testid="stExpander"] summary, [data-testid="stExpander"] summary * {{ color: {INK} !important; }}
-    [data-testid="stExpander"] summary:hover {{ background: {c["grid"]}; }}
+    [data-testid="stExpander"] details {{ background: transparent; border: 0; border-top: 1px solid {LINE};
+               border-bottom: 1px solid {LINE}; border-radius: 0; }}
+    [data-testid="stExpander"] summary {{ padding-left: 0; padding-right: 0; }}
+    [data-testid="stExpander"] summary, [data-testid="stExpander"] summary * {{ color: {BLUE} !important; font-weight: 500; }}
+    [data-testid="stExpander"] summary, [data-testid="stExpander"] summary:hover {{ background: transparent !important; }}
+    [data-testid="stMarkdownContainer"] code {{ background: {c["field"]} !important; color: {INK} !important; }}
+    [data-testid="stTextInputRootElement"], [data-testid="stNumberInputContainer"], [data-testid="stTextInputRootElement"] input,
+    [data-testid="stNumberInputContainer"] input, [data-testid="stNumberInputContainer"] button {{ background: {c["field"]} !important;
+                color: {INK} !important; border-color: transparent !important; }}
+    [data-testid="stExpander"] summary:hover p {{ text-decoration: underline; }}
+    [data-testid="stExpanderDetails"] {{ padding-left: 0; padding-right: 0; }}
 
     /* widgets */
     .st-key-dark {{ position: fixed; top: .8rem; right: 1.4rem; z-index: 1000001; width: auto !important; }}
@@ -100,103 +116,92 @@ def apply_theme():
     [data-testid="stWidgetLabel"] p {{ font-size: .85rem; color: {GREY} !important; }}
     [data-testid="stCaptionContainer"] {{ color: {GREY} !important; }}
     .stSelectbox [role="group"], .stMultiSelect [role="group"], .stTextInput input, .stNumberInput input,
-    .stNumberInput button, div[data-baseweb="input"] {{ background: {c["field"]} !important; color: {INK} !important;
-                border-color: {LINE} !important; }}
-    div[data-baseweb="select"] > div, .stNumberInput input {{ border-radius: 8px !important; }}
+    .stNumberInput button, div[data-baseweb="input"], div[data-baseweb="select"] > div {{ background: {c["field"]} !important;
+                color: {INK} !important; border-color: transparent !important; }}
+    div[data-baseweb="select"] > div, .stNumberInput input, div[data-baseweb="input"] {{ border-radius: 12px !important; }}
     [role="combobox"], .stSelectbox svg, .stMultiSelect svg, .stNumberInput svg {{ color: {INK} !important; }}
-    [data-testid="stSelectboxVirtualDropdown"], [role="listbox"] {{ background: {c["card"]} !important; color: {INK} !important;
-                border-color: {LINE} !important; }}
+    [data-testid="stSelectboxVirtualDropdown"], [role="listbox"] {{ background: {c["bg"]} !important; color: {INK} !important;
+                border-color: {LINE} !important; border-radius: 12px; }}
     [role="option"] {{ color: {INK} !important; }}
-    [role="option"]:hover, [role="option"][data-focused="true"] {{ background: {c["grid"]} !important; }}
-    [data-tag] {{ background: {c["grid"]} !important; color: {INK} !important; border: 1px solid {LINE}; }}
+    [role="option"]:hover, [role="option"][data-focused="true"] {{ background: {c["card"]} !important; }}
+    [data-tag] {{ background: {c["bg"]} !important; color: {INK} !important; border: 0; border-radius: 999px !important; }}
     [data-tag] * {{ color: {INK} !important; }}
     [data-testid="stSliderThumbValue"], [data-testid="stSliderTickBarMin"], [data-testid="stSliderTickBarMax"] {{ color: {GREY}; }}
-    [data-testid="stForm"] {{ border: 1px solid {LINE}; background: {c["card"]}; border-radius: 10px; }}
-    [data-testid="stAlert"] {{ background: {c["card"]}; color: {INK}; border: 1px solid {LINE}; border-radius: 10px; }}
-    button[data-variant="segmented_control"] {{ background: {c["field"]}; color: {INK}; border-color: {LINE}; }}
-    button[data-variant="segmented_control"][data-selected="true"], button[data-variant="segmented_control"][aria-checked="true"]
-        {{ background: {INK}; color: {c["bg"]}; border-color: {INK}; }}
+    [data-testid="stForm"] {{ border: 0; background: {c["card"]}; border-radius: 18px; padding: 1.4rem; }}
+    [data-testid="stForm"] div[data-baseweb="select"] > div, [data-testid="stForm"] div[data-baseweb="input"],
+    [data-testid="stForm"] .stTextInput input {{ background: {c["bg"]} !important; }}
+    [data-testid="stAlert"] {{ background: {c["card"]}; color: {INK}; border: 0; border-radius: 14px; }}
+
+    /* segmented controls: grey track, raised selected pill */
+    [data-testid="stButtonGroup"] > div {{ background: {c["field"]}; border-radius: 999px; padding: 3px; gap: 2px;
+                width: fit-content; max-width: 100%; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }}
+    button[data-variant="segmented_control"] {{ background: transparent !important; color: {INK} !important; border: 0 !important;
+                border-radius: 999px !important; padding: .35rem 1rem !important; box-shadow: none !important;
+                flex: 0 0 auto !important; white-space: nowrap; }}
+    button[data-variant="segmented_control"][data-selected="true"], button[data-variant="segmented_control"][aria-checked="true"],
+    button[kind="segmented_controlActive"] {{ background: {c["pill"]} !important; color: {INK} !important;
+                box-shadow: 0 1px 4px rgba(0,0,0,.12) !important; }}
+    button[data-variant="segmented_control"] p {{ color: inherit !important; font-weight: 500; }}
+
     [data-testid="stTopNavLinkContainer"] span, header a span {{ color: {INK} !important; }}
     [data-testid="stTooltipIcon"] svg {{ color: {GREY}; }}
-    .stButton > button, .stFormSubmitButton > button, .stDownloadButton > button {{ background: {INK}; color: {c["bg"]};
-                border: 1px solid {INK}; border-radius: 8px; padding: .5rem 1.1rem; font-weight: 500; box-shadow: none; }}
-    .stButton > button:hover, .stFormSubmitButton > button:hover {{ opacity: .85; color: {c["bg"]}; }}
+    .stButton > button, .stFormSubmitButton > button, .stDownloadButton > button {{ background: {BLUE}; color: #fff;
+                border: 0; border-radius: 999px; padding: .55rem 1.3rem; font-weight: 500; box-shadow: none; }}
+    .stButton > button:hover, .stFormSubmitButton > button:hover {{ filter: brightness(1.08); color: #fff; }}
     .stButton > button p, .stDownloadButton > button p, .stFormSubmitButton > button p {{ color: inherit !important; }}
-    .stButton > button[data-testid="stBaseButton-secondary"] {{ background: transparent; color: {INK}; border-color: {LINE}; }}
-    .stButton > button[data-testid="stBaseButton-tertiary"] {{ background: transparent; color: {BLUE}; border: 0; padding: .2rem 0; }}
-    .stButton > button[data-testid="stBaseButton-tertiary"]:hover {{ color: {INK}; opacity: 1; }}
+    .stButton > button[data-testid="stBaseButton-secondary"] {{ background: transparent; color: {BLUE}; border: 1px solid {BLUE}; }}
+    .stButton > button[data-testid="stBaseButton-tertiary"] {{ background: transparent; color: {BLUE}; border: 0; padding: .2rem 0;
+                min-height: 0; }}
+    .stButton > button[data-testid="stBaseButton-tertiary"]:hover {{ text-decoration: underline; filter: none; }}
 
-    /* tab bar of a parent page (segmented control restyled as underlined tabs) */
-    [class*="st-key-tab_"] {{ border-bottom: 1px solid {LINE}; position: sticky; top: 3.6rem; z-index: 999; background: {c["bg"]}; }}
-    [class*="st-key-tab_"] [data-testid="stButtonGroup"], [class*="st-key-tab_"] [role="radiogroup"] {{ gap: .25rem; }}
-    [class*="st-key-tab_"] button {{ background: transparent !important; border: 0 !important; border-radius: 0 !important;
-                 color: {GREY} !important; padding: .75rem .9rem !important; border-bottom: 2px solid transparent !important;
-                 box-shadow: none !important; flex: 0 1 auto !important; }}
-    [class*="st-key-tab_"] button:hover {{ color: {INK} !important; }}
-    [class*="st-key-tab_"] button[aria-checked="true"], [class*="st-key-tab_"] button[data-selected="true"],
-    [class*="st-key-tab_"] button[kind="segmented_controlActive"] {{ color: {INK} !important; background: transparent !important;
-                 border-bottom: 2px solid {INK} !important; }}
-    [class*="st-key-tab_"] p {{ color: inherit !important; font-size: .95rem !important; font-weight: 500; }}
+    /* tab bar of a parent page: centred segmented control, sticky under the header */
+    [class*="st-key-tab_"] {{ position: sticky; top: 3.75rem; z-index: 999; padding: .6rem 0; background: {c["glass"]};
+                backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); }}
+    [class*="st-key-tab_"] [data-testid="stButtonGroup"] {{ display: flex; justify-content: center; }}
+    [class*="st-key-tab_"] [data-testid="stButtonGroup"] > div {{ margin: 0 auto; }}
     iframe[height="0"] {{ display: block; }}
     .element-container:has(> iframe[height="0"]), .stElementContainer:has(> iframe[height="0"]) {{ display: none; }}
-    .pager-rule {{ border-top: 1px solid {LINE}; margin: 2.6rem 0 .8rem; }}
+    .pager-rule {{ border-top: 1px solid {LINE}; margin: 4rem 0 1rem; }}
 
     /* landing page */
-    .home-head {{ padding: 2.2rem 0 1.6rem; border-bottom: 1px solid {LINE}; display: flex; align-items: center;
-                  justify-content: space-between; gap: 24px; }}
-    .home-head .head-text {{ min-width: 0; }}
-    .qr {{ flex: none; display: flex; flex-direction: column; align-items: center; gap: 6px; text-decoration: none !important; }}
-    .qr img {{ width: 112px; height: 112px; background: #fff; padding: 8px; border: 1px solid {LINE}; border-radius: 10px;
-               image-rendering: pixelated; }}
-    .qr span {{ color: {GREY}; font-size: .75rem; font-weight: 500; }}
-    .home-head .eyebrow {{ color: {GREY}; font-size: .85rem; font-weight: 500; }}
-    .home-head h1 {{ font-size: clamp(2rem, 4.5vw, 2.9rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.03em;
-                    margin: .6rem 0 .5rem; padding: 0; color: {INK}; }}
-    .home-head .sub {{ color: {GREY}; font-size: 1.05rem; }}
-    .home-head [data-testid="stHeaderActionElements"] {{ display: none; }}
-    .meta {{ display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 1.4rem 0 .4rem; }}
-    @media (max-width: 640px) {{ .meta {{ grid-template-columns: 1fr; }} }}
-    .meta .card .k {{ color: {GREY}; font-size: .78rem; font-weight: 500; text-transform: uppercase; letter-spacing: .04em; }}
-    .meta .card .v {{ color: {INK}; font-size: .93rem; line-height: 1.6; margin-top: .35rem; }}
-    .tldr {{ border: 1px solid {LINE}; border-radius: 10px; padding: 18px 22px; margin: .8rem 0 0; background: {c["card"]}; }}
-    .tldr h3 {{ font-size: .78rem; font-weight: 600; color: {GREY}; text-transform: uppercase; letter-spacing: .06em;
-               margin: 0 0 .6rem; padding: 0; }}
-    .tldr ul {{ margin: 0; padding-left: 1.1rem; }}
-    .tldr li {{ color: {INK}; font-size: .97rem; line-height: 1.6; margin: .25rem 0; }}
-    .tldr li b {{ font-weight: 600; }}
-    .tldr li em {{ font-style: normal; color: {VN_COLOR}; font-weight: 600; }}
-    .card .t {{ color: {INK}; font-weight: 600; font-size: 1rem; }}
-    .card .d {{ color: {GREY}; font-size: .88rem; line-height: 1.5; margin-top: .3rem; }}
-    .contrib {{ display: flex; flex-direction: column; }}
-    .contrib .id {{ color: {GREY}; font-size: .82rem; margin-top: .15rem; }}
-    .contrib ul {{ margin: .7rem 0 .9rem; padding-left: 1.1rem; color: {INK}; font-size: .88rem; line-height: 1.55; flex: 1; }}
-    .contrib .share {{ height: 4px; border-radius: 2px; background: {c["grid"]}; overflow: hidden; }}
-    .contrib .share span {{ display: block; height: 100%; background: {BLUE}; }}
-    .contrib .pct {{ color: {GREY}; font-size: .78rem; margin-top: .35rem; }}
-    .explore {{ min-height: 7.2rem; }}
-    .footer {{ color: {GREY}; font-size: .82rem; padding: 1.2rem 0 .4rem; border-top: 1px solid {LINE}; margin-top: 2.6rem; line-height: 1.7; }}
-    /* tab bars scroll sideways instead of wrapping */
-    [class*="st-key-tab_"] [data-testid="stButtonGroup"] > div {{ flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }}
+    .stat .num {{ color: {BLUE}; font-size: clamp(2.3rem, 5vw, 3.2rem); font-weight: 700; letter-spacing: -0.04em; line-height: 1.05; }}
+    .stat .txt {{ color: {INK}; font-size: 1rem; line-height: 1.45; margin-top: .6rem; }}
+    .card .t {{ color: {INK}; font-weight: 650; font-size: 1.25rem; letter-spacing: -0.02em; }}
+    .card .d {{ color: {GREY}; font-size: .95rem; line-height: 1.5; margin-top: .4rem; }}
+    .card .id {{ color: {GREY}; font-size: .85rem; margin-top: .25rem; }}
+    .explore {{ min-height: 8.5rem; }}
+    .contrib ul {{ margin: .5rem 0 1rem; padding-left: 1.1rem; color: {INK}; font-size: .9rem; line-height: 1.6; }}
+    .footer {{ color: {GREY}; font-size: 1rem; padding: 2rem 0 .4rem; border-top: 1px solid {LINE}; margin-top: 5rem;
+               line-height: 1.7; display: flex; justify-content: space-between; align-items: center; gap: 24px; }}
+    .qr {{ flex: none; display: flex; flex-direction: column; align-items: center; gap: 6px; cursor: zoom-in; }}
+    .qr-toggle {{ display: none; }}
+    .qr-overlay {{ display: none; position: fixed; inset: 0; z-index: 1000002; background: {c["glass"]};
+                   backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); cursor: zoom-out;
+                   flex-direction: column; align-items: center; justify-content: center; gap: 18px; }}
+    .qr-toggle:checked ~ .qr-overlay {{ display: flex; }}
+    .qr-overlay img {{ width: min(80vw, 80vh, 520px); height: auto; aspect-ratio: 1; background: #fff; padding: 22px;
+                       border-radius: 28px; image-rendering: pixelated; box-shadow: 0 20px 60px rgba(0,0,0,.18); }}
+    .qr-overlay span {{ color: {INK}; font-size: 1rem; font-weight: 500; }}
+    .qr img {{ width: 104px; height: 104px; background: #fff; padding: 6px; border-radius: 12px; image-rendering: pixelated; }}
+    .qr span {{ color: {GREY}; font-size: .85rem; }}
 
     /* touch screens: no Plotly toolbar (it covers the chart titles) */
     @media (hover: none), (max-width: 640px) {{ .modebar-container {{ display: none !important; }} }}
 
     /* phones */
     @media (max-width: 640px) {{
-        .block-container {{ padding: 1.2rem 1rem 2.5rem; }}
-        .tile, .insight, .card {{ padding: 13px 14px; }}
-        .tile .v {{ font-size: 1.3rem; }}
+        .block-container {{ padding: 1.4rem 1rem 3rem; }}
+        .hero {{ padding: 2rem 0 1.6rem; }}
+        .tile, .insight, .card {{ padding: 16px 18px; border-radius: 16px; }}
+        .tile .v {{ font-size: 1.4rem; }}
         .tile .s {{ font-size: .76rem; }}
-        .home-head {{ padding: 1.4rem 0 1.2rem; flex-direction: column; align-items: flex-start; gap: 14px; }}
-        .qr {{ flex-direction: row; gap: 10px; }}
-        .qr img {{ width: 84px; height: 84px; padding: 6px; }}
-        .tldr {{ padding: 14px 16px; }}
-        .section-title {{ margin-top: 1.8rem; }}
-        .takeaway {{ font-size: 1.05rem; margin-top: 1.9rem; }}
-        .tbl {{ padding: 2px 8px; }}
+        .section-title {{ margin-top: 3.2rem; }}
+        .takeaway {{ margin-top: 3rem; }}
+        .tbl {{ padding: 4px 10px; }}
         .tbl table {{ font-size: .8rem; }}
         .js-plotly-plot .gtitle {{ font-size: 12.5px !important; }}
         .explore {{ min-height: 0; }}
+        .footer {{ flex-direction: column; align-items: flex-start; }}
         .st-key-dark {{ right: .8rem; }}
     }}
     </style>""", unsafe_allow_html=True)
@@ -204,21 +209,23 @@ def apply_theme():
 
 def style(fig, h=420, legend=True):
     fig.update_layout(template=C["template"], height=h, font=dict(family=FONT, color=INK, size=12),
-                      margin=dict(l=8, r=18, t=44, b=8), paper_bgcolor=C["card"], plot_bgcolor=C["card"],
-                      title=dict(x=0.01, xanchor="left", font=dict(size=14, weight=600)), colorway=PALETTE,
-                      showlegend=legend, legend=dict(orientation="h", yref="container", y=0, yanchor="bottom", x=0.01, title=None,
+                      margin=dict(l=16, r=22, t=56, b=20), paper_bgcolor=C["card"], plot_bgcolor=C["card"],
+                      title=dict(x=0.01, xanchor="left", font=dict(size=15, weight=600)), colorway=PALETTE,
+                      showlegend=legend, legend=dict(orientation="h", yref="container", y=12 / h, yanchor="bottom", x=0.01, title=None,
                                                        font=dict(size=11)),
-                      hoverlabel=dict(font_family=FONT, bgcolor=C["card"], font_color=INK))
-    fig.update_xaxes(showgrid=False, linecolor=LINE, ticks="", title_font=dict(size=11, color=GREY))
-    fig.update_yaxes(gridcolor=C["grid"], zeroline=False, linecolor=LINE, title_font=dict(size=11, color=GREY))
+                      hoverlabel=dict(font_family=FONT, bgcolor=C["bg"], font_color=INK, bordercolor=LINE))
+    fig.update_xaxes(showgrid=False, showline=False, ticks="", tickfont=dict(color=GREY),
+                     title_font=dict(size=11, color=GREY))
+    fig.update_yaxes(gridcolor=C["line"] if DARK else C["grid"], zeroline=False, showline=False,
+                     tickfont=dict(color=GREY), title_font=dict(size=11, color=GREY))
     if any(t.type == "choropleth" for t in fig.data):
         fig.update_geos(bgcolor=C["card"], landcolor=C["grid"], showland=True, lakecolor=C["card"])
     return fig
 
 
 def hero(eyebrow, title, sub):
-    """Left-aligned page header: small label, title, one-line summary."""
-    st.markdown(f'<div class="hero"><div class="eyebrow">{eyebrow}</div><h1>{title.replace("<br>", " ")}</h1>'
+    """Centred page header: small label, large title (keeps its <br>), one-line summary."""
+    st.markdown(f'<div class="hero"><div class="eyebrow">{eyebrow}</div><h1>{title}</h1>'
                 f'<p>{sub}</p></div>', unsafe_allow_html=True)
 
 

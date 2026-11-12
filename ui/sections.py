@@ -13,8 +13,7 @@ def sections():
             ("why", "2 · Why", part2.page),
             ("so-what", "3 · So what", part3.page)]),
         "lab": dict(title="Lab", icon=":material/science:", tabs=[
-            ("trends", "Trends", explore.page_trends),
-            ("compare", "Compare", explore.page_compare),
+            ("countries", "Countries", explore.page_countries),
             ("models", "Models", explore.page_models),
             ("clusters", "Clusters", explore.page_clusters)]),
     }

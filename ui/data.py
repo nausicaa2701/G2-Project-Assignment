@@ -56,8 +56,7 @@ def _pca_coords():
 def page_a():
     r = _a_results()
     hero("A · Initial data exploration", "What is in the data,<br>and what is missing.",
-         "Size and attributes of the World Bank files, summary statistics of the 32 indicators we kept, "
-         "and the outliers, groups and values that stand out. Missing values are checked at every step.")
+         "The World Bank files, the 32 indicators we kept, and the gaps and outliers that shape the analysis.")
 
     # A1
     section("A1 · Dataset overview", "The raw Kaggle files, their attributes, and the subset analysed in this project.")
@@ -65,14 +64,13 @@ def page_a():
            ("Economies", "247", "214 countries + 33 aggregates"),
            ("Indicators", "1,344", "1960–2015, 574 MB on disk"),
            ("Analysed", f"{len(panel):,} × 32", f"country-years × indicators; snapshot {len(snap)} × 32")])
-    st.write("")
-    st.markdown("**Raw files**")
     f = ex.RAW_FILES.copy()
     f["rows"] = f.rows.map(lambda v: f"{v:,.0f}" if pd.notna(v) else "–")
     f["columns"] = f["columns"].map(lambda v: f"{v:.0f}" if pd.notna(v) else "–")
-    table(f.style.hide(axis="index"))
-    st.markdown("**Attributes of the raw tables**")
-    table(ex.RAW_ATTRIBUTES.style.hide(axis="index"))
+    with st.expander("Raw files and their attributes"):
+        table(f.style.hide(axis="index"))
+        st.write("")
+        table(ex.RAW_ATTRIBUTES.style.hide(axis="index"))
 
     y = r["years"]
     first, peak = y.iloc[0], y.loc[y.cells.idxmax()]
@@ -105,17 +103,18 @@ def page_a():
     gdp = s.loc["gdp_pc"]
     takeaway(f"Income is strongly right-skewed: the mean GDP per head (<em>US${gdp['mean']:,.0f}</em>) is "
              f"<em>{gdp['mean'] / gdp['median']:.1f}×</em> the median",
-             f"{int((s["skew"] > 1).sum())} of 32 attributes have skewness above 1, so medians and log scales describe "
+             f"{int((s['skew'] > 1).sum())} of 32 attributes have skewness above 1, so medians and log scales describe "
              "them better than means. Percentages are bounded at 100 and skewed to the left.")
-    theme = st.segmented_control("Theme", ["All"] + list(THEME_VARS), default="All", key="a2_theme") or "All"
-    rows = s if theme == "All" else s.loc[[v for v in THEME_VARS[theme] if v in s.index]]
-    t = rows.copy()
-    t.index = [f"{_short(v)} · {v}" for v in t.index]
-    table(t.style.format({"count": "{:.0f}", "missing_%": "{:.1f}", "skew": "{:.2f}"}, precision=2, thousands=",")
-          .format(lambda v: f"{v:,.0f}" if abs(v) >= 1000 else f"{v:,.3g}",
-                  subset=["mean", "median", "std", "min", "max"])
-          .background_gradient(cmap="Oranges", subset=["missing_%"], vmin=0, vmax=60)
-          .background_gradient(cmap="Purples", subset=["skew"], vmin=0, vmax=5))
+    with st.expander("Summary statistics of all 32 attributes"):
+        theme = st.segmented_control("Theme", ["All"] + list(THEME_VARS), default="All", key="a2_theme") or "All"
+        rows = s if theme == "All" else s.loc[[v for v in THEME_VARS[theme] if v in s.index]]
+        t = rows.copy()
+        t.index = [f"{_short(v)} · {v}" for v in t.index]
+        table(t.style.format({"count": "{:.0f}", "missing_%": "{:.1f}", "skew": "{:.2f}"}, precision=2, thousands=",")
+              .format(lambda v: f"{v:,.0f}" if abs(v) >= 1000 else f"{v:,.3g}",
+                      subset=["mean", "median", "std", "min", "max"])
+              .background_gradient(cmap="Oranges", subset=["missing_%"], vmin=0, vmax=60)
+              .background_gradient(cmap="Purples", subset=["skew"], vmin=0, vmax=5))
 
     c1, c2 = st.columns([2, 1])
     var = c1.selectbox("Distribution of", list(num.columns), index=list(num.columns).index("gdp_pc"),
@@ -220,15 +219,13 @@ def page_a():
     fig.update_yaxes(visible=False, range=[-1, 1])
     fig.update_xaxes(title=f"{LABELS[v]}{' (log₁₀)' if z is not xs else ''}")
     chart(fig, 300)
-    st.markdown("**Indicators with outliers** (the three most extreme countries each)")
-    table(o[o.n_outliers > 0].sort_values("n_outliers", ascending=False)
-          .assign(indicator=lambda d: d.indicator.map(_short)).style.hide(axis="index"))
-    a, b = st.columns(2)
-    with a:
+    with st.expander("All outliers and hyperinflation years"):
+        st.markdown("**Indicators with outliers** (the three most extreme countries each)")
+        table(o[o.n_outliers > 0].sort_values("n_outliers", ascending=False)
+              .assign(indicator=lambda d: d.indicator.map(_short)).style.hide(axis="index"))
         st.markdown(f"**Hyperinflation years** (> 500 %): {len(hy)} country-years in the panel")
         table(hy.head(8).drop(columns="CountryCode").style.format({"inflation": "{:,.0f} %", "Year": "{:.0f}"})
               .hide(axis="index"))
-    with b:
         st.markdown("**Reading.** Small trading hubs have trade above 300 % of GDP, Gulf states very high CO₂, war "
                     "years produce GDP collapses, and gross enrolment above 100 % reflects over-age pupils. These are "
                     "real values, so they stay in the data. Hyperinflation years are flagged rather than deleted: "
@@ -326,15 +323,14 @@ FINDINGS = pd.DataFrame([
     ("A2", "scales differ by orders of magnitude", "B3", "z-score standardisation"),
     ("A3", "extreme but genuine values, hyperinflation", "B1", "keep, flag hyperinflation, robust statistics"),
     ("A3", "one correlated block of indicators", "B4", "PCA (one development axis)"),
-    ("A3", "near-definitional pairs (infant mortality ↔ life expectancy)", "B5", "drop leaking features per target"),
+    ("A3", "near-definitional pairs (infant mortality ↔ life expectancy)", "Lab", "drop leaking features per target (Models tab)"),
 ], columns=["found in", "problem", "group", "technique applied"])
 
 
 def page_b():
     r = _b_results()
     hero("B · Data preprocessing", "From 5.66 million raw rows<br>to two analysis-ready tables.",
-         "Each technique answers a problem found in A. We use all four groups, cleaning (B1), integration (B2), "
-         "transformation (B3) and reduction (B4), plus leakage control for the models.")
+         "Cleaning, integration, transformation and reduction, each answering a problem found in A.")
 
     section("Which techniques, and why", "Problem found during exploration → preprocessing technique applied.")
     table(FINDINGS.style.hide(axis="index"))
@@ -357,8 +353,6 @@ def page_b():
     # B1
     section("B1 · Data cleaning", "Validation, outliers and a missing-value rule for each kind of gap.")
     v = r["valid"]
-    st.markdown("**Validation of the processed panel** (recomputed on every load)")
-    table(v.style.hide(axis="index"))
     st.markdown("**Missing-value strategy:** one rule per kind of gap")
     table(pd.DataFrame([
         ("1", "linear interpolation of internal gaps ≤ 3 years, never extrapolate", "44.9 → 42.1 % missing"),
@@ -367,6 +361,8 @@ def page_b():
         ("4", "coverage threshold", "exploration ≥ 60 %, models ≥ 50 %"),
         ("5", "group trends only where ≥ 30 % of the group reports", "no trend from a few countries"),
     ], columns=["#", "rule", "effect"]).style.hide(axis="index"))
+    with st.expander("Validation checks on the processed panel"):
+        table(v.style.hide(axis="index"))
     sz = r["sizes"]
     cov = r["cov"]
     listwise = int(sz.set_index("sample").at["listwise: all 32 indicators", "countries"])
@@ -393,26 +389,23 @@ def page_b():
 
     # B2
     section("B2 · Data integration", "Three files joined on their keys into one table per analysis.")
-    a, b = st.columns(2)
-    with a:
-        st.write("")
-        table(pd.DataFrame([
-            ("Indicators.CountryCode", "Country.CountryCode", "ShortName, Region, IncomeGroup"),
-            ("Indicators.IndicatorCode", "Series.SeriesCode", "indicator name, topic, unit"),
-            ("IndicatorCode", "alias table (32 rows)", "short name (life_exp) + theme"),
-            ("IncomeGroup", "High: OECD + non-OECD", "one 'High income' level → 4 ordinal levels"),
-        ], columns=["key", "joined to", "adds"]).style.hide(axis="index"))
-    with b:
-        ic = snap.groupby(["Region", "Income"], observed=True).size().reset_index(name="countries")
-        fig = px.bar(ic, x="countries", y="Region", color="Income", orientation="h",
-                     category_orders={"Income": INCOME_ORDER}, color_discrete_map=k.INCOME_COLORS,
-                     title="Integrated attributes: region × income group (214 countries)", labels={"Region": ""})
-        chart(fig, 330, target=b)
+    table(pd.DataFrame([
+        ("Indicators.CountryCode", "Country.CountryCode", "ShortName, Region, IncomeGroup"),
+        ("Indicators.IndicatorCode", "Series.SeriesCode", "indicator name, topic, unit"),
+        ("IndicatorCode", "alias table (32 rows)", "short name (life_exp) + theme"),
+        ("IncomeGroup", "High: OECD + non-OECD", "one 'High income' level → 4 ordinal levels"),
+    ], columns=["key", "joined to", "adds"]).style.hide(axis="index"))
+    st.write("")
+    ic = snap.groupby(["Region", "Income"], observed=True).size().reset_index(name="countries")
+    fig = px.bar(ic, x="countries", y="Region", color="Income", orientation="h",
+                 category_orders={"Income": INCOME_ORDER}, color_discrete_map=k.INCOME_COLORS,
+                 title="Integrated attributes: region × income group (214 countries)", labels={"Region": ""})
+    chart(fig, 330)
     show = ["CountryCode", "ShortName", "Region", "Income", "gdp_pc", "life_exp", "internet", "co2_pc"]
-    st.markdown("**Result: one row per country with metadata and indicators** (snapshot excerpt)")
-    table(snap.set_index("CountryCode").loc[[VN, "CHN", "THA", "NGA", "DEU"]].reset_index()[show].style
-          .format({"gdp_pc": "{:,.0f}", "life_exp": "{:.1f}", "internet": "{:.1f}", "co2_pc": "{:.2f}"})
-          .hide(axis="index"))
+    with st.expander("Sample of the result: one row per country"):
+        table(snap.set_index("CountryCode").loc[[VN, "CHN", "THA", "NGA", "DEU"]].reset_index()[show].style
+              .format({"gdp_pc": "{:,.0f}", "life_exp": "{:.1f}", "internet": "{:.1f}", "co2_pc": "{:.2f}"})
+              .hide(axis="index"))
 
     # B3
     section("B3 · Data transformation", "Reshape, log transform and standardise.")
@@ -420,29 +413,29 @@ def page_b():
     long = panel[(panel.CountryCode == VN) & panel.Year.between(2010, 2012)][["CountryCode", "Year", "gdp_pc",
                                                                               "life_exp", "internet"]]
     lg = long.melt(["CountryCode", "Year"], var_name="IndicatorCode", value_name="Value")
-    a, b = st.columns(2)
-    with a:
-        st.caption(f"Long (raw format): {len(lg)} rows for 3 years × 3 indicators")
-        table(lg.style.format({"Value": "{:,.2f}"}).hide(axis="index"))
-    with b:
-        st.caption(f"Wide (panel): {len(long)} rows, one column per indicator")
-        table(long.style.format({"gdp_pc": "{:,.0f}", "life_exp": "{:.1f}", "internet": "{:.1f}"}).hide(axis="index"))
+    with st.expander("Example: Vietnam 2010–2012, long and wide"):
+        a, b = st.columns(2)
+        with a:
+            st.caption(f"Long (raw format): {len(lg)} rows for 3 years × 3 indicators")
+            table(lg.style.format({"Value": "{:,.2f}"}).hide(axis="index"))
+        with b:
+            st.caption(f"Wide (panel): {len(long)} rows, one column per indicator")
+            table(long.style.format({"gdp_pc": "{:,.0f}", "life_exp": "{:.1f}", "internet": "{:.1f}"})
+                  .hide(axis="index"))
 
     sk = r["skew"]
     g = sk.set_index("indicator").loc["gdp_pc"]
     takeaway(f"log₁₀ turns GDP per head from skew <em>{g.skew_raw:.1f}</em> into <em>{g.skew_log10:+.2f}</em>",
              "and makes the income relationships close to linear (the Preston curve in Part 2).")
-    a, b = st.columns(2)
-    v = a.selectbox("Attribute", sk.indicator.tolist(), format_func=lambda c: LABELS[c], key="b3_var")
+    v = st.selectbox("Attribute", sk.indicator.tolist(), format_func=lambda c: LABELS[c], key="b3_var")
     x = snap[v].dropna()
     fig = make_subplots(1, 2, subplot_titles=(f"raw · skew {x.skew():.1f}", f"log₁₀ · skew {np.log10(x.clip(lower=1e-3)).skew():+.2f}"))
     fig.add_histogram(x=x, nbinsx=35, marker_color=k.GREY, row=1, col=1, showlegend=False)
     fig.add_histogram(x=np.log10(x.clip(lower=1e-3)), nbinsx=35, marker_color=k.BLUE, row=1, col=2, showlegend=False)
-    chart(fig.update_layout(title=LABELS[v]), 340, legend=False, target=a)
+    chart(fig.update_layout(title=LABELS[v]), 340, legend=False)
     t = sk.set_index(sk.indicator.map(_short)).drop(columns="indicator")
     t.index.name = None
-    with b:
-        st.write("")
+    with st.expander("Skewness before and after, every log-transformed attribute"):
         table(t.style.format("{:.2f}"))
 
     d, X, Z = cluster_matrix(snap.assign(Income=snap.Income.astype(str)))
@@ -491,12 +484,5 @@ def page_b():
     st.markdown(f"**Instance reduction:** 55 years × 214 countries ({len(panel):,} country-years) → one snapshot row "
                 f"per country ({len(snap)}), for every cross-country comparison; the panel is kept for trends and "
                 "fixed effects.")
-
-    # B5
-    section("B5 · Leakage control for the models", "Near-definitional features are removed per target, and "
-            "cross-validation folds are split by country.")
-    table(pd.DataFrame([(t, LABELS[s["target"]], ", ".join(LABELS[f] for f in s["leak"]))
-                        for t, s in THEMES.items()], columns=["theme", "target", "features dropped"])
-          .style.hide(axis="index"))
 
     bridge("With clean, comparable tables we can tell the story: how did the world change?")

@@ -1,4 +1,4 @@
-"""Lab: free-exploration tabs (trends, compare, model lab, clusters)."""
+"""Lab: free-exploration tabs (countries, model lab, clusters)."""
 import numpy as np
 import pandas as pd
 import plotly.express as px
@@ -8,40 +8,18 @@ from sklearn.decomposition import PCA
 from sklearn.metrics import silhouette_score
 
 from ui import core as k
-from ui.core import (INCOME_ORDER, LABELS, LOG_SCALE, THEME_VARS, group_trend, load_results, panel, section,
+from ui.core import (INCOME_ORDER, LABELS, LOG_SCALE, THEME_VARS, load_results, panel, section,
                      snap, style, table, tiles)
 from wdi.models import MODEL_NAMES, THEMES, Config, evaluate, summarise
 from wdi.story.part3 import CLUSTER_VARS, cluster_matrix, fit_clusters
 
 
-def page_trends():
-    section("Theme trends", "Median across countries, shown only when at least 30% of the group reports.")
-    c1, c2, c3 = st.columns([1, 2, 1])
-    theme = c1.selectbox("Theme", list(THEME_VARS))
+def page_countries():
+    section("Countries", "Pick one indicator: the map, the ranking and the country lines all follow it.")
+    c1, c2 = st.columns([1, 2])
+    theme = c1.selectbox("Theme", list(THEME_VARS), index=list(THEME_VARS).index("Health"))
     var = c2.selectbox("Indicator", THEME_VARS[theme], format_func=LABELS.get)
-    by = c3.segmented_control("Group by", ["Income", "Region"], default="Income") or "Income"
-    t = group_trend(var, by)
-    fig = px.line(t, x="Year", y="median", color=by, log_y=var in LOG_SCALE, title=LABELS[var],
-                  color_discrete_map=k.INCOME_COLORS if by == "Income" else None,
-                  category_orders={"Income": INCOME_ORDER}, labels={"median": ""})
-    fig.update_traces(line_width=3)
-    st.plotly_chart(style(fig, 460), width="stretch", theme=None)
 
-    section("Country explorer", "Compare individual countries on the same indicator.")
-    names = sorted(panel.ShortName.dropna().unique())
-    pick = st.multiselect("Countries", names, default=["Vietnam", "China", "Thailand", "Indonesia", "India"])
-    d = panel[panel.ShortName.isin(pick)].dropna(subset=[var])
-    fig = px.line(d, x="Year", y=var, color="ShortName", log_y=var in LOG_SCALE, labels={var: "", "ShortName": ""},
-                  title=LABELS[var])
-    fig.update_traces(line_width=2.5)
-    st.plotly_chart(style(fig, 420), width="stretch", theme=None)
-
-
-def page_compare():
-    section("Compare countries", "Latest available value between 2005 and 2014.")
-    c1, c2 = st.columns([2, 1])
-    var = c1.selectbox("Indicator", list(LABELS), index=list(LABELS).index("life_exp"), format_func=LABELS.get)
-    n = c2.slider("Top / bottom", 5, 20, 10)
     d = snap.dropna(subset=[var])
     color = np.log10(d[var].clip(lower=1e-3)) if var in LOG_SCALE else d[var]
     fig = go.Figure(go.Choropleth(locations=d.CountryCode, z=color, text=d.ShortName, colorscale="Blues",
@@ -50,7 +28,18 @@ def page_compare():
                                   colorbar=dict(title="log₁₀" if var in LOG_SCALE else "", thickness=10)))
     fig.update_geos(showframe=False, showcoastlines=False, projection_type="natural earth",
                     projection_rotation_lon=0, lonaxis_range=[-180, 180], lataxis_range=[-58, 85])
-    st.plotly_chart(style(fig, 480, legend=False).update_layout(title=LABELS[var]), width="stretch", theme=None)
+    st.plotly_chart(style(fig, 460, legend=False).update_layout(title=f"{LABELS[var]} · latest value 2005–2014"),
+                    width="stretch", theme=None)
+
+    names = sorted(panel.ShortName.dropna().unique())
+    pick = st.multiselect("Countries over time", names, default=["Vietnam", "China", "Thailand", "Indonesia", "India"])
+    p = panel[panel.ShortName.isin(pick)].dropna(subset=[var])
+    fig = px.line(p, x="Year", y=var, color="ShortName", log_y=var in LOG_SCALE, labels={var: "", "ShortName": ""},
+                  title=LABELS[var])
+    fig.update_traces(line_width=2.5)
+    st.plotly_chart(style(fig, 420), width="stretch", theme=None)
+
+    n = st.slider("Lowest and highest", 5, 20, 10)
     s = d.sort_values(var)
     a, b = st.columns(2)
     for col, part, title in ((a, s.head(n), "Lowest"), (b, s.tail(n), "Highest")):
@@ -60,8 +49,9 @@ def page_compare():
 
     section("Relationship explorer", "Any two indicators, one bubble per country (size = population).")
     c1, c2 = st.columns(2)
-    x = c1.selectbox("X axis", list(LABELS), index=list(LABELS).index("gdp_pc"), format_func=LABELS.get)
-    y = c2.selectbox("Y axis", list(LABELS), index=list(LABELS).index("life_exp"), format_func=LABELS.get)
+    keys = list(LABELS)
+    x = c1.selectbox("X axis", keys, index=keys.index("gdp_pc"), format_func=LABELS.get)
+    y = c2.selectbox("Y axis", keys, index=keys.index(var if var != x else "life_exp"), format_func=LABELS.get)
     d = snap.dropna(subset=[x, y, "population"])
     fig = px.scatter(d, x=x, y=y, size="population", color="Region", hover_name="ShortName", size_max=45,
                      log_x=x in LOG_SCALE, log_y=y in LOG_SCALE, labels={x: LABELS[x], y: LABELS[y]})
@@ -118,6 +108,12 @@ def page_models():
                          labels={"y": "", "importance": "drop in R² when shuffled"})
             fig.update_traces(marker_color=k.BLUE)
             b.plotly_chart(style(fig, 440, legend=False), width="stretch", theme=None)
+
+    section("Leakage control", "Near-definitional features are removed per target, and cross-validation folds "
+            "are split by country, so no country is in both train and test.")
+    table(pd.DataFrame([(t, LABELS[s["target"]], ", ".join(LABELS[f] for f in s["leak"]))
+                        for t, s in THEMES.items()], columns=["theme", "target", "features dropped"])
+          .style.hide(axis="index"))
 
     section("Run your own experiment", "Choose models, seeds and settings. Results are computed live and cached.")
     with st.form("lab"):

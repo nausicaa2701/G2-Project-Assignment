@@ -59,18 +59,10 @@ def page():
          "are where the interesting lessons are.")
     codes = country_picker("p2_pick", PEERS)
 
-    # 1 · almost everything moves with income
+    # 1 · almost everything moves with income (folded under the Preston curve)
     num = [c for c in LABELS if c in snap and c not in ("gdp_pc", "gdp_pc_ppp", "population")]
     rho = snap[num].corrwith(snap.gdp_pc, method="spearman").dropna().sort_values(key=abs)
     strong = int((rho.abs() >= .5).sum())
-    takeaway(f"<em>{strong} of {len(rho)}</em> indicators move closely with income",
-             "Spearman correlation with GDP per capita across countries (latest value 2005–2014). |ρ| ≥ 0.5 counts as close.")
-    fig = go.Figure(go.Bar(x=rho.values, y=[LABELS[i] for i in rho.index], orientation="h",
-                           marker_color=[k.BLUE if v > 0 else "#ff9f0a" for v in rho.values],
-                           text=[f"{v:+.2f}" for v in rho.values], textposition="outside",
-                           hovertemplate="%{y}: ρ = %{x:.2f}<extra></extra>"))
-    fig.update_xaxes(range=[-1.1, 1.1], title="ρ with GDP per capita (blue: rises with income, orange: falls)")
-    st.plotly_chart(style(fig, 140 + 22 * len(rho), legend=False), width="stretch", theme=None)
 
     # 2 · the Preston curve
     takeaway(f"Each 10× more income goes with <em>+{health.slope_per_10x:.0f} years</em> of life",
@@ -78,6 +70,15 @@ def page():
              "The dotted line is what income predicts; distance from it is the residual.")
     st.plotly_chart(_p2_income_scatter("Health", fit, codes, "Life expectancy vs income (the Preston curve)"),
                     width="stretch", theme=None)
+    with st.expander(f"Not only health: {strong} of {len(rho)} indicators move closely with income"):
+        st.markdown("Spearman correlation with GDP per capita across countries (latest value 2005–2014). "
+                    "|ρ| ≥ 0.5 counts as close.")
+        fig = go.Figure(go.Bar(x=rho.values, y=[LABELS[i] for i in rho.index], orientation="h",
+                               marker_color=[k.BLUE if v > 0 else "#ff9f0a" for v in rho.values],
+                               text=[f"{v:+.2f}" for v in rho.values], textposition="outside",
+                               hovertemplate="%{y}: ρ = %{x:.2f}<extra></extra>"))
+        fig.update_xaxes(range=[-1.1, 1.1], title="ρ with GDP per capita (blue: rises with income, orange: falls)")
+        st.plotly_chart(style(fig, 140 + 22 * len(rho), legend=False), width="stretch", theme=None)
 
     # 3 · E2.1 R² in three layers
     lt = layer_table(layers)
@@ -171,11 +172,11 @@ def page():
     fh = fe.set_index("theme").loc["Health"]
     yh = yfx[yfx.theme == "Health"]
     shift = yh.effect.iloc[-1]
-    takeaway(f"Getting richer adds only <em>+{fh.within:.1f} years</em> per 10×. Time itself added "
-             f"<em>+{shift:.1f}</em>",
-             "Between countries, 10× more income goes with ~11 more years. Within one country over time, "
-             "the same rise in income goes with far less, while life expectancy rose for everyone at the same income.")
-    a, b = st.columns(2)
+    fold = st.expander(f"Richer vs getting richer: +{fh.within:.1f} years per 10× within a country")
+    fold.markdown(f"**Getting richer adds only +{fh.within:.1f} years per 10×; time itself added +{shift:.1f}.** "
+                  "Between countries, 10× more income goes with ~11 more years. Within one country over time, the "
+                  "same rise in income goes with far less, while life expectancy rose for everyone at the same income.")
+    a, b = fold.columns(2)
     fig = go.Figure(go.Bar(x=["Between countries<br>(richer)", "Within a country<br>(getting richer)"],
                            y=[fh["between"], fh.within], marker_color=[k.GREY, k.BLUE],
                            error_y=dict(type="data", array=[0, 1.96 * fh.within_se], color=k.INK),
@@ -192,7 +193,7 @@ def page():
     fe_t.columns = ["Between countries", "Within (country + year FE)", "95% CI low", "95% CI high", "Countries",
                     "Country-years"]
     fe_t.index.name = None
-    method_box(
+    fold.markdown(
         "**Data:** panel 1990–2014, countries with ≥ 5 years of data. Slope = change in the target per 10× GDP per "
         "capita (CO₂ in log₁₀ units, so 0.75 means ×5.6 CO₂ per 10× income).\n\n"
         "**Between:** regression of country averages, the same comparison as the Preston curve. "
@@ -200,9 +201,9 @@ def page():
         "global trend count. Standard errors clustered by country. The year effects on the right are the "
         "common shift of all countries at a given income.\n\n"
         "**Reading:** cross-country gaps overstate what income growth alone buys. Medicine, vaccines and public "
-        "health spread to everyone over time. This is still an association, not a causal estimate.",
-        "Fixed-effects details and all themes",
-        styler=fe_t.style.format({c: "{:.2f}" for c in fe_t.columns[:4]}))
+        "health spread to everyone over time. This is still an association, not a causal estimate.")
+    with fold:
+        table(fe_t.style.format({c: "{:.2f}" for c in fe_t.columns[:4]}))
 
     # 6 · the cost: CO₂
     e = vn.loc["Environment"]

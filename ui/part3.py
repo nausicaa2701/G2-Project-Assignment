@@ -40,28 +40,14 @@ def page():
          "If income does not tell the whole story, are income groups the right way to compare countries? "
          "And where does Vietnam really stand?")
 
-    # 3.1 · one continuous axis
-    takeaway(f"Development is mostly one continuous axis: <em>PC1 = {ev[0]:.0%}</em> of the variance, "
-             f"silhouette only {sil:.2f}",
-             "15 standardised indicators projected on two principal components, coloured by World Bank income group. "
-             "Countries spread along PC1 without clear gaps, so any grouping cuts a continuum.")
-    fig = px.scatter(d, x="PC1", y="PC2", color="Income", hover_name="ShortName", category_orders={"Income": INCOME_ORDER},
-                     color_discrete_map=k.INCOME_COLORS,
-                     labels={"PC1": f"PC1 · overall development ({ev[0]:.0%})", "PC2": f"PC2 ({ev[1]:.0%})"})
-    fig.update_traces(marker=dict(size=9, opacity=.75))
-    vn = d[d.CountryCode == VN]
-    fig.add_scatter(x=vn.PC1, y=vn.PC2, mode="markers+text", text=["Vietnam"], textposition="top center",
-                    marker=dict(color=VN_COLOR, size=17, line=dict(color=k.C["card"], width=2)),
-                    textfont=dict(color=VN_COLOR, size=14), showlegend=False)
-    chart(fig, 480)
-
     # 3.2 · clusters vs income groups
     r = rob.set_index("algorithm")
     km = r.loc["K-means"]
     takeaway(f"Four data-driven clusters match income groups for <em>{agree:.0%}</em> of countries; "
              "the mismatches are the interesting part",
-             f"K-means (k = 4) is stable: ARI {km.ari_between_seeds:.2f} between seeds. Clusters are numbered by "
-             "median GDP per head and named after their profile.")
+             f"K-means (k = 4) is stable: ARI {km.ari_between_seeds:.2f} between seeds, but the silhouette is only "
+             f"{sil:.2f}: development is one continuous axis (PC1 = {ev[0]:.0%} of the variance, Data A3), so any "
+             "grouping cuts a continuum.")
     a, b = st.columns(2)
     ct = pd.crosstab(pd.Categorical(d.cluster, NAME_ORDER), pd.Categorical(d.Income, INCOME_ORDER))
     fig = px.imshow(ct.values, x=["Low", "Lower-mid", "Upper-mid", "High"], y=NAME_ORDER, text_auto=True,
@@ -98,22 +84,23 @@ def page():
     for col, part, title, color in ((a, inc, "Same income", k.GREY), (b, soc, "Same social outcomes", k.BLUE)):
         fig = go.Figure(go.Bar(x=part.gdp_ratio_vs_vn, y=part.country, orientation="h", marker_color=color,
                                text=[f"{v:.1f}× · {le:.0f} yrs" for v, le in zip(part.gdp_ratio_vs_vn, part.life_exp)],
-                               textposition="inside", textfont=dict(color="#fff"),
+                               textposition="inside" if part.gdp_ratio_vs_vn.min() > 2 else "outside",
+                               textfont=dict(color="#fff" if part.gdp_ratio_vs_vn.min() > 2 else k.INK),
                                hovertemplate="%{y}: %{x:.1f}× Vietnam's GDP per head<extra></extra>"))
         fig.add_vline(x=1, line=dict(color=VN_COLOR, width=2), annotation_text="Vietnam = 1×",
-                      annotation_font_color=VN_COLOR)
+                      annotation_position="bottom right", annotation_font_color=VN_COLOR)
         fig.update_yaxes(autorange="reversed")
-        fig.update_xaxes(type="log", title="GDP per head relative to Vietnam (log)")
+        fig.update_xaxes(type="log", title="GDP per head relative to Vietnam (log)", range=[-0.15, 1.3])
         chart(fig.update_layout(title=f"{title} · bar label: income ratio · life expectancy"), 340, legend=False,
               target=col)
 
     # 3.4 · what separates Vietnam from 'Emerging' (E3.3)
     g = gaps[(gaps.versus == "Emerging")].dropna(subset=["gap_sd"]).sort_values("gap_sd")
     urb = g.set_index("indicator").loc["urban"]
-    takeaway(f"What separates Vietnam from the 'Emerging' cluster: income and urbanisation "
-             f"(<em>{urb.vietnam:.0f} %</em> urban vs {urb.cluster_median:.0f} %)",
-             "Vietnam minus the cluster median, in standard deviations across countries (log scale where marked). "
-             "Red: gaps of half a standard deviation or more.")
+    fold = st.expander(f"What separates Vietnam from the 'Emerging' cluster: income and urbanisation "
+                       f"({urb.vietnam:.0f} % urban vs {urb.cluster_median:.0f} %)")
+    fold.markdown("Vietnam minus the cluster median, in standard deviations across countries (log scale where "
+                  "marked). Red: gaps of half a standard deviation or more.")
     fig = go.Figure(go.Bar(x=g.gap_sd, y=[LABELS[i].split(" (")[0] + (" (log)" if lg else "") for i, lg in
                                          zip(g.indicator, g.log)], orientation="h",
                            marker_color=[VN_COLOR if abs(v) >= .5 else k.GREY for v in g.gap_sd],
@@ -122,7 +109,7 @@ def page():
                                          "%{customdata[1]:,.1f}<extra></extra>"))
     fig.add_vline(x=0, line=dict(color=k.INK, width=1))
     fig.update_xaxes(title="Vietnam − 'Emerging' median (SD)")
-    chart(fig, 460, legend=False)
+    chart(fig, 460, legend=False, target=fold)
 
     # 3.5 · answer
     takeaway("The answer: <em>richer mostly means more developed</em>, but policy shifts the whole curve")
@@ -135,7 +122,7 @@ def page():
          "its income predicts."),
         ("Limits.", "Data ends in 2014; poorer countries report less; associations, not causal effects; country "
          "medians are not population-weighted; clusters cut a continuum."),
-        ("Your question?", "The Lab tabs (Trends, Compare, Models, Clusters) answer follow-up questions live."),
+        ("Your question?", "The Lab tabs (Countries, Models, Clusters) answer follow-up questions live."),
     ])
 
     bridge("Does richer mean more developed? Mostly yes, but not only: look with data, not only with income.")

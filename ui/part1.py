@@ -11,7 +11,7 @@ from plotly.subplots import make_subplots
 
 from ui import core as k
 from ui.core import (INCOME_ORDER, VN, VN_COLOR, bridge, chart, group_trend, hero, load_results, method_box,
-                     missing_results, panel, takeaway)
+                     missing_results, panel, table, takeaway)
 from wdi.story import part1 as p1
 
 SIGMA_LABEL = {"life_exp": "Life expectancy", "enrol_primary": "Primary enrolment", "gdp_pc": "GDP per head",
@@ -38,8 +38,7 @@ def page():
     r0, n0 = _p90_p10(1990)
     r1, n1 = _p90_p10(2013)
     hero("Part 1 · What", "The world progressed,<br>but unevenly.",
-         "Does richer mean more developed? First, what actually happened between 1960 and 2014: "
-         "who caught up, on what, and who did not.")
+         "Between 1960 and 2014: who caught up, on what, and who did not.")
 
     # 1.1 · the paradox
     takeaway(f"The life-expectancy gap shrank from <em>{gap.iloc[0]:.0f}</em> to <em>{gap.iloc[-1]:.0f} years</em>, "
@@ -63,11 +62,6 @@ def page():
     # 1.2 · can we trust it
     rb = robust.copy()
     held = (rb.groupby("indicator").direction.nunique() == 1).sum()
-    takeaway(f"The trends are not an artefact of missing data: the direction holds for <em>{held} of "
-             f"{rb.indicator.nunique()}</em> indicators on a balanced panel",
-             "About 42 % of panel cells are empty, mostly because some series start in 1990. Re-running the "
-             "convergence measure only on countries that report in both years gives the same picture. "
-             "Details of the data handling are on pages A and B.")
     rb["CV"] = rb.apply(lambda r: f"{r.cv_start:.2f} → {r.cv_end:.2f}", axis=1)
     t = rb.pivot(index="indicator", columns="version", values="CV")
     t.index = t.index.map(SIGMA_LABEL)
@@ -75,21 +69,29 @@ def page():
     t.columns.name = None
     dirs = rb.pivot(index="indicator", columns="version", values="direction")
     t["direction (balanced panel)"] = dirs["balanced panel"].rename(index=SIGMA_LABEL)
-    method_box("**E1.3 robustness:** coefficient of variation (CV) 1990 → 2013 for (a) every reporting country, "
+    method_box(f"**The trends are not an artefact of missing data:** the direction holds for {held} of "
+               f"{rb.indicator.nunique()} indicators on a balanced panel.\n\n**E1.3 robustness:** coefficient of variation (CV) 1990 → 2013 for (a) every reporting country, "
                "(b) a balanced panel of countries reporting in both years, (c) the balanced panel weighted by "
-               "population. A change of more than 5 % counts as converging or diverging. GDP convergence on the "
-               "weighted panel is mostly China and India growing.",
-               "E1.3 · same result on a balanced panel?",
+               "population. A change of more than 5 % counts as converging or diverging. GDP shows a small fall "
+               "(5–13 %) over 1990–2013 because its spread peaked around 1990 and eased after 2007, mostly China and "
+               "India growing; over the full period it did not converge (see the chart below).",
+               "Check: same result on a balanced panel?",
                t.style)
 
     # 1.3 · what converges (E1.1)
     s = sigma.sort_values("Year")
     first = s.groupby("indicator").cv.first()
     last = s.groupby("indicator").cv.last()
-    takeaway(f"Health and schooling converged; income did not: life-expectancy CV <em>{first['life_exp']:.2f} → "
+    u5 = panel.groupby("Year").u5_mort.agg(["std", "count"])
+    u5 = u5[u5["count"] > 100]["std"]
+    takeaway(f"Life expectancy and schooling converged; income did not: life-expectancy CV <em>{first['life_exp']:.2f} → "
              f"{last['life_exp']:.2f}</em>, GDP CV <em>{first['gdp_pc']:.2f} → {last['gdp_pc']:.2f}</em>",
              "σ-convergence: the spread between countries (coefficient of variation) each year, relative to the "
-             "first year with more than 100 reporting countries. Below 1 means countries became more alike.")
+             "first year with more than 100 reporting countries. Below 1 means countries became more alike. "
+             f"GDP's spread rose until 1990 and fell back only after 2007. Child mortality and fertility look like "
+             f"they diverge only because their averages fell sharply and CV divides by the mean: the absolute gap "
+             f"in under-5 mortality fell "
+             f"from {u5.iloc[0]:.0f} to {u5.iloc[-1]:.0f} deaths per 1,000.")
     pick = st.multiselect("Indicators", list(SIGMA_LABEL), default=list(SIGMA_LABEL), format_func=SIGMA_LABEL.get,
                           key="p1_sigma")
     fig = go.Figure()
@@ -126,10 +128,11 @@ def page():
     gdp = b_.loc["gdp_pc"]
     others = b_.drop("gdp_pc")
     vn_g = gdp.vn_change
-    takeaway(f"Poorer countries did not grow faster: income β gives r = <em>{gdp.r:+.2f}</em> (p = {gdp.p:.2f}), "
-             f"against r = {others.r.max():+.2f} to {others.r.min():+.2f} for health, schooling and fertility",
-             f"β-convergence: change per year since 1990 against the 1990 level; a falling line means catch-up. "
-             f"Vietnam (red) grew {vn_g:.1f} % a year, one of the few that broke away.")
+    fold = st.expander("β-convergence: did poorer countries grow faster?")
+    fold.markdown(f"**No.** Income β gives r = {gdp.r:+.2f} (p = {gdp.p:.2f}), against r = {others.r.max():+.2f} to "
+                  f"{others.r.min():+.2f} for health, schooling and fertility. Each panel: change per year since 1990 "
+                  f"against the 1990 level; a falling line means catch-up. Vietnam (red) grew {vn_g:.1f} % a year, "
+                  "one of the few that broke away.")
     names = {"gdp_pc": "GDP per head (log growth %/yr)", "life_exp": "Life expectancy (years/yr)",
              "enrol_primary": "Primary enrolment (pp/yr)", "fertility": "Fertility (births/yr)"}
     order = list(names)
@@ -148,17 +151,17 @@ def page():
                             showlegend=False, hovertemplate="Vietnam<extra></extra>", row=1, col=i)
         fig.update_xaxes(title_text="1990 level" + (" (log₁₀)" if v == "gdp_pc" else ""), row=1, col=i)
     fig.update_annotations(font_size=12)
-    chart(fig, 380, legend=False)
+    chart(fig, 380, legend=False, target=fold)
     bt = b_[["period", "n", "beta", "ci_low", "ci_high", "r", "p", "vn_change"]].copy()
     bt.index = bt.index.map(names)
     bt.index.name = None
-    method_box("**β-convergence (E1.2):** OLS of the annual change between 1990 and the last year with more than "
-               "100 reporting countries on the 1990 level. GDP uses log growth in % per year on the log₁₀ level; the "
-               "others use units per year on the level. β < 0 means catch-up; the 95 % CI comes from the t "
-               "distribution.\n\n**σ-convergence (E1.1):** CV = standard deviation / mean across countries, for years "
-               "with more than 100 reporting countries.",
-               "Method & all coefficients",
-               bt.style.format({"n": "{:.0f}", "beta": "{:.3f}", "ci_low": "{:.3f}", "ci_high": "{:.3f}",
-                                "r": "{:+.2f}", "p": "{:.3f}", "vn_change": "{:.2f}"}))
+    fold.markdown("**β-convergence (E1.2):** OLS of the annual change between 1990 and the last year with more "
+                  "than 100 reporting countries on the 1990 level. GDP uses log growth in % per year on the log₁₀ "
+                  "level; the others use units per year on the level. β < 0 means catch-up; the 95 % CI comes from "
+                  "the t distribution.\n\n**σ-convergence (E1.1):** CV = standard deviation / mean across "
+                  "countries, for years with more than 100 reporting countries.")
+    with fold:
+        table(bt.style.format({"n": "{:.0f}", "beta": "{:.3f}", "ci_low": "{:.3f}", "ci_high": "{:.3f}",
+                               "r": "{:+.2f}", "p": "{:.3f}", "vn_change": "{:.2f}"}))
 
     bridge("Health converged while income did not. So how much does income really matter?")
